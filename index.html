@@ -4,24 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gomes Digital Arouca — Tecnologia sem complicações</title>
-
-<!--
-  ============================================================
-  NÚMERO DE WHATSAPP — altere só a linha seguinte.
-  Escreva 351 e os 9 dígitos, sem + e sem espaços.
-  Exemplo: content="351934467004"
-  A página copia este número para todos os botões (wa.me).
-  Onde o número aparece escrito, mostra-se como 934 467 004.
-  A linha de baixo é a mensagem que já vai escrita no WhatsApp.
-  ============================================================
--->
-<meta name="gomes:whatsapp" content="351934467004">
-<meta name="gomes:whatsapp-mensagem" content="Olá, Pedro. Preciso de ajuda com tecnologia em casa e gostava de um diagnóstico rápido. Obrigado.">
-
 <meta name="description" content="Assistência ao domicílio em Arouca, Vale de Cambra e arredores. Telemóveis, computadores, Wi-Fi e cópias de segurança. Diagnóstico grátis por WhatsApp.">
 <meta name="author" content="Pedro Gomes">
-<meta name="theme-color" content="#1b4332">
-<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0B0B0F">
+<meta name="color-scheme" content="dark">
 <meta name="format-detection" content="telephone=no">
 <meta name="robots" content="index,follow">
 
@@ -31,6 +17,7 @@
   https://wizzynoise.github.io/gomes-digital-arouca/
   nestas linhas, na imagem og:image e no bloco JSON-LD (e também em
   robots.txt e sitemap.xml).
+  O contacto por WhatsApp está em contacto.js, não neste ficheiro.
 -->
 <link rel="canonical" href="https://wizzynoise.github.io/gomes-digital-arouca/">
 <link rel="alternate" hreflang="pt-PT" href="https://wizzynoise.github.io/gomes-digital-arouca/">
@@ -96,7 +83,6 @@
     "@type": "ContactPoint",
     "contactType": "customer service",
     "availableLanguage": "Portuguese",
-    "url": "https://wa.me/351934467004",
     "description": "Contacto apenas por WhatsApp. Atendimento por marcação, todos os dias."
   },
   "hasOfferCatalog": {
@@ -154,14 +140,12 @@
     </a>
     <nav aria-label="Secções da página">
       <ul class="menu">
-        <li><a href="#ajuda">Ajuda</a></li>
-        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#servicos">Serviços</a></li>
         <li><a href="#quem-sou">Quem sou</a></li>
-        <li><a href="#onde">Onde</a></li>
-        <li><a href="#perguntas">Perguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
-    <a class="botao botao-cabecalho" data-whatsapp href="https://wa.me/351934467004?text=Ol%C3%A1%2C%20Pedro.%20Preciso%20de%20ajuda%20com%20tecnologia%20em%20casa%20e%20gostava%20de%20um%20diagn%C3%B3stico%20r%C3%A1pido.%20Obrigado.">WhatsApp<span class="sr-only">. Abre uma conversa com a mensagem já escrita.</span></a>
+    <a class="botao botao-nav" data-whatsapp href="#contacto">WhatsApp<span class="sr-only">. Abre uma conversa com a mensagem já escrita.</span></a>
   </div>
 </header>
 
@@ -174,25 +158,19 @@
       <p class="subfrase">Assistência ao domicílio e soluções digitais para particulares e pequenos negócios.</p>
       <p class="entrada">Sou o Pedro Gomes, de Rossas. Ajudo com telemóveis, computadores, internet e o resto da tecnologia de casa, com calma, na sua casa ou à distância.</p>
       <div class="acoes">
-        <a class="botao" data-whatsapp href="https://wa.me/351934467004?text=Ol%C3%A1%2C%20Pedro.%20Preciso%20de%20ajuda%20com%20tecnologia%20em%20casa%20e%20gostava%20de%20um%20diagn%C3%B3stico%20r%C3%A1pido.%20Obrigado.">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 5.2A2.2 2.2 0 0 1 6.2 3h11.6A2.2 2.2 0 0 1 20 5.2v8.2a2.2 2.2 0 0 1-2.2 2.2H8.7L4 20.2V5.2z"/></svg>
+        <a class="botao" data-whatsapp href="#contacto">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 6.2A2.2 2.2 0 0 1 7.2 4h9.6A2.2 2.2 0 0 1 19 6.2v6.6a2.2 2.2 0 0 1-2.2 2.2H9.2L5 18.8V6.2z"/></svg>
           Falar no WhatsApp
           <span class="sr-only">. Abre uma conversa com a mensagem já escrita.</span>
         </a>
-        <a class="ligacao-texto" href="#ajuda">Ver como posso ajudar</a>
+        <a class="botao botao-fantasma" href="#servicos">Ver serviços</a>
       </div>
-      <ul class="factos">
-        <li><strong>Diagnóstico grátis</strong> Cerca de 5 minutos, por WhatsApp.</li>
-        <li><strong>Deslocação grátis</strong> Em todo o concelho de Arouca.</li>
-        <li><strong>Por marcação</strong> Todos os dias, também ao fim do dia e ao fim de semana.</li>
-        <li><strong>Confidencialidade</strong> Assino uma declaração em cada serviço.</li>
-      </ul>
     </div>
   </section>
 
-  <section class="seccao faixa-branca" id="ajuda" aria-labelledby="titulo-ajuda">
+  <section class="seccao revelar" id="servicos" aria-labelledby="titulo-servicos">
     <div class="envolve">
-      <h2 id="titulo-ajuda">Como posso ajudar</h2>
+      <h2 id="titulo-servicos">Serviços</h2>
       <p class="intro">Explico tudo com calma e ensino a usar a tecnologia com mais confiança, ao seu ritmo. Uma boa opção para quem não tem tempo para ir a lojas ou não se pode deslocar.</p>
       <div class="grelha-servicos">
         <article class="cartao">
@@ -259,29 +237,101 @@
     </div>
   </section>
 
-  <section class="seccao" id="como-funciona" aria-labelledby="titulo-funciona">
+  <section class="seccao revelar" id="confianca" aria-labelledby="titulo-confianca">
+    <div class="envolve">
+      <h2 id="titulo-confianca">Confiança</h2>
+      <p class="intro">Quatro coisas que ficam combinadas antes de eu começar.</p>
+      <div class="pilares">
+        <article class="pilar">
+          <div class="icone" aria-hidden="true">
+            <svg viewBox="0 0 32 32" focusable="false"><path d="M16 28s8-7.2 8-14a8 8 0 1 0-16 0c0 6.8 8 14 8 14z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="14" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Local em Arouca</h3>
+          <p>Moro em Rossas. A deslocação é grátis em todo o concelho de Arouca.</p>
+        </article>
+        <article class="pilar">
+          <div class="icone" aria-hidden="true">
+            <svg viewBox="0 0 32 32" focusable="false"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 16.5l3.2 3.2L21.5 12.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Preço combinado antes</h3>
+          <p>Preço justo, combinado antes de começar. O diagnóstico de cerca de 5 minutos, no WhatsApp, é grátis.</p>
+        </article>
+        <article class="pilar">
+          <div class="icone" aria-hidden="true">
+            <svg viewBox="0 0 32 32" focusable="false"><path d="M16 3.5l10 4v8.2c0 6.2-4.2 10.4-10 12.8-5.8-2.4-10-6.6-10-12.8V7.5l10-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Confidencialidade</h3>
+          <p>Assino uma declaração em cada serviço. As palavras-passe escreve-as o senhor ou a senhora.</p>
+        </article>
+        <article class="pilar">
+          <div class="icone" aria-hidden="true">
+            <svg viewBox="0 0 32 32" focusable="false"><path d="M6 14.5 16 6l10 8.5V26H6V14.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13 26v-7h6v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Remoto ou em casa</h3>
+          <p>Sempre que der, resolvo à distância. Quando não der, vou à sua casa ou ao seu negócio. Não tenho loja.</p>
+        </article>
+      </div>
+
+      <div class="bloco-extra">
+        <h3>O que fica por escrito</h3>
+        <p class="intro">Antes de começar, assino consigo uma declaração de confidencialidade sobre os seus dados. O que está no computador ou no telemóvel fica entre nós.</p>
+        <ul class="compromissos">
+          <li>Guardo sigilo sobre ficheiros, fotos, mensagens, emails, contas e documentos. Não os divulgo a ninguém, durante o serviço nem depois.</li>
+          <li>Acedo só ao que for preciso para o serviço pedido.</li>
+          <li>Não peço nem guardo palavras-passe ou códigos. É sempre o senhor ou a senhora que as escreve.</li>
+          <li>Não fico com cópias dos ficheiros. Se for precisa uma cópia temporária, só com autorização, apago-a no fim e digo quando.</li>
+          <li>Não instalo programas de acesso remoto sem autorização. Cada sessão só começa quando autorizar, nesse momento.</li>
+          <li>Se algo correr mal com os seus dados, digo-o de imediato. Explico o que fiz, passo a passo, se quiser.</li>
+        </ul>
+        <p class="nota">Os dados de contacto e de faturação servem para marcar o serviço e passar a fatura, e ficam guardados pelo prazo que a lei exige. Pode pedir para consultar, corrigir ou apagar o que não seja obrigatório guardar. Se num negócio o serviço der acesso a dados de clientes ou de funcionários, digo-o antes: a declaração simples pode não chegar.</p>
+      </div>
+
+      <div class="bloco-extra">
+        <h3>Onde trabalho</h3>
+        <p class="intro">A deslocação é grátis em todo o concelho de Arouca, em todas as freguesias:</p>
+        <ul class="zonas">
+          <li>Alvarenga</li>
+          <li>Arouca e Burgo</li>
+          <li>Cabreiros e Albergaria da Serra</li>
+          <li>Canelas e Espiunca</li>
+          <li>Chave</li>
+          <li>Covelo de Paivó e Janarde</li>
+          <li>Escariz</li>
+          <li>Fermedo</li>
+          <li>Mansores</li>
+          <li>Moldes</li>
+          <li>Rossas (moro aqui)</li>
+          <li>Santa Eulália</li>
+          <li>São Miguel do Mato</li>
+          <li>Tropeço</li>
+          <li>Urrô</li>
+          <li>Várzea</li>
+        </ul>
+        <p>Também vou a Vale de Cambra e a zonas vizinhas, como Oliveira de Azeméis. Fora de Arouca, a deslocação combina-se antes de começar, ao mesmo tempo que o preço.</p>
+        <p>Não tenho loja aberta ao público e não publico a morada de casa. Ou vou eu ter consigo, ou resolvemos à distância.</p>
+        <p>Atendo todos os dias, por marcação, também ao fim do dia e ao fim de semana. Escreva no WhatsApp: respondo assim que puder.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccao revelar" id="como-funciona" aria-labelledby="titulo-funciona">
     <div class="envolve">
       <h2 id="titulo-funciona">Como funciona</h2>
-      <p class="intro">Quatro passos. Sem letra pequena e sem surpresas no fim.</p>
+      <p class="intro">Três passos. Sem letra pequena e sem surpresas no fim.</p>
       <ol class="passos">
-        <li>
+        <li class="passo">
           <p class="passo-rotulo">Passo 1</p>
-          <h3>Mensagem no WhatsApp</h3>
+          <h3>Explique o problema</h3>
           <p>Escreva o que se passa, com as suas palavras. Não precisa de saber o nome técnico. Se quiser, junte uma fotografia do ecrã, sem palavras-passe à vista. Não envie códigos nem palavras-passe.</p>
         </li>
-        <li>
+        <li class="passo">
           <p class="passo-rotulo">Passo 2</p>
-          <h3>Diagnóstico grátis</h3>
-          <p>Em cerca de 5 minutos digo se posso ajudar. Este primeiro contacto não se paga.</p>
+          <h3>Receba uma solução clara</h3>
+          <p>Em cerca de 5 minutos digo se posso ajudar. Este primeiro contacto não se paga. Preço justo, combinado antes de começar. Só avanço depois de o senhor ou a senhora aceitar o valor.</p>
         </li>
-        <li>
+        <li class="passo">
           <p class="passo-rotulo">Passo 3</p>
-          <h3>Preço combinado</h3>
-          <p>Preço justo, combinado antes de começar. Só avanço depois de o senhor ou a senhora aceitar o valor.</p>
-        </li>
-        <li>
-          <p class="passo-rotulo">Passo 4</p>
-          <h3>À distância ou em sua casa</h3>
+          <h3>Resolvo à distância ou em sua casa</h3>
           <p>Sempre que der, resolvo à distância: por videochamada no WhatsApp ou, se autorizar nessa altura, com acesso remoto. Pode ver o que faço e desligar quando quiser. Quando não der, vou à sua casa ou ao seu negócio. Em todo o concelho de Arouca, a deslocação é grátis.</p>
         </li>
       </ol>
@@ -291,7 +341,7 @@
     </div>
   </section>
 
-  <section class="seccao faixa-branca" id="quem-sou" aria-labelledby="titulo-quem">
+  <section class="seccao revelar" id="quem-sou" aria-labelledby="titulo-quem">
     <div class="envolve quem-grelha">
       <div class="quem-texto">
         <h2 id="titulo-quem">Quem sou</h2>
@@ -307,84 +357,40 @@
       </div>
       <figure class="ilustracao">
         <svg viewBox="0 0 360 400" role="img" aria-label="Ilustração de Arouca: colinas da Serra da Freita, uma aldeia com a torre da igreja, um telemóvel, um computador e um sinal de ajuda." focusable="false">
-          <rect width="360" height="400" fill="#e7f2eb"/>
-          <circle cx="300" cy="62" r="26" fill="#f4e2c0"/>
-          <path fill="#14382c" d="M0 188l32-42 36 24 40-62 38 48 36-34 42-46 40 54 36-30 40 40 20-22v78H0z"/>
-          <path fill="#1b4332" d="M0 206c48-36 92-8 140-28 52-22 78 8 128-12 28-12 58 6 92-8v96H0z"/>
-          <path fill="#245c42" d="M0 248c62-28 108 18 168-6 48-18 78 16 120-4 24-8 48 8 72-2v78H0z"/>
-          <g fill="#fffdf8">
+          <rect width="360" height="400" fill="#12141a"/>
+          <circle cx="300" cy="62" r="26" fill="#2997FF"/>
+          <path fill="#0c1c28" d="M0 188l32-42 36 24 40-62 38 48 36-34 42-46 40 54 36-30 40 40 20-22v78H0z"/>
+          <path fill="#123044" d="M0 206c48-36 92-8 140-28 52-22 78 8 128-12 28-12 58 6 92-8v96H0z"/>
+          <path fill="#1a4560" d="M0 248c62-28 108 18 168-6 48-18 78 16 120-4 24-8 48 8 72-2v78H0z"/>
+          <g fill="#F5F5F7">
             <rect x="108" y="196" width="38" height="52"/>
             <rect x="156" y="168" width="20" height="80"/>
             <rect x="186" y="204" width="42" height="44"/>
           </g>
-          <path fill="#8a3e18" d="M104 196l23-26 23 26zm52-28 10-20 10 20zm30 36 21-24 21 24z"/>
-          <rect x="164" y="142" width="4" height="12" fill="#1b4332"/>
-          <rect x="160" y="146" width="12" height="4" fill="#1b4332"/>
-          <rect x="160" y="184" width="12" height="16" rx="6" fill="#1b4332"/>
-          <rect x="120" y="214" width="12" height="16" fill="#1b4332"/>
-          <rect x="200" y="218" width="14" height="14" fill="#1b4332"/>
-          <path fill="#2f6a4f" d="M0 246c70-8 110 36 176 14 54-18 90 20 128 4 22-6 40 10 56 2v62H0z"/>
-          <path fill="#d7eadc" d="M0 318c78-34 140 28 214-4 46-20 90 16 146 2v84H0z"/>
-          <rect x="214" y="286" width="34" height="58" rx="6" fill="#1b4332"/>
-          <rect x="219" y="292" width="24" height="40" rx="2" fill="#f6f1e7"/>
-          <circle cx="231" cy="338" r="2.4" fill="#f6f1e7"/>
-          <rect x="72" y="292" width="78" height="48" rx="4" fill="#1b4332"/>
-          <rect x="78" y="298" width="66" height="34" rx="2" fill="#f6f1e7"/>
-          <path fill="#14382c" d="M64 340h94l8 12H56z"/>
-          <path fill="none" stroke="#1b4332" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M98 316l8 8 16-16"/>
-          <circle cx="252" cy="274" r="16" fill="#8a3e18"/>
-          <path fill="#fffdf8" d="M252 268.5c-2.2-2-5.4-1.6-6.6.8-1.2-2.4-4.4-2.8-6.6-.8-2.6 2.4-2.4 6.4.2 8.8 2.2 2 6.4 4.6 6.4 4.6s4.2-2.6 6.4-4.6c2.6-2.4 2.8-6.4.2-8.8z"/>
+          <path fill="#2997FF" d="M104 196l23-26 23 26zm52-28 10-20 10 20zm30 36 21-24 21 24z"/>
+          <rect x="164" y="142" width="4" height="12" fill="#F5F5F7"/>
+          <rect x="160" y="146" width="12" height="4" fill="#F5F5F7"/>
+          <rect x="160" y="184" width="12" height="16" rx="6" fill="#0B0B0F"/>
+          <rect x="120" y="214" width="12" height="16" fill="#0B0B0F"/>
+          <rect x="200" y="218" width="14" height="14" fill="#0B0B0F"/>
+          <path fill="#16384c" d="M0 246c70-8 110 36 176 14 54-18 90 20 128 4 22-6 40 10 56 2v62H0z"/>
+          <path fill="#0c1c28" d="M0 318c78-34 140 28 214-4 46-20 90 16 146 2v84H0z"/>
+          <rect x="214" y="286" width="34" height="58" rx="6" fill="#0B0B0F"/>
+          <rect x="219" y="292" width="24" height="40" rx="2" fill="#F5F5F7"/>
+          <circle cx="231" cy="338" r="2.4" fill="#0B0B0F"/>
+          <rect x="72" y="292" width="78" height="48" rx="4" fill="#0B0B0F"/>
+          <rect x="78" y="298" width="66" height="34" rx="2" fill="#F5F5F7"/>
+          <path fill="#123044" d="M64 340h94l8 12H56z"/>
+          <path fill="none" stroke="#2997FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M98 316l8 8 16-16"/>
+          <circle cx="252" cy="274" r="16" fill="#2997FF"/>
+          <path fill="#F5F5F7" d="M252 268.5c-2.2-2-5.4-1.6-6.6.8-1.2-2.4-4.4-2.8-6.6-.8-2.6 2.4-2.4 6.4.2 8.8 2.2 2 6.4 4.6 6.4 4.6s4.2-2.6 6.4-4.6c2.6-2.4 2.8-6.4.2-8.8z"/>
         </svg>
         <figcaption>Serra da Freita e o vale.</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="seccao faixa-pinho" id="confianca" aria-labelledby="titulo-confianca">
-    <div class="envolve">
-      <h2 id="titulo-confianca">Confiança e privacidade</h2>
-      <p class="intro">Antes de começar, assino consigo uma declaração de confidencialidade sobre os seus dados. O que está no computador ou no telemóvel fica entre nós.</p>
-      <ul class="compromissos">
-        <li>Guardo sigilo sobre ficheiros, fotos, mensagens, emails, contas e documentos. Não os divulgo a ninguém, durante o serviço nem depois.</li>
-        <li>Acedo só ao que for preciso para o serviço pedido.</li>
-        <li>Não peço nem guardo palavras-passe ou códigos. É sempre o senhor ou a senhora que as escreve.</li>
-        <li>Não fico com cópias dos ficheiros. Se for precisa uma cópia temporária, só com autorização, apago-a no fim e digo quando.</li>
-        <li>Não instalo programas de acesso remoto sem autorização. Cada sessão só começa quando autorizar, nesse momento.</li>
-        <li>Se algo correr mal com os seus dados, digo-o de imediato. Explico o que fiz, passo a passo, se quiser.</li>
-      </ul>
-      <p class="nota-final">Os dados de contacto e de faturação servem para marcar o serviço e passar a fatura, e ficam guardados pelo prazo que a lei exige. Pode pedir para consultar, corrigir ou apagar o que não seja obrigatório guardar. Se num negócio o serviço der acesso a dados de clientes ou de funcionários, digo-o antes: a declaração simples pode não chegar.</p>
-    </div>
-  </section>
-
-  <section class="seccao" id="onde" aria-labelledby="titulo-onde">
-    <div class="envolve">
-      <h2 id="titulo-onde">Onde trabalho</h2>
-      <p class="intro">A deslocação é grátis em todo o concelho de Arouca, em todas as freguesias:</p>
-      <ul class="zonas">
-        <li>Alvarenga</li>
-        <li>Arouca e Burgo</li>
-        <li>Cabreiros e Albergaria da Serra</li>
-        <li>Canelas e Espiunca</li>
-        <li>Chave</li>
-        <li>Covelo de Paivó e Janarde</li>
-        <li>Escariz</li>
-        <li>Fermedo</li>
-        <li>Mansores</li>
-        <li>Moldes</li>
-        <li>Rossas (moro aqui)</li>
-        <li>Santa Eulália</li>
-        <li>São Miguel do Mato</li>
-        <li>Tropeço</li>
-        <li>Urrô</li>
-        <li>Várzea</li>
-      </ul>
-      <p>Também vou a Vale de Cambra e a zonas vizinhas, como Oliveira de Azeméis. Fora de Arouca, a deslocação combina-se antes de começar, ao mesmo tempo que o preço.</p>
-      <p>Não tenho loja aberta ao público e não publico a morada de casa. Ou vou eu ter consigo, ou resolvemos à distância.</p>
-      <p>Atendo todos os dias, por marcação, também ao fim do dia e ao fim de semana. Escreva no WhatsApp: respondo assim que puder.</p>
-    </div>
-  </section>
-
-  <section class="seccao faixa-branca" id="perguntas" aria-labelledby="titulo-perguntas">
+  <section class="seccao revelar" id="perguntas" aria-labelledby="titulo-perguntas">
     <div class="envolve">
       <h2 id="titulo-perguntas">Perguntas frequentes</h2>
       <div class="faq">
@@ -419,51 +425,51 @@
       </div>
     </div>
   </section>
+
+  <section class="seccao revelar" id="contacto" aria-labelledby="titulo-contacto">
+    <div class="envolve">
+      <div class="contacto-caixa">
+        <h2 id="titulo-contacto">Contacto</h2>
+        <p>Escreva no WhatsApp. O diagnóstico de cerca de 5 minutos é grátis. Respondo assim que puder, todos os dias, por marcação.</p>
+        <p>Pedro Gomes · Rossas, Arouca. Assistência ao domicílio, sem loja aberta ao público.</p>
+        <p>Os seus dados ficam consigo: em cada serviço assino uma declaração de confidencialidade.</p>
+        <a class="botao" data-whatsapp href="#contacto">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 6.2A2.2 2.2 0 0 1 7.2 4h9.6A2.2 2.2 0 0 1 19 6.2v6.6a2.2 2.2 0 0 1-2.2 2.2H9.2L5 18.8V6.2z"/></svg>
+          Falar no WhatsApp
+          <span class="sr-only">. Abre uma conversa com a mensagem já escrita.</span>
+        </a>
+        <noscript>
+          <p class="nota-js">O botão do WhatsApp precisa de JavaScript para abrir a conversa. Ligue o JavaScript neste browser, ou peça a um familiar que já tenha o contacto do Pedro.</p>
+        </noscript>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="rodape" id="contacto">
+<footer class="rodape">
   <div class="envolve">
     <p class="rodape-nome">Gomes Digital Arouca</p>
     <p>Tecnologia sem complicações. Conte comigo.</p>
-    <p>Pedro Gomes · Rossas, Arouca. Assistência ao domicílio, sem loja aberta ao público. Atendimento por marcação, todos os dias.</p>
-    <p>Os seus dados ficam consigo: em cada serviço assino uma declaração de confidencialidade.</p>
-    <p><a data-whatsapp href="https://wa.me/351934467004?text=Ol%C3%A1%2C%20Pedro.%20Preciso%20de%20ajuda%20com%20tecnologia%20em%20casa%20e%20gostava%20de%20um%20diagn%C3%B3stico%20r%C3%A1pido.%20Obrigado.">Falar no WhatsApp<span class="sr-only">. Abre uma conversa com a mensagem já escrita.</span></a></p>
-    <p class="numero-visivel">WhatsApp <span data-whatsapp-numero>934 467 004</span></p>
+    <p>Pedro Gomes · Rossas, Arouca.</p>
     <ul class="rodape-menu">
-      <li><a href="#ajuda">Ajuda</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#confianca">Confiança</a></li>
       <li><a href="#como-funciona">Como funciona</a></li>
       <li><a href="#quem-sou">Quem sou</a></li>
-      <li><a href="#confianca">Confiança</a></li>
-      <li><a href="#onde">Onde</a></li>
       <li><a href="#perguntas">Perguntas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
   </div>
 </footer>
 
 <div class="barra-whatsapp">
-  <a class="botao" data-whatsapp href="https://wa.me/351934467004?text=Ol%C3%A1%2C%20Pedro.%20Preciso%20de%20ajuda%20com%20tecnologia%20em%20casa%20e%20gostava%20de%20um%20diagn%C3%B3stico%20r%C3%A1pido.%20Obrigado.">
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 5.2A2.2 2.2 0 0 1 6.2 3h11.6A2.2 2.2 0 0 1 20 5.2v8.2a2.2 2.2 0 0 1-2.2 2.2H8.7L4 20.2V5.2z"/></svg>
+  <a class="botao" data-whatsapp href="#contacto">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 6.2A2.2 2.2 0 0 1 7.2 4h9.6A2.2 2.2 0 0 1 19 6.2v6.6a2.2 2.2 0 0 1-2.2 2.2H9.2L5 18.8V6.2z"/></svg>
     Falar no WhatsApp
     <span class="sr-only">. Abre uma conversa com a mensagem já escrita.</span>
   </a>
 </div>
 
-<script>
-(function () {
-  var metaNum = document.querySelector('meta[name="gomes:whatsapp"]');
-  var metaMsg = document.querySelector('meta[name="gomes:whatsapp-mensagem"]');
-  if (!metaNum) return;
-  var numero = (metaNum.getAttribute("content") || "").replace(/[\s+\-()]/g, "");
-  var mensagem = metaMsg ? (metaMsg.getAttribute("content") || "") : "";
-  var url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
-  var links = document.querySelectorAll("[data-whatsapp]");
-  for (var i = 0; i < links.length; i++) links[i].href = url;
-  var visivel = numero;
-  var partes = numero.match(/^351(\d{3})(\d{3})(\d{3})$/);
-  if (partes) visivel = partes[1] + " " + partes[2] + " " + partes[3];
-  var mostrados = document.querySelectorAll("[data-whatsapp-numero]");
-  for (var j = 0; j < mostrados.length; j++) mostrados[j].textContent = visivel;
-})();
-</script>
+<script src="contacto.js"></script>
 </body>
 </html>
