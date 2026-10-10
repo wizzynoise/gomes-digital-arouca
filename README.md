@@ -1,36 +1,39 @@
 # Gomes Digital Arouca
 
-Site de uma página da Gomes Digital Arouca (Pedro Gomes, Rossas). É HTML e CSS, sem loja de aplicações, sem base de dados e sem serviços pagos. Publica-se grátis no GitHub Pages, a partir da raiz deste repositório.
+Site de uma página da Gomes Digital Arouca (Pedro Gomes, Rossas). É HTML, CSS e um ficheiro pequeno de JavaScript, sem loja de aplicações, sem base de dados e sem serviços pagos. Publica-se grátis no GitHub Pages, a partir da raiz deste repositório.
 
-O texto está em português de Portugal. O contacto público é só o WhatsApp. Não há preços, testemunhos nem fotografias de banco de imagens.
+O texto está em português de Portugal. O contacto público é só o WhatsApp. O número não aparece escrito na página. Não há preços, testemunhos nem fotografias de banco de imagens.
 
-## 1. Mudar o número de WhatsApp
+## 1. Ligação do WhatsApp
 
-Há **um único sítio** para o número.
+Há **um único sítio** para o contacto: o ficheiro `contacto.js`.
 
-1. Abra o ficheiro `index.html`.
-2. No topo, encontre esta linha:
+No topo está esta linha, com aspas vazias de propósito:
 
-```html
-<meta name="gomes:whatsapp" content="351934467004">
+```javascript
+var WHATSAPP_SHORT_LINK = "";
 ```
 
-3. O número atual é `351934467004`. Para o mudar, escreva `351` e os 9 dígitos, **sem** `+`, **sem** espaços e **sem** traços.
-4. Grave o ficheiro.
+Quando tiver a ligação curta do WhatsApp Business, cole-a entre as aspas. Tem de começar por `https://wa.me/message/` (também serve um endereço `https://api.whatsapp.com/`). Exemplo da forma, sem um código real:
 
-Não é preciso editar os botões um a um. Ao abrir a página, esse número é copiado para todos os links. O endereço fica `https://wa.me/351934467004`.
-
-Onde o número aparece **escrito** na página (no rodapé), o formato é `934 467 004`, sem o 351. Esse texto também sai da mesma linha: os grupos de 3 dígitos são postos com espaços. Se mudar o número na linha de cima, o texto visível acompanha.
-
-A linha logo por baixo é a mensagem que já vai escrita na conversa:
-
-```html
-<meta name="gomes:whatsapp-mensagem" content="Olá, Pedro. Preciso de ajuda com tecnologia em casa e gostava de um diagnóstico rápido. Obrigado.">
+```javascript
+var WHATSAPP_SHORT_LINK = "https://wa.me/message/COLOQUE-AQUI";
 ```
 
-Pode reescrevê-la. Mantenha o texto entre aspas.
+Como obter essa ligação, na aplicação WhatsApp Business:
 
-Se o JavaScript estiver desligado no browser, os botões usam o mesmo número, já escrito em cada link. No telemóvel e no computador normais, o JavaScript está ligado e vale a linha `gomes:whatsapp`.
+1. Abra **Definições** (ou **Ferramentas para empresas**).
+2. Procure a **ligação curta** (short link).
+3. Copie o endereço que começa por `https://wa.me/message/`.
+4. Cole-o entre as aspas, no `contacto.js`, e grave o ficheiro.
+
+Enquanto as aspas estiverem vazias, os botões continuam a funcionar: no clique, o JavaScript monta o endereço do WhatsApp a partir de partes guardadas no mesmo ficheiro. Esse endereço **não** fica escrito na página, nem nos links, antes do clique.
+
+A mensagem que já vai escrita na conversa está na linha `MENSAGEM`, no mesmo ficheiro, entre aspas. Pode reescrevê-la.
+
+Os botões precisam de JavaScript. Se estiver desligado, a página explica isso na secção Contacto, sem mostrar um número.
+
+Os commits anteriores deste repositório ainda têm o número escrito. O histórico não foi reescrito.
 
 ## 2. Mudar os textos
 
@@ -39,12 +42,12 @@ Os textos visíveis estão no `index.html`, por baixo de `<body>`.
 | O que mudar | Onde procurar |
 |---|---|
 | Frase e subtítulo | `Tecnologia sem complicações` e a frase logo a seguir |
-| Serviços | `<h2 id="titulo-ajuda">` |
+| Serviços | `<h2 id="titulo-servicos">` |
+| Confiança e zonas | `<h2 id="titulo-confianca">` |
 | Passos | `<h2 id="titulo-funciona">` |
 | Apresentação | o parágrafo com `id="texto-quem-sou"` |
-| Privacidade | `<h2 id="titulo-confianca">` |
-| Zonas | `<h2 id="titulo-onde">` |
 | Perguntas | `<h2 id="titulo-perguntas">` |
+| Contacto | `<h2 id="titulo-contacto">` |
 
 O parágrafo `texto-quem-sou` é um texto honesto de espera, para o Pedro substituir por duas ou três frases suas: por que começou e como gosta de explicar. Sem cursos inventados, sem número de clientes e sem estrelas.
 
@@ -54,7 +57,7 @@ Ao escrever, use português de Portugal:
 - Não use «você».
 - Telemóvel (não «celular»), ecrã (não «tela»), ficheiro (não «arquivo»), palavra-passe, contacto.
 
-Não ponha preços. A frase do site é: «Preço justo, combinado antes de começar.» Não há secção de avaliações de propósito.
+Não ponha preços. A frase do site é: «Preço justo, combinado antes de começar.» Não há secção de avaliações de propósito. Não escreva o número de telefone na página, nas meta tags nem no bloco JSON-LD.
 
 ## 3. Fotografia (mais tarde, se quiser)
 
@@ -80,9 +83,9 @@ A imagem de partilha (quando alguém envia o link do site) é outra: `assets/og.
 
 ## 4. Ver a página no seu computador
 
-Na pasta do projeto, abra o ficheiro `index.html` com o browser (duplo clique).
+Na pasta do projeto, abra o ficheiro `index.html` com o browser (duplo clique). Os botões do WhatsApp abrem melhor com um servidor local, porque alguns browsers limitam o JavaScript num ficheiro aberto direto.
 
-Ou, se tiver o Python instalado, nessa pasta:
+Se tiver o Python instalado, nessa pasta:
 
 ```bash
 python3 -m http.server 8080
@@ -90,7 +93,7 @@ python3 -m http.server 8080
 
 Depois abra `http://localhost:8080`.
 
-Veja também no telemóvel, ou na ferramenta de tamanho do browser: a letra é grande e o botão do WhatsApp fica fixo em baixo.
+Veja também no telemóvel, ou na ferramenta de tamanho do browser: a letra é grande e o botão do WhatsApp fica fixo em baixo, sem tapar o texto.
 
 ## 5. Publicar no GitHub Pages
 
@@ -108,13 +111,14 @@ Quando estas alterações estiverem na branch `main`:
 8. Carregue em **Save**.
 9. Espere um ou dois minutos e atualize a página das definições. Aparece uma caixa com o endereço do site.
 10. O endereço será `https://NOME-DA-CONTA.github.io/gomes-digital-arouca/` (o nome da conta GitHub no lugar de `NOME-DA-CONTA`).
-11. Abra esse endereço no telemóvel. Confirme o número, os textos e o desenho.
+11. Abra esse endereço no telemóvel. Confirme os textos, o desenho e que o botão abre o WhatsApp.
 
 Cada vez que gravar alterações na branch `main`, o site atualiza sozinho ao fim de cerca de um minuto.
 
 ### Se editar pelo site do GitHub
 
-- Número ou textos: abra `index.html`, carregue no lápis, altere, e em baixo escolha **Commit changes**.
+- Ligação curta: abra `contacto.js`, carregue no lápis, cole o endereço entre as aspas de `WHATSAPP_SHORT_LINK`, e em baixo escolha **Commit changes**.
+- Textos: abra `index.html`, carregue no lápis, altere, e grave da mesma forma.
 - Fotografia, quando a quiser: siga a secção 3. Envie `assets/pedro.jpg` e troque o desenho pelo `<img>` indicado.
 
 ## 6. Se o endereço público for outro
@@ -129,7 +133,7 @@ Se a conta GitHub for outra, ou se mais tarde usar um domínio próprio, procure
 - `robots.txt`
 - `sitemap.xml`
 
-O bloco JSON-LD descreve um negócio de área de serviço: concelho de Arouca, Vale de Cambra e zonas vizinhas. **Não tem rua nem número de porta**, de propósito. Também não tem preços. O contacto indicado é o WhatsApp (`https://wa.me/351934467004`). Na página, o número escrito é `934 467 004`.
+O bloco JSON-LD descreve um negócio de área de serviço: concelho de Arouca, Vale de Cambra e zonas vizinhas. **Não tem rua nem número de porta**, de propósito. Também não tem preços nem telefone. O contacto está descrito como WhatsApp, sem endereço e sem número.
 
 ## O que fica de fora
 
@@ -138,13 +142,15 @@ O bloco JSON-LD descreve um negócio de área de serviço: concelho de Arouca, V
 - Fotografias de outras pessoas sem autorização escrita, e fotografias de banco de imagens.
 - Frases como «100% seguro» ou «máxima segurança».
 - Loja, horário de balcão ou morada de casa.
+- O número de telefone escrito na página, nas meta tags ou no JSON-LD.
 
 ## Ficheiros
 
 | Ficheiro | Para quê |
 |---|---|
-| `index.html` | A página toda: textos, número, dados para o Google |
+| `index.html` | A página toda: textos e dados para o Google |
 | `styles.css` | Aspeto. Em princípio não precisa de o abrir |
+| `contacto.js` | Ligação curta do WhatsApp e a mensagem já escrita |
 | `assets/og.jpg` | Imagem quando o link é partilhado |
 | `assets/pedro.jpg` | Só se mais tarde quiser uma fotografia sua (ver secção 3). Este ficheiro ainda não existe |
 | `assets/icon-180.png` | Ícone no telemóvel, se alguém guardar o site |
