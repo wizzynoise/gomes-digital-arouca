@@ -136,22 +136,6 @@ a:hover {
   }
 }
 
-/* Aviso enquanto o número for o exemplo */
-
-.aviso-numero {
-  background: #3f2a12;
-  color: #fff8ee;
-  border-bottom: 4px solid var(--barro);
-  padding: 1rem max(1.25rem, env(safe-area-inset-left)) 1.1rem;
-}
-
-.aviso-numero p {
-  margin: 0 auto;
-  max-width: 46rem;
-  font-size: 1.125rem;
-  line-height: 1.45;
-}
-
 /* Cabeçalho */
 
 .topo {
@@ -554,61 +538,21 @@ h2 {
   margin-bottom: 0;
 }
 
-.retrato {
+.ilustracao {
   margin: 0;
   width: min(100%, 22rem);
 }
 
-.retrato-moldura {
-  overflow: hidden;
-  aspect-ratio: 4 / 5;
-  border: 4px solid var(--pinho);
-  border-radius: 1.25rem;
-  background: var(--pinho);
-}
-
-.retrato object {
+.ilustracao svg {
   display: block;
   width: 100%;
-  height: 100%;
-  border: 0;
-  object-fit: cover;
-  pointer-events: none;
+  height: auto;
+  border: 4px solid var(--pinho);
+  border-radius: 1.25rem;
+  background: #e7f2eb;
 }
 
-.retrato-fallback {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  height: 100%;
-  padding: 1.25rem;
-  color: #fbf7f0;
-  text-align: center;
-}
-
-.monograma {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 6.5rem;
-  height: 6.5rem;
-  margin: 0 0 0.4rem;
-  border: 3px solid #fbf7f0;
-  border-radius: 50%;
-  font-family: Georgia, "Liberation Serif", serif;
-  font-size: 2.2rem;
-  line-height: 1;
-}
-
-.retrato-fallback p {
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.retrato figcaption {
+.ilustracao figcaption {
   margin-top: 0.75rem;
   font-size: 1.125rem;
   font-weight: 700;
@@ -757,6 +701,13 @@ h2 {
   font-size: 1.25rem;
 }
 
+.numero-visivel {
+  margin-top: -0.2rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 .rodape-nome {
   margin-bottom: 0.45rem;
   font-size: clamp(1.8rem, 3vw, 2.35rem);
@@ -820,13 +771,12 @@ h2 {
   .cartao,
   .factos li,
   .passos li,
-  .retrato-moldura {
+  .ilustracao svg {
     border: 2px solid CanvasText;
   }
 }
 
 @media print {
-  .aviso-numero,
   .barra-whatsapp,
   .botao-cabecalho,
   .saltar,

@@ -12,22 +12,15 @@ Há **um único sítio** para o número.
 2. No topo, encontre esta linha:
 
 ```html
-<meta name="gomes:whatsapp" content="351XXXXXXXXX">
+<meta name="gomes:whatsapp" content="351934467004">
 ```
 
-3. Substitua `351XXXXXXXXX` pelo número real: `351` e os 9 dígitos, **sem** `+`, **sem** espaços e **sem** traços.
-
-Exemplo (número fictício):
-
-```html
-<meta name="gomes:whatsapp" content="351912345678">
-```
-
+3. O número atual é `351934467004`. Para o mudar, escreva `351` e os 9 dígitos, **sem** `+`, **sem** espaços e **sem** traços.
 4. Grave o ficheiro.
 
-Não é preciso editar os botões um a um. Ao abrir a página, esse número é copiado para todos os links «Falar no WhatsApp».
+Não é preciso editar os botões um a um. Ao abrir a página, esse número é copiado para todos os links. O endereço fica `https://wa.me/351934467004`.
 
-Enquanto o número tiver letras `X`, ou não tiver o formato certo, aparece uma faixa no topo da página a avisar. A faixa desaparece quando o número está bem escrito.
+Onde o número aparece **escrito** na página (no rodapé), o formato é `934 467 004`, sem o 351. Esse texto também sai da mesma linha: os grupos de 3 dígitos são postos com espaços. Se mudar o número na linha de cima, o texto visível acompanha.
 
 A linha logo por baixo é a mensagem que já vai escrita na conversa:
 
@@ -37,7 +30,7 @@ A linha logo por baixo é a mensagem que já vai escrita na conversa:
 
 Pode reescrevê-la. Mantenha o texto entre aspas.
 
-Se o JavaScript estiver desligado no browser, os botões usam o número de exemplo que está escrito nos próprios links. No telemóvel e no computador normais, o JavaScript está ligado e vale a linha `gomes:whatsapp`.
+Se o JavaScript estiver desligado no browser, os botões usam o mesmo número, já escrito em cada link. No telemóvel e no computador normais, o JavaScript está ligado e vale a linha `gomes:whatsapp`.
 
 ## 2. Mudar os textos
 
@@ -63,18 +56,25 @@ Ao escrever, use português de Portugal:
 
 Não ponha preços. A frase do site é: «Preço justo, combinado antes de começar.» Não há secção de avaliações de propósito.
 
-## 3. Pôr a sua fotografia
+## 3. Fotografia (mais tarde, se quiser)
 
-O espaço está na secção «Quem sou». Enquanto não houver foto real, vê-se um quadro verde com as iniciais PG e o nome do ficheiro.
+Por agora não há fotografia. Na secção «Quem sou» está um desenho feito no próprio `index.html`: colinas da Serra da Freita, uma aldeia com a torre da igreja, um telemóvel, um computador e um sinal de ajuda. Não é uma foto de pessoa nem uma imagem de banco.
+
+Quando quiser uma fotografia real:
 
 1. Tire uma fotografia sua, com luz de janela: de frente, roupa simples, rosto mais ou menos ao centro.
-2. Formato JPG. No telemóvel chega. Se puder, use retrato (mais alto do que largo), com pelo menos 800 píxeis no lado mais curto.
-3. O ficheiro tem de se chamar **exatamente** `pedro.jpg`, em minúsculas.
-4. Substitua o ficheiro `assets/pedro.jpg` por essa fotografia. Não mude o nome.
+2. Formato JPG. No telemóvel chega. Retrato, com pelo menos 800 píxeis no lado mais curto.
+3. Grave o ficheiro como `assets/pedro.jpg`, em minúsculas. O GitHub distingue maiúsculas: `Pedro.JPG` não chega.
+4. No `index.html`, na secção «Quem sou», substitua o bloco `<figure class="ilustracao">` … `</figure>` por:
+
+```html
+<figure class="ilustracao">
+  <img src="assets/pedro.jpg" alt="Pedro Gomes, de Rossas, Arouca.">
+  <figcaption>Pedro Gomes, de Rossas.</figcaption>
+</figure>
+```
 
 Não use fotografias de banco de imagens, nem caras de clientes, nem ecrãs com mensagens, contas ou fotos de outras pessoas.
-
-Se o ficheiro faltar ou o nome estiver errado (por exemplo `Pedro.JPG`), a página mostra um quadro neutro com as iniciais, em vez de uma imagem partida. O GitHub distingue maiúsculas de minúsculas: `Pedro.jpg` não chega.
 
 A imagem de partilha (quando alguém envia o link do site) é outra: `assets/og.jpg`. É um cartaz com o nome, sem fotografia de pessoas. Pode deixá-la como está.
 
@@ -108,14 +108,14 @@ Quando estas alterações estiverem na branch `main`:
 8. Carregue em **Save**.
 9. Espere um ou dois minutos e atualize a página das definições. Aparece uma caixa com o endereço do site.
 10. O endereço será `https://NOME-DA-CONTA.github.io/gomes-digital-arouca/` (o nome da conta GitHub no lugar de `NOME-DA-CONTA`).
-11. Abra esse endereço no telemóvel. Confirme o número, os textos e a fotografia.
+11. Abra esse endereço no telemóvel. Confirme o número, os textos e o desenho.
 
-Cada vez que gravar alterações na branch `main`, o site actualiza sozinho ao fim de cerca de um minuto.
+Cada vez que gravar alterações na branch `main`, o site atualiza sozinho ao fim de cerca de um minuto.
 
 ### Se editar pelo site do GitHub
 
 - Número ou textos: abra `index.html`, carregue no lápis, altere, e em baixo escolha **Commit changes**.
-- Fotografia: entre na pasta `assets`, carregue em **Add file** → **Upload files**, envie a foto com o nome `pedro.jpg` (substitui a que lá está) e grave.
+- Fotografia, quando a quiser: siga a secção 3. Envie `assets/pedro.jpg` e troque o desenho pelo `<img>` indicado.
 
 ## 6. Se o endereço público for outro
 
@@ -129,7 +129,7 @@ Se a conta GitHub for outra, ou se mais tarde usar um domínio próprio, procure
 - `robots.txt`
 - `sitemap.xml`
 
-O bloco JSON-LD descreve um negócio de área de serviço: concelho de Arouca, Vale de Cambra e zonas vizinhas. **Não tem rua nem número de porta**, de propósito. Também não tem preços nem o número de WhatsApp, para o número de exemplo não ficar indexado. O contacto na página é o botão.
+O bloco JSON-LD descreve um negócio de área de serviço: concelho de Arouca, Vale de Cambra e zonas vizinhas. **Não tem rua nem número de porta**, de propósito. Também não tem preços. O contacto indicado é o WhatsApp (`https://wa.me/351934467004`). Na página, o número escrito é `934 467 004`.
 
 ## O que fica de fora
 
@@ -145,8 +145,8 @@ O bloco JSON-LD descreve um negócio de área de serviço: concelho de Arouca, V
 |---|---|
 | `index.html` | A página toda: textos, número, dados para o Google |
 | `styles.css` | Aspeto. Em princípio não precisa de o abrir |
-| `assets/pedro.jpg` | A sua fotografia (substituir este ficheiro) |
 | `assets/og.jpg` | Imagem quando o link é partilhado |
+| `assets/pedro.jpg` | Só se mais tarde quiser uma fotografia sua (ver secção 3). Este ficheiro ainda não existe |
 | `assets/icon-180.png` | Ícone no telemóvel, se alguém guardar o site |
 | `favicon.svg` | Ícone no separador do browser |
 | `.nojekyll` | Obrigatório para o GitHub Pages. Não apagar |
