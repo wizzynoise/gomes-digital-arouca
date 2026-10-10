@@ -1,0 +1,859 @@
+/* Gomes Digital Arouca
+   Papel quente, texto grande, contraste alto.
+   Nenhum texto útil fica abaixo de 1.125rem (18px com a letra base do browser). */
+
+:root {
+  --papel: #f6f1e7;
+  --branco: #fffdf8;
+  --tinta: #1a1814;
+  --tinta-suave: #3f3a34;
+  --linha: #e0d5c4;
+  --pinho: #1b4332;
+  --pinho-fundo: #14382c;
+  --pinho-profundo: #10281f;
+  --whatsapp: #0c5737;
+  --whatsapp-hover: #0a4a2e;
+  --whatsapp-active: #083d26;
+  --barro: #8a3e18;
+  --realce: #e7f2eb;
+  --foco: #08315c;
+  --folga-scroll: 10rem;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: "Segoe UI", "Liberation Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+}
+
+h1,
+h2,
+h3,
+.frase,
+.caixa-preco strong,
+.marca-nome,
+.rodape-nome {
+  font-family: Georgia, "Liberation Serif", "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin-top: 0;
+}
+
+p,
+li {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--pinho);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--pinho-profundo);
+}
+
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.saltar {
+  position: absolute;
+  left: 1rem;
+  top: -6rem;
+  z-index: 60;
+  background: var(--branco);
+  color: var(--tinta);
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.saltar:focus {
+  top: 0.75rem;
+}
+
+.envolve {
+  width: min(100%, 72rem);
+  margin-inline: auto;
+  padding-inline: max(1.25rem, env(safe-area-inset-left), env(safe-area-inset-right));
+}
+
+[id] {
+  scroll-margin-top: var(--folga-scroll);
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --folga-scroll: 6rem;
+  }
+}
+
+/* Aviso enquanto o número for o exemplo */
+
+.aviso-numero {
+  background: #3f2a12;
+  color: #fff8ee;
+  border-bottom: 4px solid var(--barro);
+  padding: 1rem max(1.25rem, env(safe-area-inset-left)) 1.1rem;
+}
+
+.aviso-numero p {
+  margin: 0 auto;
+  max-width: 46rem;
+  font-size: 1.125rem;
+  line-height: 1.45;
+}
+
+/* Cabeçalho */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--papel);
+  border-bottom: 2px solid var(--linha);
+  border-top: 6px solid var(--pinho);
+}
+
+.topo-interior {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1rem;
+  padding-block: 0.55rem 0.35rem;
+}
+
+.marca {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 3rem;
+  color: var(--tinta);
+  text-decoration: none;
+  line-height: 1.15;
+}
+
+.marca-nome {
+  font-size: 1.35rem;
+}
+
+.marca-local {
+  color: var(--pinho);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.15rem 0 0.45rem;
+  list-style: none;
+}
+
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  color: var(--tinta);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.botao-cabecalho {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .topo-interior {
+    flex-wrap: nowrap;
+    padding-block: 0.7rem;
+  }
+
+  .menu {
+    width: auto;
+    flex: 1;
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  .botao-cabecalho {
+    display: inline-flex;
+    min-height: 3rem;
+    padding-inline: 1rem;
+    font-size: 1.125rem;
+  }
+}
+
+/* Botão */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  min-height: 3.5rem;
+  padding: 0.8rem 1.35rem;
+  border-radius: 999px;
+  background: var(--whatsapp);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+.botao:hover {
+  background: var(--whatsapp-hover);
+  color: #fff;
+}
+
+.botao:active {
+  background: var(--whatsapp-active);
+  color: #fff;
+}
+
+.botao:focus-visible {
+  outline: 3px solid #fbf7f0;
+  box-shadow: 0 0 0 6px var(--foco);
+}
+
+.botao svg {
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: none;
+}
+
+/* Hero */
+
+.hero {
+  padding-block: 2rem 2.5rem;
+}
+
+.sobretitulo {
+  margin-bottom: 0.6rem;
+  color: var(--pinho);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin-bottom: 0.7rem;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  letter-spacing: -0.02em;
+}
+
+.frase {
+  margin-bottom: 1rem;
+  color: var(--pinho);
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 700;
+}
+
+.subfrase,
+.entrada {
+  max-width: 40rem;
+  margin-bottom: 0.85rem;
+}
+
+.subfrase {
+  font-size: 1.35rem;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.25rem;
+  margin-top: 1.4rem;
+}
+
+.acoes .botao {
+  width: 100%;
+}
+
+@media (min-width: 36rem) {
+  .acoes .botao {
+    width: auto;
+  }
+}
+
+.ligacao-texto {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.factos {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 40rem) {
+  .factos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .factos {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.factos li {
+  padding: 1rem 1.05rem;
+  background: var(--branco);
+  border: 2px solid var(--linha);
+  border-radius: 1rem;
+}
+
+.factos strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: "Segoe UI", "Liberation Sans", Arial, sans-serif;
+  font-size: 1.2rem;
+}
+
+/* Secções */
+
+.seccao {
+  padding-block: 3rem;
+}
+
+@media (min-width: 48rem) {
+  .seccao {
+    padding-block: 4.5rem;
+  }
+}
+
+.faixa-branca {
+  background: var(--branco);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: var(--pinho);
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+}
+
+.intro {
+  max-width: 42rem;
+  margin-bottom: 1.6rem;
+}
+
+.grelha-servicos {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 48rem) {
+  .grelha-servicos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cartao-negocio {
+    grid-column: 1 / -1;
+  }
+}
+
+.cartao {
+  padding: 1.35rem 1.25rem 0.6rem;
+  background: var(--papel);
+  border: 2px solid var(--linha);
+  border-radius: 1.15rem;
+}
+
+.cartao-negocio {
+  background: var(--realce);
+  border-color: var(--pinho);
+}
+
+.icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 0.85rem;
+  border-radius: 50%;
+  background: var(--realce);
+  color: var(--pinho);
+}
+
+.cartao-negocio .icone {
+  background: var(--branco);
+}
+
+.icone svg {
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+.cartao h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.55rem;
+}
+
+.cartao ul {
+  margin: 0.4rem 0 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cartao li {
+  position: relative;
+  margin: 0.75rem 0;
+  padding-left: 1.4rem;
+}
+
+.cartao li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--pinho);
+}
+
+/* Passos */
+
+.passos {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 48rem) {
+  .passos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.passos li {
+  padding: 1.2rem 1.15rem 1.15rem;
+  background: var(--branco);
+  border: 2px solid var(--linha);
+  border-radius: 1.15rem;
+}
+
+.passo-rotulo {
+  margin-bottom: 0.35rem;
+  color: var(--barro);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.passos h3 {
+  margin-bottom: 0.55rem;
+  font-size: 1.45rem;
+}
+
+.passos p:last-child {
+  margin-bottom: 0;
+}
+
+.caixa-preco {
+  margin-top: 1.25rem;
+  padding: 1.2rem 1.25rem;
+  background: var(--branco);
+  border-left: 8px solid var(--barro);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.caixa-preco strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--barro);
+  font-size: clamp(1.45rem, 2vw, 1.8rem);
+}
+
+.caixa-preco p {
+  margin: 0;
+  max-width: 40rem;
+}
+
+/* Quem sou */
+
+.quem-grelha {
+  display: grid;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+@media (min-width: 52rem) {
+  .quem-grelha {
+    grid-template-columns: minmax(0, 1fr) min(22rem, 38%);
+    gap: 3rem;
+    align-items: center;
+  }
+}
+
+.quem-texto p:last-child {
+  margin-bottom: 0;
+}
+
+.retrato {
+  margin: 0;
+  width: min(100%, 22rem);
+}
+
+.retrato-moldura {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border: 4px solid var(--pinho);
+  border-radius: 1.25rem;
+  background: var(--pinho);
+}
+
+.retrato object {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.retrato-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  height: 100%;
+  padding: 1.25rem;
+  color: #fbf7f0;
+  text-align: center;
+}
+
+.monograma {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.5rem;
+  height: 6.5rem;
+  margin: 0 0 0.4rem;
+  border: 3px solid #fbf7f0;
+  border-radius: 50%;
+  font-family: Georgia, "Liberation Serif", serif;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.retrato-fallback p {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.retrato figcaption {
+  margin-top: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+/* Confiança */
+
+.faixa-pinho {
+  background: var(--pinho-fundo);
+  color: #fbf7f0;
+}
+
+.faixa-pinho h2,
+.faixa-pinho a {
+  color: #fbf7f0;
+}
+
+.compromissos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 44rem;
+}
+
+.compromissos li {
+  position: relative;
+  margin: 0.95rem 0;
+  padding-left: 2.3rem;
+}
+
+.compromissos li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.35rem;
+  width: 0.7rem;
+  height: 1.15rem;
+  border-right: 3px solid #fbf7f0;
+  border-bottom: 3px solid #fbf7f0;
+  transform: rotate(40deg);
+}
+
+.nota-final {
+  max-width: 44rem;
+  margin-bottom: 0;
+}
+
+/* Onde */
+
+.zonas {
+  display: grid;
+  gap: 0.15rem 1.5rem;
+  margin: 1rem 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 40rem) {
+  .zonas {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .zonas {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.zonas li {
+  padding-block: 0.45rem;
+  border-bottom: 1px solid var(--linha);
+}
+
+/* Perguntas */
+
+.faq {
+  display: grid;
+  gap: 0.35rem;
+  max-width: 46rem;
+}
+
+.faq details {
+  border-bottom: 2px solid var(--linha);
+}
+
+.faq summary {
+  position: relative;
+  min-height: 3.5rem;
+  padding: 0.9rem 2.6rem 0.9rem 0;
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary h3 {
+  margin: 0;
+  font-family: "Segoe UI", "Liberation Sans", Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.faq summary::after {
+  content: "";
+  position: absolute;
+  right: 0.35rem;
+  top: 1.35rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-right: 3px solid var(--pinho);
+  border-bottom: 3px solid var(--pinho);
+  transform: rotate(45deg);
+}
+
+.faq details[open] summary::after {
+  top: 1.15rem;
+  transform: rotate(-135deg);
+}
+
+.faq details p {
+  max-width: 40rem;
+  margin: 0 0 1.15rem;
+}
+
+/* Rodapé */
+
+.rodape {
+  background: var(--pinho-profundo);
+  color: #fbf7f0;
+  padding-block: 2.5rem 2rem;
+}
+
+.rodape a {
+  color: #fbf7f0;
+  font-weight: 700;
+}
+
+.rodape a[data-whatsapp] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  font-size: 1.25rem;
+}
+
+.rodape-nome {
+  margin-bottom: 0.45rem;
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
+}
+
+.rodape p {
+  max-width: 40rem;
+  margin-bottom: 0.7rem;
+}
+
+.rodape-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rodape-menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  font-size: 1.125rem;
+}
+
+/* Barra fixa do WhatsApp */
+
+.barra-whatsapp {
+  position: fixed;
+  z-index: 40;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--pinho-profundo);
+  padding: 0.65rem max(0.75rem, env(safe-area-inset-left)) calc(0.65rem + env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-right));
+}
+
+.barra-whatsapp .botao {
+  width: 100%;
+}
+
+@media (min-width: 64rem) {
+  .barra-whatsapp {
+    left: auto;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    width: auto;
+    background: transparent;
+    padding: 0;
+  }
+
+  .barra-whatsapp .botao {
+    width: auto;
+    box-shadow: 0 10px 28px rgba(16, 40, 31, 0.28);
+  }
+}
+
+@media (forced-colors: active) {
+  .botao,
+  .cartao,
+  .factos li,
+  .passos li,
+  .retrato-moldura {
+    border: 2px solid CanvasText;
+  }
+}
+
+@media print {
+  .aviso-numero,
+  .barra-whatsapp,
+  .botao-cabecalho,
+  .saltar,
+  .menu {
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: 0;
+    background: #fff;
+    color: #000;
+  }
+
+  .topo {
+    position: static;
+  }
+
+  .faixa-pinho,
+  .rodape {
+    background: #fff;
+    color: #000;
+  }
+
+  .faixa-pinho h2,
+  .faixa-pinho a,
+  .rodape a,
+  .rodape {
+    color: #000;
+  }
+}
