@@ -174,7 +174,7 @@ a { color: var(--verde-escuro); text-underline-offset: 0.18em; }
 .botao svg { width: 22px; height: 22px; flex: none; }
 
 .hero {
-  padding-block: 32px 16px;
+  padding-block: 16px 8px;
   background:
     radial-gradient(ellipse 80% 60% at 100% 0%, rgba(14, 122, 69, 0.14), transparent 55%),
     radial-gradient(ellipse 50% 40% at 0% 80%, rgba(196, 132, 62, 0.12), transparent 50%),
@@ -189,19 +189,19 @@ a { color: var(--verde-escuro); text-underline-offset: 0.18em; }
 }
 
 h1 {
-  max-width: 16ch;
-  margin-bottom: 16px;
-  font-size: clamp(2.15rem, 5vw, 3.5rem);
+  max-width: 18ch;
+  margin-bottom: 12px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 .subfrase {
   max-width: 36rem;
   margin-bottom: 0;
   color: var(--secundario);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
-.hero .botao { margin-top: 24px; }
+.hero .botao { margin-top: 16px; }
 
 .hero-grelha {
   display: grid;
@@ -210,14 +210,23 @@ h1 {
 }
 
 @media (min-width: 64rem) {
-  .hero { padding-block: 64px 48px; }
+  .hero { padding-block: 56px 40px; }
   .hero-grelha { grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr); }
+  .subfrase { font-size: 1.25rem; }
+  .hero .botao { margin-top: 24px; }
+  .cena { height: 28rem; }
+  .telefone { width: 11.25rem; height: 22rem; }
+  .app-wa { top: 36px; left: 8px; }
+  .app-wifi { top: 84px; right: 4px; }
+  .app-print { top: 180px; left: 0; }
+  .app-cloud { top: 232px; right: 0; }
+  .app-ai { bottom: 36px; left: 40px; }
 }
 
 .cena {
   position: relative;
   width: min(100%, 22rem);
-  height: 26rem;
+  height: 19rem;
   margin-inline: auto;
 }
 
@@ -226,8 +235,8 @@ h1 {
   z-index: 1;
   left: 50%;
   top: 50%;
-  width: 11.25rem;
-  height: 22rem;
+  width: 9.4rem;
+  height: 17rem;
   padding: 8px;
   border-radius: 32px;
   background: #1c1917;
@@ -277,11 +286,11 @@ h1 {
 
 .app svg { width: 28px; height: 28px; }
 
-.app-wa { top: 28px; left: 8px; background: #0e7a45; }
-.app-wifi { top: 72px; right: 4px; background: #1d4ed8; }
-.app-print { top: 168px; left: 0; background: #c2410c; }
-.app-cloud { top: 220px; right: 0; background: #0369a1; }
-.app-ai { bottom: 28px; left: 36px; background: #6d28d9; }
+.app-wa { top: 8px; left: 4px; background: #0e7a45; }
+.app-wifi { top: 36px; right: 0; background: #1d4ed8; }
+.app-print { top: 132px; left: 0; background: #c2410c; }
+.app-cloud { top: 168px; right: 0; background: #0369a1; }
+.app-ai { bottom: 12px; left: 28px; background: #6d28d9; }
 
 .seccao { padding-block: 48px; }
 
