@@ -43,7 +43,8 @@ Os textos visíveis estão no `index.html`, por baixo de `<body>`.
 |---|---|
 | Frase e subtítulo | `Tecnologia sem complicações` e a frase logo a seguir |
 | Passos | `<h2 id="titulo-funciona">` |
-| Serviços | `<h2 id="titulo-servicos">` |
+| Serviços em destaque | `<h2 id="titulo-servicos">` e os cartões `.destaque` |
+| Outros serviços | `<h3 class="outros-titulo">` |
 | Idades | `<h2 id="titulo-idades">` |
 | Confiança | `<ul class="confianca">` |
 
@@ -100,7 +101,9 @@ O bloco JSON-LD descreve a área de Arouca. Não tem rua, não tem preços, não
 |---|---|
 | `index.html` | A página: textos e dados para o Google |
 | `styles.css` | Aspeto |
-| `contacto.js` | Ligação curta do WhatsApp e a mensagem já escrita |
+| `contacto.js` | Ligação curta do WhatsApp, a mensagem já escrita e as setas dos serviços |
+| `assets/monograma.svg` | Monograma GIA, no cabeçalho |
+| `assets/logo-gomes-ia.webp` | Logótipo completo da Gomes IA Digital, no rodapé |
 | `assets/og.jpg` | Imagem quando o link é partilhado |
 | `assets/icon-180.png` | Ícone no telemóvel, se alguém guardar o site |
 | `favicon.svg` | Ícone no separador do browser |
