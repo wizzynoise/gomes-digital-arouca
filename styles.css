@@ -673,15 +673,6 @@ h2 {
   text-decoration: none;
 }
 
-.nota-js {
-  margin-top: 16px;
-  padding: 16px;
-  border-radius: 14px;
-  background: var(--superficie);
-  border: 1px solid var(--linha);
-  color: var(--texto);
-}
-
 .flutuante {
   position: fixed;
   z-index: 40;
