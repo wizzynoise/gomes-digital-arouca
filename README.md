@@ -1,111 +1,46 @@
-# Gomes Digital
+# Gomes Digital Arouca
 
-Site de uma página da Gomes Digital, em Arouca. É HTML, CSS e um ficheiro pequeno de JavaScript, sem loja de aplicações, sem base de dados e sem serviços pagos. Publica-se grátis no GitHub Pages, a partir da raiz deste repositório.
+One-page website for **Gomes IA Digital**, a technology support and digital services business based in Arouca, Portugal. On the page the public name is Gomes Digital, presented as a Gomes IA Digital brand.
 
-O texto está em português de Portugal. O contacto público é só o WhatsApp. O número não aparece escrito na página. Não há preços, testemunhos nem fotografias de pessoas.
+**Status:** In development. Visible copy is European Portuguese, for clients in Portugal.
 
-## 1. Ligação do WhatsApp
+## Stack
 
-Há **um único sítio** para o contacto: o ficheiro `contacto.js`.
+Plain HTML, CSS, and a small JavaScript file (`contacto.js`). No database, no build step, and no paid services.
 
-No topo está esta linha, com aspas vazias de propósito:
+## Contact link (WhatsApp)
+
+The only contact setting is in `contacto.js`:
 
 ```javascript
 var WHATSAPP_SHORT_LINK = "";
 ```
 
-Quando houver a ligação curta do WhatsApp Business, cole-a entre as aspas. Tem de começar por `https://wa.me/message/` (também serve um endereço `https://api.whatsapp.com/`). Exemplo da forma, sem um código real:
+Paste the WhatsApp Business short link between the quotes. The script accepts an address that starts with `https://wa.me/` or `https://api.whatsapp.com/` (a Business short link starts with `https://wa.me/message/`). The phone number is not shown on the page. While the quotes are empty, a click still opens WhatsApp: the address is built in the browser from parts kept in the same file, with the prefilled message stored in `MENSAGEM`.
 
-```javascript
-var WHATSAPP_SHORT_LINK = "https://wa.me/message/COLOQUE-AQUI";
-```
+## Run locally
 
-Como obter essa ligação, na aplicação WhatsApp Business:
-
-1. Abra **Definições** (ou **Ferramentas para empresas**).
-2. Procure a **ligação curta**.
-3. Copie o endereço que começa por `https://wa.me/message/`.
-4. Cole-o entre as aspas, no `contacto.js`, e grave o ficheiro.
-
-Enquanto as aspas estiverem vazias, os botões continuam a funcionar: no clique, o JavaScript monta o endereço do WhatsApp a partir de partes guardadas no mesmo ficheiro. Esse endereço não fica escrito na página antes do clique.
-
-A mensagem que já vai escrita na conversa está na linha `MENSAGEM`, no mesmo ficheiro, entre aspas. Pode reescrevê-la.
-
-Os botões precisam de JavaScript. Se estiver desligado, o rodapé explica isso, sem mostrar um número.
-
-Os commits anteriores deste repositório ainda têm o número escrito. O histórico não foi reescrito.
-
-## 2. Mudar os textos
-
-Os textos visíveis estão no `index.html`, por baixo de `<body>`.
-
-| O que mudar | Onde procurar |
-|---|---|
-| Frase e subtítulo | `Tecnologia sem complicações` e a frase logo a seguir |
-| Passos | `<h2 id="titulo-funciona">` |
-| Serviços em destaque | `<h2 id="titulo-servicos">` e os cartões `.destaque` |
-| Outros serviços | `<h3 class="outros-titulo">` |
-| Idades | `<h2 id="titulo-idades">` |
-| Confiança | `<ul class="confianca">` |
-
-Ao escrever, use português de Portugal, de forma impessoal ou com «você». Não use expressões do Brasil: telemóvel (não «celular»), ecrã (não «tela»), ficheiro (não «arquivo»).
-
-Não ponha preços. A frase do site é: «Preço justo, combinado antes de começar.» Não há avaliações, de propósito. Não escreva um número de telefone nem um email na página, nas meta tags nem no bloco JSON-LD. Na página, o nome é Gomes Digital, em Arouca.
-
-## 3. Ver a página no computador
-
-Na pasta do projeto:
+Open `index.html` in a browser, or serve the folder with any static server:
 
 ```bash
-python3 -m http.server 8080
+python3 -m http.server
 ```
 
-Depois abra `http://localhost:8080`.
+## Deploy
 
-A letra é grande. No telemóvel, o botão do WhatsApp fica fixo em baixo e não tapa o resto.
+Serve the repository root as a static site. `.nojekyll` is included so GitHub Pages can publish that root. The address written in `index.html`, `robots.txt`, and `sitemap.xml` is `https://wizzynoise.github.io/gomes-digital-arouca/`.
 
-## 4. Publicar no GitHub Pages
+## Files
 
-O site fica no ar a partir da branch `main`, pasta raiz (`/`). O ficheiro `.nojekyll` não se apaga.
-
-Quando estas alterações estiverem na branch `main`:
-
-1. Abra o repositório no GitHub.
-2. **Settings → Pages**.
-3. Em **Source**, escolha **Deploy from a branch**.
-4. Escolha `main` e a pasta **`/ (root)`**. Grave.
-5. O endereço será `https://NOME-DA-CONTA.github.io/gomes-digital-arouca/`.
-
-Cada gravação na branch `main` atualiza o site ao fim de cerca de um minuto.
-
-## 5. Se o endereço público for outro
-
-Os links de partilha usam, por agora:
-
-`https://wizzynoise.github.io/gomes-digital-arouca/`
-
-Se a conta ou o domínio mudarem, substitua esse endereço em `index.html`, `robots.txt` e `sitemap.xml`.
-
-O bloco JSON-LD descreve a área de Arouca. Não tem rua, não tem preços, não tem telefone e não tem email.
-
-## O que fica de fora
-
-- Preços e promoções com valor.
-- Testemunhos, estrelas, número de clientes ou credenciais que não sejam verdade.
-- Fotografias de pessoas e imagens pesadas.
-- O número de telefone ou um email escritos na página.
-
-## Ficheiros
-
-| Ficheiro | Para quê |
-|---|---|
-| `index.html` | A página: textos e dados para o Google |
-| `styles.css` | Aspeto |
-| `contacto.js` | Ligação curta do WhatsApp, a mensagem já escrita e as setas dos serviços |
-| `assets/monograma.svg` | Monograma GIA, no cabeçalho |
-| `assets/logo-gomes-ia.webp` | Logótipo completo da Gomes IA Digital, no rodapé |
-| `assets/og.jpg` | Imagem quando o link é partilhado |
-| `assets/icon-180.png` | Ícone no telemóvel, se alguém guardar o site |
-| `favicon.svg` | Ícone no separador do browser |
-| `.nojekyll` | Obrigatório para o GitHub Pages. Não apagar |
-| `robots.txt` e `sitemap.xml` | Ajudam os motores de busca a encontrar a página |
+| File | Role |
+| --- | --- |
+| `index.html` | The page, including search and social metadata |
+| `styles.css` | Layout and appearance |
+| `contacto.js` | WhatsApp link and the services carousel |
+| `assets/monograma.svg` | GIA monogram in the header |
+| `assets/logo-gomes-ia.webp` | Gomes IA Digital logo in the footer |
+| `assets/og.jpg` | Image used when the link is shared |
+| `assets/icon-180.png` | Home-screen icon |
+| `favicon.svg` | Browser-tab icon |
+| `.nojekyll` | Keeps GitHub Pages from running Jekyll |
+| `robots.txt`, `sitemap.xml` | Point crawlers at the page |

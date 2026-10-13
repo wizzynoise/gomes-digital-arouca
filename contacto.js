@@ -1,8 +1,8 @@
-/* Gomes Digital — contacto
-   Cole aqui a ligação curta do WhatsApp Business, quando a tiver.
-   Começa por https://wa.me/message/
-   Deixe as aspas vazias até lá. Os botões passam a usar essa ligação.
-   Enquanto estiver vazio, o endereço é montado só no clique, a partir de partes.
+/* Gomes Digital — contact
+   Paste the WhatsApp Business short link here when you have it.
+   It starts with https://wa.me/message/
+   Leave the quotes empty until then. The buttons then use that link.
+   While it is empty, the address is built only on click, from parts.
 */
 var WHATSAPP_SHORT_LINK = "";
 
