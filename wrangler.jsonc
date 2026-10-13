@@ -1,0 +1,10 @@
+{
+  // Static site only. Production uses the top-level assets block.
+  // An empty previews object inherits those assets so `wrangler preview` can run.
+  "name": "gomes-digital-arouca",
+  "compatibility_date": "2026-10-13",
+  "assets": {
+    "directory": "."
+  },
+  "previews": {}
+}

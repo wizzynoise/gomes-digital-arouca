@@ -1,0 +1,9 @@
+# Non-site files. The Worker serves the page from the repository root.
+README.md
+wrangler.jsonc
+.gitignore
+.assetsignore
+.git
+.github
+.wrangler
+.dev.vars
