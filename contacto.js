@@ -1,4 +1,4 @@
-/* Gomes Digital — contact
+/* Gomes IA Digital — contact
    Paste the WhatsApp Business short link here when you have it.
    It starts with https://wa.me/message/
    Leave the quotes empty until then. The buttons then use that link.

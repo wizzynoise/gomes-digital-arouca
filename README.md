@@ -1,6 +1,6 @@
-# Gomes Digital Arouca
+# Gomes IA Digital Arouca
 
-One-page website for **Gomes IA Digital**, a technology support and digital services business based in Arouca, Portugal. On the page the public name is Gomes Digital, presented as a Gomes IA Digital brand.
+One-page website for **Gomes IA Digital**, a technology support and digital services business based in Arouca, Portugal. The public name on the page is Gomes IA Digital. The header and the hero keep “· Arouca” next to that name.
 
 **Status:** In development. Visible copy is European Portuguese, for clients in Portugal.
 
@@ -10,7 +10,9 @@ Plain HTML, CSS, and a small JavaScript file (`contacto.js`). No database, no bu
 
 ## Contact link (WhatsApp)
 
-The only contact setting is in `contacto.js`:
+The only public email on the page is `sjgomesarouca@gmail.com`. Do not add any other address.
+
+The only WhatsApp setting is in `contacto.js`:
 
 ```javascript
 var WHATSAPP_SHORT_LINK = "";
@@ -28,7 +30,7 @@ python3 -m http.server
 
 ## Deploy
 
-Static hosting from the repository root. `.nojekyll` is included for GitHub Pages, and the repository is connected to Cloudflare Workers Builds. The address written in `index.html`, `robots.txt`, and `sitemap.xml` is `https://wizzynoise.github.io/gomes-digital-arouca/`.
+Static hosting from the repository root. `.nojekyll` is included for GitHub Pages, and the repository is connected to Cloudflare Workers Builds. `wrangler.jsonc` publishes this folder as static assets only (no Worker script). The empty `previews` block lets `wrangler preview` inherit that assets config. `.assetsignore` keeps non-site files out of the asset upload. The address written in `index.html`, `robots.txt`, and `sitemap.xml` is `https://wizzynoise.github.io/gomes-digital-arouca/`.
 
 ## Files
 
@@ -42,5 +44,7 @@ Static hosting from the repository root. `.nojekyll` is included for GitHub Page
 | `assets/og.jpg` | Image used when the link is shared |
 | `assets/icon-180.png` | Home-screen icon |
 | `favicon.svg` | Browser-tab icon |
+| `wrangler.jsonc` | Static-assets Worker config, including previews |
+| `.assetsignore` | Files left out of the Worker asset upload |
 | `.nojekyll` | Keeps GitHub Pages from running Jekyll |
 | `robots.txt`, `sitemap.xml` | Point crawlers at the page |

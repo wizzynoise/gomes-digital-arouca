@@ -1,4 +1,4 @@
-/* Gomes Digital — light page, large type, 8px grid. */
+/* Gomes IA Digital — light page, large type, 8px grid. */
 
 :root {
   --fundo: #fbf7f2;
@@ -179,6 +179,16 @@ a { color: var(--teal); text-underline-offset: 0.18em; }
 .botao:hover { background: var(--verde-escuro); color: #fff; }
 .botao:active { background: #094828; color: #fff; }
 
+.botao-email {
+  background: var(--superficie);
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  box-shadow: none;
+}
+
+.botao-email:hover,
+.botao-email:active { background: #e5f6f1; color: var(--navy); }
+
 .botao:focus-visible {
   outline: 3px solid var(--texto);
   outline-offset: 3px;
@@ -339,6 +349,8 @@ h1 {
 .app-ai { bottom: 12px; left: 28px; background: #6d28d9; }
 
 .seccao { padding-block: 48px; }
+
+.seccao-menor { padding-block: 16px 32px; }
 
 h2 {
   margin-bottom: 24px;
@@ -521,6 +533,78 @@ h2 {
 
 .outros-titulo { margin: 32px 0 16px; font-size: 1.5rem; }
 
+.solucoes,
+.portfolio {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.solucoes li,
+.portfolio li {
+  margin: 0;
+  padding: 16px 20px;
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  border-radius: 16px;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.portfolio p { margin: 0 0 8px; color: var(--texto); font-weight: 600; }
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #e5f6f1;
+  color: var(--teal);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.quem-corpo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  margin: 0;
+  flex: none;
+  border: 3px solid var(--teal);
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--fundo);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.ligacao-email {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
 @media (min-width: 64rem) {
   .setas { display: flex; }
   .destaque { flex-basis: calc((100% - 32px) / 2.2); }
@@ -611,6 +695,8 @@ h2 {
 @media (min-width: 40rem) {
   .passos,
   .servicos,
+  .solucoes,
+  .portfolio,
   .confianca { grid-template-columns: 1fr 1fr; }
 }
 
@@ -668,7 +754,10 @@ h2 {
   .passo,
   .cartao,
   .bloco,
-  .telefone { border: 2px solid ButtonText; }
+  .telefone,
+  .avatar,
+  .portfolio li,
+  .solucoes li { border: 2px solid ButtonText; }
 }
 
 @media print {
