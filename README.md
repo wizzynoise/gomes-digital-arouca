@@ -28,7 +28,7 @@ python3 -m http.server
 
 ## Deploy
 
-Serve the repository root as a static site. `.nojekyll` is included so GitHub Pages can publish that root. The address written in `index.html`, `robots.txt`, and `sitemap.xml` is `https://wizzynoise.github.io/gomes-digital-arouca/`.
+Static hosting from the repository root. `.nojekyll` is included for GitHub Pages, and the repository is connected to Cloudflare Workers Builds. The address written in `index.html`, `robots.txt`, and `sitemap.xml` is `https://wizzynoise.github.io/gomes-digital-arouca/`.
 
 ## Files
 
