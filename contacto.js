@@ -1,39 +1,16 @@
-/* Gomes IA Digital — contact
-   Paste the WhatsApp Business short link here when you have it.
-   It starts with https://wa.me/message/
-   Leave the quotes empty until then. The buttons then use that link.
-   While it is empty, the address is built only on click, from parts.
+/* Gomes IA Digital — contact.
+   WhatsApp buttons open this short link. The phone number is not stored.
 */
-var WHATSAPP_SHORT_LINK = "";
+var WHATSAPP_SHORT_LINK = "https://wa.me/message/5VB7SV74VVEKE1";
 
 (function () {
-  var MENSAGEM = "Olá. Preciso de ajuda com tecnologia e gostava de um diagnóstico rápido. Obrigado.";
-
-  function numero() {
-    var aoContrario = ["400", "764", "439", "153"].join("");
-    return aoContrario.split("").reverse().join("");
+  var links = document.querySelectorAll("[data-whatsapp]");
+  var i;
+  for (i = 0; i < links.length; i++) {
+    links[i].href = WHATSAPP_SHORT_LINK;
+    links[i].target = "_blank";
+    links[i].rel = "noopener noreferrer";
   }
-
-  function destino() {
-    var curto = String(WHATSAPP_SHORT_LINK || "").replace(/^\s+|\s+$/g, "");
-    if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//i.test(curto)) return curto;
-    return "https://wa.me/" + numero() + "?text=" + encodeURIComponent(MENSAGEM);
-  }
-
-  document.addEventListener("click", function (evento) {
-    var el = evento.target;
-    var botao = null;
-    while (el && el !== document) {
-      if (el.getAttribute && el.getAttribute("data-whatsapp") != null) {
-        botao = el;
-        break;
-      }
-      el = el.parentNode;
-    }
-    if (!botao) return;
-    evento.preventDefault();
-    window.open(destino(), "_blank", "noopener,noreferrer");
-  });
 })();
 
 (function () {

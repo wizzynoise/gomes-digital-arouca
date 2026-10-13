@@ -12,13 +12,13 @@ Plain HTML, CSS, and a small JavaScript file (`contacto.js`). No database, no bu
 
 The only public email on the page is `sjgomesarouca@gmail.com`. Do not add any other address.
 
-The only WhatsApp setting is in `contacto.js`:
+Every WhatsApp button points straight at the short link in `contacto.js`:
 
 ```javascript
-var WHATSAPP_SHORT_LINK = "";
+var WHATSAPP_SHORT_LINK = "https://wa.me/message/5VB7SV74VVEKE1";
 ```
 
-Paste the WhatsApp Business short link between the quotes. The script accepts an address that starts with `https://wa.me/` or `https://api.whatsapp.com/` (a Business short link starts with `https://wa.me/message/`). The phone number is not shown on the page. While the quotes are empty, a click still opens WhatsApp: the address is built in the browser from parts kept in the same file, with the prefilled message stored in `MENSAGEM`.
+The same address is the `href` on each button. The script does not build a `wa.me` address, and the phone number is not in the repository.
 
 ## Run locally
 
