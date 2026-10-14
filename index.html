@@ -10,37 +10,24 @@ if (location.hostname.endsWith('github.io')) {
   location.replace('https://gomes-digital-arouca.sjgomesarouca.workers.dev' + location.pathname.replace('/gomes-digital-arouca', '') + location.hash);
 }
 </script>
-<script>
-(function () {
-  var stored = null;
-  try { stored = localStorage.getItem('gid-theme'); } catch (e) {}
-  var choice = stored === 'light' || stored === 'dark' ? stored : 'system';
-  var dark = choice === 'dark' || (choice === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
-  var root = document.documentElement;
-  root.setAttribute('data-theme', dark ? 'dark' : 'light');
-  root.setAttribute('data-choice', choice);
-  root.style.backgroundColor = dark ? '#101418' : '#f4f0e8';
-  root.style.colorScheme = dark ? 'dark' : 'light';
-})();
-</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gomes IA Digital — Ajuda com tecnologia e software à medida</title>
-<meta name="description" content="Ajuda prática com computadores, telemóveis e ferramentas, em Arouca ou à distância. Websites desde 80 €, aplicações e sistemas digitais. Pedro Gomes, Arouca.">
+<title>Gomes IA Digital — Websites que valorizam o teu negócio</title>
+<meta name="description" content="Websites para negócios locais e à distância, em qualquer ponto de Portugal. Em Arouca, assistência tecnológica prática, em pessoa. Website desde 80 €.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://gomes-digital-arouca.sjgomesarouca.workers.dev/">
 <link rel="alternate" hreflang="pt-PT" href="https://gomes-digital-arouca.sjgomesarouca.workers.dev/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_PT">
 <meta property="og:site_name" content="Gomes IA Digital">
-<meta property="og:title" content="Gomes IA Digital — Ajuda com tecnologia e software à medida">
-<meta property="og:description" content="Calma para o que já usas. Critério para o que vamos construir. Ajuda tecnológica e desenvolvimento digital, a partir de Arouca.">
+<meta property="og:title" content="Gomes IA Digital — Websites que valorizam o teu negócio">
+<meta property="og:description" content="Websites que valorizam o teu negócio. Tecnologia que simplifica o teu dia a dia. Website desde 80 €. Assistência presencial em Arouca.">
 <meta property="og:url" content="https://gomes-digital-arouca.sjgomesarouca.workers.dev/">
 <meta property="og:image" content="https://gomes-digital-arouca.sjgomesarouca.workers.dev/assets/og.jpg">
-<meta property="og:image:alt" content="Gomes IA Digital. Ajuda com tecnologia e software à medida.">
+<meta property="og:image:alt" content="Gomes IA Digital. Websites que valorizam o teu negócio.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gomes IA Digital — Ajuda com tecnologia e software à medida">
-<meta name="twitter:description" content="Calma para o que já usas. Critério para o que vamos construir.">
+<meta name="twitter:title" content="Gomes IA Digital — Websites que valorizam o teu negócio">
+<meta name="twitter:description" content="Websites que valorizam o teu negócio. Tecnologia que simplifica o teu dia a dia.">
 <meta name="twitter:image" content="https://gomes-digital-arouca.sjgomesarouca.workers.dev/assets/og.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/icon-180.png" type="image/png" sizes="180x180">
@@ -50,7 +37,7 @@ if (location.hostname.endsWith('github.io')) {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Gomes IA Digital",
-  "description": "Ajuda prática com tecnologia, em Arouca ou à distância, e desenvolvimento de websites, aplicações e sistemas digitais.",
+  "description": "Websites para negócios locais e à distância, em qualquer ponto de Portugal. Assistência tecnológica prática, presencial, em Arouca.",
   "url": "https://gomes-digital-arouca.sjgomesarouca.workers.dev/",
   "image": "https://gomes-digital-arouca.sjgomesarouca.workers.dev/assets/og.jpg",
   "logo": "https://gomes-digital-arouca.sjgomesarouca.workers.dev/assets/logo-gomes-ia.webp",
@@ -69,242 +56,191 @@ if (location.hostname.endsWith('github.io')) {
 </script>
 <style>
 :root{
-  --bg:#f4f0e8;
-  --bg-warm:#f3ece3;
-  --bg-cool:#f6f5f2;
-  --surface:#fffcf8;
+  --navy:#0f2a4a;
+  --teal:#0b6b68;
+  --sand:#f4f0e8;
+  --paper:#fffcf8;
   --ink:#1a2433;
-  --heading:#0f2a4a;
-  --muted:#3e4a59;
-  --accent:#0b6b68;
-  --warm:#6b4a32;
+  --mut:#3e4a59;
   --line:#0f2a4a1f;
   --wa:#0e7a45;
-  --btn:#0f2a4a;
-  --btn-hover:#1b3d66;
-  --on-btn:#fff;
-  --btn-line:#0f2a4a;
-  --input:#fff;
-  --input-border:#8b97a3;
-  --header:rgba(244,240,232,.94);
-  --mark:#6b4a32;
-  --focus:#0b6b68;
-  --pill-bg:#e7f3f2;
-  --pill-ink:#0f2a4a;
   --serif:"Iowan Old Style",Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
-html[data-theme="dark"]{
-  --bg:#101418;
-  --bg-warm:#161310;
-  --bg-cool:#0e1418;
-  --surface:#1a212b;
-  --ink:#f4f0e8;
-  --heading:#f4f0e8;
-  --muted:#c5ced6;
-  --accent:#8fd4cf;
-  --warm:#e0c2a8;
-  --line:#ffffff2e;
-  --btn:#e7e2d8;
-  --btn-hover:#d5d0c4;
-  --on-btn:#121820;
-  --btn-line:#e7e2d8;
-  --input:#101418;
-  --input-border:#9aa6b2;
-  --header:rgba(16,20,24,.94);
-  --mark:#e0c2a8;
-  --focus:#8fd4cf;
-  --pill-bg:#1c3332;
-  --pill-ink:#d7f4f2;
-}
 *{box-sizing:border-box;margin:0}
 html,body{overflow-x:clip}
-html{scroll-padding-top:220px;background:var(--bg)}
-body{font:17px/1.6 var(--sans);color:var(--ink);background:var(--bg)}
-body[data-view="a"]{--mark:var(--warm)}
-body[data-view="b"]{--mark:var(--accent)}
+html{scroll-padding-top:160px}
+body{font:17px/1.6 var(--sans);color:var(--ink);background:var(--sand)}
 a{color:inherit}
 img{max-width:100%;height:auto}
 .w{width:min(100%,1120px);margin-inline:auto;padding-inline:20px}
-:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 .skip{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.skip:focus{position:fixed;left:20px;top:8px;width:auto;height:auto;margin:0;overflow:visible;clip:auto;background:#fff;color:#0f2a4a;padding:10px 14px;z-index:30}
-header{position:sticky;top:0;z-index:6;background:var(--header);border-bottom:2px solid var(--mark)}
+.skip:focus{position:fixed;left:20px;top:8px;width:auto;height:auto;margin:0;overflow:visible;clip:auto;background:#fff;color:var(--navy);padding:10px 14px;z-index:20}
+header{position:sticky;top:0;z-index:6;background:rgba(244,240,232,.94);border-bottom:1px solid var(--line)}
 .nav{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:2px;padding-block:8px}
-.brand{grid-column:1;grid-row:1;display:flex;gap:10px;align-items:center;min-width:0;min-height:44px;font-weight:650;font-size:15px;white-space:nowrap;text-decoration:none;color:var(--heading)}
+.brand{grid-column:1;grid-row:1;display:flex;gap:10px;align-items:center;min-width:0;min-height:44px;font-weight:650;font-size:15px;white-space:nowrap;text-decoration:none;color:var(--navy);letter-spacing:-.01em}
 .brand img{width:38px;height:38px;object-fit:contain;flex:none}
-html[data-theme="dark"] .brand img{background:#f4f0e8;padding:3px}
-.nav>.btn{grid-column:2;grid-row:1}
+.nav>.btn{grid-column:2;grid-row:1;white-space:nowrap}
 .nav ul{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:0 16px;list-style:none;padding:0}
-.theme{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding-bottom:6px}
-@media(min-width:1100px){
-  .nav{grid-template-columns:auto minmax(0,1fr) auto auto;column-gap:18px}
+@media(min-width:900px){
+  .nav{grid-template-columns:auto 1fr auto}
   .nav ul{grid-column:2;grid-row:1;justify-content:flex-end;flex-wrap:nowrap}
-  .theme{grid-column:3;grid-row:1;padding-bottom:0;align-self:center}
-  .nav>.btn{grid-column:4;grid-row:1}
+  .nav>.btn{grid-column:3}
 }
-.nav ul a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--muted);font-size:15px}
-.nav ul a:hover{color:var(--heading)}
-.theme button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:6px 8px;border:0;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);font:600 13px/1 var(--sans);cursor:pointer}
-html[data-choice="light"] .theme [data-set="light"],
-html[data-choice="dark"] .theme [data-set="dark"],
-html[data-choice="system"] .theme [data-set="system"]{background:var(--btn);color:var(--on-btn);box-shadow:none}
-.theme svg{flex:none}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 18px;border-radius:2px;font:600 16px/1.2 var(--sans);text-decoration:none;border:0;cursor:pointer;text-align:center;background:var(--btn);color:var(--on-btn);white-space:nowrap}
-.btn:hover{background:var(--btn-hover)}
-.btn.line{background:transparent;color:var(--heading);box-shadow:inset 0 0 0 1.5px var(--btn-line)}
-.btn.line:hover{background:var(--surface)}
-.btn.wa{background:var(--wa);color:#fff}
-.btn.wa:hover{background:#0c6a3c}
-header .btn{min-height:44px;padding:8px 14px;font-size:15px}
-.eyebrow{font-size:13px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--warm)}
-h1{font-family:var(--serif);font-weight:560;font-size:clamp(36px,5.6vw,64px);line-height:1.05;letter-spacing:-.025em;color:var(--heading);max-width:14em}
-h2{font-family:var(--serif);font-weight:560;font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.02em;color:var(--heading)}
-h3{font-family:var(--serif);font-weight:560;font-size:22px;line-height:1.25;color:var(--heading)}
-.lead{color:var(--muted);font-size:18px;max-width:38em}
+.nav ul a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--mut);font-size:15px}
+.nav ul a:hover{color:var(--navy)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:999px;font:600 16px/1.2 var(--sans);text-decoration:none;border:0;cursor:pointer;text-align:center}
+.btn:hover{transform:translateY(-1px)}
+.bp{background:var(--navy);color:#fff}
+.bs{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--navy)}
+.bw{background:var(--wa);color:#fff}
+.bt{background:#0c6b69;color:#fff}
+header .btn{min-height:44px;padding:8px 16px;font-size:15px}
+.eyebrow{font-size:13px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+h1{font-family:var(--serif);font-weight:560;font-size:clamp(34px,5.4vw,62px);line-height:1.08;letter-spacing:-.02em;color:var(--navy);max-width:16em}
+h2{font-family:var(--serif);font-weight:560;font-size:clamp(30px,4vw,46px);line-height:1.12;letter-spacing:-.02em;color:var(--navy)}
+h3{font-family:var(--serif);font-weight:560;font-size:24px;line-height:1.25;color:var(--navy)}
+.lead{color:var(--mut);font-size:18px;max-width:38em}
 section{padding-block:72px}
-.hero{padding-block:28px 8px}
-.hero .lead{margin-top:18px}
-.paths{list-style:none;padding:0;margin:32px 0 0;border-top:1px solid var(--line);max-width:40em}
-.paths a{display:flex;align-items:baseline;justify-content:space-between;gap:16px;min-height:64px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--heading)}
-.paths a:hover{color:var(--accent)}
-.paths span{font-size:13px;letter-spacing:.12em;color:var(--muted);font-variant-numeric:tabular-nums}
-.paths strong{font-family:var(--serif);font-weight:560;font-size:clamp(22px,3vw,30px);line-height:1.2}
-#ajuda{background:var(--bg-warm)}
-#criar{background:var(--bg-cool)}
-#criar .eyebrow{color:var(--accent)}
-.rows{list-style:none;padding:0;margin:28px 0 0;border-top:1px solid var(--line);max-width:40em}
-.rows li{padding:16px 0;border-bottom:1px solid var(--line)}
-.rows p{color:var(--muted);margin-top:4px}
-.bridge{margin-top:28px;max-width:36em;font-family:var(--serif);font-size:22px;line-height:1.35;color:var(--heading)}
-.spec{list-style:none;padding:0;margin:28px 0 0;border-top:1px solid var(--line)}
-.spec li{display:grid;grid-template-columns:auto 1fr;gap:14px 18px;padding:16px 0;border-bottom:1px solid var(--line)}
-.spec span{font-variant-numeric:tabular-nums;letter-spacing:.08em;color:var(--accent);font-size:13px;font-weight:650;padding-top:6px}
-.spec p{color:var(--muted);margin-top:4px}
-.price{display:grid;gap:28px;margin-top:36px;padding-top:8px}
-@media(min-width:860px){.price{grid-template-columns:1.05fr .95fr;gap:48px}}
-.amount{font-family:var(--serif);font-size:clamp(56px,8vw,80px);line-height:.9;letter-spacing:-.03em;color:var(--heading)}
-.amount small{display:block;font-family:var(--sans);font-size:14px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.list{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:10px}
-.list li{padding-left:16px;border-left:2px solid var(--accent)}
-.aside-list li{border-left-color:var(--muted)}
-.note{font-size:14px;color:var(--muted)}
-.demos{display:grid;gap:18px;margin-top:22px}
+.hero{padding-block:36px 28px}
+.hero-grid{display:grid;gap:36px;align-items:end}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;min-height:calc(100svh - 120px)}}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.split{display:grid;gap:12px}
+.split a{display:grid;gap:6px;text-decoration:none;padding:22px 22px 20px;border-radius:16px;min-height:132px}
+.split a span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.split strong{font-family:var(--serif);font-size:24px;font-weight:560;line-height:1.2}
+.split p{font-size:15px;line-height:1.45}
+.split-a{background:var(--navy);color:#f4f0e8}
+.split-a span{color:#9fd4d2}
+.split-a p{color:#d5deea}
+.split-b{background:var(--paper);color:var(--navy);box-shadow:inset 0 0 0 1px var(--line)}
+.split-b span{color:var(--teal)}
+.split-b p{color:var(--mut)}
+.band{background:var(--paper);border-block:1px solid var(--line)}
+.sec-head{max-width:40em;margin-bottom:28px}
+.sec-head p{margin-top:12px}
+.two{display:grid;gap:28px}
+@media(min-width:860px){.two{grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}}
+.points{list-style:none;padding:0;display:grid;gap:14px;margin-top:22px}
+.points li{padding-left:18px;border-left:2px solid var(--teal);color:var(--ink)}
+.price-layout{display:grid;gap:22px}
+@media(min-width:860px){.price-layout{grid-template-columns:1.1fr .9fr}}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px 22px}
+.panel h3{margin-bottom:12px}
+.amount{font-family:var(--serif);font-size:clamp(52px,8vw,76px);line-height:.95;color:var(--navy);letter-spacing:-.03em}
+.amount small{display:block;font-family:var(--sans);font-size:15px;letter-spacing:0;font-weight:600;color:var(--mut);margin-bottom:8px}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.list li{padding-left:22px;position:relative}
+.list li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.aside-list li:before{background:#9aa6b4}
+.note{font-size:14px;color:var(--mut)}
+.demos{display:grid;gap:18px}
 @media(min-width:720px){.demos{grid-template-columns:1fr 1fr}}
-.demo{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);text-decoration:none;color:inherit;min-height:100%}
-.demo .shot{aspect-ratio:16/10;overflow:hidden;background:var(--bg)}
+.demo{display:flex;flex-direction:column;background:var(--paper);border-radius:18px;overflow:hidden;border:1px solid var(--line);text-decoration:none;color:inherit;min-height:100%}
+.demo .shot{aspect-ratio:16/10;overflow:hidden;background:#ddd}
 .demo img{width:100%;height:100%;object-fit:cover;display:block}
-.demo .body{display:flex;flex-direction:column;gap:8px;padding:16px 16px 18px;flex:1}
-.pill{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--pill-ink);background:var(--pill-bg);padding:4px 8px}
-.demo h3{font-size:26px}
-.demo p{color:var(--muted);flex:1}
-.more{color:var(--accent);font-weight:650;font-size:15px}
-.steps{list-style:none;padding:0;margin:8px 0 0;max-width:40em}
-.steps li{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
-.steps b{font-family:var(--serif);font-size:28px;font-weight:560;color:var(--mark);line-height:1}
-.steps p{color:var(--muted);margin-top:4px}
-.person{display:flex;gap:16px;align-items:center;margin:18px 0}
-.av{width:64px;height:64px;background:var(--heading);color:var(--bg);display:grid;place-items:center;font-family:var(--serif);font-size:22px;flex:none}
-.faq{max-width:40em;border-top:1px solid var(--line)}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{min-height:52px;display:flex;align-items:center;cursor:pointer;font-weight:650;color:var(--heading);padding:8px 0}
-.faq summary:hover{color:var(--accent)}
-.faq details p{color:var(--muted);padding:0 0 14px}
+.demo:hover img{transform:scale(1.03)}
+.demo .body{display:flex;flex-direction:column;gap:8px;padding:18px 18px 20px;flex:1}
+.pill{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);background:#e7f3f2;border-radius:999px;padding:4px 10px}
+.demo h3{font-size:28px}
+.demo p{color:var(--mut);flex:1}
+.more{color:var(--teal);font-weight:650;font-size:15px}
+.assist{display:grid;gap:28px}
+@media(min-width:860px){.assist{grid-template-columns:.9fr 1.1fr;gap:56px}}
+.tasks{list-style:none;padding:0;margin:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.tasks li{padding:12px 0;border-bottom:1px solid var(--line)}
 .who{display:grid;gap:36px}
 @media(min-width:860px){.who{grid-template-columns:.85fr 1.15fr;align-items:start}}
-form{background:var(--surface);border:1px solid var(--line);padding:22px;display:grid;gap:14px}
+.person{display:flex;gap:16px;align-items:center;margin:18px 0}
+.av{width:64px;height:64px;border-radius:50%;background:var(--navy);color:#f4f0e8;display:grid;place-items:center;font-family:var(--serif);font-size:22px;flex:none}
+form{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:14px}
 label{font-weight:600;font-size:14px;display:grid;gap:6px}
-input,select,textarea{font:inherit;padding:12px;border:1.5px solid var(--input-border);border-radius:2px;background:var(--input);color:var(--ink);width:100%}
+input,select,textarea{font:inherit;padding:12px;border:1.5px solid #c5cdd6;border-radius:10px;background:#fff;color:var(--ink);width:100%}
 .check{display:flex;gap:10px;align-items:flex-start;font-weight:450}
-.check input{width:auto;margin-top:4px;accent-color:var(--accent)}
-footer{padding-block:28px 36px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-footer a{color:var(--accent)}
-.rail{display:none}
-@media(min-width:1280px){
-  .rail{display:block;position:fixed;z-index:4;left:0;top:0;bottom:0;width:3px;pointer-events:none;background:var(--line)}
-  .rail span{display:block;width:100%;height:100%;background:var(--mark);transform:scaleY(0);transform-origin:top center}
-}
-@media(prefers-reduced-motion:no-preference){
-  html{scroll-behavior:smooth}
-  header,.btn,.theme button,form,input,select,textarea,.demo{transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease}
-  .demo img{transition:transform .35s ease}
-  .demo:hover img{transform:scale(1.03)}
-  .rail span{transition:transform .15s linear,background-color .35s ease}
-}
+.check input{width:auto;margin-top:4px}
+footer{padding-block:28px 36px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+footer a{color:var(--teal)}
+.btn,.demo img{transition:transform .25s ease}
 @media(prefers-reduced-motion:reduce){
-  .rail{display:none}
+  .btn,.demo img{transition:none}
+  .btn:hover,.demo:hover img{transform:none}
 }
 </style>
 </head>
-<body data-view="a">
-<div class="rail" aria-hidden="true"><span id="rail"></span></div>
+<body>
 <a class="skip" href="#main">Saltar para o conteúdo</a>
 <header>
 <nav class="w nav" aria-label="Principal">
 <a class="brand" href="#"><img src="assets/logo-gomes-ia.webp" alt="" width="38" height="38">Gomes IA Digital</a>
 <ul>
-<li><a href="#ajuda">Ajuda</a></li>
-<li><a href="#criar">Criar</a></li>
-<li><a href="#processo">Processo</a></li>
-<li><a href="#perguntas">Perguntas</a></li>
+<li><a href="#websites">Websites</a></li>
+<li><a href="#assistencia">Assistência</a></li>
+<li><a href="#demos">Demonstrações</a></li>
+<li><a href="#preco">Preço</a></li>
 <li><a href="#contacto">Contacto</a></li>
 </ul>
-<div class="theme" role="radiogroup" aria-label="Tema">
-<button type="button" role="radio" data-set="light" aria-checked="false" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Claro</button>
-<button type="button" role="radio" data-set="dark" aria-checked="false" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Escuro</button>
-<button type="button" role="radio" data-set="system" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="4" width="18" height="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 20h8M12 16v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Sistema</button>
-</div>
-<a class="btn wa" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp</a>
+<a class="btn bw" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp</a>
 </nav>
 </header>
 <main id="main">
 <section class="hero">
-<div class="w">
-<p class="eyebrow">Gomes IA Digital · Arouca</p>
-<h1>Calma para o que já usas. Critério para o que vamos construir.</h1>
-<p class="lead">Uma pessoa para as duas coisas: pôr a tecnologia do dia a dia a funcionar, e fazer o website ou o software que o trabalho pede.</p>
-<ol class="paths">
-<li><a href="#ajuda"><span>01</span><strong>Preciso de ajuda com tecnologia</strong></a></li>
-<li><a href="#criar"><span>02</span><strong>Quero criar um website ou software</strong></a></li>
-</ol>
-</div>
-</section>
-
-<section id="ajuda">
-<div class="w">
-<p class="eyebrow">Tecnologia próxima e acessível</p>
-<h2>Podes chegar sem saberes o nome do problema.</h2>
-<p class="lead" style="margin-top:14px">Instalo, configuro e explico, com paciência. Em pessoa, em Arouca, ou à distância, conforme o que o serviço pedir. Não precisas de falar a linguagem da informática.</p>
-<ul class="rows">
-<li><h3>Equipamento</h3><p>Computadores, telemóveis, impressoras e outros aparelhos, deixados prontos a usar.</p></li>
-<li><h3>Software</h3><p>Instalação e configuração dos programas de que precisas em casa ou no trabalho.</p></li>
-<li><h3>Cópias e ordem</h3><p>Cópias de segurança e uma maneira simples de encontrares documentos e fotos.</p></li>
-<li><h3>Ferramentas</h3><p>Serviços e ferramentas digitais postos a funcionar, um passo de cada vez.</p></li>
-<li><h3>Inteligência artificial</h3><p>Ajuda a usar ferramentas de IA no dia a dia, sem as tratar como um mistério.</p></li>
-<li><h3>Ao teu lado</h3><p>Acompanhamento personalizado, presencial em Arouca ou remoto, conforme o serviço.</p></li>
-</ul>
-<p class="bridge">Se o aparelho já funciona e o que falta é uma presença ou uma ferramenta, o caminho é outro.</p>
-<p style="margin-top:22px"><a class="btn line" href="#contacto" data-assunto="Ajuda com tecnologia">Pedir orçamento</a></p>
-</div>
-</section>
-
-<section id="criar">
-<div class="w">
-<p class="eyebrow">Desenvolvimento digital e software</p>
-<h2>O que se constrói, dito antes de começar.</h2>
-<p class="lead" style="margin-top:14px">Websites, aplicações e sistemas, com o âmbito combinado à partida. A inteligência artificial entra quando poupa trabalho a sério. Não entra para enfeitar o nome do projeto.</p>
-<ol class="spec">
-<li><span>01</span><div><h3>Websites</h3><p>Páginas modernas, legíveis no telemóvel e no computador, com o contacto à mão.</p></div></li>
-<li><span>02</span><div><h3>Aplicações e gestão</h3><p>Aplicações web e ferramentas para organizar o trabalho do dia.</p></div></li>
-<li><span>03</span><div><h3>Sistemas à medida</h3><p>Um sistema digital desenhado para a forma como já trabalhas.</p></div></li>
-<li><span>04</span><div><h3>Automação</h3><p>Tarefas e processos repetidos, passados para um fluxo que não depende da memória.</p></div></li>
-<li><span>05</span><div><h3>IA com critério</h3><p>Integração de inteligência artificial só quando acrescenta valor real.</p></div></li>
-</ol>
-
-<div id="preco" class="price">
+<div class="w hero-grid">
 <div>
-<p class="amount"><small>Website desde</small>80 €</p>
-<h3 style="margin-top:16px">Incluído</h3>
+<p class="eyebrow">Arouca · websites em todo o Portugal</p>
+<h1>Websites que valorizam o teu negócio. Tecnologia que simplifica o teu dia a dia.</h1>
+<p class="lead" style="margin-top:18px">Crio websites para negócios da terra e, à distância, para qualquer ponto de Portugal. Em Arouca, também trato de telemóveis, computadores e problemas do dia a dia, em pessoa.</p>
+<div class="ctas">
+<a class="btn bp" href="#demos">Ver websites de demonstração</a>
+<a class="btn bs" href="#contacto">Criar o meu website</a>
+<a class="btn bw" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+</div>
+</div>
+<aside class="split" aria-label="As duas formas de trabalhar">
+<a class="split-a" href="#websites"><span>Principal</span><strong>Websites e soluções digitais</strong><p>Uma página clara, no telemóvel, com contacto direto.</p></a>
+<a class="split-b" href="#assistencia"><span>Presencial em Arouca</span><strong>Assistência tecnológica</strong><p>Telemóveis, contas e problemas comuns, explicados com calma.</p></a>
+</aside>
+</div>
+</section>
+
+<section id="websites" class="band">
+<div class="w two">
+<div class="sec-head">
+<p class="eyebrow">Oferta principal</p>
+<h2>Websites e soluções digitais</h2>
+<p class="lead">O website é o centro do trabalho. Uma página sóbria, fácil de ler no telemóvel, com o que um cliente precisa de saber: o que fazes, onde estás, o horário e uma forma simples de falar contigo.</p>
+<p class="lead" style="margin-top:12px">Sirvo negócios em Arouca e, à distância, em qualquer ponto de Portugal. O pacote de entrada tem um âmbito fechado. O que for além disso pede orçamento, antes de começar.</p>
+<ul class="points">
+<li>Presença do negócio numa página, sem enfeites a mais.</li>
+<li>Contacto por WhatsApp e dados visíveis.</li>
+<li>Leitura confortável no telemóvel e no computador.</li>
+</ul>
+<div class="ctas">
+<a class="btn bp" href="#preco">Website desde 80 €</a>
+<a class="btn bs" href="#demos">Ver websites de demonstração</a>
+</div>
+</div>
+<div class="panel">
+<p class="eyebrow">Para quem</p>
+<h3 style="margin-top:8px">Negócios locais e quem trabalha longe</h3>
+<p style="margin-top:12px;color:var(--mut)">Um café, uma oficina, uma loja, um alojamento, um serviço que ainda explica tudo de boca em boca. Se estás em Arouca, combinamos em pessoa quando fizer falta. Se estás noutro concelho, o website faz-se à distância, com o mesmo cuidado.</p>
+<p style="margin-top:14px"><a class="btn bt" href="#contacto">Criar o meu website</a></p>
+</div>
+</div>
+</section>
+
+<section id="preco">
+<div class="w">
+<div class="sec-head">
+<p class="eyebrow">Âmbito fechado</p>
+<h2>Website desde 80 €</h2>
+<p class="lead">Um preço de entrada. Está incluído só o que está nesta lista. O resto, se precisares, orçamenta-se à parte. Não prometo mais do que isto.</p>
+</div>
+<div class="price-layout">
+<article class="panel">
+<p class="amount"><small>Desde</small>80 €</p>
+<h3 style="margin-top:18px">Incluído</h3>
 <ul class="list">
 <li>Site de uma página, com até 5 secções</li>
 <li>Preparado para telemóvel</li>
@@ -316,11 +252,10 @@ footer a{color:var(--accent)}
 <li>Cerca de 7 dias depois de receber o conteúdo</li>
 </ul>
 <p class="note" style="margin-top:16px">Os textos, o horário e os contactos vêm de ti. Eu monto a página dentro deste âmbito.</p>
-<p style="margin-top:16px"><a class="btn" href="#contacto" data-assunto="Website desde 80 €">Pedir orçamento</a></p>
-</div>
-<div>
+<p style="margin-top:16px"><a class="btn bp" href="#contacto">Pedir orçamento</a></p>
+</article>
+<article class="panel">
 <h3>Orçamento à parte</h3>
-<p class="note" style="margin-top:8px">O que não está na lista de cima pede orçamento. O mesmo vale para aplicações, sistemas e automações.</p>
 <ul class="list aside-list">
 <li>Domínio próprio, pago por ti, cerca de 10–15 € por ano</li>
 <li>Páginas extra</li>
@@ -331,14 +266,18 @@ footer a{color:var(--accent)}
 <li>Manutenção mensal</li>
 <li>Revisões extra</li>
 </ul>
-<p style="margin-top:18px"><a class="btn line" href="#contacto" data-assunto="Website ou software à medida">Falar de um trabalho à medida</a></p>
+</article>
 </div>
 </div>
+</section>
 
-<div id="demos" style="margin-top:56px">
+<section id="demos" class="band">
+<div class="w">
+<div class="sec-head">
 <p class="eyebrow">Conceitos</p>
-<h2 style="margin-top:8px">Quatro websites de demonstração</h2>
-<p class="lead" style="margin-top:12px">Páginas completas, cada uma com um negócio fictício. Servem para veres o género de site. Não são clientes reais.</p>
+<h2>Websites de demonstração</h2>
+<p class="lead">Quatro páginas completas, cada uma com um negócio fictício. Servem para veres o género de site. Não são clientes reais.</p>
+</div>
 <div class="demos">
 <a class="demo" href="demos/barbearia-leme/index.html">
 <div class="shot"><img src="assets/demos/leme-sala-sm.webp" alt="Interior de barbearia com cadeiras e espelhos." width="800" height="600" loading="lazy" decoding="async"></div>
@@ -358,81 +297,53 @@ footer a{color:var(--accent)}
 </a>
 </div>
 </div>
+</section>
+
+<section id="assistencia">
+<div class="w assist">
+<div>
+<p class="eyebrow">Presencial em Arouca</p>
+<h2>Assistência tecnológica prática</h2>
+<p class="lead" style="margin-top:12px">Em casa ou no negócio, no concelho de Arouca. Explico o que estou a fazer, sem jargão. Os websites trato à distância. Esta parte é outra: presença, ao teu lado.</p>
+<p class="lead" style="margin-top:12px">Do primeiro telemóvel às tarefas de todos os dias, atendo toda a gente.</p>
+<p style="margin-top:20px"><a class="btn bs" href="#contacto">Pedir orçamento</a></p>
+</div>
+<ul class="tasks">
+<li>Telemóveis e computadores</li>
+<li>Contas e acessos, postos a funcionar</li>
+<li>Impressoras</li>
+<li>Routers e rede de casa</li>
+<li>Cópias de segurança na nuvem</li>
+<li>Passagem de dados para um aparelho novo</li>
+<li>Problemas comuns, com uma explicação simples</li>
+<li>Ferramentas de inteligência artificial, no essencial do dia a dia</li>
+<li>Configurar controlo parental e partilha de localização no telemóvel</li>
+</ul>
 </div>
 </section>
 
-<section id="processo">
-<div class="w">
-<p class="eyebrow">Processo</p>
-<h2>Como começa</h2>
-<ol class="steps">
-<li><b>1</b><div><h3>Dizes o que precisas</h3><p>Por WhatsApp ou pelo formulário. Ajuda com tecnologia, ou um website ou software.</p></div></li>
-<li><b>2</b><div><h3>Recebes um orçamento</h3><p>À medida, com o que fica incluído e o que fica de fora, antes de começar.</p></div></li>
-<li><b>3</b><div><h3>Fica feito e explicado</h3><p>Faço o trabalho e mostro como o usar, em linguagem simples.</p></div></li>
-</ol>
-</div>
-</section>
-
-<section id="quem">
-<div class="w" style="max-width:40rem">
+<section id="contacto" class="band">
+<div class="w who">
+<div>
 <p class="eyebrow">Quem faz o trabalho</p>
-<h2>Pedro Gomes, em Arouca</h2>
+<h2>Uma pessoa, em Arouca</h2>
 <div class="person">
 <div class="av" aria-hidden="true">PG</div>
 <div><strong>Pedro Gomes</strong><br><span class="note">Arouca</span></div>
 </div>
-<p>Mais de 20 anos na indústria, na logística e a coordenar equipas. Trago esse modo de trabalhar: fiável, organizado e prático.</p>
-<p style="margin-top:12px">A ajuda pode ser presencial, em Arouca, ou à distância, conforme o serviço. O trabalho digital faz-se à distância, em Portugal.</p>
-</div>
-</section>
-
-<section id="perguntas">
-<div class="w">
-<p class="eyebrow">Perguntas</p>
-<h2>O que já está combinado</h2>
-<div class="faq" style="margin-top:18px">
-<details>
-<summary>O diagnóstico é gratuito?</summary>
-<p>Sim. Olho para o problema antes de falar de preço.</p>
-</details>
-<details>
-<summary>A deslocação é gratuita?</summary>
-<p>No concelho de Arouca, sim.</p>
-</details>
-<details>
-<summary>Há preços fechados?</summary>
-<p>O website de entrada está descrito nesta página, desde 80 €, com a lista do que inclui. Tudo o resto é orçamento à medida.</p>
-</details>
-<details>
-<summary>Como entro em contacto?</summary>
-<p>Pelo WhatsApp, ou pelo formulário no fim desta página.</p>
-</details>
-</div>
-</div>
-</section>
-
-<section id="contacto">
-<div class="w who">
-<div>
-<p class="eyebrow">Contacto</p>
-<h2>Diz por qual dos caminhos vens.</h2>
-<p class="lead" style="margin-top:14px">Ajuda com tecnologia, ou um website ou software. O pedido abre no WhatsApp, com a mensagem já escrita.</p>
-<p style="margin-top:18px"><a class="btn wa" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Falar pelo WhatsApp</a></p>
+<p>Mais de 20 anos na indústria, na logística e a coordenar equipas. Trago esse modo de trabalhar para aqui: fiável, organizado e prático.</p>
+<p style="margin-top:12px">A assistência é presencial, em Arouca. Os websites fazem-se à distância, para um negócio local ou para qualquer ponto de Portugal.</p>
+<p style="margin-top:18px"><a class="btn bw" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Falar pelo WhatsApp</a></p>
 <p class="note" style="margin-top:14px"><a href="mailto:sjgomesarouca@gmail.com">sjgomesarouca@gmail.com</a></p>
 </div>
 <div>
 <form id="pedido">
 <label>Nome<input name="n" required autocomplete="name"></label>
 <label>Como preferes ser contactado?<input name="c" required placeholder="Email ou telemóvel"></label>
-<label>Assunto<select name="a">
-<option>Ajuda com tecnologia</option>
-<option>Website desde 80 €</option>
-<option>Website ou software à medida</option>
-<option>Outro</option>
-</select></label>
+<label>Assunto<select name="a"><option>Website desde 80 €</option><option>Website com trabalho extra</option><option>Assistência em Arouca</option><option>Outro</option></select></label>
 <label>Mensagem<textarea name="m" rows="4" required></textarea></label>
 <label class="check"><input type="checkbox" required> Aceito que os dados sejam usados só para responder ao pedido.</label>
-<button class="btn">Pedir orçamento</button>
+<button class="btn bp">Pedir orçamento</button>
 <p class="note" aria-live="polite">O pedido abre no WhatsApp, com a mensagem já escrita.</p>
 </form>
 <p class="note" style="margin-top:12px"><a href="politica-privacidade.html">Política de privacidade</a></p>
@@ -442,99 +353,18 @@ footer a{color:var(--accent)}
 </main>
 <footer><div class="w">© 2026 Gomes IA Digital · Arouca · <a href="mailto:sjgomesarouca@gmail.com">sjgomesarouca@gmail.com</a> · <a href="politica-privacidade.html">Política de privacidade</a></div></footer>
 <script>
-(function () {
-  var key = 'gid-theme';
-  var root = document.documentElement;
-  var mq = window.matchMedia('(prefers-color-scheme: dark)');
-  var group = document.querySelector('.theme');
-  function choice() {
-    var stored = null;
-    try { stored = localStorage.getItem(key); } catch (e) {}
-    return stored === 'light' || stored === 'dark' ? stored : 'system';
-  }
-  function apply() {
-    var c = choice();
-    var dark = c === 'dark' || (c === 'system' && mq.matches);
-    root.setAttribute('data-theme', dark ? 'dark' : 'light');
-    root.setAttribute('data-choice', c);
-    root.style.backgroundColor = dark ? '#101418' : '#f4f0e8';
-    root.style.colorScheme = dark ? 'dark' : 'light';
-    if (!group) return;
-    var buttons = group.querySelectorAll('[data-set]');
-    for (var i = 0; i < buttons.length; i++) {
-      var on = buttons[i].getAttribute('data-set') === c;
-      buttons[i].setAttribute('aria-checked', on ? 'true' : 'false');
-      buttons[i].tabIndex = on ? 0 : -1;
-    }
-  }
-  function setChoice(c) {
-    try {
-      if (c === 'system') localStorage.removeItem(key);
-      else localStorage.setItem(key, c);
-    } catch (e) {}
-    apply();
-  }
-  mq.addEventListener('change', function () {
-    if (choice() === 'system') apply();
-  });
-  if (group) {
-    group.addEventListener('click', function (event) {
-      var btn = event.target.closest('[data-set]');
-      if (!btn) return;
-      setChoice(btn.getAttribute('data-set'));
-    });
-    group.addEventListener('keydown', function (event) {
-      var names = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1, Home: 'home', End: 'end' };
-      if (!names[event.key]) return;
-      var buttons = [].slice.call(group.querySelectorAll('[data-set]'));
-      var i = 0;
-      for (var n = 0; n < buttons.length; n++) {
-        if (buttons[n].getAttribute('aria-checked') === 'true') i = n;
-      }
-      if (event.key === 'Home') i = 0;
-      else if (event.key === 'End') i = buttons.length - 1;
-      else i = (i + names[event.key] + buttons.length) % buttons.length;
-      event.preventDefault();
-      setChoice(buttons[i].getAttribute('data-set'));
-      buttons[i].focus();
-    });
-  }
-  apply();
-
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var criar = document.getElementById('criar');
-  var rail = document.getElementById('rail');
-  function onScroll() {
-    var y = window.scrollY || document.documentElement.scrollTop;
-    var max = document.documentElement.scrollHeight - window.innerHeight;
-    var p = max > 0 ? Math.min(1, Math.max(0, y / max)) : 0;
-    if (rail && !reduce) rail.style.transform = 'scaleY(' + p + ')';
-    var view = criar && (y + window.innerHeight * 0.35) >= criar.offsetTop ? 'b' : 'a';
-    if (document.body.getAttribute('data-view') !== view) document.body.setAttribute('data-view', view);
-  }
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  document.querySelectorAll('[data-assunto]').forEach(function (el) {
-    el.addEventListener('click', function () {
-      var sel = document.querySelector('#pedido select');
-      if (sel) sel.value = el.getAttribute('data-assunto');
-    });
-  });
-
-  document.getElementById('pedido').addEventListener('submit', function (event) {
-    event.preventDefault();
-    var texto = [
-      'Olá. Pedido pelo site.',
-      'Nome: ' + this.n.value.trim(),
-      'Contacto: ' + this.c.value.trim(),
-      'Assunto: ' + this.a.value,
-      'Mensagem: ' + this.m.value.trim()
-    ].join('\n');
-    window.open('https://wa.me/message/5VB7SV74VVEKE1?text=' + encodeURIComponent(texto), '_blank', 'noopener');
-    this.querySelector('.note').textContent = 'O WhatsApp abriu com o teu pedido.';
-  });
-})();
+document.getElementById('pedido').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var texto = [
+    'Olá. Pedido pelo site.',
+    'Nome: ' + this.n.value.trim(),
+    'Contacto: ' + this.c.value.trim(),
+    'Assunto: ' + this.a.value,
+    'Mensagem: ' + this.m.value.trim()
+  ].join('\n');
+  window.open('https://wa.me/message/5VB7SV74VVEKE1?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+  this.querySelector('.note').textContent = 'O WhatsApp abriu com o teu pedido.';
+});
 </script>
 </body>
 </html>
