@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wizzynoise.github.io/gomes-digital-arouca/sitemap.xml
+Sitemap: https://gomes-digital-arouca.sjgomesarouca.workers.dev/sitemap.xml
