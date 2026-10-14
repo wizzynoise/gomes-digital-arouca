@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>O Bibo · Gomes IA Digital</title>
+<meta name="description" content="O Bibo mostra que a tecnologia não é um bicho de sete cabeças. Tu tratas do teu negócio, nós ajudamos-te com a tecnologia. Gomes IA Digital, Arouca.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="O Bibo · Gomes IA Digital">
+<meta property="og:description" content="Ainda achas que a tecnologia é um bicho de sete cabeças? Conhece o Bibo, da Gomes IA Digital.">
+<meta property="og:site_name" content="Gomes IA Digital">
+<meta property="og:url" content="https://gomes-digital-arouca.sjgomesarouca.workers.dev/bibo/">
+<link rel="canonical" href="https://gomes-digital-arouca.sjgomesarouca.workers.dev/bibo/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#070a1a">
+<style>
+:root{--bg:#070a1a;--cy:#22e3f0;--vi:#8b5cf6;--ink:#eaf2ff;--mut:#9fb0d0;--navy:#0d1b3d}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+#stage{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+.glow{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+.g1{width:340px;height:340px;background:var(--cy);top:-90px;left:-120px;opacity:.28}
+.g2{width:380px;height:380px;background:var(--vi);bottom:-120px;right:-140px;opacity:.38;animation-delay:-6s}
+@keyframes drift{to{transform:translate(40px,30px) scale(1.15)}}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(34,227,240,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(34,227,240,.06) 1px,transparent 1px);background-size:36px 36px;mask-image:radial-gradient(ellipse at 50% 60%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 60%,#000 20%,transparent 75%)}
+.floaty{position:absolute;font-weight:700;color:rgba(139,92,246,.35);font-family:ui-monospace,monospace;animation:fl 9s ease-in-out infinite;pointer-events:none}
+@keyframes fl{50%{transform:translateY(-22px) rotate(8deg)}}
+canvas#fx{position:absolute;inset:0;pointer-events:none}
+header.top{position:relative;z-index:3;width:100%;max-width:520px;display:flex;justify-content:space-between;align-items:center;padding:14px 18px 0;font-size:13px;color:var(--mut);letter-spacing:.08em;text-transform:uppercase}
+header.top b{color:var(--ink)}
+.dots{display:flex;gap:7px}
+.dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18);transition:.4s}
+.dots i.on{background:var(--cy);box-shadow:0 0 10px var(--cy);width:22px;border-radius:5px}
+main{position:relative;z-index:2;flex:1;width:100%;max-width:520px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 18px}
+.bubble{position:relative;min-height:96px;width:100%;max-width:360px;background:rgba(15,22,48,.82);border:1px solid rgba(34,227,240,.35);border-radius:20px;padding:16px 18px;font-size:clamp(18px,5vw,22px);line-height:1.35;font-weight:650;box-shadow:0 0 30px rgba(34,227,240,.15);backdrop-filter:blur(6px);transition:opacity .5s,transform .5s}
+.bubble:after{content:"";position:absolute;bottom:-10px;left:50%;width:18px;height:18px;background:inherit;border-right:1px solid rgba(34,227,240,.35);border-bottom:1px solid rgba(34,227,240,.35);transform:translateX(-50%) rotate(45deg)}
+.bubble.hide{opacity:0;transform:translateY(10px)}
+.bubble .hl{color:var(--cy)}
+.caret{display:inline-block;width:2px;height:1em;background:var(--cy);vertical-align:-3px;margin-left:2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.robowrap{position:relative;width:min(62vw,250px);margin-top:18px;transition:transform .8s cubic-bezier(.3,1.4,.5,1)}
+#robot{width:100%;height:auto;overflow:visible;animation:hover 3.2s ease-in-out infinite}
+@keyframes hover{50%{transform:translateY(-10px)}}
+#head{transform-origin:120px 150px;transition:transform .7s cubic-bezier(.3,1.5,.5,1)}
+.s1 #head{transform:rotate(-12deg)}
+.s3 #head{transform:rotate(4deg)}
+.eye{transition:all .4s}
+.s1 .eyes{animation:wob 1.4s ease-in-out infinite}
+@keyframes wob{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.mouth{opacity:0;transition:opacity .3s}
+.s1 #m-conf,.s2 #m-o,.s3 #m-smile,.s4 #m-smile{opacity:1}
+.qm{opacity:0;font:800 34px system-ui;fill:var(--vi)}
+.s1 .qm{animation:qm 2.2s ease-in-out infinite}
+.s1 .qm.b{animation-delay:.7s;fill:var(--cy)}
+@keyframes qm{0%{opacity:0;transform:translateY(10px)}30%,70%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
+#bulb{opacity:0;transform-origin:120px 20px;transition:.5s}
+.s2 #bulb{opacity:1;animation:pop .6s cubic-bezier(.3,1.8,.5,1)}
+@keyframes pop{from{transform:scale(0)}}
+.s2 #ant-tip,.s3 #ant-tip{fill:#fde047;filter:drop-shadow(0 0 8px #fde047)}
+#ant-tip{fill:var(--cy);transition:.4s}
+#armR{transform-origin:186px 205px;transition:transform .7s cubic-bezier(.3,1.6,.5,1)}
+.s3 #armR,.s4 #armR{transform:rotate(-115deg)}
+#thumb{opacity:0;transition:.4s .3s}
+.s3 #thumb,.s4 #thumb{opacity:1}
+#armL{transform-origin:54px 205px;transition:.7s}
+.s1 #armL{transform:rotate(40deg)}
+.blink{animation:blink 4.5s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+.eyes{transform-origin:120px 118px}
+.s2 .robowrap{transform:scale(.62) translateY(-30px)}
+/* web interface */
+.web{position:absolute;left:50%;bottom:6%;width:min(88vw,380px);transform:translateX(-50%);opacity:0;pointer-events:none;transition:opacity .4s}
+.s2 .web{opacity:1}
+.web .frame{border-radius:14px;background:#0e1430;border:1px solid rgba(139,92,246,.5);box-shadow:0 0 40px rgba(139,92,246,.35),0 0 0 1px rgba(34,227,240,.15) inset;overflow:hidden;transform:scale(.6) rotateX(40deg);opacity:0}
+.s2 .web .frame{animation:in-frame .9s .3s cubic-bezier(.2,1.2,.4,1) forwards}
+@keyframes in-frame{to{transform:none;opacity:1}}
+.bar{display:flex;gap:6px;align-items:center;padding:9px 11px;background:#151d42}
+.bar i{width:9px;height:9px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.bar span{flex:1;margin-left:8px;height:16px;border-radius:8px;background:rgba(255,255,255,.08);font:11px ui-monospace,monospace;color:var(--mut);padding:1px 8px;white-space:nowrap;overflow:hidden}
+.pg{padding:12px}
+.pg>*{opacity:0;transform:translateY(16px)}
+.s2 .pg>*{animation:up .6s cubic-bezier(.2,1.3,.4,1) forwards}
+.s2 .pg .nav{animation-delay:1.1s}.s2 .pg .hero{animation-delay:1.6s}.s2 .pg .cards{animation-delay:2.2s}
+@keyframes up{to{opacity:1;transform:none}}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.nav b{width:56px;height:10px;border-radius:5px;background:var(--cy)}
+.nav span{display:flex;gap:6px}.nav span i{width:22px;height:6px;border-radius:3px;background:rgba(255,255,255,.25)}
+.hero{border-radius:10px;padding:14px;background:linear-gradient(120deg,rgba(34,227,240,.25),rgba(139,92,246,.35));margin-bottom:10px}
+.hero p{font:800 15px system-ui;margin-bottom:8px}
+.hero em{display:inline-block;font:700 11px system-ui;font-style:normal;background:var(--cy);color:#04121a;border-radius:20px;padding:5px 10px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.cards div{height:52px;border-radius:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);position:relative}
+.cards div:before{content:"";position:absolute;left:8px;top:8px;width:16px;height:16px;border-radius:5px;background:var(--vi)}
+.cards div:nth-child(2):before{background:var(--cy)}.cards div:nth-child(3):before{background:#fde047}
+.cards div:after{content:"";position:absolute;left:8px;bottom:9px;width:60%;height:5px;border-radius:3px;background:rgba(255,255,255,.25)}
+/* end card */
+.end{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .7s}
+.s4 .end{opacity:1;pointer-events:auto}
+.s4 main{opacity:.0;transition:opacity .5s}
+.logo{width:96px;height:96px;border-radius:24px;background:#fff;box-shadow:0 0 40px rgba(34,227,240,.4);overflow:hidden;margin-bottom:18px}
+.logo img{width:100%;height:100%;object-fit:cover}
+.word{font-size:clamp(30px,9vw,44px);font-weight:850;letter-spacing:-.02em;line-height:1}
+.word span{background:linear-gradient(90deg,var(--cy),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{color:var(--mut);margin:12px 0 26px;font-size:16px;max-width:320px;line-height:1.45}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--cy);color:#03141c;font-weight:800;font-size:17px;padding:15px 26px;border-radius:999px;text-decoration:none;box-shadow:0 8px 30px rgba(34,227,240,.4);transition:transform .2s}
+.cta:hover,.cta:focus-visible{transform:translateY(-2px)}
+.sec{margin-top:16px;color:var(--ink);font-size:15px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--vi)}
+.foot{color:var(--mut);font-size:12px;margin-top:22px}
+/* controls */
+nav.ctrl{position:relative;z-index:5;display:flex;gap:10px;padding:12px 16px calc(14px + env(safe-area-inset-bottom));width:100%;max-width:520px;justify-content:center}
+nav.ctrl button{flex:1;max-width:150px;min-height:48px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:rgba(20,28,60,.75);color:var(--ink);font:650 15px system-ui;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;backdrop-filter:blur(6px);transition:background .2s,border-color .2s}
+nav.ctrl button:hover{border-color:var(--cy)}
+nav.ctrl button:focus-visible,.cta:focus-visible,.sec:focus-visible{outline:3px solid #fde047;outline-offset:3px}
+nav.ctrl button#next{background:linear-gradient(135deg,rgba(34,227,240,.3),rgba(139,92,246,.4));border-color:rgba(34,227,240,.5)}
+nav.ctrl button[aria-pressed="true"]{border-color:var(--cy);color:var(--cy)}
+nav.ctrl button:disabled{opacity:.4;cursor:default}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (min-height:760px){.robowrap{width:min(66vw,280px)}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="stage" class="s1">
+  <div class="glow g1"></div><div class="glow g2"></div><div class="grid"></div>
+  <span class="floaty" style="top:16%;left:8%">&lt;/&gt;</span>
+  <span class="floaty" style="top:30%;right:9%;animation-delay:-3s;color:rgba(34,227,240,.3)">{ }</span>
+  <span class="floaty" style="bottom:28%;left:10%;animation-delay:-5s;font-size:22px">✦</span>
+  <span class="floaty" style="top:62%;right:12%;animation-delay:-1s;color:rgba(34,227,240,.3)">01</span>
+  <canvas id="fx"></canvas>
+  <header class="top"><span><b>O Bibo</b></span><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div></header>
+  <main>
+    <div class="bubble" id="bubble" aria-live="polite"><span id="say"></span><span class="caret"></span></div>
+    <div class="robowrap">
+<svg id="robot" viewBox="0 0 240 300" role="img" aria-label="O Bibo, um robô simpático">
+ <defs>
+  <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7ff"/><stop offset="1" stop-color="#b9c4e6"/></linearGradient>
+  <linearGradient id="vis" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1236"/><stop offset="1" stop-color="#1a0f3d"/></linearGradient>
+  <radialGradient id="eyeg"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#7ff6ff"/><stop offset="1" stop-color="#22e3f0"/></radialGradient>
+  <filter id="gl"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ </defs>
+ <ellipse cx="120" cy="292" rx="62" ry="7" fill="#22e3f0" opacity=".25"/>
+ <!-- body -->
+ <g id="armL"><path d="M58 200 q-26 18 -22 48" stroke="#c9d2ef" stroke-width="14" stroke-linecap="round" fill="none"/><circle cx="36" cy="250" r="11" fill="#e8edfb"/></g>
+ <g id="armR"><path d="M182 200 q26 18 22 48" stroke="#c9d2ef" stroke-width="14" stroke-linecap="round" fill="none"/><circle cx="204" cy="250" r="12" fill="#e8edfb"/><rect id="thumb" x="199" y="232" width="9" height="16" rx="4.5" fill="#e8edfb"/></g>
+ <rect x="62" y="180" width="116" height="92" rx="40" fill="url(#body)"/>
+ <rect x="92" y="208" width="56" height="34" rx="12" fill="#0d1b3d"/>
+ <path d="M104 226 h8 l4 -8 l6 16 l4 -8 h10" stroke="#22e3f0" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#gl)"/>
+ <rect x="108" y="168" width="24" height="16" rx="6" fill="#9aa6cc"/>
+ <!-- head -->
+ <g id="head">
+  <line x1="120" y1="62" x2="120" y2="38" stroke="#c9d2ef" stroke-width="5" stroke-linecap="round"/>
+  <circle id="ant-tip" cx="120" cy="32" r="8" filter="url(#gl)"/>
+  <g id="bulb"><path d="M120 -14 a16 16 0 0 1 9 29 v6 h-18 v-6 a16 16 0 0 1 9 -29z" fill="#fde047" filter="url(#gl)"/><rect x="112" y="23" width="16" height="5" rx="2" fill="#cbd5e1"/><g stroke="#fde047" stroke-width="3" stroke-linecap="round"><line x1="94" y1="-6" x2="86" y2="-12"/><line x1="146" y1="-6" x2="154" y2="-12"/><line x1="120" y1="-22" x2="120" y2="-30"/></g></g>
+  <rect x="34" y="58" width="172" height="118" rx="52" fill="url(#body)"/>
+  <rect x="24" y="100" width="16" height="36" rx="8" fill="#8b5cf6"/><rect x="200" y="100" width="16" height="36" rx="8" fill="#8b5cf6"/>
+  <rect x="50" y="74" width="140" height="86" rx="38" fill="url(#vis)"/>
+  <path d="M66 84 q30 -10 60 -4" stroke="#fff" stroke-opacity=".18" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g class="eyes"><g class="blink" style="transform-origin:120px 112px">
+   <ellipse class="eye" cx="94" cy="112" rx="15" ry="17" fill="url(#eyeg)" filter="url(#gl)"/>
+   <ellipse class="eye" cx="146" cy="112" rx="15" ry="17" fill="url(#eyeg)" filter="url(#gl)"/>
+   <circle cx="99" cy="106" r="4" fill="#fff"/><circle cx="151" cy="106" r="4" fill="#fff"/>
+  </g></g>
+  <ellipse cx="72" cy="136" rx="9" ry="5" fill="#8b5cf6" opacity=".55"/><ellipse cx="168" cy="136" rx="9" ry="5" fill="#8b5cf6" opacity=".55"/>
+  <path id="m-conf" class="mouth" d="M104 142 q8 -6 16 0 t16 0" stroke="#22e3f0" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse id="m-o" class="mouth" cx="120" cy="143" rx="7" ry="8" fill="#22e3f0"/>
+  <path id="m-smile" class="mouth" d="M102 138 q18 18 36 0" stroke="#22e3f0" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#gl)"/>
+  <!-- brows -->
+  <path d="M80 88 l20 4" stroke="#7ff6ff" stroke-width="4" stroke-linecap="round" class="eye"/>
+ </g>
+ <text class="qm" x="196" y="52">?</text><text class="qm b" x="20" y="62">?</text>
+</svg>
+    </div>
+    <div class="web" aria-hidden="true"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>o-teu-negocio.pt</span></div>
+      <div class="pg"><div class="nav"><b></b><span><i></i><i></i><i></i></span></div>
+      <div class="hero"><p>O teu negócio, online.</p><em>Contactar</em></div>
+      <div class="cards"><div></div><div></div><div></div></div></div></div></div>
+  </main>
+  <section class="end" aria-label="Gomes IA Digital">
+    <div class="logo"><img alt="Logótipo Gomes IA Digital" width="96" height="96" src="data:image/webp;base64,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"></div>
+    <h1 class="word">Gomes <span>IA Digital</span></h1>
+    <p class="tag">Tu tratas do teu negócio. Nós ajudamos-te com a tecnologia.</p>
+    <a class="cta" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">💬 Falar pelo WhatsApp</a>
+    <a class="sec" href="https://gomes-digital-arouca.sjgomesarouca.workers.dev/" target="_blank" rel="noopener">Ver o site</a>
+    <p class="foot">Websites e assistência tecnológica · Arouca</p>
+  </section>
+  <nav class="ctrl" aria-label="Controlos">
+    <button id="next" type="button" aria-label="Avançar para a cena seguinte">Avançar ▸</button>
+    <button id="replay" type="button" aria-label="Repetir desde o início">↺ Repetir</button>
+    <button id="snd" type="button" aria-pressed="false" aria-label="Ativar som">🔇 Som</button>
+  </nav>
+  <p class="sr" id="live" aria-live="polite"></p>
+</div>
+<script>
+(()=>{
+const st=document.getElementById('stage'),say=document.getElementById('say'),bub=document.getElementById('bubble'),
+dots=[...document.querySelectorAll('.dots i')],nextB=document.getElementById('next'),snd=document.getElementById('snd'),live=document.getElementById('live');
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const LINES={1:'Ainda achas que a tecnologia é um <span class="hl">bicho de sete cabeças</span>?',2:'Espera… tive uma ideia! 💡',3:'Tu tratas do teu negócio. <span class="hl">Nós ajudamos-te com a tecnologia.</span>'};
+const DUR={1:7000,2:6500,3:6500};
+let scene=0,timers=[],ac=null,on=false;
+function clear(){timers.forEach(clearTimeout);timers=[]}
+function T(f,ms){timers.push(setTimeout(f,ms))}
+// audio
+function tone(f,d,type='sine',v=.05,slide){if(!on||!ac)return;const o=ac.createOscillator(),g=ac.createGain(),t=ac.currentTime;o.type=type;o.frequency.setValueAtTime(f,t);if(slide)o.frequency.exponentialRampToValueAtTime(slide,t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+d)}
+function whoosh(){if(!on||!ac)return;const n=ac.sampleRate*.8,b=ac.createBuffer(1,n,ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.sin(Math.PI*i/n);const s=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain();f.type='bandpass';f.frequency.setValueAtTime(300,ac.currentTime);f.frequency.exponentialRampToValueAtTime(3000,ac.currentTime+.8);g.gain.value=.12;s.buffer=b;s.connect(f).connect(g).connect(ac.destination);s.start()}
+function chime(){[660,880,1320].forEach((f,i)=>setTimeout(()=>tone(f,.6,'triangle',.06),i*110))}
+snd.onclick=()=>{on=!on;if(on&&!ac){ac=new (window.AudioContext||window.webkitAudioContext)()}if(ac&&ac.state==='suspended')ac.resume();
+ snd.setAttribute('aria-pressed',on);snd.setAttribute('aria-label',on?'Desativar som':'Ativar som');snd.textContent=on?'🔊 Som':'🔇 Som';if(on)tone(880,.12,'sine',.05)};
+// typewriter
+function type(html){say.innerHTML='';bub.classList.remove('hide');const tmp=document.createElement('div');tmp.innerHTML=html;live.textContent=tmp.textContent;
+ if(RM){say.innerHTML=html;return}
+ const nodes=[...tmp.childNodes];let ni=0,ci=0,cur=null;
+ (function step(){if(ni>=nodes.length)return;const n=nodes[ni];
+  if(n.nodeType===3){if(!cur){cur=document.createTextNode('');say.appendChild(cur)}cur.data+=n.data[ci];ci++;if(ci>=n.data.length){ni++;ci=0;cur=null}}
+  else{if(!cur){cur=n.cloneNode(false);say.appendChild(cur)}cur.textContent+=n.textContent[ci];ci++;if(ci>=n.textContent.length){ni++;ci=0;cur=null}}
+  if(ci%2===0)tone(1200+Math.random()*500,.03,'square',.015);T(step,38)})()}
+// particles
+const cv=document.getElementById('fx'),cx=cv.getContext('2d');let P=[];
+function rs(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio;cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}rs();addEventListener('resize',rs);
+function burst(){if(RM)return;const r=document.querySelector('.robowrap').getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height*.25;
+ for(let i=0;i<90;i++){const a=Math.random()*6.28,s=2+Math.random()*6;P.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c:Math.random()<.5?'34,227,240':'139,92,246',r:1+Math.random()*3})}}
+(function loop(){cx.clearRect(0,0,innerWidth,innerHeight);P=P.filter(p=>p.l>0);for(const p of P){p.x+=p.vx;p.y+=p.vy;p.vx*=.97;p.vy=p.vy*.97+.03;p.l-=.012;cx.beginPath();cx.fillStyle=`rgba(${p.c},${p.l})`;cx.shadowBlur=12;cx.shadowColor=`rgb(${p.c})`;cx.arc(p.x,p.y,p.r,0,6.28);cx.fill()}requestAnimationFrame(loop)})();
+function go(n){clear();scene=n;st.className='s'+n;dots.forEach((d,i)=>d.classList.toggle('on',i===n-1));
+ nextB.disabled=n===4;
+ if(n<4){T(()=>type(LINES[n]),n===1?600:400)}
+ if(n===2){T(()=>{burst();whoosh();chime()},250);bub.classList.add('hide')}
+ if(n===3)T(()=>tone(523,.25,'triangle',.05),300);
+ if(n===4){live.textContent='Gomes IA Digital. Fala connosco pelo WhatsApp.';chime();T(()=>document.querySelector('.cta').focus({preventScroll:true}),800)}
+ if(n<4)T(()=>go(n+1),DUR[n])}
+nextB.onclick=()=>{if(scene<4)go(scene+1)};
+document.getElementById('replay').onclick=()=>{P=[];go(1)};
+addEventListener('keydown',e=>{if(e.target.tagName==='BUTTON'||e.target.tagName==='A')return;if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();nextB.click()}else if(e.key==='r'||e.key==='R')go(1)});
+window.__go=go;go(1);
+})();
+</script>
+</body>
+</html>
