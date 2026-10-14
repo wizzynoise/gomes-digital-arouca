@@ -10,6 +10,19 @@ if (location.hostname.endsWith('github.io')) {
   location.replace('https://gomes-digital-arouca.sjgomesarouca.workers.dev' + location.pathname.replace('/gomes-digital-arouca', '') + location.hash);
 }
 </script>
+<script>
+(function () {
+  var stored = null;
+  try { stored = localStorage.getItem('gid-theme'); } catch (e) {}
+  var choice = stored === 'light' || stored === 'dark' ? stored : 'system';
+  var dark = choice === 'dark' || (choice === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+  var root = document.documentElement;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  root.setAttribute('data-choice', choice);
+  root.style.backgroundColor = dark ? '#101418' : '#f4f0e8';
+  root.style.colorScheme = dark ? 'dark' : 'light';
+})();
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de privacidade — Gomes IA Digital</title>
@@ -33,19 +46,29 @@ if (location.hostname.endsWith('github.io')) {
 html{scroll-padding-top:160px}body{font:17px/1.6 var(--f);color:var(--ink);background:var(--sand)}
 a{color:var(--teal2)}img{max-width:100%}
 .w{width:min(100%,1140px);max-width:1140px;margin-inline:auto;padding-inline:20px}
-:focus-visible{outline:3px solid #0b6b68;outline-offset:3px;border-radius:6px}
+html[data-theme="dark"]{--navy:#f4f0e8;--teal2:#8fd4cf;--sand:#101418;--ink:#f4f0e8;--mut:#c5ced6}
+html[data-theme="dark"] header{background:rgba(16,20,24,.94);border-bottom-color:#ffffff2e}
+html[data-theme="dark"] .brand img{background:#f4f0e8;padding:3px}
+:focus-visible{outline:3px solid var(--teal2);outline-offset:3px}
 .skip{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.skip:focus{position:fixed;left:20px;top:8px;width:auto;height:auto;margin:0;overflow:visible;clip:auto;background:#fff;padding:8px;z-index:9;color:var(--navy)}
+.skip:focus{position:fixed;left:20px;top:8px;width:auto;height:auto;margin:0;overflow:visible;clip:auto;background:#fff;padding:8px;z-index:9;color:#0f2a4a}
 header{position:sticky;top:0;z-index:5;background:rgba(244,240,232,.94);border-bottom:1px solid #0f2a4a1f}
 .nav{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:2px;padding-block:8px}
 .brand{grid-column:1;grid-row:1;display:flex;gap:10px;align-items:center;min-width:0;min-height:44px;font-weight:700;font-size:15px;white-space:nowrap;text-decoration:none;color:var(--navy)}
 .brand img{width:38px;height:38px;object-fit:contain;flex:none}
 .nav>.btn{grid-column:2;grid-row:1;white-space:nowrap}
 .nav ul{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:0 16px;list-style:none;padding:0}.nav ul a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--mut);font-size:15px}.nav ul a:hover{color:var(--navy)}
-@media(min-width:900px){
-  .nav{grid-template-columns:auto 1fr auto}
+.theme{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding-bottom:6px}
+.theme button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:6px 8px;border:0;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px #0f2a4a1f;font:600 13px/1 var(--f);cursor:pointer}
+html[data-theme="dark"] .theme button{box-shadow:inset 0 0 0 1px #ffffff2e}
+html[data-choice="light"] .theme [data-set="light"],
+html[data-choice="dark"] .theme [data-set="dark"],
+html[data-choice="system"] .theme [data-set="system"]{background:var(--navy);color:var(--sand);box-shadow:none}
+@media(min-width:1100px){
+  .nav{grid-template-columns:auto minmax(0,1fr) auto auto}
   .nav ul{grid-column:2;grid-row:1;justify-content:flex-end;flex-wrap:nowrap}
-  .nav>.btn{grid-column:3}
+  .theme{grid-column:3;grid-row:1;padding-bottom:0}
+  .nav>.btn{grid-column:4}
 }
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font:600 15px/1.2 var(--f)}
 .bw{background:#0e7a45;color:#fff}
@@ -62,8 +85,13 @@ footer a{color:var(--teal2)}
 <body>
 <a class="skip" href="#main">Saltar para o conteúdo</a>
 <header><nav class="w nav" aria-label="Principal"><a class="brand" href="index.html"><img src="assets/logo-gomes-ia.webp" alt="" width="38" height="38">Gomes IA Digital</a>
-<ul><li><a href="index.html#websites">Websites</a></li><li><a href="index.html#assistencia">Assistência</a></li><li><a href="index.html#demos">Demonstrações</a></li><li><a href="index.html#preco">Preço</a></li><li><a href="index.html#contacto">Contacto</a></li></ul>
-<a class="btn bw sm" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp</a></nav></header>
+<ul><li><a href="index.html#ajuda">Ajuda</a></li><li><a href="index.html#criar">Criar</a></li><li><a href="index.html#processo">Processo</a></li><li><a href="index.html#perguntas">Perguntas</a></li><li><a href="index.html#contacto">Contacto</a></li></ul>
+<div class="theme" role="radiogroup" aria-label="Tema">
+<button type="button" role="radio" data-set="light" aria-checked="false" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Claro</button>
+<button type="button" role="radio" data-set="dark" aria-checked="false" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Escuro</button>
+<button type="button" role="radio" data-set="system" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="4" width="18" height="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 20h8M12 16v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Sistema</button>
+</div>
+<a class="btn bw" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp</a></nav></header>
 <main id="main">
 <article class="w page">
 <p class="lead">Arouca</p>
@@ -95,5 +123,61 @@ footer a{color:var(--teal2)}
 </article>
 </main>
 <footer><div class="w">© 2026 Gomes IA Digital · Arouca · <a href="mailto:sjgomesarouca@gmail.com">sjgomesarouca@gmail.com</a> · <a href="politica-privacidade.html">Política de privacidade</a></div></footer>
+<script>
+(function () {
+  var key = 'gid-theme';
+  var root = document.documentElement;
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  var group = document.querySelector('.theme');
+  function choice() {
+    var stored = null;
+    try { stored = localStorage.getItem(key); } catch (e) {}
+    return stored === 'light' || stored === 'dark' ? stored : 'system';
+  }
+  function apply() {
+    var c = choice();
+    var dark = c === 'dark' || (c === 'system' && mq.matches);
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    root.setAttribute('data-choice', c);
+    root.style.backgroundColor = '';
+    root.style.colorScheme = dark ? 'dark' : 'light';
+    if (!group) return;
+    var buttons = group.querySelectorAll('[data-set]');
+    for (var i = 0; i < buttons.length; i++) {
+      var on = buttons[i].getAttribute('data-set') === c;
+      buttons[i].setAttribute('aria-checked', on ? 'true' : 'false');
+      buttons[i].tabIndex = on ? 0 : -1;
+    }
+  }
+  function setChoice(c) {
+    try {
+      if (c === 'system') localStorage.removeItem(key);
+      else localStorage.setItem(key, c);
+    } catch (e) {}
+    apply();
+  }
+  mq.addEventListener('change', function () { if (choice() === 'system') apply(); });
+  if (group) {
+    group.addEventListener('click', function (event) {
+      var btn = event.target.closest('[data-set]');
+      if (btn) setChoice(btn.getAttribute('data-set'));
+    });
+    group.addEventListener('keydown', function (event) {
+      var step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+      if (!step[event.key] && event.key !== 'Home' && event.key !== 'End') return;
+      var buttons = [].slice.call(group.querySelectorAll('[data-set]'));
+      var i = 0;
+      for (var n = 0; n < buttons.length; n++) if (buttons[n].getAttribute('aria-checked') === 'true') i = n;
+      if (event.key === 'Home') i = 0;
+      else if (event.key === 'End') i = buttons.length - 1;
+      else i = (i + step[event.key] + buttons.length) % buttons.length;
+      event.preventDefault();
+      setChoice(buttons[i].getAttribute('data-set'));
+      buttons[i].focus();
+    });
+  }
+  apply();
+})();
+</script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # Gomes IA Digital Arouca
 
-Website for **Gomes IA Digital**, Pedro Gomes, based in Arouca, Portugal. Visible copy is European Portuguese. The main offer is a simple business website. In-person technology help is a separate, local service.
+Website for **Gomes IA Digital**, Pedro Gomes, based in Arouca, Portugal. Visible copy is European Portuguese. One brand, two paths: practical technology help, and digital development (websites from 80 €, software, and tools). The homepage theme control offers light, dark, and system. The choice is stored in the browser only.
 
 ## Stack
 
@@ -32,7 +32,8 @@ Static hosting from the repository root. `.nojekyll` is included for GitHub Page
 
 | File | Role |
 | --- | --- |
-| `index.html` | Homepage, including styles, the contact script, and search metadata |
+| `index.html` | Homepage, including styles, theme, the contact script, and search metadata |
+| `docs/homepage-proposals.md` | Audit of the homepage and the concept that was built |
 | `politica-privacidade.html` | Privacy policy in European Portuguese |
 | `demos/barbearia-leme/` | Fictional barbershop concept |
 | `demos/mesa-da-encosta/` | Fictional restaurant concept |
