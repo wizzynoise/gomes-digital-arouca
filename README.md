@@ -1,24 +1,16 @@
 # Gomes IA Digital Arouca
 
-One-page website for **Gomes IA Digital**, a technology support and digital services business based in Arouca, Portugal. The public name on the page is Gomes IA Digital. The header and the hero keep “· Arouca” next to that name.
-
-**Status:** In development. Visible copy is European Portuguese, for clients in Portugal.
+One-page website for **Gomes IA Digital**, a technology support and digital services business based in Arouca, Portugal. Visible copy is European Portuguese.
 
 ## Stack
 
-Plain HTML, CSS, and a small JavaScript file (`contacto.js`). No database, no build step, and no paid services.
+One HTML file with the page styles and scripts inside it. No database, no build step, and no paid services.
 
-## Contact link (WhatsApp)
+## Contact
 
 The only public email on the page is `sjgomesarouca@gmail.com`. Do not add any other address.
 
-Every WhatsApp button points straight at the short link in `contacto.js`:
-
-```javascript
-var WHATSAPP_SHORT_LINK = "https://wa.me/message/5VB7SV74VVEKE1";
-```
-
-The same address is the `href` on each button. The script does not build a `wa.me` address, and the phone number is not in the repository.
+Every WhatsApp button opens `https://wa.me/message/5VB7SV74VVEKE1`. The contact form stays on the page and opens that same short link with the visitor's message attached. The phone number is not in the repository.
 
 ## Run locally
 
@@ -30,17 +22,15 @@ python3 -m http.server
 
 ## Deploy
 
-Static hosting from the repository root. `.nojekyll` is included for GitHub Pages, and the repository is connected to Cloudflare Workers Builds. `wrangler.jsonc` publishes this folder as static assets only (no Worker script). The empty `previews` block lets `wrangler preview` inherit that assets config. `.assetsignore` keeps non-site files out of the asset upload. The address written in `index.html`, `robots.txt`, and `sitemap.xml` is `https://wizzynoise.github.io/gomes-digital-arouca/`.
+Static hosting from the repository root. `.nojekyll` is included for GitHub Pages, and the repository is connected to Cloudflare Workers Builds. `wrangler.jsonc` publishes this folder as static assets only (no Worker script). The empty `previews` block lets `wrangler preview` inherit that assets config. `.assetsignore` keeps non-site files out of the asset upload. The public address in `index.html`, `robots.txt`, and `sitemap.xml` is `https://gomes-digital-arouca.sjgomesarouca.workers.dev/`.
 
 ## Files
 
 | File | Role |
 | --- | --- |
-| `index.html` | The page, including search and social metadata |
-| `styles.css` | Layout and appearance |
-| `contacto.js` | WhatsApp link and the services carousel |
-| `assets/monograma.svg` | GIA monogram in the header |
-| `assets/logo-gomes-ia.webp` | Gomes IA Digital logo in the footer |
+| `index.html` | The page, including styles, scripts, and search metadata |
+| `assets/monograma.svg` | GIA monogram |
+| `assets/logo-gomes-ia.webp` | Gomes IA Digital logo in the header |
 | `assets/og.jpg` | Image used when the link is shared |
 | `assets/icon-180.png` | Home-screen icon |
 | `favicon.svg` | Browser-tab icon |
