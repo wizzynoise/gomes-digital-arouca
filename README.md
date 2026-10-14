@@ -1,6 +1,6 @@
 # Gomes IA Digital Arouca
 
-One-page website for **Gomes IA Digital**, a technology support and digital services business based in Arouca, Portugal. Visible copy is European Portuguese.
+Website for **Gomes IA Digital**, Pedro Gomes, based in Arouca, Portugal. Visible copy is European Portuguese. The main offer is a simple business website. In-person technology help is a separate, local service.
 
 ## Stack
 
@@ -8,9 +8,13 @@ Static HTML pages, with styles and scripts in each file. No database, no build s
 
 ## Contact
 
-The only public email on the page is `sjgomesarouca@gmail.com`. Do not add any other address.
+The only public email on the site is `sjgomesarouca@gmail.com`. Do not add any other address.
 
-Every WhatsApp button opens `https://wa.me/message/5VB7SV74VVEKE1`. The contact form stays on the page and opens that same short link with the visitor's message attached. The phone number is not in the repository.
+Every WhatsApp button opens `https://wa.me/message/5VB7SV74VVEKE1`. The contact form stays on the page and opens that same short link with the visitor's message attached. Demonstration sites use the same short link with the prefilled sentence "Quero um site como este". The phone number is not in the repository.
+
+## Demonstration sites
+
+Four fictional businesses live under `demos/`. Each page is `noindex` and is not listed in `sitemap.xml`, so a made-up shop is not offered to search engines as a real local business. Photo sources are in `CREDITS.md`.
 
 ## Run locally
 
@@ -28,8 +32,14 @@ Static hosting from the repository root. `.nojekyll` is included for GitHub Page
 
 | File | Role |
 | --- | --- |
-| `index.html` | The page, including styles, scripts, and search metadata |
+| `index.html` | Homepage, including styles, the contact script, and search metadata |
 | `politica-privacidade.html` | Privacy policy in European Portuguese |
+| `demos/barbearia-leme/` | Fictional barbershop concept |
+| `demos/mesa-da-encosta/` | Fictional restaurant concept |
+| `demos/casa-do-vale/` | Fictional rural stay concept |
+| `demos/barro-e-linho/` | Fictional shop concept |
+| `assets/demos/` | Compressed WebP photographs for the concepts |
+| `CREDITS.md` | Photograph authors and source URLs |
 | `assets/monograma.svg` | GIA monogram |
 | `assets/logo-gomes-ia.webp` | Gomes IA Digital logo in the header |
 | `assets/og.jpg` | Image used when the link is shared |
@@ -38,4 +48,4 @@ Static hosting from the repository root. `.nojekyll` is included for GitHub Page
 | `wrangler.jsonc` | Static-assets Worker config, including previews |
 | `.assetsignore` | Files left out of the Worker asset upload |
 | `.nojekyll` | Keeps GitHub Pages from running Jekyll |
-| `robots.txt`, `sitemap.xml` | Point crawlers at the page |
+| `robots.txt`, `sitemap.xml` | Point crawlers at the homepage and the privacy page |
