@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<script>
+if (location.hostname.endsWith('github.io')) {
+  var meta = document.createElement('meta');
+  meta.name = 'robots';
+  meta.content = 'noindex';
+  document.head.appendChild(meta);
+  location.replace('https://gomes-digital-arouca.sjgomesarouca.workers.dev' + location.pathname.replace('/gomes-digital-arouca', '') + location.hash);
+}
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbearia Leme — conceito de demonstração</title>
+<meta name="description" content="Conceito de demonstração de um website para uma barbearia fictícia. Criado por Gomes IA Digital.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://gomes-digital-arouca.sjgomesarouca.workers.dev/demos/barbearia-leme/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#141414;--bg2:#1c1c1c;--ink:#f3efe6;--mut:#c9c2b4;--gold:#e4c48a;--line:#f3efe622}
+*{box-sizing:border-box;margin:0}
+html,body{overflow-x:clip}
+html{scroll-padding-top:120px}
+body{font:17px/1.6 Georgia,"Iowan Old Style",Palatino,serif;background:var(--bg);color:var(--ink);padding-bottom:76px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.w{width:min(100%,1080px);margin-inline:auto;padding-inline:20px}
+.ribbon{position:fixed;z-index:40;left:0;right:0;bottom:0;margin:0;padding:10px 16px;text-align:center;background:#f4f0e8;color:#1a2433;border-top:1px solid #0f2a4a22;font:13px/1.4 system-ui,sans-serif}
+.ribbon a{color:#0b6b68}
+header{position:sticky;top:0;z-index:5;background:rgba(20,20,20,.92);border-bottom:1px solid var(--line)}
+.nav{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:0;padding-block:8px}
+.logo{grid-column:1;grid-row:1;display:inline-flex;align-items:center;min-height:44px;font-size:22px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;font-weight:500}
+.nav>.btn{grid-column:2;grid-row:1}
+.nav ul{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:0 16px;list-style:none;padding:0}
+.nav a{text-decoration:none}
+.nav ul a{display:inline-flex;align-items:center;min-height:44px;color:var(--mut);font-size:15px;font-family:system-ui,sans-serif}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;font:600 13px/1 system-ui,sans-serif}
+.btn.fill{background:var(--gold);color:#1a140c;border-color:var(--gold)}
+.hero{position:relative;min-height:78vh;display:grid;align-items:end}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,#14141499 0%,#141414e6 78%)}
+.hero .w{position:relative;padding-block:64px 48px}
+.kicker{font:600 12px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+h1{font-weight:500;font-size:clamp(46px,8vw,92px);line-height:.95;letter-spacing:-.02em;max-width:10ch;margin:12px 0}
+h2{font-weight:500;font-size:clamp(32px,5vw,52px);line-height:1.05}
+.lead{max-width:36em;color:var(--mut);font-size:18px}
+section{padding-block:72px}
+.services{display:grid;gap:0;margin-top:28px;padding:0;border-top:1px solid var(--line)}
+.services li{list-style:none;display:grid;grid-template-columns:1fr auto;gap:12px 24px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.services strong{font-size:22px;font-weight:500}
+.services span{color:var(--gold);font-variant-numeric:tabular-nums}
+.services p{grid-column:1/-1;color:var(--mut);margin-top:-6px}
+.gallery{display:grid;gap:12px}
+@media(min-width:800px){.gallery{grid-template-columns:1.2fr .8fr}}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:100%;object-fit:cover;max-height:520px}
+figcaption{font:14px/1.4 system-ui,sans-serif;color:var(--mut);margin-top:8px}
+.split{display:grid;gap:28px}
+@media(min-width:800px){.split{grid-template-columns:1fr 1fr;gap:48px}}
+.hours{margin-top:16px;border-top:1px solid var(--line)}
+.hours div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-family:system-ui,sans-serif}
+address{font-style:normal;color:var(--mut);margin-top:12px}
+footer{padding:28px 0 12px;color:var(--mut);font:14px/1.5 system-ui,sans-serif;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<p class="ribbon">Conceito de demonstração criado por <a href="../../index.html">Gomes IA Digital</a> · negócio fictício</p>
+<header>
+<nav class="w nav" aria-label="Barbearia Leme">
+<a class="logo" href="#topo">Leme</a>
+<ul>
+<li><a href="#servicos">Serviços</a></li>
+<li><a href="#casa">A casa</a></li>
+<li><a href="#horario">Horário</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+<a class="btn" href="#contacto">Marcar</a>
+</nav>
+</header>
+<main id="topo">
+<section class="hero">
+<img src="../../assets/demos/leme-sala.webp" srcset="../../assets/demos/leme-sala-sm.webp 800w, ../../assets/demos/leme-sala.webp 1600w" sizes="(min-width: 800px) 70vw, 100vw" alt="Interior de barbearia com várias cadeiras e espelhos." width="1600" height="1000" fetchpriority="high" decoding="async">
+<div class="veil"></div>
+<div class="w">
+<p class="kicker">Barbearia · Vila do Leme</p>
+<h1>Corte com tempo.</h1>
+<p class="lead">Um atelier pequeno. Marcações, sem fila à porta. Navalha, tesoura e uma conversa curta, se a quiseres.</p>
+<p style="margin-top:22px"><a class="btn fill" href="#servicos">Ver serviços e preços</a></p>
+</div>
+</section>
+<section id="servicos">
+<div class="w">
+<p class="kicker">Serviços</p>
+<h2>O que se faz na cadeira</h2>
+<ul class="services">
+<li><strong>Corte</strong><span>16 €</span><p>Tesoura ou máquina, com acabamento na nuca e nas patilhas.</p></li>
+<li><strong>Barba</strong><span>14 €</span><p>Toalha quente, navalha e óleo. Dura o tempo que a barba pedir.</p></li>
+<li><strong>Corte e barba</strong><span>26 €</span><p>As duas coisas, seguidas, no mesmo lugar.</p></li>
+<li><strong>Acabamento</strong><span>8 €</span><p>Contorno entre cortes, quando só a linha precisa de ser revista.</p></li>
+<li><strong>Corte criança</strong><span>12 €</span><p>Até aos 10 anos, com calma e sem pressa de mais.</p></li>
+</ul>
+<p style="margin-top:28px"><a class="btn fill" href="https://wa.me/message/5VB7SV74VVEKE1?text=Quero%20um%20site%20como%20este" target="_blank" rel="noopener">Pedir um site como este</a></p>
+</div>
+</section>
+<section id="casa">
+<div class="w">
+<p class="kicker">A casa</p>
+<h2>Poucas cadeiras. Luz certa.</h2>
+<p class="lead" style="margin:14px 0 22px">A Leme cabe numa sala. Não há ecrã na parede nem música alta. O preço está na lista, o horário está na porta.</p>
+<div class="gallery">
+<figure><img src="../../assets/demos/leme-espelhos.webp" srcset="../../assets/demos/leme-espelhos-sm.webp 800w, ../../assets/demos/leme-espelhos.webp 1600w" sizes="(min-width: 800px) 70vw, 100vw" alt="Espelhos, cadeiras e luzes de um salão." width="1600" height="1000" loading="lazy" decoding="async"><figcaption>Espelhos ao longo da parede.</figcaption></figure>
+<figure><img src="../../assets/demos/leme-cadeira.webp" srcset="../../assets/demos/leme-cadeira-sm.webp 800w, ../../assets/demos/leme-cadeira.webp 1600w" sizes="(min-width: 800px) 70vw, 100vw" alt="Homem sentado numa cadeira de barbeiro." width="1600" height="1000" loading="lazy" decoding="async"><figcaption>A cadeira, no meio do corte.</figcaption></figure>
+</div>
+</div>
+</section>
+<section id="horario">
+<div class="w split">
+<div>
+<p class="kicker">Horário</p>
+<h2>Terça a sábado</h2>
+<div class="hours">
+<div><span>Terça a sexta</span><span>9–13 · 15–19</span></div>
+<div><span>Sábado</span><span>9–14</span></div>
+<div><span>Domingo e segunda</span><span>Encerrado</span></div>
+</div>
+</div>
+<div id="contacto">
+<p class="kicker">Contacto</p>
+<h2>Marcações</h2>
+<address>Rua do Ofício 12<br>Vila do Leme<br>Morada de demonstração</address>
+<p class="lead" style="margin-top:14px">Num site real, este botão abriria a marcação do negócio. Aqui abre o WhatsApp da Gomes IA Digital, com o pedido de um site neste estilo.</p>
+<p style="margin-top:18px"><a class="btn fill" href="https://wa.me/message/5VB7SV74VVEKE1?text=Quero%20um%20site%20como%20este" target="_blank" rel="noopener">Quero um site como este</a></p>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="w">Barbearia Leme é um negócio fictício. Conceito criado por Gomes IA Digital.</div></footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<script>
+if (location.hostname.endsWith('github.io')) {
+  var meta = document.createElement('meta');
+  meta.name = 'robots';
+  meta.content = 'noindex';
+  document.head.appendChild(meta);
+  location.replace('https://gomes-digital-arouca.sjgomesarouca.workers.dev' + location.pathname.replace('/gomes-digital-arouca', '') + location.hash);
+}
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barro &amp; Linho — conceito de demonstração</title>
+<meta name="description" content="Conceito de demonstração de um website para uma loja fictícia de cerâmica e linho. Criado por Gomes IA Digital.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://gomes-digital-arouca.sjgomesarouca.workers.dev/demos/barro-e-linho/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#241c18;--clay:#7a3e2e;--linen:#f6f1ea;--card:#fff;--mut:#5a4e46;--line:#241c1818}
+*{box-sizing:border-box;margin:0}
+html,body{overflow-x:clip}
+html{scroll-padding-top:120px}
+body{font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--linen);color:var(--ink);padding-bottom:76px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.w{width:min(100%,1100px);margin-inline:auto;padding-inline:20px}
+.ribbon{position:fixed;z-index:40;left:0;right:0;bottom:0;margin:0;padding:10px 16px;text-align:center;background:#241c18;color:#f6f1ea;font:13px/1.4 system-ui,sans-serif}
+.ribbon a{color:#f0c9b0}
+header{position:sticky;top:0;z-index:5;background:rgba(246,241,234,.94);border-bottom:1px solid var(--line)}
+.nav{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:0;padding-block:8px}
+.logo{grid-column:1;grid-row:1;display:inline-flex;align-items:center;min-height:44px;font-weight:700;letter-spacing:-.03em;font-size:20px;text-decoration:none}
+.nav>.btn{grid-column:2;grid-row:1}
+.nav ul{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:0 16px;list-style:none;padding:0}
+.nav ul a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--mut);font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;background:var(--clay);color:#fff;text-decoration:none;font-weight:650;border:0;cursor:pointer;font:650 16px/1 system-ui,sans-serif}
+h1{font-size:clamp(36px,5.5vw,60px);line-height:1.05;letter-spacing:-.035em;max-width:14ch}
+h2{font-size:clamp(28px,3.5vw,40px);letter-spacing:-.03em;line-height:1.15}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--clay)}
+.lead{color:var(--mut);max-width:38em;font-size:18px}
+.hero{display:grid;gap:28px;align-items:center;padding-block:36px 20px}
+@media(min-width:860px){.hero{grid-template-columns:.9fr 1.1fr;min-height:calc(100svh - 140px)}}
+.hero img{width:100%;height:100%;max-height:560px;object-fit:cover}
+section{padding-block:64px}
+.grid{display:grid;gap:16px;margin-top:24px}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.product{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+.product img{width:100%;height:240px;object-fit:cover}
+.product .pad{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.price{font-weight:700}
+.product p{color:var(--mut);flex:1}
+.span2{grid-column:1/-1}
+@media(min-width:980px){.span2{grid-column:span 2}.span2 .row{display:grid;grid-template-columns:1.1fr .9fr}}
+.note{color:var(--mut);font-size:14px}
+footer{padding:8px 0 16px;color:var(--mut);font-size:14px}
+</style>
+</head>
+<body>
+<p class="ribbon">Conceito de demonstração criado por <a href="../../index.html">Gomes IA Digital</a> · negócio fictício</p>
+<header>
+<nav class="w nav" aria-label="Barro e Linho">
+<a class="logo" href="#topo">Barro &amp; Linho</a>
+<ul>
+<li><a href="#pecas">Peças</a></li>
+<li><a href="#oficina">Oficina</a></li>
+<li><a href="#encomenda">Encomenda</a></li>
+</ul>
+<a class="btn" href="#encomenda">Encomendar</a>
+</nav>
+</header>
+<main id="topo">
+<section class="hero w">
+<div>
+<p class="kicker">Cerâmica e linho · oficina fictícia</p>
+<h1>Peças para pôr na mesa.</h1>
+<p class="lead" style="margin-top:14px">Taças, pratos e panos feitos em série curta. Cada fornada muda um pouco a cor. O que vês é o que está, até acabar.</p>
+<p style="margin-top:20px"><a class="btn" href="#pecas">Ver peças</a></p>
+</div>
+<img src="../../assets/demos/barro-tecidos.webp" srcset="../../assets/demos/barro-tecidos-sm.webp 800w, ../../assets/demos/barro-tecidos.webp 1600w" sizes="(min-width: 800px) 70vw, 100vw" alt="Rolos de tecido numa loja." width="1600" height="1000" fetchpriority="high" decoding="async">
+</section>
+<section id="pecas">
+<div class="w">
+<p class="kicker">Peças</p>
+<h2>O que está na prateleira</h2>
+<div class="grid">
+<article class="product span2">
+<div class="row">
+<img src="../../assets/demos/barro-prato.webp" srcset="../../assets/demos/barro-prato-sm.webp 800w, ../../assets/demos/barro-prato.webp 1600w" sizes="(min-width: 800px) 70vw, 100vw" alt="Taça de cerâmica escura com fruta, sobre madeira." width="1600" height="1000" loading="lazy" decoding="async">
+<div class="pad"><h3>Taça funda de grés</h3><p class="price">28 €</p><p>Grés escuro, interior vidrado. Serve sopa ou fruta. Diâmetro cerca de 18 cm. Peça de demonstração.</p><a class="btn" href="#encomenda">Encomendar esta peça</a></div>
+</div>
+</article>
+<article class="product">
+<img src="../../assets/demos/barro-tacas.webp" srcset="../../assets/demos/barro-tacas-sm.webp 800w, ../../assets/demos/barro-tacas.webp 1600w" sizes="(min-width: 800px) 70vw, 100vw" alt="Taças de cerâmica branca sobre uma mesa de madeira." width="1600" height="1000" loading="lazy" decoding="async">
+<div class="pad"><h3>Conjunto de três taças</h3><p class="price">42 €</p><p>Cerâmica clara, para pequeno-almoço. As três juntas.</p><a class="btn" href="#encomenda">Encomendar</a></div>
+</article>
+<article class="product">
+<div class="pad"><h3>Pano de linho</h3><p class="price">18 €</p><p>Linho lavado, cor de areia, 45 por 45 cm. Corte da peça que está nos rolos da oficina.</p><a class="btn" href="#encomenda">Encomendar</a></div>
+</article>
+<article class="product">
+<div class="pad"><h3>Mesa posta</h3><p class="price">64 €</p><p>Duas taças, dois pratos e dois panos. O conjunto que se leva de uma vez.</p><a class="btn" href="#encomenda">Encomendar</a></div>
+</article>
+</div>
+</div>
+</section>
+<section id="oficina">
+<div class="w">
+<p class="kicker">Oficina</p>
+<h2>Rua do Tear, quando a porta está aberta</h2>
+<p class="lead" style="margin-top:12px">Quinta e sábado, das 10 às 13 e das 15 às 18. O resto da semana é forno e tear, sem balcão. A morada, Rua do Tear 7, Vila do Linho, é de demonstração.</p>
+</div>
+</section>
+<section id="encomenda">
+<div class="w">
+<p class="kicker">Encomenda</p>
+<h2>Diz a peça e a quantidade</h2>
+<p class="lead" style="margin-top:10px">Não há carrinho nem pagamento nesta página. A encomenda abre o WhatsApp da Gomes IA Digital, porque o negócio é fictício e o site é um conceito.</p>
+<form id="pedido">
+<label style="display:grid;gap:6px;font-weight:600;font-size:14px;max-width:460px">Peça e quantidade<textarea name="m" rows="3" required placeholder="Por exemplo: duas taças fundas"></textarea></label>
+<p style="margin-top:12px"><button class="btn">Encomendar por contacto</button></p>
+<p class="note" aria-live="polite" style="margin-top:10px"></p>
+</form>
+</div>
+</section>
+</main>
+<footer><div class="w">Barro &amp; Linho é um negócio fictício. Conceito criado por Gomes IA Digital.</div></footer>
+<script>
+document.getElementById('pedido').addEventListener('submit', function (event) {
+  event.preventDefault();
+  var texto = 'Quero um site como este.\nPeça: ' + this.m.value.trim();
+  window.open('https://wa.me/message/5VB7SV74VVEKE1?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+  this.querySelector('.note').textContent = 'O WhatsApp abriu com o pedido.';
+});
+</script>
+</body>
+</html>
