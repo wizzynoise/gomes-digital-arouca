@@ -4,7 +4,7 @@ One-page website for **Gomes IA Digital**, a technology support and digital serv
 
 ## Stack
 
-One HTML file with the page styles and scripts inside it. No database, no build step, and no paid services.
+Static HTML pages, with styles and scripts in each file. No database, no build step, and no paid services. A visit from `github.io` is sent to the Workers address.
 
 ## Contact
 
@@ -29,6 +29,7 @@ Static hosting from the repository root. `.nojekyll` is included for GitHub Page
 | File | Role |
 | --- | --- |
 | `index.html` | The page, including styles, scripts, and search metadata |
+| `politica-privacidade.html` | Privacy policy in European Portuguese |
 | `assets/monograma.svg` | GIA monogram |
 | `assets/logo-gomes-ia.webp` | Gomes IA Digital logo in the header |
 | `assets/og.jpg` | Image used when the link is shared |
