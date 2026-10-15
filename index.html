@@ -124,10 +124,34 @@ header{
 .nav ul{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;gap:0 14px;list-style:none;padding:0}
 .nav ul a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--mut);font-size:15px;font-weight:650}
 .nav ul a:hover{color:var(--ink)}
+.nav-toggle{display:none}
+.burger{display:block;width:18px;height:2px;border-radius:2px;background:currentColor;box-shadow:0 -6px 0 currentColor,0 6px 0 currentColor}
 @media(min-width:980px){
   .nav{grid-template-columns:auto 1fr auto}
   .nav ul{grid-column:2;grid-row:1;justify-content:flex-end;flex-wrap:nowrap}
   .nav>.btn{grid-column:3}
+}
+@media(max-width:720px){
+  header .w{padding-inline:12px}
+  .nav{grid-template-columns:minmax(0,1fr) auto auto;column-gap:8px}
+  .brand{font-size:14px;gap:8px}
+  .brand img{width:32px;height:32px}
+  header .btn{padding:8px 10px;font-size:14px}
+  .nav-toggle{
+    grid-column:3;grid-row:1;
+    display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;padding:0;border-radius:12px;
+    border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer
+  }
+  .nav ul{display:none;flex-direction:column;gap:0;padding-bottom:6px}
+  .nav ul.is-open{display:flex}
+  .nav-toggle[aria-expanded="true"] .burger{background:transparent;box-shadow:none;position:relative}
+  .nav-toggle[aria-expanded="true"] .burger::before,
+  .nav-toggle[aria-expanded="true"] .burger::after{
+    content:"";position:absolute;left:0;top:0;width:18px;height:2px;border-radius:2px;background:currentColor
+  }
+  .nav-toggle[aria-expanded="true"] .burger::before{transform:rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] .burger::after{transform:rotate(-45deg)}
 }
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:999px;font:650 16px/1.2 var(--sans);text-decoration:none;border:0;cursor:pointer;text-align:center}
 .bp{background:var(--cy);color:#041018}
@@ -216,33 +240,14 @@ section{padding-block:64px}
 }
 .badge.test{border-color:var(--cy)}
 .badge.live{border-color:#86efac}
-.badge.wait{border-color:var(--mut)}
 .badge.demo{border-color:var(--vi)}
 .pair{display:grid;gap:14px}
 @media(min-width:860px){.pair{grid-template-columns:1.15fr .85fr}}
 .shotcard{display:flex;flex-direction:column;text-decoration:none;color:inherit;min-height:100%}
 .shotcard .frame{aspect-ratio:16/10;overflow:hidden;background:#0d1b3d}
 .shotcard img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-.shotcard .body,.soon-body{display:flex;flex-direction:column;gap:8px;padding:16px 16px 18px;flex:1}
-.more{color:var(--cy);font-weight:650;font-size:15px}
-.soon{
-  min-height:180px;
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  align-items:end;
-  gap:10px;
-  padding:28px 22px 18px;
-  background:
-    radial-gradient(120px 80px at 20% 30%, rgba(34,227,240,.2), transparent 70%),
-    radial-gradient(140px 90px at 80% 70%, rgba(139,92,246,.28), transparent 70%),
-    #0d1b3d;
-}
-.soon span{display:block;border-radius:8px 8px 4px 4px;background:linear-gradient(180deg,var(--cy),var(--vi));opacity:.85}
-.soon span:nth-child(1){height:42px}
-.soon span:nth-child(2){height:78px}
-.soon span:nth-child(3){height:110px}
-.soon span:nth-child(4){height:64px}
-.soon span:nth-child(5){height:90px}
+.shotcard .body{display:flex;flex-direction:column;gap:8px;padding:16px 16px 18px;flex:1}
+.more{align-self:flex-start;color:var(--cy);font-weight:650;font-size:15px}
 .price-layout{display:grid;gap:14px}
 @media(min-width:860px){.price-layout{grid-template-columns:1.1fr .9fr}}
 .panel{padding:22px 20px}
@@ -271,6 +276,7 @@ input,select,textarea{font:400 16px/1.4 var(--sans);padding:12px;border:1.5px so
 .check{display:flex;gap:10px;align-items:flex-start;font-weight:400}
 .check input{width:auto;margin-top:4px}
 footer{padding-block:22px 8px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+footer p+p{margin-top:6px}
 footer a{color:var(--cy);font-weight:650}
 @media (prefers-reduced-motion: no-preference){
   html{scroll-behavior:smooth}
@@ -293,7 +299,9 @@ footer a{color:var(--cy);font-weight:650}
 <header>
 <nav class="w nav" aria-label="Principal">
 <a class="brand" href="/"><img src="assets/logo-gomes-ia.webp" alt="" width="38" height="38">Gomes IA Digital</a>
-<ul>
+<a class="btn bw" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp<span class="sr"> (abre num separador novo)</span></a>
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu-principal"><span class="sr">Menu</span><span class="burger" aria-hidden="true"></span></button>
+<ul id="menu-principal">
 <li><a href="#websites">Serviços</a></li>
 <li><a href="#portfolio">Portfólio</a></li>
 <li><a href="#demos">Demonstrações</a></li>
@@ -301,7 +309,6 @@ footer a{color:var(--cy);font-weight:650}
 <li><a href="#assistencia">Assistência</a></li>
 <li><a href="#contacto">Contacto</a></li>
 </ul>
-<a class="btn bw" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp<span class="sr"> (abre num separador novo)</span></a>
 </nav>
 </header>
 <main id="main">
@@ -415,14 +422,15 @@ footer a{color:var(--cy);font-weight:650}
 <span class="more">Abrir o site<span class="sr"> (abre num separador novo)</span></span>
 </div>
 </a>
-<article class="shotcard reveal">
-<div class="soon" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-<div class="soon-body">
-<p class="badge wait">Em preparação</p>
+<a class="shotcard reveal" href="https://sjgomes.sjgomesarouca.workers.dev" target="_blank" rel="noopener">
+<div class="frame"><img src="assets/portfolio/sjgomes-1280.webp" alt="Página inicial do website SjGomes, aluguer de som para eventos em Arouca." width="1600" height="1000" loading="lazy" decoding="async"></div>
+<div class="body">
+<p class="badge live">Online</p>
 <h3>SjGomes Sistemas de Som</h3>
-<p>Website de aluguer de som para eventos. Ainda em preparação, sem ligação pública.</p>
+<p>Website de aluguer de som para eventos em Arouca. Online, com pedido de orçamento por WhatsApp.</p>
+<span class="more">Ver o site<span class="sr"> (abre num separador novo)</span></span>
 </div>
-</article>
+</a>
 </div>
 </div>
 </div>
@@ -437,19 +445,19 @@ footer a{color:var(--cy);font-weight:650}
 </div>
 <div class="demos">
 <a class="shotcard reveal" href="demos/barbearia-leme/index.html">
-<div class="frame"><img src="assets/demos/leme-sala-sm.webp" alt="Interior de barbearia com cadeiras e espelhos." width="800" height="600" loading="lazy" decoding="async"></div>
+<div class="frame"><img src="assets/demos/barbearia-leme-preview.webp" alt="Pré-visualização do site de demonstração Barbearia Leme" width="1280" height="800" loading="lazy" decoding="async"></div>
 <div class="body"><p class="badge demo">Demonstração</p><h3>Barbearia Leme</h3><p>Atelier escuro, serviços com preço e pedido de marcação. Negócio fictício.</p><span class="more">Abrir demonstração</span></div>
 </a>
 <a class="shotcard reveal" href="demos/mesa-da-encosta/index.html">
-<div class="frame"><img src="assets/demos/mesa-mesa-sm.webp" alt="Mesa posta com copos de vinho e pratos." width="800" height="600" loading="lazy" decoding="async"></div>
+<div class="frame"><img src="assets/demos/mesa-da-encosta-preview.webp" alt="Pré-visualização do site de demonstração Mesa da Encosta" width="1280" height="800" loading="lazy" decoding="async"></div>
 <div class="body"><p class="badge demo">Demonstração</p><h3>Mesa da Encosta</h3><p>Restaurante em layout editorial, com ementa, morada e reserva. Negócio fictício.</p><span class="more">Abrir demonstração</span></div>
 </a>
 <a class="shotcard reveal" href="demos/casa-do-vale/index.html">
-<div class="frame"><img src="assets/demos/vale-colinas-sm.webp" alt="Colinas verdes com muros de pedra." width="800" height="600" loading="lazy" decoding="async"></div>
+<div class="frame"><img src="assets/demos/casa-do-vale-preview.webp" alt="Pré-visualização do site de demonstração Casa do Vale" width="1280" height="800" loading="lazy" decoding="async"></div>
 <div class="body"><p class="badge demo">Demonstração</p><h3>Casa do Vale</h3><p>Alojamento rural com paisagem, quartos e pedido de estadia. Negócio fictício.</p><span class="more">Abrir demonstração</span></div>
 </a>
 <a class="shotcard reveal" href="demos/barro-e-linho/index.html">
-<div class="frame"><img src="assets/demos/barro-tacas-sm.webp" alt="Taças de cerâmica branca sobre uma mesa de madeira." width="800" height="600" loading="lazy" decoding="async"></div>
+<div class="frame"><img src="assets/demos/barro-e-linho-preview.webp" alt="Pré-visualização do site de demonstração Barro e Linho" width="1280" height="800" loading="lazy" decoding="async"></div>
 <div class="body"><p class="badge demo">Demonstração</p><h3>Barro &amp; Linho</h3><p>Loja de peças com produtos, preços e encomenda por contacto. Negócio fictício.</p><span class="more">Abrir demonstração</span></div>
 </a>
 </div>
@@ -548,7 +556,30 @@ footer a{color:var(--cy);font-weight:650}
 </div>
 </section>
 </main>
-<footer><div class="w">© 2026 Gomes IA Digital · Arouca · <a href="mailto:sjgomesarouca@gmail.com">sjgomesarouca@gmail.com</a> · <a href="politica-privacidade.html">Política de privacidade</a></div></footer>
+<footer><div class="w"><p>Quem somos: Gomes IA Digital · Pedro Gomes, programador e diretor · Arouca</p><p>© 2026 Gomes IA Digital · Arouca · <a href="mailto:sjgomesarouca@gmail.com">sjgomesarouca@gmail.com</a> · <a href="politica-privacidade.html">Política de privacidade</a></p></div></footer>
+<script>
+(function () {
+  var btn = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('menu-principal');
+  if (!btn || !menu) return;
+  function setOpen(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.classList.toggle('is-open', open);
+  }
+  btn.addEventListener('click', function () {
+    setOpen(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  menu.addEventListener('click', function (event) {
+    if (event.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+      setOpen(false);
+      btn.focus();
+    }
+  });
+})();
+</script>
 <script>
 document.getElementById('pedido').addEventListener('submit', function (event) {
   event.preventDefault();

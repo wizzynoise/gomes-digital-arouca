@@ -12,6 +12,18 @@ The only public email on the site is `sjgomesarouca@gmail.com`. Do not add any o
 
 Every WhatsApp button opens `https://wa.me/message/5VB7SV74VVEKE1`. The contact form stays on the page and opens that same short link with the visitor's message attached. Demonstration sites use the same short link with the prefilled sentence "Quero um site como este". The phone number is not in the repository.
 
+## Portfolio
+
+Real work on the homepage, separate from the fictional demonstrations:
+
+| Project | State | Screenshot |
+| --- | --- | --- |
+| PainelLog | In testing, no public address | `assets/portfolio/painellog-390.webp`, `assets/portfolio/painellog-1280.webp` |
+| 7Jardins | Online at https://7jardins26.vercel.app | `assets/portfolio/7jardins-1280.webp` |
+| SjGomes Sistemas de Som | Online at https://sjgomes.sjgomesarouca.workers.dev | `assets/portfolio/sjgomes-1280.webp` (1280×800 capture, saved at 1600×1000) |
+
+The four demonstration cards use screenshots of the demo pages themselves: `assets/demos/barbearia-leme-preview.webp`, `assets/demos/mesa-da-encosta-preview.webp`, `assets/demos/casa-do-vale-preview.webp` and `assets/demos/barro-e-linho-preview.webp`. The older photographs stay in `assets/demos/` because the demo pages still use them.
+
 ## Demonstration sites
 
 Four fictional businesses live under `demos/`. Each page is `noindex` and is not listed in `sitemap.xml`, so a made-up shop is not offered to search engines as a real local business. Photo sources are in `CREDITS.md`.
