@@ -1,5 +1,19 @@
 # Photo credits
 
+## Page screenshots
+
+These files are screenshots of web pages, not third-party photographs. They were captured in headless Chromium at a 1280×800 viewport.
+
+| File | Page |
+| --- | --- |
+| `assets/portfolio/sjgomes-1280.webp` | [SjGomes Sistemas de Som](https://sjgomes.sjgomesarouca.workers.dev), saved at 1600×1000 |
+| `assets/demos/barbearia-leme-preview.webp` | `/demos/barbearia-leme/` |
+| `assets/demos/mesa-da-encosta-preview.webp` | `/demos/mesa-da-encosta/` |
+| `assets/demos/casa-do-vale-preview.webp` | `/demos/casa-do-vale/` |
+| `assets/demos/barro-e-linho-preview.webp` | `/demos/barro-e-linho/` |
+
+## Demonstration photographs
+
 Demonstration pages use photographs from Unsplash, under the [Unsplash License](https://unsplash.com/license). Attribution is not required by the licence. Authors are listed here anyway.
 
 Files live in `assets/demos/`. Each photograph has a 1600×1000 hero and an 800×600 card (`-sm`).
