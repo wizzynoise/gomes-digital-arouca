@@ -2,9 +2,6 @@
 <html lang="pt-PT">
 <head>
 <script>
-try{if(!navigator.webdriver&&!/bot|crawl|spider|slurp|facebookexternalhit/i.test(navigator.userAgent)&&new URLSearchParams(location.search).get('skip')!=='1'&&!sessionStorage.getItem('bibo_intro_seen'))location.replace('/bibo/')}catch(e){}
-</script>
-<script>
 if (location.hostname.endsWith('github.io')) {
   var meta = document.createElement('meta');
   meta.name = 'robots';
@@ -169,7 +166,10 @@ section{padding-block:64px}
 .hero-grid{display:grid;gap:28px;align-items:center}
 @media(min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:48px;min-height:calc(100svh - 132px)}}
 .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.mail{margin-top:14px}
+.bibo-link{margin-top:14px;font-size:15px}
+.bibo-link a{color:var(--mut);text-underline-offset:3px}
+.bibo-link a:hover{color:var(--ink)}
+.mail{margin-top:12px}
 .stage{
   background:var(--card);
   border:1px solid rgba(34,227,240,.35);
@@ -315,13 +315,14 @@ footer a{color:var(--cy);font-weight:650}
 <section class="hero">
 <div class="w hero-grid">
 <div>
-<p class="eyebrow">Arouca · pequenos negócios</p>
-<h1>O teu negócio, online e mais fácil de gerir.</h1>
-<p class="lead" style="margin-top:16px">Websites, presença digital e pequenas automações, explicadas sem jargão. Em Arouca, também trato de telemóveis e computadores, em pessoa. Website desde 80 €.</p>
+<p class="eyebrow">Arouca e arredores · pequenos negócios</p>
+<h1>Sites e presença online para o teu negócio.</h1>
+<p class="lead" style="margin-top:16px">A Gomes IA Digital cria websites e ajuda a melhorar a presença online de pequenos negócios, em Arouca e arredores. Explicado sem jargão. Sites desde 80 €.</p>
 <div class="ctas">
-<a class="btn bp" href="mailto:sjgomesarouca@gmail.com?subject=Pedido%20de%20or%C3%A7amento">Pedir orçamento</a>
-<a class="btn bs" href="/bibo/">Conhecer o Bibo</a>
+<a class="btn bw" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Falar pelo WhatsApp<span class="sr"> (abre num separador novo)</span></a>
+<a class="btn bs" href="#contacto">Pedir orçamento</a>
 </div>
+<p class="bibo-link"><a href="/bibo/">Conhecer o Bibo</a></p>
 <p class="mail"><a href="mailto:sjgomesarouca@gmail.com">sjgomesarouca@gmail.com</a></p>
 </div>
 <aside class="stage" aria-label="O Bibo">
