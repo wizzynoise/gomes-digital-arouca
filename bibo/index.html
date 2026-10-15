@@ -111,7 +111,9 @@ main{position:relative;z-index:2;flex:1;width:100%;max-width:520px;display:flex;
 nav.ctrl{position:relative;z-index:5;display:flex;gap:10px;padding:12px 16px calc(14px + env(safe-area-inset-bottom));width:100%;max-width:520px;justify-content:center}
 nav.ctrl button{flex:1;max-width:150px;min-height:48px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:rgba(20,28,60,.75);color:var(--ink);font:650 15px system-ui;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;backdrop-filter:blur(6px);transition:background .2s,border-color .2s}
 nav.ctrl button:hover{border-color:var(--cy)}
-nav.ctrl button:focus-visible,.cta:focus-visible,.sec:focus-visible{outline:3px solid #fde047;outline-offset:3px}
+nav.ctrl button:focus-visible,.cta:focus-visible,.sec:focus-visible,a.saltar:focus-visible{outline:3px solid #fde047;outline-offset:3px}
+a.saltar{position:fixed;z-index:9;top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right));display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid #22e3f0;border-radius:999px;background:#0d1b3d;color:#eaf2ff;font:700 14px/1 system-ui,sans-serif;text-decoration:none}
+@media(max-width:560px){header.top{padding-right:96px}}
 nav.ctrl button#next{background:linear-gradient(135deg,rgba(34,227,240,.3),rgba(139,92,246,.4));border-color:rgba(34,227,240,.5)}
 nav.ctrl button[aria-pressed="true"]{border-color:var(--cy);color:var(--cy)}
 nav.ctrl button:disabled{opacity:.4;cursor:default}
@@ -121,6 +123,7 @@ nav.ctrl button:disabled{opacity:.4;cursor:default}
 </style>
 </head>
 <body>
+<a class="saltar" href="/">Saltar</a>
 <div id="stage" class="s1">
   <div class="glow g1"></div><div class="glow g2"></div><div class="grid"></div>
   <span class="floaty" style="top:16%;left:8%">&lt;/&gt;</span>
@@ -181,7 +184,7 @@ nav.ctrl button:disabled{opacity:.4;cursor:default}
     <h1 class="word">Gomes <span>IA Digital</span></h1>
     <p class="tag">Tu tratas do teu negócio. Nós ajudamos-te com a tecnologia.</p>
     <a class="cta" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">💬 Falar pelo WhatsApp</a>
-    <a class="sec" href="https://gomes-digital-arouca.sjgomesarouca.workers.dev/" target="_blank" rel="noopener">Ver o site</a>
+    <a class="sec" href="/">Ver o site</a>
     <p class="foot">Websites e assistência tecnológica · Arouca</p>
   </section>
   <nav class="ctrl" aria-label="Controlos">
@@ -192,6 +195,7 @@ nav.ctrl button:disabled{opacity:.4;cursor:default}
   <p class="sr" id="live" aria-live="polite"></p>
 </div>
 <script>
+try{sessionStorage.setItem('bibo_intro_seen','1')}catch(e){}
 (()=>{
 const st=document.getElementById('stage'),say=document.getElementById('say'),bub=document.getElementById('bubble'),
 dots=[...document.querySelectorAll('.dots i')],nextB=document.getElementById('next'),snd=document.getElementById('snd'),live=document.getElementById('live');
