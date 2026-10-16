@@ -18,42 +18,45 @@ if (location.hostname.endsWith('github.io')) {
 <link rel="canonical" href="https://gomes-digital-arouca.sjgomesarouca.workers.dev/demos/mesa-da-encosta/">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <style>
-:root{--paper:#f6f1e7;--ink:#1c1412;--wine:#6e2430;--mut:#5c5148;--line:#1c14121a}
+:root{--paper:#f4efe6;--ink:#1a1210;--wine:#6a1d2e;--mut:#4e433c;--line:#1a12101f}
 *{box-sizing:border-box;margin:0}
 html,body{overflow-x:clip}
 html{scroll-padding-top:72px}
-body{font:18px/1.6 "Iowan Old Style",Palatino,"Palatino Linotype",Georgia,serif;background:var(--paper);color:var(--ink);padding-bottom:76px}
+body{font:18px/1.65 "Iowan Old Style",Palatino,"Palatino Linotype",Georgia,serif;background:var(--paper);color:var(--ink);padding-bottom:88px}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--wine);outline-offset:3px}
 .w{width:min(100%,1040px);margin-inline:auto;padding-inline:20px}
 .ribbon{position:fixed;z-index:40;left:0;right:0;bottom:0;margin:0;padding:10px 16px;text-align:center;background:#1c1412;color:#f6f1e7;font:13px/1.4 system-ui,sans-serif}
 .ribbon a{color:#f0c9b0}
-header{background:var(--paper)}
-.mast{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px;padding-block:22px 8px}
-nav.w{position:sticky;top:0;z-index:5;width:100%;max-width:none;padding-inline:0;background:rgba(246,241,231,.96);border-bottom:1px solid var(--line)}
+header{position:absolute;z-index:6;left:0;right:0;top:0;background:linear-gradient(#1a1210b8,transparent)}
+.mast{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px;padding-block:22px 4px;color:#fffaf3}
+nav.w{position:static;z-index:6;width:100%;max-width:none;padding-inline:0;background:transparent;border-bottom:0}
 nav.w ul{width:min(100%,1040px);margin-inline:auto;padding-inline:20px}
-.mast strong{font-size:clamp(28px,4vw,40px);font-weight:500;letter-spacing:-.02em}
-.mast span{color:var(--mut);font-size:15px;font-family:system-ui,sans-serif}
+.mast strong{font-size:clamp(28px,4vw,40px);font-weight:500;letter-spacing:-.02em;color:#fffaf3}
+.mast span{color:#f3e6d4;font-size:15px;font-family:system-ui,sans-serif}
 nav ul{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;padding:0 0 14px}
-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--wine);font-family:system-ui,sans-serif;font-size:15px;font-weight:600}
-h1{font-weight:500;font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-.03em;max-width:14ch}
-h2{font-weight:500;font-size:clamp(30px,4vw,46px);line-height:1.1}
-.kicker{font:600 12px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--wine)}
-.lead{color:var(--mut);max-width:38em}
-.hero{padding-block:28px 10px}
-.frame{margin-top:28px}
-.frame img{width:100%;max-height:640px;object-fit:cover}
+nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:#fffaf3;font-family:system-ui,sans-serif;font-size:15px;font-weight:600}
+h1{font-weight:500;font-size:clamp(48px,8vw,92px);line-height:.95;letter-spacing:-.04em;max-width:12ch}
+h2{font-weight:500;font-size:clamp(34px,4.5vw,56px);line-height:1.05;letter-spacing:-.03em}
+.kicker{font:700 12px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--wine)}
+.lead{color:var(--mut);max-width:36em;font-size:19px}
+.hero{position:relative;min-height:92vh;display:grid;align-items:end;color:#f7f1e8}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,#1a121055,#1a1210e0 78%)}
+.hero .w{position:relative;padding-block:72px 64px}
+.hero .kicker,.hero .lead{color:#f3e6d4}
+.hero h1{color:#fffaf3}
 .cap{font:14px/1.4 system-ui,sans-serif;color:var(--mut);margin-top:8px}
-section{padding-block:64px}
-.menu{margin-top:22px}
-.dish{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding:16px 0;border-top:1px solid var(--line)}
+section{padding-block:88px}
+.menu{margin-top:28px}
+.dish{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding:20px 0;border-top:1px solid var(--line)}
 .dish p{grid-column:1/-1;color:var(--mut);font-size:16px}
 .dish b{font-weight:500;font-variant-numeric:tabular-nums}
 .pair{display:grid;gap:16px;margin-top:22px}
 @media(min-width:800px){.pair{grid-template-columns:1fr 1fr}}
 .pair figure{margin:0}
-.pair img{width:100%;height:360px;object-fit:cover}
+.pair img{width:100%;height:420px;object-fit:cover}
 .where{display:grid;gap:28px}
 @media(min-width:800px){.where{grid-template-columns:1.1fr .9fr}}
 address{font-style:normal;font-size:20px;line-height:1.45;margin-top:12px}
@@ -80,14 +83,13 @@ footer{padding:12px 0 20px;color:var(--mut);font:14px/1.5 system-ui,sans-serif}
 </header>
 <main>
 <section class="hero">
+<img src="../../assets/demos/mesa-mesa.webp" srcset="../../assets/demos/mesa-mesa-sm.webp 800w, ../../assets/demos/mesa-mesa.webp 1600w" sizes="100vw" alt="Mesa posta com copos de vinho e pratos de comida." width="1600" height="1000" fetchpriority="high" decoding="async">
+<div class="veil"></div>
 <div class="w">
-<p class="kicker">Almoço e jantar</p>
+<p class="kicker">Almoço e jantar · lugar fictício</p>
 <h1>Comida de panela, mesa posta.</h1>
 <p class="lead" style="margin-top:16px">Um restaurante pequeno na encosta. A ementa muda com a semana. O vinho da casa vem de uma garrafa aberta nesse dia, não de uma carta infinita.</p>
-<div class="frame">
-<img src="../../assets/demos/mesa-mesa.webp" srcset="../../assets/demos/mesa-mesa-sm.webp 800w, ../../assets/demos/mesa-mesa.webp 1600w" sizes="(min-width: 800px) 70vw, 100vw" alt="Mesa posta com copos de vinho e pratos de comida." width="1600" height="1000" fetchpriority="high" decoding="async">
-<p class="cap">A mesa, antes de se sentarem.</p>
-</div>
+<p style="margin-top:22px"><a class="btn" href="#ementa">Ver a ementa</a></p>
 </div>
 </section>
 <section id="ementa">
@@ -131,7 +133,7 @@ footer{padding:12px 0 20px;color:var(--mut);font:14px/1.5 system-ui,sans-serif}
 <div><span>Segunda</span><span>Encerrado</span></div>
 </div>
 <p class="lead" style="margin-top:16px">O botão não reserva mesa. Abre o WhatsApp da Gomes IA Digital para pedires um site como este.</p>
-<p style="margin-top:16px"><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1?text=Quero%20um%20site%20como%20este" target="_blank" rel="noopener">Quero um site como este</a></p>
+<p style="margin-top:16px"><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero um site como este</a></p>
 </div>
 </div>
 </section>

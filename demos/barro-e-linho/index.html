@@ -116,24 +116,12 @@ footer{padding:8px 0 16px;color:var(--mut);font-size:14px}
 <div class="w">
 <p class="kicker">Encomenda</p>
 <h2>Diz a peça e a quantidade</h2>
-<p class="lead" style="margin-top:10px">Não há carrinho nem pagamento nesta página. A encomenda abre o WhatsApp da Gomes IA Digital, porque o negócio é fictício e o site é um conceito.</p>
-<form id="pedido">
-<label style="display:grid;gap:6px;font-weight:600;font-size:14px;max-width:460px">Peça e quantidade<textarea name="m" rows="3" required placeholder="Por exemplo: duas taças fundas"></textarea></label>
-<p style="margin-top:12px"><button class="btn">Encomendar por contacto</button></p>
-<p class="note" aria-live="polite" style="margin-top:10px"></p>
-</form>
+<p class="lead" style="margin-top:10px">Não há carrinho nem pagamento nesta página. O botão abre o WhatsApp da Gomes IA Digital, porque o negócio é fictício e o site é um conceito.</p>
+<p style="margin-top:16px"><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Falar no WhatsApp</a></p>
 </div>
 </section>
 </main>
 <footer><div class="w">Barro &amp; Linho é um negócio fictício. Conceito criado por Gomes IA Digital.</div></footer>
-<script>
-document.getElementById('pedido').addEventListener('submit', function (event) {
-  event.preventDefault();
-  var texto = 'Quero um site como este.\nPeça: ' + this.m.value.trim();
-  window.open('https://wa.me/message/5VB7SV74VVEKE1?text=' + encodeURIComponent(texto), '_blank', 'noopener');
-  this.querySelector('.note').textContent = 'O WhatsApp abriu com o pedido.';
-});
-</script>
 <script src="../../assets/bibo-widget.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
 </body>
