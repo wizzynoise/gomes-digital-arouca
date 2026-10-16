@@ -201,7 +201,6 @@ nav.ctrl button:disabled{opacity:.4;cursor:default}
   <p class="sr" id="live" aria-live="polite"></p>
 </div>
 <script>
-try{sessionStorage.setItem('bibo_intro_seen','1')}catch(e){}
 (()=>{
 const st=document.getElementById('stage'),say=document.getElementById('say'),bub=document.getElementById('bubble'),
 dots=[...document.querySelectorAll('.dots i')],nextB=document.getElementById('next'),snd=document.getElementById('snd'),live=document.getElementById('live');
@@ -244,5 +243,6 @@ addEventListener('keydown',e=>{if(e.target.tagName==='BUTTON'||e.target.tagName=
 window.__go=go;go(1);
 })();
 </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
 </body>
 </html>
