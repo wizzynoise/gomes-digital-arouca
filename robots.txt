@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gomes-digital-arouca.sjgomesarouca.workers.dev/sitemap.xml
+Sitemap: https://gomesiadigital.com/sitemap.xml

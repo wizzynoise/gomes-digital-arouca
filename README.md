@@ -4,7 +4,7 @@ Website for **Gomes IA Digital**, Pedro Gomes, based in Arouca, Portugal. Visibl
 
 ## Stack
 
-Static HTML pages, with styles and scripts in each file. No database, no build step, and no paid services. A visit from `github.io` is sent to the Workers address.
+Static HTML pages, with styles and scripts in each file. No database, no build step, and no paid services. A visit from `github.io` is sent to `https://gomesiadigital.com`.
 
 ## Contact
 
@@ -37,9 +37,15 @@ Open `index.html` in a browser, or serve the folder with any static server:
 python3 -m http.server
 ```
 
+Check the host redirects without deploying:
+
+```bash
+node test/redirects.mjs
+```
+
 ## Deploy
 
-Static hosting from the repository root. `.nojekyll` is included for GitHub Pages, and the repository is connected to Cloudflare Workers Builds. `wrangler.jsonc` publishes this folder as static assets only (no Worker script). The empty `previews` block lets `wrangler preview` inherit that assets config. `.assetsignore` keeps non-site files out of the asset upload. The public address in `index.html`, `robots.txt`, and `sitemap.xml` is `https://gomes-digital-arouca.sjgomesarouca.workers.dev/`.
+The repository root is a Cloudflare Worker with static assets, connected to Workers Builds. `.nojekyll` is included for GitHub Pages. `worker.js` runs before the assets (`run_worker_first`). It returns 301 to `https://gomesiadigital.com`, with the same path and query, for `www.gomesiadigital.com` and `gomes-digital-arouca.sjgomesarouca.workers.dev`. Any other `*.workers.dev` host, including versioned previews, is served on that host. The apex is served in place. `env.ASSETS.fetch` still applies `_headers` and the default extensionless HTML redirect (307). The empty `previews` block lets preview URLs inherit this config. `.assetsignore` keeps non-site files out of the asset upload. The public address in the pages, `robots.txt`, and `sitemap.xml` is `https://gomesiadigital.com/`.
 
 ## Files
 
@@ -61,7 +67,9 @@ Static hosting from the repository root. `.nojekyll` is included for GitHub Page
 | `assets/og.jpg` | Image used when the link is shared |
 | `assets/icon-180.png` | Home-screen icon |
 | `favicon.svg` | Browser-tab icon |
-| `wrangler.jsonc` | Static-assets Worker config, including previews |
+| `worker.js` | 301 from www and the production workers.dev host to the apex |
+| `wrangler.jsonc` | Worker and static-assets config, including previews |
+| `test/redirects.mjs` | Local checks for the host redirects |
 | `.assetsignore` | Files left out of the Worker asset upload |
 | `.nojekyll` | Keeps GitHub Pages from running Jekyll |
 | `robots.txt`, `sitemap.xml` | Point crawlers at the homepage and the privacy page |
