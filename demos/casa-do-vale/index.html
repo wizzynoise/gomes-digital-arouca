@@ -130,25 +130,12 @@ footer{padding:8px 0 20px;color:var(--mut);font-size:14px}
 <div class="w">
 <p class="kicker" style="color:var(--green)">Pedido</p>
 <h2>Datas e um nome</h2>
-<p class="lead" style="margin-top:10px">Este formulário não reserva a casa. Abre o WhatsApp da Gomes IA Digital com o texto «Quero um site como este» e o que escreveres.</p>
-<form id="estadia">
-<label>Nome<input name="n" required autocomplete="name"></label>
-<label>Datas ou pedido<textarea name="m" rows="3" required placeholder="Por exemplo: duas noites em maio"></textarea></label>
-<button class="btn dark">Enviar pedido de estadia</button>
-<p class="note" aria-live="polite"></p>
-</form>
+<p class="lead" style="margin-top:10px">Este botão não reserva a casa. Abre o WhatsApp da Gomes IA Digital, para pedires um site neste estilo.</p>
+<p style="margin-top:16px"><a class="btn dark" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Falar no WhatsApp</a></p>
 </div>
 </section>
 </main>
 <footer><div class="w">Casa do Vale é um negócio fictício. Conceito criado por Gomes IA Digital.</div></footer>
-<script>
-document.getElementById('estadia').addEventListener('submit', function (event) {
-  event.preventDefault();
-  var texto = 'Quero um site como este.\nNome: ' + this.n.value.trim() + '\nPedido: ' + this.m.value.trim();
-  window.open('https://wa.me/message/5VB7SV74VVEKE1?text=' + encodeURIComponent(texto), '_blank', 'noopener');
-  this.querySelector('.note').textContent = 'O WhatsApp abriu com o pedido.';
-});
-</script>
 <script src="../../assets/bibo-widget.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
 </body>

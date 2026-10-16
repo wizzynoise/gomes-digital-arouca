@@ -10,7 +10,7 @@ Static HTML pages, with styles and scripts in each file. No database, no build s
 
 The only public email on the site is `sjgomesarouca@gmail.com`. Do not add any other address.
 
-Every WhatsApp button opens `https://wa.me/message/5VB7SV74VVEKE1`. The homepage contact form opens the visitor's email app with a message to `sjgomesarouca@gmail.com`. Demonstration sites use the same short link with the prefilled sentence "Quero um site como este". The phone number is not in the repository. Cloudflare Web Analytics (cookieless) is loaded on each HTML page.
+Every WhatsApp control is a link to `https://wa.me/message/5VB7SV74VVEKE1` with `target="_blank"`. Do not add a `?text=` query: it breaks this short link. The homepage contact form still opens the visitor's email app with a message to `sjgomesarouca@gmail.com`. The phone number is not in the repository. Cloudflare Web Analytics (cookieless) is loaded on each HTML page.
 
 ## Portfolio
 

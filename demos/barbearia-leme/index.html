@@ -18,11 +18,11 @@ if (location.hostname.endsWith('github.io')) {
 <link rel="canonical" href="https://gomes-digital-arouca.sjgomesarouca.workers.dev/demos/barbearia-leme/">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <style>
-:root{--bg:#141414;--bg2:#1c1c1c;--ink:#f3efe6;--mut:#c9c2b4;--gold:#e4c48a;--line:#f3efe622}
+:root{--bg:#100e0c;--bg2:#1a1714;--ink:#f7f1e8;--mut:#d9d0c3;--gold:#e7c98a;--line:#f7f1e824}
 *{box-sizing:border-box;margin:0}
 html,body{overflow-x:clip}
 html{scroll-padding-top:120px}
-body{font:17px/1.6 Georgia,"Iowan Old Style",Palatino,serif;background:var(--bg);color:var(--ink);padding-bottom:76px}
+body{font:18px/1.65 Georgia,"Iowan Old Style",Palatino,serif;background:var(--bg);color:var(--ink);padding-bottom:88px}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
@@ -38,24 +38,26 @@ header{position:sticky;top:0;z-index:5;background:rgba(20,20,20,.92);border-bott
 .nav ul a{display:inline-flex;align-items:center;min-height:44px;color:var(--mut);font-size:15px;font-family:system-ui,sans-serif}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;font:600 13px/1 system-ui,sans-serif}
 .btn.fill{background:var(--gold);color:#1a140c;border-color:var(--gold)}
-.hero{position:relative;min-height:78vh;display:grid;align-items:end}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,#14141499 0%,#141414e6 78%)}
-.hero .w{position:relative;padding-block:64px 48px}
-.kicker{font:600 12px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
-h1{font-weight:500;font-size:clamp(46px,8vw,92px);line-height:.95;letter-spacing:-.02em;max-width:10ch;margin:12px 0}
-h2{font-weight:500;font-size:clamp(32px,5vw,52px);line-height:1.05}
-.lead{max-width:36em;color:var(--mut);font-size:18px}
-section{padding-block:72px}
-.services{display:grid;gap:0;margin-top:28px;padding:0;border-top:1px solid var(--line)}
-.services li{list-style:none;display:grid;grid-template-columns:1fr auto;gap:12px 24px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.services strong{font-size:22px;font-weight:500}
-.services span{color:var(--gold);font-variant-numeric:tabular-nums}
-.services p{grid-column:1/-1;color:var(--mut);margin-top:-6px}
-.gallery{display:grid;gap:12px}
-@media(min-width:800px){.gallery{grid-template-columns:1.2fr .8fr}}
+.hero{position:relative;min-height:92vh;display:grid;align-items:end}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,#100e0c55 0%,#100e0ce8 72%)}
+.hero .w{position:relative;padding-block:80px 72px}
+.kicker{font:700 12px/1 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+h1{font-weight:500;font-size:clamp(56px,9vw,108px);line-height:.9;letter-spacing:-.035em;max-width:9ch;margin:16px 0 18px}
+h2{font-weight:500;font-size:clamp(36px,5vw,60px);line-height:1.02;letter-spacing:-.03em}
+.lead{max-width:34em;color:var(--mut);font-size:19px}
+section{padding-block:88px}
+.services{display:grid;gap:14px;margin-top:32px;padding:0}
+@media(min-width:800px){.services{grid-template-columns:1fr 1fr}}
+.services li{list-style:none;display:grid;grid-template-columns:1fr auto;gap:8px 20px;padding:22px 22px 18px;border:1px solid var(--line);background:#181512;align-items:baseline}
+.services strong{font-size:24px;font-weight:500;letter-spacing:-.02em}
+.services span{color:var(--gold);font-variant-numeric:tabular-nums;font-family:system-ui,sans-serif;font-weight:700}
+.services p{grid-column:1/-1;color:var(--mut);margin:0}
+.gallery{display:grid;gap:16px}
+@media(min-width:800px){.gallery{grid-template-columns:1.25fr .75fr}}
 .gallery figure{margin:0}
-.gallery img{width:100%;height:100%;object-fit:cover;max-height:520px}
+.gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.gallery figure:first-child img{aspect-ratio:4/5;min-height:420px}
 figcaption{font:14px/1.4 system-ui,sans-serif;color:var(--mut);margin-top:8px}
 .split{display:grid;gap:28px}
 @media(min-width:800px){.split{grid-template-columns:1fr 1fr;gap:48px}}
@@ -101,7 +103,7 @@ footer{padding:28px 0 12px;color:var(--mut);font:14px/1.5 system-ui,sans-serif;b
 <li><strong>Acabamento</strong><span>8 €</span><p>Contorno entre cortes, quando só a linha precisa de ser revista.</p></li>
 <li><strong>Corte criança</strong><span>12 €</span><p>Até aos 10 anos, com calma e sem pressa de mais.</p></li>
 </ul>
-<p style="margin-top:28px"><a class="btn fill" href="https://wa.me/message/5VB7SV74VVEKE1?text=Quero%20um%20site%20como%20este" target="_blank" rel="noopener">Pedir um site como este</a></p>
+<p style="margin-top:28px"><a class="btn fill" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Pedir um site como este</a></p>
 </div>
 </section>
 <section id="casa">
@@ -130,8 +132,8 @@ footer{padding:28px 0 12px;color:var(--mut);font:14px/1.5 system-ui,sans-serif;b
 <p class="kicker">Contacto</p>
 <h2>Marcações</h2>
 <address>Rua do Ofício 12<br>Vila do Leme<br>Morada de demonstração</address>
-<p class="lead" style="margin-top:14px">Num site real, este botão abriria a marcação do negócio. Aqui abre o WhatsApp da Gomes IA Digital, com o pedido de um site neste estilo.</p>
-<p style="margin-top:18px"><a class="btn fill" href="https://wa.me/message/5VB7SV74VVEKE1?text=Quero%20um%20site%20como%20este" target="_blank" rel="noopener">Quero um site como este</a></p>
+<p class="lead" style="margin-top:14px">Num site real, este botão abriria a marcação do negócio. Aqui abre o WhatsApp da Gomes IA Digital.</p>
+<p style="margin-top:18px"><a class="btn fill" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero um site como este</a></p>
 </div>
 </div>
 </section>
