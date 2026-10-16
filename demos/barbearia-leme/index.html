@@ -16,6 +16,8 @@ if (location.hostname.endsWith('github.io')) {
 <meta name="description" content="Conceito de demonstração de um website para uma barbearia fictícia. Criado por Gomes IA Digital.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://gomesiadigital.com/demos/barbearia-leme/">
+<meta property="og:url" content="https://gomesiadigital.com/demos/barbearia-leme/">
+<meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <style>
 :root{--bg:#100e0c;--bg2:#1a1714;--ink:#f7f1e8;--mut:#d9d0c3;--gold:#e7c98a;--line:#f7f1e824}
@@ -29,6 +31,7 @@ a{color:inherit}
 .w{width:min(100%,1080px);margin-inline:auto;padding-inline:20px}
 .ribbon{position:fixed;z-index:40;left:0;right:0;bottom:0;margin:0;padding:10px 16px;text-align:center;background:#f4f0e8;color:#1a2433;border-top:1px solid #0f2a4a22;font:13px/1.4 system-ui,sans-serif}
 .ribbon a{color:#0b6b68}
+.ribbon a:focus-visible{outline-color:#102033}
 header{position:sticky;top:0;z-index:5;background:rgba(20,20,20,.92);border-bottom:1px solid var(--line)}
 .nav{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:0;padding-block:8px}
 .logo{grid-column:1;grid-row:1;display:inline-flex;align-items:center;min-height:44px;font-size:22px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;font-weight:500}
@@ -64,11 +67,12 @@ figcaption{font:14px/1.4 system-ui,sans-serif;color:var(--mut);margin-top:8px}
 .hours{margin-top:16px;border-top:1px solid var(--line)}
 .hours div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-family:system-ui,sans-serif}
 address{font-style:normal;color:var(--mut);margin-top:12px}
+footer a{color:inherit}
 footer{padding:28px 0 12px;color:var(--mut);font:14px/1.5 system-ui,sans-serif;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
-<p class="ribbon">Conceito de demonstração criado por <a href="../../index.html">Gomes IA Digital</a> · negócio fictício</p>
+<p class="ribbon">Conceito de demonstração criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a> · negócio fictício</p>
 <header>
 <nav class="w nav" aria-label="Barbearia Leme">
 <a class="logo" href="#topo">Leme</a>
@@ -138,7 +142,7 @@ footer{padding:28px 0 12px;color:var(--mut);font:14px/1.5 system-ui,sans-serif;b
 </div>
 </section>
 </main>
-<footer><div class="w">Barbearia Leme é um negócio fictício. Conceito criado por Gomes IA Digital.</div></footer>
+<footer><div class="w">Barbearia Leme é um negócio fictício. Conceito criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a>.</div></footer>
 <script src="../../assets/bibo-widget.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
 </body>

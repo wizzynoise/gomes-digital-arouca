@@ -7,18 +7,12 @@
   var WA = 'https://wa.me/message/5VB7SV74VVEKE1';
   var demo = path.indexOf('/demos/') !== -1;
 
-  function base() {
-    var p = path.replace(/\/index\.html$/i, '/').replace(/\/[^/]+\.html$/i, '/');
-    if (p.slice(-1) !== '/') p += '/';
-    var depth = p.split('/').filter(Boolean).length;
-    return depth ? new Array(depth + 1).join('../') : '';
-  }
   function href(code) {
     if (code === 'wa') return WA;
     if (code === 'mail') return 'mailto:sjgomesarouca@gmail.com';
     if (/^https?:/.test(code)) return code;
-    if (code.charAt(0) === '#') return base() + 'index.html' + code;
-    return base() + 'demos/' + code + '/index.html';
+    if (code.charAt(0) === '#') return '/' + code;
+    return '/demos/' + code + '/';
   }
 
   var greet = demo

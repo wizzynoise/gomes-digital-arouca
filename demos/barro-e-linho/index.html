@@ -16,6 +16,8 @@ if (location.hostname.endsWith('github.io')) {
 <meta name="description" content="Conceito de demonstração de um website para uma loja fictícia de cerâmica e linho. Criado por Gomes IA Digital.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://gomesiadigital.com/demos/barro-e-linho/">
+<meta property="og:url" content="https://gomesiadigital.com/demos/barro-e-linho/">
+<meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <style>
 :root{--ink:#241c18;--clay:#7a3e2e;--linen:#f6f1ea;--card:#fff;--mut:#5a4e46;--line:#241c1818}
@@ -29,6 +31,7 @@ a{color:inherit}
 .w{width:min(100%,1100px);margin-inline:auto;padding-inline:20px}
 .ribbon{position:fixed;z-index:40;left:0;right:0;bottom:0;margin:0;padding:10px 16px;text-align:center;background:#241c18;color:#f6f1ea;font:13px/1.4 system-ui,sans-serif}
 .ribbon a{color:#f0c9b0}
+.ribbon a:focus-visible{outline-color:#f6f1ea}
 header{position:sticky;top:0;z-index:5;background:rgba(246,241,234,.94);border-bottom:1px solid var(--line)}
 .nav{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:0;padding-block:8px}
 .logo{grid-column:1;grid-row:1;display:inline-flex;align-items:center;min-height:44px;font-weight:700;letter-spacing:-.03em;font-size:20px;text-decoration:none}
@@ -55,11 +58,12 @@ section{padding-block:64px}
 .span2{grid-column:1/-1}
 @media(min-width:980px){.span2{grid-column:span 2}.span2 .row{display:grid;grid-template-columns:1.1fr .9fr}}
 .note{color:var(--mut);font-size:14px}
+footer a{color:inherit}
 footer{padding:8px 0 16px;color:var(--mut);font-size:14px}
 </style>
 </head>
 <body>
-<p class="ribbon">Conceito de demonstração criado por <a href="../../index.html">Gomes IA Digital</a> · negócio fictício</p>
+<p class="ribbon">Conceito de demonstração criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a> · negócio fictício</p>
 <header>
 <nav class="w nav" aria-label="Barro e Linho">
 <a class="logo" href="#topo">Barro &amp; Linho</a>
@@ -121,7 +125,7 @@ footer{padding:8px 0 16px;color:var(--mut);font-size:14px}
 </div>
 </section>
 </main>
-<footer><div class="w">Barro &amp; Linho é um negócio fictício. Conceito criado por Gomes IA Digital.</div></footer>
+<footer><div class="w">Barro &amp; Linho é um negócio fictício. Conceito criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a>.</div></footer>
 <script src="../../assets/bibo-widget.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
 </body>

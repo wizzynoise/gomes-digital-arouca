@@ -31,10 +31,40 @@ function apexUrl(request) {
   return target.toString();
 }
 
+// html_handling "auto-trailing-slash" 307s /file.html to /file.
+// Google fetches this verification file at the .html URL and expects 200.
+const VERIFY_HTML = "/googlef7be4e9e08c807ca.html";
+const VERIFY_LINE = "google-site-verification: googlef7be4e9e08c807ca.html\n";
+
+async function googleVerification(request, env) {
+  const assetUrl = new URL(request.url);
+  assetUrl.pathname = "/googlef7be4e9e08c807ca";
+  assetUrl.search = "";
+  const headers = new Headers({
+    "content-type": "text/html; charset=utf-8",
+    "x-content-type-options": "nosniff",
+  });
+  let body = VERIFY_LINE;
+  try {
+    const asset = await env.ASSETS.fetch(new Request(assetUrl, { method: "GET" }));
+    if (asset.status === 200) {
+      const text = await asset.text();
+      if (text.startsWith("google-site-verification:")) body = text.endsWith("\n") ? text : text + "\n";
+    }
+  } catch {
+    // The literal line still answers 200 if the asset fetch fails.
+  }
+  if (request.method === "HEAD") return new Response(null, { status: 200, headers });
+  return new Response(body, { status: 200, headers });
+}
+
 export default {
   async fetch(request, env) {
     if (REDIRECT_HOSTS.has(requestHost(request))) {
       return Response.redirect(apexUrl(request), 301);
+    }
+    if (new URL(request.url).pathname === VERIFY_HTML) {
+      return googleVerification(request, env);
     }
     return env.ASSETS.fetch(request);
   },
