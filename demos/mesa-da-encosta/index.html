@@ -16,6 +16,8 @@ if (location.hostname.endsWith('github.io')) {
 <meta name="description" content="Conceito de demonstração de um website para um restaurante fictício. Criado por Gomes IA Digital.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://gomesiadigital.com/demos/mesa-da-encosta/">
+<meta property="og:url" content="https://gomesiadigital.com/demos/mesa-da-encosta/">
+<meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <style>
 :root{--paper:#f4efe6;--ink:#1a1210;--wine:#6a1d2e;--mut:#4e433c;--line:#1a12101f}
@@ -29,6 +31,7 @@ a{color:inherit}
 .w{width:min(100%,1040px);margin-inline:auto;padding-inline:20px}
 .ribbon{position:fixed;z-index:40;left:0;right:0;bottom:0;margin:0;padding:10px 16px;text-align:center;background:#1c1412;color:#f6f1e7;font:13px/1.4 system-ui,sans-serif}
 .ribbon a{color:#f0c9b0}
+.ribbon a:focus-visible{outline-color:#f6f1e7}
 header{position:absolute;z-index:6;left:0;right:0;top:0;background:linear-gradient(#1a1210b8,transparent)}
 .mast{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px;padding-block:22px 4px;color:#fffaf3}
 nav.w{position:static;z-index:6;width:100%;max-width:none;padding-inline:0;background:transparent;border-bottom:0}
@@ -62,11 +65,12 @@ section{padding-block:88px}
 address{font-style:normal;font-size:20px;line-height:1.45;margin-top:12px}
 .hours div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-family:system-ui,sans-serif;font-size:16px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;background:var(--wine);color:#fff;text-decoration:none;font:600 15px/1 system-ui,sans-serif}
+footer a{color:inherit}
 footer{padding:12px 0 20px;color:var(--mut);font:14px/1.5 system-ui,sans-serif}
 </style>
 </head>
 <body>
-<p class="ribbon">Conceito de demonstração criado por <a href="../../index.html">Gomes IA Digital</a> · negócio fictício</p>
+<p class="ribbon">Conceito de demonstração criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a> · negócio fictício</p>
 <header>
 <div class="w mast">
 <strong>Mesa da Encosta</strong>
@@ -138,7 +142,7 @@ footer{padding:12px 0 20px;color:var(--mut);font:14px/1.5 system-ui,sans-serif}
 </div>
 </section>
 </main>
-<footer><div class="w">Mesa da Encosta é um negócio fictício. Conceito criado por Gomes IA Digital.</div></footer>
+<footer><div class="w">Mesa da Encosta é um negócio fictício. Conceito criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a>.</div></footer>
 <script src="../../assets/bibo-widget.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
 </body>

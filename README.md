@@ -45,7 +45,7 @@ node test/redirects.mjs
 
 ## Deploy
 
-The repository root is a Cloudflare Worker with static assets, connected to Workers Builds. `.nojekyll` is included for GitHub Pages. `worker.js` runs before the assets (`run_worker_first`). It returns 301 to `https://gomesiadigital.com`, with the same path and query, for `www.gomesiadigital.com` and `gomes-digital-arouca.sjgomesarouca.workers.dev`. Any other `*.workers.dev` host, including versioned previews, is served on that host. The apex is served in place. `env.ASSETS.fetch` still applies `_headers` and the default extensionless HTML redirect (307). The empty `previews` block lets preview URLs inherit this config. `.assetsignore` keeps non-site files out of the asset upload. The public address in the pages, `robots.txt`, and `sitemap.xml` is `https://gomesiadigital.com/`.
+The repository root is a Cloudflare Worker with static assets, connected to Workers Builds. `.nojekyll` is included for GitHub Pages. `worker.js` runs before the assets (`run_worker_first`). It returns 301 to `https://gomesiadigital.com`, with the same path and query, for `www.gomesiadigital.com` and `gomes-digital-arouca.sjgomesarouca.workers.dev`. Any other `*.workers.dev` host, including versioned previews, is served on that host. The apex is served in place. `env.ASSETS.fetch` still applies `_headers` and the default extensionless HTML redirect (307). The exception is `/googlef7be4e9e08c807ca.html`: the Worker returns that Google verification file with status 200, because the clean-URL rule would otherwise 307 it to the extensionless path. That file is not listed in `sitemap.xml`. The empty `previews` block lets preview URLs inherit this config. `.assetsignore` keeps non-site files out of the asset upload. The public address in the pages, `robots.txt`, and `sitemap.xml` is `https://gomesiadigital.com/`.
 
 ## Files
 
@@ -67,6 +67,7 @@ The repository root is a Cloudflare Worker with static assets, connected to Work
 | `assets/og.jpg` | Image used when the link is shared |
 | `assets/icon-180.png` | Home-screen icon |
 | `favicon.svg` | Browser-tab icon |
+| `googlef7be4e9e08c807ca.html` | Google Search Console file, served at the `.html` URL with status 200 |
 | `worker.js` | 301 from www and the production workers.dev host to the apex |
 | `wrangler.jsonc` | Worker and static-assets config, including previews |
 | `test/redirects.mjs` | Local checks for the host redirects |

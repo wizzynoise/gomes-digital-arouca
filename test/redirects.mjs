@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import worker from "../worker.js";
 
 const seen = [];
@@ -81,6 +82,13 @@ const cases = [
     status: 200,
     assets: true,
   },
+  {
+    name: "www verification file redirects to the apex html URL",
+    url: "https://www.gomesiadigital.com/googlef7be4e9e08c807ca.html",
+    status: 301,
+    location: "https://gomesiadigital.com/googlef7be4e9e08c807ca.html",
+    assets: false,
+  },
 ];
 
 for (const item of cases) {
@@ -93,6 +101,47 @@ for (const item of cases) {
   }
   check(item.name + " assets", item.assets ? seen.length === 1 && seen[0] === item.url : seen.length === 0, seen.join(","));
 }
+
+const VERIFY_LINE = "google-site-verification: googlef7be4e9e08c807ca.html\n";
+const verifyFile = readFileSync(new URL("../googlef7be4e9e08c807ca.html", import.meta.url), "utf8");
+check("verification file is the single Google line", verifyFile === VERIFY_LINE, JSON.stringify(verifyFile));
+
+const sitemap = readFileSync(new URL("../sitemap.xml", import.meta.url), "utf8");
+check("sitemap omits the verification file", !sitemap.includes("googlef7be4e9e08c807ca"));
+
+seen.length = 0;
+const verify = await worker.fetch(new Request("https://gomesiadigital.com/googlef7be4e9e08c807ca.html"), env);
+check("apex verification html status", verify.status === 200, verify.status);
+check("apex verification html has no location", verify.headers.get("location") == null, verify.headers.get("location"));
+check("apex verification html body", (await verify.text()) === VERIFY_LINE);
+check(
+  "apex verification html reads the extensionless asset",
+  seen.length === 1 && seen[0] === "https://gomesiadigital.com/googlef7be4e9e08c807ca",
+  seen.join(","),
+);
+
+seen.length = 0;
+const redirectingAssets = {
+  ASSETS: {
+    fetch(request) {
+      seen.push(new URL(request.url).href);
+      return Response.redirect("https://gomesiadigital.com/googlef7be4e9e08c807ca", 307);
+    },
+  },
+};
+const forced = await worker.fetch(
+  new Request("https://gomesiadigital.com/googlef7be4e9e08c807ca.html?check=1"),
+  redirectingAssets,
+);
+check("verification html stays 200 when assets would 307", forced.status === 200, forced.status);
+check("verification html drops the asset redirect", forced.headers.get("location") == null);
+check("verification html fallback body", (await forced.text()) === VERIFY_LINE);
+
+const head = await worker.fetch(
+  new Request("https://gomesiadigital.com/googlef7be4e9e08c807ca.html", { method: "HEAD" }),
+  env,
+);
+check("verification html HEAD is 200", head.status === 200 && (await head.text()) === "", head.status);
 
 if (process.exitCode) process.exit(process.exitCode);
 console.log("all redirect cases passed");
