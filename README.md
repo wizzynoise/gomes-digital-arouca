@@ -10,19 +10,20 @@ Static HTML pages, with styles and scripts in each file. No database, no build s
 
 The only public email on the site is `sjgomesarouca@gmail.com`. Do not add any other address.
 
-Every WhatsApp button opens `https://wa.me/message/5VB7SV74VVEKE1`. The contact form stays on the page and opens that same short link with the visitor's message attached. Demonstration sites use the same short link with the prefilled sentence "Quero um site como este". The phone number is not in the repository.
+Every WhatsApp button opens `https://wa.me/message/5VB7SV74VVEKE1`. The homepage contact form opens the visitor's email app with a message to `sjgomesarouca@gmail.com`. Demonstration sites use the same short link with the prefilled sentence "Quero um site como este". The phone number is not in the repository. Cloudflare Web Analytics (cookieless) is loaded on each HTML page.
 
 ## Portfolio
 
-Real work on the homepage, separate from the fictional demonstrations:
+The homepage shows four project cards. Desktop and mobile screenshots crossfade on hover, focus, or tap.
 
 | Project | State | Screenshot |
 | --- | --- | --- |
-| PainelLog | In testing, no public address | `assets/portfolio/painellog-390.webp`, `assets/portfolio/painellog-1280.webp` |
-| 7Jardins | Online at https://7jardins26.vercel.app | `assets/portfolio/7jardins-1280.webp` |
-| SjGomes Sistemas de Som | Online at https://sjgomes.sjgomesarouca.workers.dev | `assets/portfolio/sjgomes-1280.webp` (1280×800 capture, saved at 1600×1000) |
+| 7Jardins | Real project, business closed. Live archive at https://7jardins26.vercel.app | `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` |
+| SjGomes Sistemas de Som | Real project, no public address | `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` |
+| Barbearia Leme | Fictional concept | `assets/projects/barbearia-leme-desktop.webp`, `assets/projects/barbearia-leme-mobile.webp` |
+| Mesa da Encosta | Fictional concept | `assets/projects/mesa-da-encosta-desktop.webp`, `assets/projects/mesa-da-encosta-mobile.webp` |
 
-The four demonstration cards use screenshots of the demo pages themselves: `assets/demos/barbearia-leme-preview.webp`, `assets/demos/mesa-da-encosta-preview.webp`, `assets/demos/casa-do-vale-preview.webp` and `assets/demos/barro-e-linho-preview.webp`. The older photographs stay in `assets/demos/` because the demo pages still use them.
+Casa do Vale and Barro & Linho stay as demonstration pages and are linked under the cards. The older photographs stay in `assets/demos/` because the demo pages still use them.
 
 ## Demonstration sites
 
@@ -44,7 +45,10 @@ Static hosting from the repository root. `.nojekyll` is included for GitHub Page
 
 | File | Role |
 | --- | --- |
-| `index.html` | Homepage, including styles, the contact script, and search metadata |
+| `index.html` | Homepage, search metadata, and contact script |
+| `assets/home.css` | Homepage styles |
+| `assets/bibo-widget.js` | Bibo assistant on the homepage and demonstrations |
+| `assets/projects/` | Desktop and mobile screenshots for the four homepage cards |
 | `politica-privacidade.html` | Privacy policy in European Portuguese |
 | `demos/barbearia-leme/` | Fictional barbershop concept |
 | `demos/mesa-da-encosta/` | Fictional restaurant concept |

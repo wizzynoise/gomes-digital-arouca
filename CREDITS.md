@@ -2,11 +2,14 @@
 
 ## Page screenshots
 
-These files are screenshots of web pages, not third-party photographs. They were captured in headless Chromium at a 1280×800 viewport.
+These files are screenshots of web pages, not third-party photographs. The homepage cards use a desktop viewport and a phone viewport, saved as WebP.
 
 | File | Page |
 | --- | --- |
-| `assets/portfolio/sjgomes-1280.webp` | [SjGomes Sistemas de Som](https://sjgomes.sjgomesarouca.workers.dev), saved at 1600×1000 |
+| `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` | https://7jardins26.vercel.app |
+| `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` | Local render of the SjGomes Sistemas de Som site. No public address. |
+| `assets/projects/barbearia-leme-desktop.webp`, `assets/projects/barbearia-leme-mobile.webp` | `/demos/barbearia-leme/` |
+| `assets/projects/mesa-da-encosta-desktop.webp`, `assets/projects/mesa-da-encosta-mobile.webp` | `/demos/mesa-da-encosta/` |
 | `assets/demos/barbearia-leme-preview.webp` | `/demos/barbearia-leme/` |
 | `assets/demos/mesa-da-encosta-preview.webp` | `/demos/mesa-da-encosta/` |
 | `assets/demos/casa-do-vale-preview.webp` | `/demos/casa-do-vale/` |
