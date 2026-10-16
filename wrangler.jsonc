@@ -1,10 +1,15 @@
 {
-  // Static site only. Production uses the top-level assets block.
-  // An empty previews object inherits those assets so `wrangler preview` can run.
+  // Static site. worker.js runs first so two public hosts can 301 to the apex.
+  // html_handling stays on the default: extensionless HTML URLs keep their 307.
+  // An empty previews object inherits this config, including the Worker.
   "name": "gomes-digital-arouca",
   "compatibility_date": "2026-10-13",
+  "main": "worker.js",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": true
   },
   "previews": {}
 }
