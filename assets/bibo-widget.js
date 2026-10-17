@@ -12,17 +12,18 @@
     if (code === 'mail') return 'mailto:sjgomesarouca@gmail.com';
     if (/^https?:/.test(code)) return code;
     if (code.charAt(0) === '#') return '/' + code;
+    if (code.charAt(0) === '/') return code;
     return '/demos/' + code + '/';
   }
 
   var greet = demo
-    ? 'Olá. Sou o Bibo, da Gomes IA Digital. Esta página é um conceito de demonstração, de um negócio fictício.'
+    ? 'Olá. Sou o Bibo, da Gomes IA Digital. Esta página é um exemplo de site.'
     : 'Olá. Sou o Bibo, assistente da Gomes IA Digital. Escolhe um assunto.';
   var topics = {
-    site: ['Quero um website', 'O site simples começa nos 80 €: uma página com até 5 secções, versão para telemóvel, botões de WhatsApp e contacto, mapa e horário, título e descrição básicos, alojamento gratuito num subdomínio, 1 ronda de alterações e cerca de 7 dias depois do conteúdo. Um site maior ou uma aplicação tem orçamento próprio.', [['Preços', '#preco'], ['Demonstrações', '#demos']]],
-    exemplos: ['Ver exemplos', 'Estes quatro sites são conceitos de demonstração, com negócios fictícios. Não são clientes reais.', [['Barbearia Leme (conceito)', 'barbearia-leme'], ['Mesa da Encosta (conceito)', 'mesa-da-encosta'], ['Casa do Vale (conceito)', 'casa-do-vale'], ['Barro e Linho (conceito)', 'barro-e-linho']]],
-    portfolio: ['Ver o portfólio', 'Há dois projetos reais: 7Jardins, um website de jardinagem (a empresa encerrou), e SjGomes Sistemas de Som, um site de aluguer de som, ainda sem endereço público. Barbearia Leme e Mesa da Encosta são conceitos, com negócios fictícios.', [['7Jardins', 'https://7jardins26.vercel.app'], ['Projetos', '#projetos'], ['Barbearia Leme (conceito)', 'barbearia-leme'], ['Mesa da Encosta (conceito)', 'mesa-da-encosta']]],
-    ajuda: ['Ajuda com tecnologia em Arouca', 'Computadores, telemóveis, cópias de segurança, segurança e explicações, também para quem está a aprender. O diagnóstico é gratuito. Pagas só o tempo a resolver. A deslocação em Arouca não se cobra. No resto de Portugal, a ajuda pode ser à distância.', [['Assistência', '#assistencia'], ['WhatsApp', 'wa']]],
+    site: ['Quero um website', 'O site simples começa nos 80 €: uma página com até 5 secções, versão para telemóvel, botões de WhatsApp e contacto, mapa e horário, título e descrição básicos, alojamento gratuito num subdomínio, 1 ronda de alterações e cerca de 7 dias depois do conteúdo. Um site maior ou uma aplicação tem orçamento próprio.', [['Preços', '#preco'], ['Exemplos', '#demos'], ['Automatizações', '#automatizacoes']]],
+    exemplos: ['Ver exemplos', 'Atelier Nórd, Leonor Matos, Nexora Inventory e BRUMA Coffee são exemplos de páginas.', [['Atelier Nórd', 'atelier-nord'], ['Leonor Matos', 'leonor-matos'], ['Nexora Inventory', 'nexora'], ['BRUMA Coffee', 'bruma']]],
+    portfolio: ['Ver projetos', '7Jardins - Serviços de jardinagem, SjGomes - Sistemas de som, Barbearia Leme e Mesa da Encosta.', [['7Jardins - Serviços de jardinagem', 'https://7jardins26.vercel.app'], ['Projetos', '/projetos'], ['Barbearia Leme', 'barbearia-leme'], ['Mesa da Encosta', 'mesa-da-encosta']]],
+    ajuda: ['Ajuda com tecnologia em Arouca', 'Computadores, telemóveis, cópias de segurança, segurança e explicações, também para quem está a aprender. O diagnóstico é gratuito. Pagas só o tempo a resolver. A deslocação em Arouca não se cobra. No resto de Portugal, a ajuda pode ser à distância.', [['Assistência', '/servicos#assistencia'], ['WhatsApp', 'wa']]],
     custo: ['Quanto custa?', 'O site simples começa nos 80 €. Projetos maiores, aplicações e a presença online têm orçamento próprio. O domínio próprio fica cerca de 10–15 € por ano, pago por ti. Na assistência, o diagnóstico é gratuito e cobra-se só o tempo a resolver.', [['Preços', '#preco'], ['WhatsApp', 'wa']]],
     pedro: ['Falar com o Pedro', 'Podes falar com o Pedro Gomes pelo WhatsApp ou por e-mail.', [['WhatsApp', 'wa'], ['E-mail', 'mail']]]
   };

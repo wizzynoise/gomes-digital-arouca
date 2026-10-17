@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<script>
+if (location.hostname.endsWith('github.io')) {
+  var meta = document.createElement('meta');
+  meta.name = 'robots';
+  meta.content = 'noindex';
+  document.head.appendChild(meta);
+  location.replace('https://gomesiadigital.com' + location.pathname.replace('/gomes-digital-arouca', '') + location.hash);
+}
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier Nórd — Gomes IA Digital</title>
+<meta name="description" content="Exemplo de site para um estúdio de arquitetura e interiores. Criado por Gomes IA Digital.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://gomesiadigital.com/demos/atelier-nord/">
+<meta property="og:url" content="https://gomesiadigital.com/demos/atelier-nord/">
+<meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#141311;--ink:#f3ece3;--mut:#c9bfb2;--line:#f3ece31f;--warm:#d8b48a}
+*{box-sizing:border-box;margin:0}
+html,body{overflow-x:clip}
+html{scroll-padding-top:80px}
+body{font:18px/1.6 Georgia,"Iowan Old Style",Palatino,serif;background:var(--bg);color:var(--ink);padding-bottom:72px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
+.w{width:min(100%,1120px);margin-inline:auto;padding-inline:24px}
+header{position:sticky;top:0;z-index:5;background:#141311eb;backdrop-filter:blur(8px)}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;min-height:72px}
+.logo{font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;font-size:14px}
+.nav ul{display:flex;flex:1;flex-wrap:wrap;gap:4px 18px;list-style:none;padding:0}
+.nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.nav ul a{font:600 14px/1 system-ui,sans-serif;color:var(--mut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border:1px solid var(--warm);color:var(--warm);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;font:600 12px/1 system-ui,sans-serif}
+.hero{position:relative;min-height:100svh;display:grid;align-items:end}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(#14131122,#141311e6)}
+.hero .w{position:relative;padding-block:80px 64px}
+h1{font-weight:500;font-size:clamp(56px,9vw,104px);line-height:.92;letter-spacing:-.04em}
+h2{font-weight:500;font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.03em}
+.kicker{font:700 12px/1 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--warm)}
+.lead{max-width:36em;color:var(--mut);font-size:20px}
+section{padding-block:88px}
+.split{display:grid;gap:36px;align-items:center}
+@media(min-width:860px){.split{grid-template-columns:1fr 1.1fr;gap:64px}}
+.frame img{width:100%;height:min(72vh,640px);object-fit:cover}
+.full{padding-inline:0}
+.full img{width:100%;height:min(80vh,760px);object-fit:cover}
+.studies{display:grid;gap:28px}
+@media(min-width:800px){.studies{grid-template-columns:1.2fr .8fr}}
+figcaption{font:14px/1.4 system-ui,sans-serif;color:var(--mut);margin-top:10px}
+footer{padding:28px 0 12px;color:var(--mut);font:14px/1.5 system-ui,sans-serif;border-top:1px solid var(--line)}
+footer a{color:var(--warm)}
+@media(prefers-reduced-motion:no-preference){
+  .reveal{animation:rise .7s ease both}
+}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+<nav class="w nav" aria-label="Atelier Nórd">
+<a class="logo" href="#topo">Atelier Nórd</a>
+<ul>
+<li><a href="#sala">Sala</a></li>
+<li><a href="#estudo">Estudos</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+<a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp</a>
+</nav>
+</header>
+<main id="topo">
+<section class="hero">
+<img src="../../assets/demos/nord-fachada.webp" srcset="../../assets/demos/nord-fachada-sm.webp 800w, ../../assets/demos/nord-fachada.webp 1600w" sizes="100vw" alt="Casa moderna ao anoitecer, com luz quente nas janelas e uma árvore em primeiro plano." width="1600" height="1000" fetchpriority="high" decoding="async">
+<div class="veil"></div>
+<div class="w">
+<p class="kicker">Arquitetura e interiores</p>
+<h1>Atelier Nórd</h1>
+<p class="lead">Espaço, matéria e luz. Um site para um estúdio que mostra o trabalho em fotografias grandes.</p>
+</div>
+</section>
+<section id="sala">
+<div class="w split">
+<div class="reveal">
+<p class="kicker">A sala</p>
+<h2>Menos peças. Mais silêncio.</h2>
+<p class="lead">O site deixa a fotografia ocupar o ecrã. O texto fica curto: o que é a divisão, e nada mais.</p>
+</div>
+<figure class="frame reveal">
+<img src="../../assets/demos/nord-sala.webp" srcset="../../assets/demos/nord-sala-sm.webp 800w, ../../assets/demos/nord-sala.webp 1600w" sizes="(min-width: 860px) 50vw, 100vw" alt="Sala de estar com sofá cinzento, mesa de pedra e um quadro grande na parede." width="1600" height="1000" loading="lazy" decoding="async">
+<figcaption>Sala de estar, com pedra e linho.</figcaption>
+</figure>
+</div>
+</section>
+<section class="full" id="estudo">
+<img src="../../assets/demos/nord-detalhe.webp" srcset="../../assets/demos/nord-detalhe-sm.webp 800w, ../../assets/demos/nord-detalhe.webp 1600w" sizes="100vw" alt="Sala branca aberta para um pátio com relva e uma árvore." width="1600" height="1000" loading="lazy" decoding="async">
+<div class="w studies" style="padding-top:28px">
+<figure>
+<p class="kicker">Estudo 01</p>
+<h2>Abertura para o pátio</h2>
+<p class="lead">Uma parede de vidro, um plano de relva e a árvore a marcar a sombra.</p>
+</figure>
+<figure>
+<p class="kicker">Estudo 02</p>
+<h2>A casa ao fim do dia</h2>
+<p class="lead">A fachada fecha-se para a rua e abre a luz para dentro.</p>
+</figure>
+</div>
+</section>
+<section id="contacto">
+<div class="w">
+<p class="kicker">Contacto</p>
+<h2>Um site neste tom.</h2>
+<p class="lead">O botão abre o WhatsApp da Gomes IA Digital.</p>
+<p style="margin-top:22px"><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero um site como este</a></p>
+</div>
+</section>
+</main>
+<footer><div class="w">Criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></div></footer>
+<script src="../../assets/bibo-widget.js" defer></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
+</body>
+</html>
