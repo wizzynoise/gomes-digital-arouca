@@ -12,56 +12,74 @@ if (location.hostname.endsWith('github.io')) {
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leonor Matos — Gomes IA Digital</title>
-<meta name="description" content="Exemplo de página de marca pessoal, com retrato e áreas de trabalho. Criado por Gomes IA Digital.">
+<title>Leonor Matos</title>
+<meta name="description" content="Marca pessoal: retrato, ofício e uma seleção curta de peças. Criado por Gomes IA Digital.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://gomesiadigital.com/demos/leonor-matos/">
 <meta property="og:url" content="https://gomesiadigital.com/demos/leonor-matos/">
 <meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
-<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-:root{--bg:#f6f1ea;--ink:#1c1714;--mut:#5c534c;--line:#1c17141a;--clay:#8c4a3a}
+:root{--bg:#f6f1ea;--ink:#1c1714;--mut:#5c534c;--line:#1c17141f;--clay:#8c4a3a;--sand:#e7d9cc}
 *{box-sizing:border-box;margin:0}
 html,body{overflow-x:clip}
-html{scroll-padding-top:80px}
-body{font:18px/1.65 Georgia,"Iowan Old Style",Palatino,serif;background:var(--bg);color:var(--ink);padding-bottom:72px}
-img{max-width:100%;height:auto;display:block}
+html{scroll-padding-top:84px}
+body{font:18px/1.65 Georgia,"Iowan Old Style",Palatino,serif;background:var(--bg);color:var(--ink)}
+img{max-width:100%;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--clay);outline-offset:3px}
-.w{width:min(100%,1040px);margin-inline:auto;padding-inline:24px}
-header{position:sticky;top:0;z-index:5;background:#f6f1eaf2;border-bottom:1px solid var(--line)}
-.nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;min-height:72px}
-.logo{text-decoration:none;font-size:20px}
-.nav ul{display:flex;flex:1;flex-wrap:wrap;gap:4px 16px;list-style:none;padding:0}
+.w{width:min(100%,1080px);margin-inline:auto;padding-inline:clamp(20px,4vw,40px)}
+header{position:sticky;top:0;z-index:5;background:#f6f1eaf5;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:12px 24px;min-height:76px}
+.logo{text-decoration:none;font-size:22px;letter-spacing:-.03em}
+.nav ul{display:flex;flex:1;justify-content:flex-end;gap:4px 20px;list-style:none;padding:0}
 .nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
-.nav ul a{font:600 14px/1 system-ui,sans-serif;color:var(--mut)}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;background:var(--ink);color:var(--bg);text-decoration:none;font:600 14px/1 system-ui,sans-serif}
-h1{font-weight:500;font-size:clamp(48px,7vw,84px);line-height:.95;letter-spacing:-.03em}
-h2{font-weight:500;font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em}
-.kicker{font:700 12px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
-.lead{color:var(--mut);max-width:38em}
-.hero{display:grid;gap:32px;align-items:end;padding-block:36px 20px}
-@media(min-width:860px){.hero{grid-template-columns:.8fr 1.1fr;min-height:calc(100svh - 72px);align-items:center}}
-.hero img{width:100%;max-height:78vh;object-fit:cover;object-position:center 15%}
-section{padding-block:72px}
-.areas{display:grid;gap:18px;margin-top:28px}
-@media(min-width:800px){.areas{grid-template-columns:1fr 1fr 1fr}}
-.areas article{border-top:1px solid var(--ink);padding-top:16px}
-.areas h3{font-weight:500;font-size:26px;margin-bottom:8px}
-.areas p{color:var(--mut);font-size:16px}
-.path{display:grid;gap:0;margin-top:28px}
-.path div{display:grid;gap:6px;padding:18px 0;border-top:1px solid var(--line)}
-@media(min-width:700px){.path div{grid-template-columns:120px 1fr;gap:24px;align-items:baseline}}
-.path b{font:700 13px/1 system-ui,sans-serif;letter-spacing:.12em}
-.work{display:grid;gap:14px;margin-top:28px}
-@media(min-width:800px){.work{grid-template-columns:1.2fr .8fr}.work article:first-child{grid-row:span 2}}
-.work article{min-height:180px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end}
-.work h3{font-weight:500;font-size:28px}
+.nav ul a{font:600 13px/1 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.nav ul a:hover{color:var(--ink)}
+.menu{display:none;min-height:44px;margin-left:auto;padding:0 12px;border:1px solid var(--ink);background:transparent;font:700 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;background:var(--ink);color:var(--bg);text-decoration:none;font:600 14px/1 system-ui,sans-serif}
+.btn:hover{background:var(--clay)}
+h1{font-weight:500;font-size:clamp(52px,7.4vw,92px);line-height:.92;letter-spacing:-.04em}
+h2{font-weight:500;font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.03em;margin:8px 0 0}
+.kicker{font:700 12px/1 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin:0 0 14px}
+.lead{color:var(--mut);max-width:36rem;margin-top:16px}
+.hero{display:grid;gap:36px;align-items:end;padding-block:28px 8px}
+.portrait{margin:0;background:#e7d9cc}
+.portrait img{width:100%;height:min(78vh,760px);object-fit:cover;object-position:center 8%}
+section{padding-block:clamp(72px,9vw,112px)}
+.areas{display:grid;gap:0;margin-top:36px;border-top:1px solid var(--ink)}
+.areas article{padding:22px 0 8px;border-bottom:1px solid var(--line)}
+.areas h3{font-weight:500;font-size:28px;letter-spacing:-.03em;margin:0 0 8px}
+.areas p{margin:0;color:var(--mut);font-size:17px;max-width:36ch}
+.path{margin-top:36px;border-top:1px solid var(--ink)}
+.path li{display:grid;gap:8px;list-style:none;padding:22px 0;border-bottom:1px solid var(--line)}
+.path b{font:700 13px/1 system-ui,sans-serif;letter-spacing:.14em;color:var(--clay)}
+.path p{margin:0;max-width:42rem}
+.work{display:grid;gap:14px;margin-top:32px}
+.work article{min-height:200px;padding:24px;display:flex;flex-direction:column;justify-content:space-between}
+.work h3{font-weight:500;font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;margin:16px 0 0}
 .a{background:#1c1714;color:#f6f1ea}
-.b{background:#e4d5c8}
+.b{background:var(--sand)}
 .c{background:#8c4a3a;color:#f6f1ea}
-footer{padding:28px 0 12px;color:var(--mut);font:14px/1.5 system-ui,sans-serif;border-top:1px solid var(--line)}
-footer a{color:var(--clay)}
+.a .kicker,.c .kicker{color:#f0d2c6}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;padding:28px 0 20px;color:var(--mut);font:14px/1.5 system-ui,sans-serif;border-top:1px solid var(--line)}
+footer a{color:var(--clay);font-weight:700}
+@media(min-width:860px){
+  .hero{grid-template-columns:minmax(0,.82fr) minmax(0,1fr);min-height:calc(100svh - 76px);align-items:center;gap:64px}
+  .areas{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .areas article{padding:28px 28px 12px 0;border-bottom:0}
+  .areas article+article{border-left:1px solid var(--line);padding-left:28px}
+  .path li{grid-template-columns:88px minmax(0,1fr);gap:24px;align-items:baseline}
+  .work{grid-template-columns:1.25fr .75fr}
+  .work article:first-child{grid-row:span 2;min-height:420px}
+}
+@media(max-width:760px){
+  .menu{display:inline-flex;align-items:center}
+  .nav{position:relative}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:76px;flex-direction:column;padding:8px 20px 16px;background:#f6f1ea;border-bottom:1px solid var(--line)}
+  .nav ul.is-open{display:flex}
+  .portrait img{height:min(68vh,520px)}
+}
 @media(prefers-reduced-motion:no-preference){
   .work article{transition:transform .35s ease}
   .work article:hover{transform:translateY(-4px)}
@@ -73,21 +91,23 @@ footer a{color:var(--clay)}
 <header>
 <nav class="w nav" aria-label="Leonor Matos">
 <a class="logo" href="#topo">Leonor Matos</a>
-<ul>
+<button class="menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<ul id="menu">
 <li><a href="#oficio">Ofício</a></li>
 <li><a href="#caminho">Caminho</a></li>
 <li><a href="#trabalho">Trabalho</a></li>
 </ul>
-<a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp</a>
 </nav>
 </header>
 <main id="topo">
 <section class="hero w">
-<img src="../../assets/demos/leonor-retrato.webp" srcset="../../assets/demos/leonor-retrato-sm.webp 800w, ../../assets/demos/leonor-retrato.webp 1000w" sizes="(min-width: 860px) 40vw, 100vw" alt="Retrato de uma mulher de braços cruzados, com blazer preto, junto a uma parede de vidro." width="1000" height="1400" fetchpriority="high" decoding="async">
+<figure class="portrait">
+<img src="../../assets/demos/leonor-retrato.webp" srcset="../../assets/demos/leonor-retrato-sm.webp 800w, ../../assets/demos/leonor-retrato.webp 1000w" sizes="(min-width: 860px) 42vw, 100vw" alt="Retrato de uma mulher de braços cruzados, com blazer preto, junto a uma parede de vidro." width="1000" height="1400" fetchpriority="high" decoding="async">
+</figure>
 <div>
 <p class="kicker">Marca pessoal</p>
 <h1>Leonor Matos</h1>
-<p class="lead">Uma página para quem trabalha com marcas: o retrato, o ofício e uma seleção curta de peças. Sem currículo em tabela.</p>
+<p class="lead">Uma página para quem trabalha com marcas: o retrato, o ofício e uma seleção curta. Sem tabela de currículo.</p>
 </div>
 </section>
 <section id="oficio">
@@ -105,11 +125,11 @@ footer a{color:var(--clay)}
 <div class="w">
 <p class="kicker">Caminho</p>
 <h2>Como a página conta o percurso.</h2>
-<div class="path">
-<div><b>01</b><p>Uma conversa para perceber o ofício e o tom.</p></div>
-<div><b>02</b><p>Uma direção: palavras, cor e o que a fotografia deve mostrar.</p></div>
-<div><b>03</b><p>Uma presença que se percebe em poucos ecrãs.</p></div>
-</div>
+<ol class="path">
+<li><b>01</b><p>Uma conversa para perceber o ofício e o tom.</p></li>
+<li><b>02</b><p>Uma direção: palavras, cor e o que a fotografia deve mostrar.</p></li>
+<li><b>03</b><p>Uma presença que se percebe em poucos ecrãs.</p></li>
+</ol>
 </div>
 </section>
 <section id="trabalho">
@@ -121,12 +141,25 @@ footer a{color:var(--clay)}
 <article class="b"><p class="kicker">Página</p><h3>Texto curto.</h3></article>
 <article class="c"><p class="kicker">Imagem</p><h3>Um retrato.</h3></article>
 </div>
-<p class="lead" style="margin-top:28px">O botão abre o WhatsApp da Gomes IA Digital.</p>
-<p style="margin-top:18px"><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero um site como este</a></p>
+<p class="lead">A mensagem segue para a Gomes IA Digital.</p>
+<p style="margin-top:20px"><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero um site como este</a></p>
 </div>
 </section>
 </main>
-<footer><div class="w">Criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></div></footer>
+<footer class="w"><span>Leonor Matos</span><span>Criado por <a href="https://gomesiadigital.com" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></span></footer>
+<script>
+(function () {
+  var btn = document.querySelector('.menu');
+  var menu = document.getElementById('menu');
+  btn.addEventListener('click', function () {
+    var open = menu.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function (event) {
+    if (event.target.closest('a')) { menu.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); }
+  });
+})();
+</script>
 <script src="../../assets/bibo-widget.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
 </body>
