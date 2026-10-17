@@ -28,27 +28,39 @@ button,input,select{font:inherit;color:inherit}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.app{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100vh}
-.side{background:var(--side);color:#f6f4eb;padding:22px 14px 18px;display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh}
-.mark{display:flex;flex-direction:column;gap:2px;padding:4px 10px 18px;text-decoration:none}
-.mark strong{font-size:18px;letter-spacing:-.04em}
-.mark span{color:#9eb4ae;font-size:12px}
-.side a.item{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;text-decoration:none;color:#d7e6e1;font-weight:700}
-.side a.item[aria-current="page"]{background:var(--lime);color:var(--ink)}
-.side a.item:hover{background:#1b3c3e}
-.side a.item[aria-current="page"]:hover{background:var(--lime)}
-.side .grow{flex:1}
+.app{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100vh;background:linear-gradient(#102a2b,#102a2b) 0 0 / 232px 100% no-repeat,var(--bg)}
+.side{background:#102a2b;color:#f6f4eb;padding:22px 14px 16px;display:flex;flex-direction:column;gap:4px;min-height:100vh;align-self:stretch}
+.mark{display:flex;align-items:center;gap:10px;padding:2px 8px 18px;text-decoration:none;color:#f6f4eb}
+.logo-mark{width:32px;height:32px;border-radius:9px;background:#c7f36a;display:grid;gap:3px;padding:8px 7px;flex:none}
+.logo-mark i{display:block;height:3px;border-radius:2px;background:#102a2b}
+.logo-mark i:nth-child(2){width:70%}
+.logo-mark i:nth-child(3){width:45%}
+.mark strong{display:block;font-size:16px;letter-spacing:-.04em}
+.mark em{display:block;font-style:normal;color:#9eb4ae;font-size:12px}
+.side a.navlink{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 12px;border-radius:10px;text-decoration:none;background:transparent;color:#e7f2ef;font-weight:700}
+.side a.navlink svg{width:16px;height:16px;flex:none}
+.side a.navlink[aria-current="page"]{background:var(--lime);color:var(--ink)}
+.side a.navlink:hover{background:#1c3d3f}
+.side a.navlink[aria-current="page"]:hover{background:var(--lime)}
+.side :focus-visible{outline-color:#c7f36a}
+.who{margin-top:auto;display:flex;align-items:center;gap:10px;padding:14px 8px 4px;border-top:1px solid #2c4a4c}
+.avatar{width:36px;height:36px;border-radius:50%;background:#1c3d3f;color:#c7f36a;display:grid;place-items:center;font-weight:800;flex:none}
+.who b{display:block;font-size:13px}
+.who small{display:block;color:#9eb4ae;font-size:12px}
 .shell{min-width:0;display:flex;flex-direction:column}
-.topbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 20px 0}
+.topbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .menu{display:none;min-height:44px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:#fff;font-weight:800;cursor:pointer}
 .search{flex:1 1 220px;min-width:0}
 .search input{width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}
 .wa{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border-radius:999px;background:var(--ink);color:#f6f4eb;text-decoration:none;font-weight:800;white-space:nowrap}
-.main{padding:16px 20px 28px;display:grid;gap:14px;min-width:0}
+.main{padding:20px;display:grid;gap:14px;min-width:0;align-content:start}
 .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;min-width:0}
-.kpi b{display:block;font-size:28px;letter-spacing:-.04em;font-variant-numeric:tabular-nums;line-height:1.1}
-.kpi span{color:var(--mut);font-size:12px;font-weight:700}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px 12px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.kpi-head{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--mut);font-size:12px;font-weight:800}
+.kpi-head svg{width:16px;height:16px;flex:none}
+.kpi b{display:block;font-size:28px;letter-spacing:-.04em;font-variant-numeric:tabular-nums;line-height:1}
+.spark{display:block;width:100%;height:28px}
+.spark polyline{fill:none;stroke:#3f5c12;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;min-width:0}
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 12px 0}
 .filters{display:flex;flex-wrap:wrap;gap:6px}
@@ -67,11 +79,11 @@ tbody tr:hover td{background:#f3f7f5}
 .chip.out{background:#f8e4e0;color:#7a2e28}
 td button,.ghost{min-height:36px;padding:0 10px;border-radius:8px;border:1px solid var(--ink);background:#fff;font-weight:800;cursor:pointer}
 .cards{display:none}
-.item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
-.item .ref{font-weight:800}
-.item .meta{color:var(--mut);font-size:13px}
-.item .qty{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;text-align:right}
-.item .act{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.stock{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.stock .ref{font-weight:800}
+.stock .meta{color:var(--mut);font-size:13px}
+.stock .qty{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;text-align:right}
+.stock .act{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin-top:8px}
 .lower{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr) minmax(0,.9fr);gap:12px}
 .lower .panel{padding:16px}
 .lower h2{margin:0 0 12px;font-size:15px;letter-spacing:-.02em}
@@ -89,8 +101,8 @@ form button{min-height:44px;border:0;border-radius:10px;background:var(--ink);co
 footer{padding:4px 20px 20px;color:var(--mut);font-size:13px}
 footer a{color:#3f5c12;font-weight:800}
 @media(max-width:800px){
-  .app{grid-template-columns:1fr}
-  .side{display:none;position:static;height:auto;padding-bottom:8px}
+  .app{grid-template-columns:1fr;background:var(--bg)}
+  .side{display:none;position:static;min-height:0;padding-bottom:8px}
   .side.is-open{display:flex}
   .menu{display:inline-flex;align-items:center}
   .kpis{grid-template-columns:1fr 1fr}
@@ -111,13 +123,15 @@ footer a{color:#3f5c12;font-weight:800}
 <body>
 <div class="app">
 <aside class="side" id="side">
-<a class="mark" href="#inventario"><strong>Nexora</strong><span>Inventory</span></a>
-<a class="item" href="#inventario" aria-current="page">Inventário</a>
-<a class="item" href="#grafico">Por categoria</a>
-<a class="item" href="#entrada">Entrada</a>
-<a class="item" href="#movimentos">Movimentos</a>
+<a class="mark" href="#inventario"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><strong>Nexora</strong><em>Inventory</em></span></a>
+<a class="navlink" href="#inventario" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Inventário</a>
+<a class="navlink" href="#grafico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 19h16M7 16V9M12 16V5M17 16v-4"/></svg>Por categoria</a>
+<a class="navlink" href="#entrada"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Entrada</a>
+<a class="navlink" href="#movimentos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h13"/></svg>Movimentos</a>
+<div class="who"><span class="avatar" aria-hidden="true">N</span><span><b>Nexora</b><small>Armazém</small></span></div>
 </aside>
 <div class="shell">
+<main class="main" id="inventario">
 <header class="topbar">
 <button class="menu" type="button" id="nav-toggle" aria-expanded="false" aria-controls="side">Menu</button>
 <form class="search" role="search" onsubmit="return false">
@@ -126,14 +140,13 @@ footer a{color:#3f5c12;font-weight:800}
 </form>
 <a class="wa" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Pedir um painel</a>
 </header>
-<main class="main" id="inventario">
 <h1 class="sr">Nexora Inventory</h1>
 <p id="live" class="sr" aria-live="polite"></p>
 <section class="kpis" aria-label="Resumo">
-<article class="kpi"><b id="sum-refs">0</b><span>Referências</span></article>
-<article class="kpi"><b id="sum-qty">0</b><span>Unidades</span></article>
-<article class="kpi"><b id="sum-low">0</b><span>Stock baixo</span></article>
-<article class="kpi"><b id="sum-moves">0</b><span>Movimentos</span></article>
+<article class="kpi"><div class="kpi-head"><span>Referências</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 7h11M8 12h11M8 17h11M5 7h.01M5 12h.01M5 17h.01"/></svg></div><b id="sum-refs">0</b><svg class="spark" viewBox="0 0 120 28" aria-hidden="true"><polyline points="2,20 18,18 34,16 50,17 66,12 82,13 100,8 118,9"/></svg></article>
+<article class="kpi"><div class="kpi-head"><span>Unidades</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h16v11H4zM8 8V6h8v2"/></svg></div><b id="sum-qty">0</b><svg class="spark" viewBox="0 0 120 28" aria-hidden="true"><polyline points="2,18 20,16 38,19 56,11 74,13 92,7 118,8"/></svg></article>
+<article class="kpi"><div class="kpi-head"><span>Stock baixo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4 3 19h18zM12 10v4M12 17h.01"/></svg></div><b id="sum-low">0</b><svg class="spark" viewBox="0 0 120 28" aria-hidden="true"><polyline points="2,10 22,12 42,9 62,16 82,14 102,20 118,18"/></svg></article>
+<article class="kpi"><div class="kpi-head"><span>Movimentos</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 7h11l-3-3M19 17H8l3 3"/></svg></div><b id="sum-moves">0</b><svg class="spark" viewBox="0 0 120 28" aria-hidden="true"><polyline points="2,16 18,14 36,18 54,10 72,15 90,9 118,11"/></svg></article>
 </section>
 <section class="panel" aria-labelledby="stock-title">
 <div class="toolbar">
@@ -232,7 +245,7 @@ footer a{color:#3f5c12;font-weight:800}
     }).join('') || '<tr><td colspan="7">Sem resultados.</td></tr>';
     cards.innerHTML = list.map(function (it) {
       var st = state(it.qty);
-      return '<article class="item"><div class="ref">' + esc(it.ref) + '</div><span class="chip ' + st[1] + '">' + st[0] + '</span><div class="meta">' + esc(it.name) + '</div><div class="qty">' + it.qty + '</div><div class="act"><span class="meta">' + esc(it.cat) + ' · ' + esc(it.loc) + '</span><button type="button" data-out="' + esc(it.ref) + '">Retirar 1</button></div></article>';
+      return '<article class="stock"><div class="ref">' + esc(it.ref) + '</div><span class="chip ' + st[1] + '">' + st[0] + '</span><div class="meta">' + esc(it.name) + '</div><div class="qty">' + it.qty + '</div><div class="act"><span class="meta">' + esc(it.cat) + ' · ' + esc(it.loc) + '</span><button type="button" data-out="' + esc(it.ref) + '">Retirar 1</button></div></article>';
     }).join('') || empty;
     var units = items.reduce(function (n, it) { return n + it.qty; }, 0);
     var low = items.filter(function (it) { return it.qty < 15; }).length;
