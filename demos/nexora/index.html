@@ -77,7 +77,9 @@ tbody tr:hover td{background:#f3f7f5}
 .chip.ok{background:#e5f4c8;color:#34510f}
 .chip.low{background:#fff1cc;color:#7a4e08}
 .chip.out{background:#f8e4e0;color:#7a2e28}
-td button,.ghost{min-height:36px;padding:0 10px;border-radius:8px;border:1px solid var(--ink);background:#fff;font-weight:800;cursor:pointer}
+td button,.stock button,.ghost{appearance:none;min-height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--ink);background:#fff;color:var(--ink);font-weight:800;cursor:pointer}
+td button:hover,.stock button:hover,.ghost:hover{background:#eef3f1}
+td button:active,.stock button:active,.ghost:active{background:#d5e0dc}
 .cards{display:none}
 .stock{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
 .stock .ref{font-weight:800}
