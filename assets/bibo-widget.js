@@ -18,7 +18,7 @@
 
   var greet = demo
     ? 'Olá. Sou o Bibo, da Gomes IA Digital. Esta página é um exemplo de site.'
-    : 'Olá. Sou o Bibo, assistente da Gomes IA Digital. Escolhe um assunto.';
+    : 'Olá. Sou o Bibo, da Gomes IA Digital. Sites e ferramentas para o teu negócio receber mais contactos, em Portugal. O site simples é desde 80 €. Escolhe um assunto.';
   var topics = {
     site: ['Quero um website', 'O site simples é desde 80 €: uma página com até 5 secções, versão para telemóvel, botões de contacto, mapa e horário, e título e descrição básicos. Escolhes o design entre várias opções. O domínio está incluído até um valor definido, e a renovação confirma-se à parte. Entram algumas atualizações, com o âmbito combinado antes. Há 1 ronda de alterações, e a entrega fica cerca de 7 dias depois do conteúdo. Um site maior ou uma aplicação tem orçamento próprio.', [['Preços', '#preco'], ['Exemplos', '#demos'], ['Automatizações', '#automatizacoes']]],
     exemplos: ['Ver exemplos', 'Atelier Nórd, Leonor Matos, Nexora Inventory e BRUMA Coffee são exemplos de páginas.', [['Atelier Nórd', 'atelier-nord'], ['Leonor Matos', 'leonor-matos'], ['Nexora Inventory', 'nexora'], ['BRUMA Coffee', 'bruma']]],
