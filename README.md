@@ -14,20 +14,37 @@ Every WhatsApp control is a link to `https://wa.me/message/5VB7SV74VVEKE1` with 
 
 ## Portfolio
 
-The homepage shows four project cards. Desktop and mobile screenshots crossfade on hover, focus, or tap.
+The homepage shows four example cards: Atelier Nórd, Leonor Matos, Nexora Inventory, and BRUMA Coffee. Desktop and mobile screenshots crossfade on hover, focus, or tap.
 
-| Project | State | Screenshot |
+`/projetos` uses the same card style for completed work, in this order:
+
+| Name on the card | Link | Screenshot |
 | --- | --- | --- |
-| 7Jardins | Real project, business closed. Live archive at https://7jardins26.vercel.app | `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` |
-| SjGomes Sistemas de Som | Real project, no public address | `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` |
-| Barbearia Leme | Fictional concept | `assets/projects/barbearia-leme-desktop.webp`, `assets/projects/barbearia-leme-mobile.webp` |
-| Mesa da Encosta | Fictional concept | `assets/projects/mesa-da-encosta-desktop.webp`, `assets/projects/mesa-da-encosta-mobile.webp` |
+| 7Jardins - Serviços de jardinagem | https://7jardins26.vercel.app | `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` |
+| SjGomes - Sistemas de som | None | `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` |
+| Barbearia Leme | `/demos/barbearia-leme/` | `assets/projects/barbearia-leme-desktop.webp`, `assets/projects/barbearia-leme-mobile.webp` |
+| Mesa da Encosta | `/demos/mesa-da-encosta/` | `assets/projects/mesa-da-encosta-desktop.webp`, `assets/projects/mesa-da-encosta-mobile.webp` |
 
-Casa do Vale and Barro & Linho stay as demonstration pages and are linked under the cards. The older photographs stay in `assets/demos/` because the demo pages still use them.
+Each card shows the name, one short line about the kind of site, and a link only where one exists. Casa do Vale and Barro & Linho stay on disk and are not linked from the homepage or `/projetos`.
+
+## Pages
+
+`servicos.html`, `projetos.html`, and `sobre.html` are served at `/servicos`, `/projetos`, and `/sobre`. They are listed in `sitemap.xml`. `/servicos#assistencia` is the technology-help block.
 
 ## Demonstration sites
 
-Four fictional businesses live under `demos/`. Each page is `noindex` and is not listed in `sitemap.xml`, so a made-up shop is not offered to search engines as a real local business. Photo sources are in `CREDITS.md`.
+Example pages live under `demos/`. Each page is `noindex` and is not listed in `sitemap.xml`. Photo sources are in `CREDITS.md`.
+
+| Path | Page |
+| --- | --- |
+| `demos/atelier-nord/` | Architecture studio example |
+| `demos/leonor-matos/` | Personal-brand example |
+| `demos/nexora/` | Inventory prototype, in the browser only |
+| `demos/bruma/` | Coffee storefront; each Comprar button uses the WhatsApp short link |
+| `demos/barbearia-leme/` | Barbershop page linked from `/projetos` |
+| `demos/mesa-da-encosta/` | Restaurant page linked from `/projetos` |
+| `demos/casa-do-vale/` | Kept on disk, not linked from the homepage or `/projetos` |
+| `demos/barro-e-linho/` | Kept on disk, not linked from the homepage or `/projetos` |
 
 ## Run locally
 
@@ -54,12 +71,12 @@ The repository root is a Cloudflare Worker with static assets, connected to Work
 | `index.html` | Homepage, search metadata, and contact script |
 | `assets/home.css` | Homepage styles |
 | `assets/bibo-widget.js` | Bibo assistant on the homepage and demonstrations |
-| `assets/projects/` | Desktop and mobile screenshots for the four homepage cards |
+| `assets/projects/` | Desktop and mobile screenshots for the homepage examples and `/projetos` |
+| `servicos.html` | Services page at `/servicos` |
+| `projetos.html` | Completed projects at `/projetos` |
+| `sobre.html` | About page at `/sobre` |
 | `politica-privacidade.html` | Privacy policy in European Portuguese |
-| `demos/barbearia-leme/` | Fictional barbershop concept |
-| `demos/mesa-da-encosta/` | Fictional restaurant concept |
-| `demos/casa-do-vale/` | Fictional rural stay concept |
-| `demos/barro-e-linho/` | Fictional shop concept |
+| `demos/` | Example pages, all `noindex` |
 | `assets/demos/` | Compressed WebP photographs for the concepts |
 | `CREDITS.md` | Photograph authors and source URLs |
 | `assets/monograma.svg` | GIA monogram |

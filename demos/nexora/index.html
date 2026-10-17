@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<script>
+if (location.hostname.endsWith('github.io')) {
+  var meta = document.createElement('meta');
+  meta.name = 'robots';
+  meta.content = 'noindex';
+  document.head.appendChild(meta);
+  location.replace('https://gomesiadigital.com' + location.pathname.replace('/gomes-digital-arouca', '') + location.hash);
+}
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexora Inventory — Gomes IA Digital</title>
+<meta name="description" content="Protótipo de inventário com tabela, pesquisa, filtros e movimentos de exemplo. Criado por Gomes IA Digital.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://gomesiadigital.com/demos/nexora/">
+<meta property="og:url" content="https://gomesiadigital.com/demos/nexora/">
+<meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#f4f7f6;--ink:#102a2b;--mut:#4d6361;--line:#d5e0dc;--card:#fff;--lime:#c7f36a}
+*{box-sizing:border-box;margin:0}
+html,body{overflow-x:clip}
+body{font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);padding-bottom:72px}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:14px 20px;background:#102a2b;color:#f6f4eb}
+.top strong{font-size:18px;letter-spacing:-.03em}
+.top span{color:#c9ddd8;font-size:13px}
+.top a{margin-left:auto;display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:999px;background:var(--lime);color:var(--ink);text-decoration:none;font-weight:800}
+.wrap{width:min(100%,1100px);margin:20px auto;padding:0 16px;display:grid;gap:16px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:800px){.cards{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card b{display:block;font-size:28px;letter-spacing:-.04em}
+.card span{color:var(--mut);font-size:13px;font-weight:700}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bar input{flex:1 1 180px;min-height:44px;padding:8px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+.filters{display:flex;flex-wrap:wrap;gap:6px}
+.filters button{min-height:40px;padding:6px 12px;border-radius:999px;border:1px solid var(--ink);background:#fff;font-weight:700;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--lime)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+td button{min-height:36px;padding:4px 10px;border-radius:8px;border:1px solid var(--ink);background:#fff;font-weight:700;cursor:pointer}
+.layout{display:grid;gap:16px}
+@media(min-width:900px){.layout{grid-template-columns:1.3fr .7fr}}
+.chart{display:grid;gap:8px}
+.row{display:grid;grid-template-columns:88px 1fr 36px;gap:8px;align-items:center;font-size:13px}
+.row i{display:block;height:12px;border-radius:6px;background:#102a2b;width:0}
+form{display:grid;gap:8px}
+label{display:grid;gap:4px;font-size:13px;font-weight:700}
+input,select{min-height:44px;padding:8px 10px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+form button{min-height:48px;border:0;border-radius:10px;background:#102a2b;color:#f6f4eb;font-weight:800;cursor:pointer}
+.moves{list-style:none;padding:0;display:grid;gap:8px;max-height:280px;overflow:auto}
+.moves li{display:flex;justify-content:space-between;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--line);font-size:13px}
+footer{width:min(100%,1100px);margin:8px auto 0;padding:8px 16px 16px;color:var(--mut);font-size:14px}
+footer a{color:#3f5c12;font-weight:800}
+h1{font-size:16px;font-weight:800}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.row i{transition:none}}
+@media(prefers-reduced-motion:no-preference){.row i{transition:width .35s ease}}
+</style>
+</head>
+<body>
+<header class="top">
+<strong>Nexora Inventory</strong>
+<span>Inventário de armazém</span>
+<a href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero um painel como este</a>
+</header>
+<main class="wrap">
+<h1 class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Nexora Inventory, protótipo com dados de exemplo</h1>
+<section class="cards" aria-label="Resumo">
+<article class="card"><b id="sum-refs">0</b><span>Referências</span></article>
+<article class="card"><b id="sum-qty">0</b><span>Unidades</span></article>
+<article class="card"><b id="sum-low">0</b><span>Abaixo de 15</span></article>
+<article class="card"><b id="sum-moves">0</b><span>Movimentos</span></article>
+</section>
+<div class="bar">
+<label class="sr" for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Pesquisar</label>
+<input id="q" type="search" placeholder="Pesquisar referência ou nome" autocomplete="off">
+<div class="filters" role="group" aria-label="Filtrar por categoria">
+<button type="button" data-cat="todas" aria-pressed="true">Todas</button>
+<button type="button" data-cat="Escritório" aria-pressed="false">Escritório</button>
+<button type="button" data-cat="Embalagem" aria-pressed="false">Embalagem</button>
+<button type="button" data-cat="Proteção" aria-pressed="false">Proteção</button>
+<button type="button" data-cat="Logística" aria-pressed="false">Logística</button>
+</div>
+</div>
+<div class="layout">
+<section class="panel">
+<div class="scroll">
+<table>
+<caption class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Existências</caption>
+<thead><tr><th>Referência</th><th>Material</th><th>Categoria</th><th>Local</th><th>Qtd.</th><th></th></tr></thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+</section>
+<div style="display:grid;gap:16px">
+<section class="panel" aria-labelledby="chart-title">
+<h2 id="chart-title" style="font-size:16px;margin-bottom:10px">Unidades por categoria</h2>
+<div class="chart" id="chart"></div>
+</section>
+<section class="panel">
+<h2 style="font-size:16px;margin-bottom:10px">Entrada</h2>
+<form id="entry">
+<label>Referência<input name="ref" required maxlength="12" placeholder="NX-700"></label>
+<label>Material<input name="name" required maxlength="40" placeholder="Nome do material"></label>
+<label>Categoria<select name="cat"><option>Escritório</option><option>Embalagem</option><option>Proteção</option><option>Logística</option></select></label>
+<label>Quantidade<input name="qty" required type="number" min="1" max="999" value="1"></label>
+<button type="submit">Registar entrada</button>
+</form>
+</section>
+<section class="panel">
+<h2 style="font-size:16px;margin-bottom:10px">Movimentos</h2>
+<ul class="moves" id="moves"></ul>
+</section>
+</div>
+</div>
+</main>
+<footer>Criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></footer>
+<script>
+(function () {
+  var items = [
+    { ref: 'NX-104', name: 'Caixa arquivo A4', cat: 'Escritório', loc: 'A-01', qty: 48 },
+    { ref: 'NX-210', name: 'Filme estirável', cat: 'Embalagem', loc: 'B-12', qty: 16 },
+    { ref: 'NX-318', name: 'Luvas de trabalho', cat: 'Proteção', loc: 'C-03', qty: 120 },
+    { ref: 'NX-422', name: 'Palete euro', cat: 'Logística', loc: 'D-01', qty: 22 },
+    { ref: 'NX-507', name: 'Etiquetas térmicas', cat: 'Escritório', loc: 'A-08', qty: 9 },
+    { ref: 'NX-611', name: 'Fita de embalagem', cat: 'Embalagem', loc: 'B-04', qty: 64 }
+  ];
+  var moves = [
+    { kind: 'Entrada', ref: 'NX-318', qty: 40 },
+    { kind: 'Saída', ref: 'NX-507', qty: 6 }
+  ];
+  var cat = 'todas';
+  var q = '';
+  var rows = document.getElementById('rows');
+  var chart = document.getElementById('chart');
+  var moveList = document.getElementById('moves');
+
+  function visible() {
+    return items.filter(function (it) {
+      var blob = (it.ref + ' ' + it.name).toLowerCase();
+      return blob.indexOf(q) !== -1 && (cat === 'todas' || it.cat === cat);
+    });
+  }
+
+  function render() {
+    var list = visible();
+    rows.innerHTML = list.map(function (it) {
+      return '<tr><td>' + it.ref + '</td><td>' + it.name + '</td><td>' + it.cat + '</td><td>' + it.loc + '</td><td>' + it.qty + '</td><td><button type="button" data-out="' + it.ref + '">Retirar 1</button></td></tr>';
+    }).join('') || '<tr><td colspan="6">Sem resultados.</td></tr>';
+    var units = items.reduce(function (n, it) { return n + it.qty; }, 0);
+    var low = items.filter(function (it) { return it.qty < 15; }).length;
+    document.getElementById('sum-refs').textContent = String(items.length);
+    document.getElementById('sum-qty').textContent = String(units);
+    document.getElementById('sum-low').textContent = String(low);
+    document.getElementById('sum-moves').textContent = String(moves.length);
+    var groups = {};
+    items.forEach(function (it) { groups[it.cat] = (groups[it.cat] || 0) + it.qty; });
+    var max = Math.max.apply(null, Object.keys(groups).map(function (k) { return groups[k]; }).concat([1]));
+    chart.innerHTML = Object.keys(groups).map(function (k) {
+      var w = Math.round(groups[k] / max * 100);
+      return '<div class="row"><span>' + k + '</span><i style="width:' + w + '%"></i><b>' + groups[k] + '</b></div>';
+    }).join('');
+    moveList.innerHTML = moves.map(function (m) {
+      return '<li><span>' + m.kind + ' · ' + m.ref + '</span><b>' + (m.kind === 'Saída' ? '−' : '+') + m.qty + '</b></li>';
+    }).join('');
+  }
+
+  document.getElementById('q').addEventListener('input', function (event) {
+    q = event.target.value.trim().toLowerCase();
+    render();
+  });
+  document.querySelector('.filters').addEventListener('click', function (event) {
+    var button = event.target.closest('button');
+    if (!button) return;
+    cat = button.getAttribute('data-cat');
+    document.querySelectorAll('.filters button').forEach(function (el) {
+      el.setAttribute('aria-pressed', el === button ? 'true' : 'false');
+    });
+    render();
+  });
+  rows.addEventListener('click', function (event) {
+    var button = event.target.closest('button[data-out]');
+    if (!button) return;
+    var ref = button.getAttribute('data-out');
+    var item = items.filter(function (it) { return it.ref === ref; })[0];
+    if (!item || item.qty < 1) return;
+    item.qty -= 1;
+    moves.unshift({ kind: 'Saída', ref: ref, qty: 1 });
+    render();
+  });
+  document.getElementById('entry').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var data = new FormData(event.target);
+    var ref = String(data.get('ref') || '').trim().toUpperCase();
+    var name = String(data.get('name') || '').trim();
+    var qty = Math.max(1, Number(data.get('qty')) || 1);
+    var group = String(data.get('cat'));
+    var found = items.filter(function (it) { return it.ref === ref; })[0];
+    if (found) found.qty += qty;
+    else items.unshift({ ref: ref, name: name, cat: group, loc: '—', qty: qty });
+    moves.unshift({ kind: 'Entrada', ref: ref, qty: qty });
+    event.target.reset();
+    render();
+  });
+  render();
+})();
+</script>
+<script src="../../assets/bibo-widget.js" defer></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
+</body>
+</html>

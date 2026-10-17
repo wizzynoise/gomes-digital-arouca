@@ -7,7 +7,11 @@ These files are screenshots of web pages, not third-party photographs. The homep
 | File | Page |
 | --- | --- |
 | `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` | Services section of https://7jardins26.vercel.app. The crop stops above the contact line. |
-| `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` | Local render of the SjGomes Sistemas de Som site. No public address. |
+| `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` | Local render of the SjGomes - Sistemas de som site. |
+| `assets/projects/atelier-nord-desktop.webp`, `assets/projects/atelier-nord-mobile.webp` | `/demos/atelier-nord/` |
+| `assets/projects/leonor-matos-desktop.webp`, `assets/projects/leonor-matos-mobile.webp` | `/demos/leonor-matos/` |
+| `assets/projects/nexora-desktop.webp`, `assets/projects/nexora-mobile.webp` | `/demos/nexora/` |
+| `assets/projects/bruma-desktop.webp`, `assets/projects/bruma-mobile.webp` | `/demos/bruma/` |
 | `assets/projects/barbearia-leme-desktop.webp`, `assets/projects/barbearia-leme-mobile.webp` | `/demos/barbearia-leme/` |
 | `assets/projects/mesa-da-encosta-desktop.webp`, `assets/projects/mesa-da-encosta-mobile.webp` | `/demos/mesa-da-encosta/` |
 | `assets/demos/barbearia-leme-preview.webp` | `/demos/barbearia-leme/` |
@@ -19,7 +23,17 @@ These files are screenshots of web pages, not third-party photographs. The homep
 
 Demonstration pages use photographs from Unsplash, under the [Unsplash License](https://unsplash.com/license). Attribution is not required by the licence. Authors are listed here anyway.
 
-Files live in `assets/demos/`. Each photograph has a 1600×1000 hero and an 800×600 card (`-sm`).
+Files live in `assets/demos/`. The newer photographs use a full WebP and an 800px-wide `-sm` file. The portrait is 1000×1400; the others in that set are 1600×1000. Older photographs have a 1600×1000 hero and an 800×600 card (`-sm`).
+
+| File | Author | Photograph |
+| --- | --- | --- |
+| `nord-fachada.webp` | R ARCHITECTURE | [Modern house at dusk](https://images.unsplash.com/photo-1600585154340-be6161a56a0c) |
+| `nord-sala.webp` | Unsplash | [Living room](https://images.unsplash.com/photo-1600210492486-724fe5c67fb0) |
+| `nord-detalhe.webp` | R ARCHITECTURE | [White room opening to a courtyard](https://images.unsplash.com/photo-1600607687939-ce8a6c25118c) |
+| `leonor-retrato.webp` | Unsplash | [Portrait](https://images.unsplash.com/photo-1573496359142-b8d87734a5a2) |
+| `bruma-chavena.webp` | Unsplash | [Cup of coffee](https://images.unsplash.com/photo-1495474472287-4d71bcdd2085) |
+| `bruma-graos.webp` | Unsplash | [Roasted coffee beans](https://images.unsplash.com/photo-1447933601403-0c6688de566e) |
+| `bruma-mesa.webp` | Unsplash | [Coffee on a table](https://images.unsplash.com/photo-1509042239860-f550ce710b93) |
 
 | File | Author | Photograph |
 | --- | --- | --- |
