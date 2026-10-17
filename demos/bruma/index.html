@@ -12,53 +12,98 @@ if (location.hostname.endsWith('github.io')) {
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BRUMA Coffee — Gomes IA Digital</title>
-<meta name="description" content="Exemplo de montra para uma marca de café, com produtos e compra pelo WhatsApp. Criado por Gomes IA Digital.">
+<title>BRUMA Coffee</title>
+<meta name="description" content="Café de especialidade. Grão, chávena e filtro da semana, com saco de compras. Criado por Gomes IA Digital.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://gomesiadigital.com/demos/bruma/">
 <meta property="og:url" content="https://gomesiadigital.com/demos/bruma/">
 <meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
-<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-:root{--bg:#f4efe8;--ink:#2a1812;--mut:#6a5146;--bean:#6f3b2a;--foam:#e7d3c0}
+:root{--bg:#f6f1ea;--ink:#241610;--mut:#6b5146;--bean:#6b3a28;--foam:#efe4d6;--card:#fffdf9;--line:#e6d9cc;--copper:#a56b45}
 *{box-sizing:border-box;margin:0}
 html,body{overflow-x:clip}
-html{scroll-padding-top:80px}
-body{font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);padding-bottom:72px}
-img{max-width:100%;height:auto;display:block}
+html{scroll-padding-top:84px}
+body{font:17px/1.6 "Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink)}
+img{max-width:100%;display:block}
 a{color:inherit}
+button{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--bean);outline-offset:3px}
-.w{width:min(100%,1100px);margin-inline:auto;padding-inline:20px}
-header{position:sticky;top:0;z-index:5;background:#f4efe8f2;border-bottom:1px solid #2a181214}
-.nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;min-height:68px}
-.logo{font-family:Georgia,Palatino,serif;font-size:22px;letter-spacing:.14em;text-decoration:none}
-.nav ul{display:flex;flex:1;flex-wrap:wrap;gap:4px 16px;list-style:none;padding:0}
-.nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
-.nav ul a{color:var(--mut);font-weight:650}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;background:var(--bean);color:#f4efe8;text-decoration:none;font-weight:700;border:0}
-h1,h2{font-family:Georgia,Palatino,serif;font-weight:500;letter-spacing:-.03em}
-h1{font-size:clamp(48px,8vw,88px);line-height:.95}
-h2{font-size:clamp(32px,4vw,48px);line-height:1.05}
-.kicker{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--bean)}
-.lead{color:var(--mut);max-width:36em;font-size:18px}
-.hero{position:relative;min-height:88svh;display:grid;align-items:end;color:#f4efe8}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero .veil{position:absolute;inset:0;background:linear-gradient(#2a181233,#2a1812d8)}
-.hero .w{position:relative;padding-block:72px 56px}
-.hero .kicker,.hero .lead{color:#f0e2d4}
-section{padding-block:72px}
-.grid{display:grid;gap:16px}
-@media(min-width:800px){.grid{grid-template-columns:1fr 1fr 1fr}}
-.product{background:#fff;border:1px solid #2a181214;display:flex;flex-direction:column}
-.product img{width:100%;height:240px;object-fit:cover}
-.pad{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
-.price{font-weight:800}
-.product p{color:var(--mut);flex:1}
-.life{display:grid;gap:24px;align-items:center}
-@media(min-width:860px){.life{grid-template-columns:1.1fr .9fr}}
-.life img{width:100%;height:min(70vh,520px);object-fit:cover}
-footer{padding:24px 0 8px;color:var(--mut);font-size:14px;border-top:1px solid #2a181214}
-footer a{color:var(--bean);font-weight:700}
+.w{width:min(100%,1120px);margin-inline:auto;padding-inline:clamp(20px,4vw,40px)}
+header{position:sticky;top:0;z-index:6;background:#f6f1eaf2;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:12px 22px;min-height:72px}
+.logo{font-family:Georgia,Palatino,serif;font-size:22px;letter-spacing:.16em;text-decoration:none}
+.nav ul{display:flex;flex:1;justify-content:flex-end;gap:4px 18px;list-style:none;padding:0}
+.nav a,.bag-btn,.menu{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.nav ul a{color:var(--mut);font-weight:700;letter-spacing:.04em}
+.nav ul a:hover{color:var(--ink)}
+.menu{display:none;margin-left:auto;padding:0 12px;border:1px solid var(--bean);background:transparent;font-weight:800;cursor:pointer}
+.bag-btn{gap:8px;padding:0 14px;border-radius:999px;border:1px solid var(--bean);background:transparent;font-weight:800;cursor:pointer}
+.bag-btn b{min-width:1.4em;height:1.4em;display:grid;place-items:center;border-radius:99px;background:var(--bean);color:#f6f1ea;font-size:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;background:var(--bean);color:#f6f1ea;text-decoration:none;font-weight:800;border:0;cursor:pointer}
+.btn:hover{background:#542c1e}
+.btn.ghost{background:transparent;color:var(--bean);border:1px solid var(--bean)}
+.btn.ghost:hover{background:var(--foam)}
+h1,h2,h3{font-family:Georgia,Palatino,serif;font-weight:500;letter-spacing:-.03em}
+h1{font-size:clamp(56px,9vw,104px);line-height:.9}
+h2{font-size:clamp(32px,4vw,52px);line-height:1.05}
+h3{font-size:26px;margin:0}
+.kicker{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--bean);margin:0 0 14px}
+.lead{color:var(--mut);max-width:36rem;font-size:18px}
+.hero{position:relative;min-height:92svh;display:grid;align-items:end;color:#f6f1ea}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.veil{position:absolute;inset:0;background:linear-gradient(180deg,#24161033,#241610e0)}
+.hero .w{position:relative;padding-block:88px 64px}
+.hero .kicker{color:#e7cbb6}
+.hero .lead{color:#f3e6d8}
+section{padding-block:clamp(72px,9vw,112px)}
+.grid{display:grid;gap:18px;margin-top:32px}
+.product{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.product .photo{overflow:hidden;background:var(--foam)}
+.product img{width:100%;height:280px;object-fit:cover}
+.pad{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.price{font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.product p{color:var(--mut);margin:0;flex:1}
+.life{display:grid;gap:28px;align-items:center}
+.life img{width:100%;height:min(68vh,520px);object-fit:cover}
+.notes{display:grid;gap:0;margin-top:28px;border-top:1px solid var(--line)}
+.notes div{padding:16px 0;border-bottom:1px solid var(--line)}
+.notes strong{display:block;margin-bottom:4px}
+.notes p{margin:0;color:var(--mut)}
+.drawer{position:fixed;z-index:30;inset:0;display:none}
+.drawer.is-open{display:block}
+.backdrop{position:absolute;inset:0;background:#24161066;border:0;width:100%;cursor:pointer}
+.sheet{position:absolute;top:0;right:0;height:100%;width:min(100%,400px);background:var(--card);display:flex;flex-direction:column;box-shadow:-12px 0 40px #24161022}
+.sheet header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--line);background:var(--card)}
+.sheet header h2{font-size:28px}
+.sheet header button{min-width:44px;min-height:44px;border:0;background:transparent;font-size:28px;cursor:pointer}
+.lines{flex:1;overflow:auto;padding:8px 18px}
+.line{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.line p{margin:0;color:var(--mut);font-size:14px}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:36px;height:36px;border:1px solid var(--line);background:#fff;border-radius:8px;font-weight:800;cursor:pointer}
+.step span{min-width:1.5em;text-align:center;font-variant-numeric:tabular-nums;font-weight:800}
+.foot{padding:16px 18px 20px;border-top:1px solid var(--line);display:grid;gap:10px}
+.sub{display:flex;justify-content:space-between;font-weight:800}
+.empty{color:var(--mut);padding:24px 0}
+footer.site{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;padding:28px 0 20px;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+footer.site a{color:var(--bean);font-weight:800}
+@media(min-width:760px){
+  .grid{grid-template-columns:1fr 1fr}
+  .life{grid-template-columns:1.05fr .95fr;gap:48px}
+  .notes{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .notes div{padding-right:20px;border-bottom:0}
+  .notes div+div{border-left:1px solid var(--line);padding-left:20px}
+}
+@media(min-width:1080px){.grid{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:760px){
+  .menu{display:inline-flex}
+  .nav{position:relative}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:72px;flex-direction:column;padding:8px 20px 16px;background:#f6f1ea;border-bottom:1px solid var(--line)}
+  .nav ul.is-open{display:flex}
+  .hero{min-height:88svh}
+  .product img{height:240px}
+}
 @media(prefers-reduced-motion:no-preference){
   .product img{transition:transform .5s ease}
   .product:hover img{transform:scale(1.04)}
@@ -70,11 +115,12 @@ footer a{color:var(--bean);font-weight:700}
 <header>
 <nav class="w nav" aria-label="BRUMA Coffee">
 <a class="logo" href="#topo">BRUMA</a>
-<ul>
+<button class="menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<ul id="menu">
 <li><a href="#loja">Loja</a></li>
-<li><a href="#origem">Origem</a></li>
+<li><a href="#chavena">Na chávena</a></li>
 </ul>
-<a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp</a>
+<button class="bag-btn" type="button" id="open-bag" aria-controls="saco" aria-expanded="false">Saco <b id="count">0</b></button>
 </nav>
 </header>
 <main id="topo">
@@ -83,43 +129,137 @@ footer a{color:var(--bean);font-weight:700}
 <div class="veil"></div>
 <div class="w">
 <p class="kicker">Café de especialidade</p>
-<h1>BRUMA Coffee</h1>
-<p class="lead">Uma montra quente: a chávena, o saco e o grão. Comprar abre o WhatsApp.</p>
+<h1>BRUMA<br>Coffee</h1>
+<p class="lead">Grão para casa, uma chávena de cerâmica e o filtro da semana.</p>
 </div>
 </section>
 <section id="loja">
 <div class="w">
 <p class="kicker">Loja</p>
 <h2>Três peças.</h2>
-<div class="grid" style="margin-top:24px">
+<div class="grid">
 <article class="product">
-<img src="../../assets/demos/bruma-graos.webp" srcset="../../assets/demos/bruma-graos-sm.webp 800w, ../../assets/demos/bruma-graos.webp 1600w" sizes="(min-width: 800px) 30vw, 100vw" alt="Grãos de café torrados, vistos de perto." width="1600" height="1000" loading="lazy" decoding="async">
-<div class="pad"><h3>Grão da casa</h3><p class="price">14 €</p><p>Saco de 250 g, moagem para filtro ou para espresso.</p><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Comprar</a></div>
+<div class="photo"><img src="../../assets/demos/bruma-graos.webp" srcset="../../assets/demos/bruma-graos-sm.webp 800w, ../../assets/demos/bruma-graos.webp 1600w" sizes="(min-width: 1080px) 30vw, (min-width: 760px) 46vw, 100vw" alt="Grãos de café torrados, vistos de perto." width="1600" height="1000" loading="lazy" decoding="async"></div>
+<div class="pad"><h3>Grão da casa</h3><p class="price">14 €</p><p>Saco de 250 g. Moagem para filtro ou para espresso.</p><button class="btn" type="button" data-add="grao">Adicionar</button></div>
 </article>
 <article class="product">
-<img src="../../assets/demos/bruma-chavena.webp" srcset="../../assets/demos/bruma-chavena-sm.webp 800w, ../../assets/demos/bruma-chavena.webp 1600w" sizes="(min-width: 800px) 30vw, 100vw" alt="Chávena de café branca sobre um pires." width="1600" height="1000" loading="lazy" decoding="async">
-<div class="pad"><h3>Chávena</h3><p class="price">18 €</p><p>Cerâmica clara, para 180 ml.</p><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Comprar</a></div>
+<div class="photo"><img src="../../assets/demos/bruma-chavena.webp" srcset="../../assets/demos/bruma-chavena-sm.webp 800w, ../../assets/demos/bruma-chavena.webp 1600w" sizes="(min-width: 1080px) 30vw, (min-width: 760px) 46vw, 100vw" alt="Chávena de café branca sobre um pires." width="1600" height="1000" loading="lazy" decoding="async"></div>
+<div class="pad"><h3>Chávena</h3><p class="price">18 €</p><p>Cerâmica clara, para 180 ml.</p><button class="btn" type="button" data-add="chavena">Adicionar</button></div>
 </article>
 <article class="product">
-<img src="../../assets/demos/bruma-mesa.webp" srcset="../../assets/demos/bruma-mesa-sm.webp 800w, ../../assets/demos/bruma-mesa.webp 1600w" sizes="(min-width: 800px) 30vw, 100vw" alt="Café num copo de vidro, com um caderno ao lado." width="1600" height="1000" loading="lazy" decoding="async">
-<div class="pad"><h3>Filtro da semana</h3><p class="price">9 €</p><p>Dose para casa, em grão ou moída.</p><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Comprar</a></div>
+<div class="photo"><img src="../../assets/demos/bruma-mesa.webp" srcset="../../assets/demos/bruma-mesa-sm.webp 800w, ../../assets/demos/bruma-mesa.webp 1600w" sizes="(min-width: 1080px) 30vw, (min-width: 760px) 46vw, 100vw" alt="Café num copo de vidro, com um caderno ao lado." width="1600" height="1000" loading="lazy" decoding="async"></div>
+<div class="pad"><h3>Filtro da semana</h3><p class="price">9 €</p><p>Dose para casa, em grão ou já moída.</p><button class="btn" type="button" data-add="filtro">Adicionar</button></div>
 </article>
 </div>
 </div>
 </section>
-<section id="origem">
+<section id="chavena">
 <div class="w life">
-<img src="../../assets/demos/bruma-mesa.webp" srcset="../../assets/demos/bruma-mesa-sm.webp 800w, ../../assets/demos/bruma-mesa.webp 1600w" sizes="(min-width: 860px) 50vw, 100vw" alt="Mesa com um café e um caderno aberto." width="1600" height="1000" loading="lazy" decoding="async">
+<img src="../../assets/demos/bruma-mesa.webp" srcset="../../assets/demos/bruma-mesa-sm.webp 800w, ../../assets/demos/bruma-mesa.webp 1600w" sizes="(min-width: 760px) 50vw, 100vw" alt="Mesa com um café e um caderno aberto." width="1600" height="1000" loading="lazy" decoding="async">
 <div>
-<p class="kicker">Origem</p>
-<h2>O sabor fica na fotografia.</h2>
-<p class="lead">A página não tem carrinho nem pagamento. Cada botão Comprar abre o WhatsApp da Gomes IA Digital.</p>
+<p class="kicker">Na chávena</p>
+<h2>O mesmo café, três formas.</h2>
+<div class="notes">
+<div><strong>Filtro</strong><p>Mais longo, para a manhã.</p></div>
+<div><strong>Espresso</strong><p>Curto, no balcão.</p></div>
+<div><strong>Casa</strong><p>O saco de 250 g, para a semana.</p></div>
+</div>
+<p class="lead" style="margin-top:22px">Para um site neste tom, a mensagem segue para a Gomes IA Digital.</p>
 <p style="margin-top:18px"><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero um site como este</a></p>
 </div>
 </div>
 </section>
 </main>
-<footer><div class="w">Criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></div></footer>
+<footer class="w site"><span>BRUMA Coffee</span><span>Criado por <a href="https://gomesiadigital.com" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></span></footer>
+<div class="drawer" id="saco" hidden>
+<button class="backdrop" type="button" data-close aria-label="Fechar o saco"></button>
+<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="saco-title">
+<header>
+<h2 id="saco-title">Saco</h2>
+<button type="button" data-close aria-label="Fechar">×</button>
+</header>
+<div class="lines" id="lines"></div>
+<div class="foot">
+<div class="sub"><span>Total</span><span id="total">0 €</span></div>
+<p class="lead" style="font-size:14px;margin:0">O pedido segue por mensagem. Não há pagamento nesta página.</p>
+<a class="btn" id="checkout" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+</div>
+</div>
+</div>
+<script>
+(function () {
+  var products = {
+    grao: { name: 'Grão da casa', price: 14 },
+    chavena: { name: 'Chávena', price: 18 },
+    filtro: { name: 'Filtro da semana', price: 9 }
+  };
+  var cart = {};
+  var drawer = document.getElementById('saco');
+  var lines = document.getElementById('lines');
+  var count = document.getElementById('count');
+  var total = document.getElementById('total');
+  var openBtn = document.getElementById('open-bag');
+  var checkout = document.getElementById('checkout');
+  var menuBtn = document.querySelector('.menu');
+  var menu = document.getElementById('menu');
+
+  function money(n) { return n + ' €'; }
+  function units() {
+    return Object.keys(cart).reduce(function (n, id) { return n + cart[id]; }, 0);
+  }
+  function sum() {
+    return Object.keys(cart).reduce(function (n, id) { return n + cart[id] * products[id].price; }, 0);
+  }
+  function render() {
+    var ids = Object.keys(cart);
+    count.textContent = String(units());
+    total.textContent = money(sum());
+    checkout.hidden = ids.length === 0;
+    lines.innerHTML = ids.length ? ids.map(function (id) {
+      var p = products[id];
+      return '<div class="line"><div><strong>' + p.name + '</strong><p>' + money(p.price) + '</p></div><div class="step"><button type="button" data-dec="' + id + '" aria-label="Tirar um">−</button><span>' + cart[id] + '</span><button type="button" data-inc="' + id + '" aria-label="Juntar um">+</button></div></div>';
+    }).join('') : '<p class="empty">O saco está vazio.</p>';
+  }
+  function openBag() {
+    drawer.hidden = false;
+    drawer.classList.add('is-open');
+    openBtn.setAttribute('aria-expanded', 'true');
+    drawer.querySelector('.sheet button').focus();
+  }
+  function closeBag() {
+    drawer.classList.remove('is-open');
+    drawer.hidden = true;
+    openBtn.setAttribute('aria-expanded', 'false');
+    openBtn.focus();
+  }
+  function add(id, n) {
+    cart[id] = (cart[id] || 0) + n;
+    if (cart[id] <= 0) delete cart[id];
+    render();
+  }
+  document.body.addEventListener('click', function (event) {
+    var addBtn = event.target.closest('[data-add]');
+    if (addBtn) { add(addBtn.getAttribute('data-add'), 1); openBag(); return; }
+    var inc = event.target.closest('[data-inc]');
+    if (inc) { add(inc.getAttribute('data-inc'), 1); return; }
+    var dec = event.target.closest('[data-dec]');
+    if (dec) { add(dec.getAttribute('data-dec'), -1); return; }
+    if (event.target.closest('[data-close]')) closeBag();
+  });
+  openBtn.addEventListener('click', function () { drawer.hidden ? openBag() : closeBag(); });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && !drawer.hidden) closeBag();
+  });
+  menuBtn.addEventListener('click', function () {
+    var open = menu.classList.toggle('is-open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function (event) {
+    if (event.target.closest('a')) { menu.classList.remove('is-open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+  });
+  render();
+})();
+</script>
 <script src="../../assets/bibo-widget.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
 </body>

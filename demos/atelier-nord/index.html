@@ -12,53 +12,76 @@ if (location.hostname.endsWith('github.io')) {
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Atelier Nórd — Gomes IA Digital</title>
-<meta name="description" content="Exemplo de site para um estúdio de arquitetura e interiores. Criado por Gomes IA Digital.">
+<title>Atelier Nórd</title>
+<meta name="description" content="Arquitetura e interiores. Fotografia grande, texto curto. Criado por Gomes IA Digital.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://gomesiadigital.com/demos/atelier-nord/">
 <meta property="og:url" content="https://gomesiadigital.com/demos/atelier-nord/">
 <meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
-<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-:root{--bg:#141311;--ink:#f3ece3;--mut:#c9bfb2;--line:#f3ece31f;--warm:#d8b48a}
+:root{--bg:#141311;--ink:#f4efe8;--mut:#cfc4b6;--line:#f4efe81c;--warm:#d8b48a}
 *{box-sizing:border-box;margin:0}
 html,body{overflow-x:clip}
-html{scroll-padding-top:80px}
-body{font:18px/1.6 Georgia,"Iowan Old Style",Palatino,serif;background:var(--bg);color:var(--ink);padding-bottom:72px}
+html{scroll-padding-top:84px}
+body{font:18px/1.65 Georgia,"Iowan Old Style",Palatino,serif;background:var(--bg);color:var(--ink)}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--warm);outline-offset:3px}
-.w{width:min(100%,1120px);margin-inline:auto;padding-inline:24px}
-header{position:sticky;top:0;z-index:5;background:#141311eb;backdrop-filter:blur(8px)}
-.nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;min-height:72px}
-.logo{font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;font-size:14px}
-.nav ul{display:flex;flex:1;flex-wrap:wrap;gap:4px 18px;list-style:none;padding:0}
+.w{width:min(100%,1120px);margin-inline:auto;padding-inline:clamp(20px,4vw,40px)}
+header{position:sticky;top:0;z-index:5;background:#141311e6;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:12px 28px;min-height:76px}
+.logo{font-weight:500;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;font-size:13px}
+.nav ul{display:flex;flex:1;justify-content:flex-end;gap:4px 22px;list-style:none;padding:0}
 .nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
-.nav ul a{font:600 14px/1 system-ui,sans-serif;color:var(--mut)}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border:1px solid var(--warm);color:var(--warm);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;font:600 12px/1 system-ui,sans-serif}
+.nav ul a{font:600 13px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.nav ul a:hover{color:var(--ink)}
+.menu{display:none;min-height:44px;padding:0 12px;border:1px solid var(--warm);background:transparent;color:var(--warm);font:700 12px/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border:1px solid var(--warm);color:var(--warm);text-decoration:none;letter-spacing:.12em;text-transform:uppercase;font:600 12px/1 system-ui,sans-serif}
+.btn:hover{background:var(--warm);color:#141311}
 .hero{position:relative;min-height:100svh;display:grid;align-items:end}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero .veil{position:absolute;inset:0;background:linear-gradient(#14131122,#141311e6)}
-.hero .w{position:relative;padding-block:80px 64px}
-h1{font-weight:500;font-size:clamp(56px,9vw,104px);line-height:.92;letter-spacing:-.04em}
-h2{font-weight:500;font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.03em}
-.kicker{font:700 12px/1 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--warm)}
-.lead{max-width:36em;color:var(--mut);font-size:20px}
-section{padding-block:88px}
-.split{display:grid;gap:36px;align-items:center}
-@media(min-width:860px){.split{grid-template-columns:1fr 1.1fr;gap:64px}}
-.frame img{width:100%;height:min(72vh,640px);object-fit:cover}
-.full{padding-inline:0}
-.full img{width:100%;height:min(80vh,760px);object-fit:cover}
-.studies{display:grid;gap:28px}
-@media(min-width:800px){.studies{grid-template-columns:1.2fr .8fr}}
-figcaption{font:14px/1.4 system-ui,sans-serif;color:var(--mut);margin-top:10px}
-footer{padding:28px 0 12px;color:var(--mut);font:14px/1.5 system-ui,sans-serif;border-top:1px solid var(--line)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.veil{position:absolute;inset:0;background:linear-gradient(180deg,#14131133 0%,#14131114 32%,#141311e8 100%)}
+.hero .w{position:relative;padding-block:96px 72px;max-width:1120px}
+.kicker{font:700 12px/1 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--warm);margin:0 0 18px}
+h1{font-weight:500;font-size:clamp(64px,11vw,128px);line-height:.86;letter-spacing:-.045em}
+h2{font-weight:500;font-size:clamp(34px,4.4vw,60px);line-height:1.02;letter-spacing:-.035em}
+.lead{max-width:34rem;margin-top:18px;color:var(--mut);font-size:clamp(18px,2vw,22px)}
+.hero .lead{color:#efe6dc}
+section{padding-block:clamp(72px,10vw,120px)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts article{padding:28px 8px 28px 0}
+.facts article+article{border-left:1px solid var(--line);padding-left:28px}
+.facts h2{font:700 13px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--warm);margin-bottom:12px}
+.facts p{margin:0;color:var(--mut);font-size:17px;max-width:28ch}
+.split{display:grid;gap:40px;align-items:center}
+.frame{margin:0;overflow:hidden}
+.frame img{width:100%;height:min(72vh,640px);object-fit:cover;object-position:center}
+figcaption{font:14px/1.45 system-ui,sans-serif;color:var(--mut);margin-top:12px}
+.full{padding-inline:0;padding-bottom:0}
+.full img{width:100%;height:min(82vh,780px);object-fit:cover;object-position:center 40%}
+.studies{display:grid;gap:36px;padding-top:48px}
+.studies h2{margin:10px 0 12px}
+.contact{display:grid;gap:18px;max-width:40rem}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;padding:28px 0 20px;color:var(--mut);font:14px/1.5 system-ui,sans-serif;border-top:1px solid var(--line)}
 footer a{color:var(--warm)}
-@media(prefers-reduced-motion:no-preference){
-  .reveal{animation:rise .7s ease both}
+@media(min-width:860px){
+  .split{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px}
+  .studies{grid-template-columns:1.15fr .85fr;gap:64px;align-items:end}
 }
-@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+@media(max-width:760px){
+  .menu{display:inline-flex;align-items:center;margin-left:auto}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:76px;flex-direction:column;gap:0;padding:8px 20px 16px;background:#141311;border-bottom:1px solid var(--line)}
+  .nav ul.is-open{display:flex}
+  .nav{position:relative}
+  .facts{grid-template-columns:1fr}
+  .facts article+article{border-left:0;border-top:1px solid var(--line);padding:22px 0}
+  .hero{min-height:92svh}
+}
+@media(prefers-reduced-motion:no-preference){
+  .frame img,.full img{transition:transform .6s ease}
+  .frame:hover img{transform:scale(1.03)}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -66,12 +89,12 @@ footer a{color:var(--warm)}
 <header>
 <nav class="w nav" aria-label="Atelier Nórd">
 <a class="logo" href="#topo">Atelier Nórd</a>
-<ul>
+<button class="menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<ul id="menu">
 <li><a href="#sala">Sala</a></li>
 <li><a href="#estudo">Estudos</a></li>
 <li><a href="#contacto">Contacto</a></li>
 </ul>
-<a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp</a>
 </nav>
 </header>
 <main id="topo">
@@ -80,26 +103,33 @@ footer a{color:var(--warm)}
 <div class="veil"></div>
 <div class="w">
 <p class="kicker">Arquitetura e interiores</p>
-<h1>Atelier Nórd</h1>
-<p class="lead">Espaço, matéria e luz. Um site para um estúdio que mostra o trabalho em fotografias grandes.</p>
+<h1>Atelier<br>Nórd</h1>
+<p class="lead">Casas, salas e pátios. O trabalho aparece em fotografias grandes.</p>
+</div>
+</section>
+<section class="w" style="padding-block:0">
+<div class="facts">
+<article><h2>Luz</h2><p>A abertura define a tarde dentro da casa.</p></article>
+<article><h2>Matéria</h2><p>Pedra, linho e madeira, sem revestir o que já tem tom.</p></article>
+<article><h2>Medida</h2><p>Poucas peças. O vazio também faz parte da sala.</p></article>
 </div>
 </section>
 <section id="sala">
 <div class="w split">
-<div class="reveal">
+<div>
 <p class="kicker">A sala</p>
 <h2>Menos peças. Mais silêncio.</h2>
-<p class="lead">O site deixa a fotografia ocupar o ecrã. O texto fica curto: o que é a divisão, e nada mais.</p>
+<p class="lead">Uma parede, um sofá, a mesa de pedra. O texto da página fica neste tamanho: o que se vê, e nada mais.</p>
 </div>
-<figure class="frame reveal">
-<img src="../../assets/demos/nord-sala.webp" srcset="../../assets/demos/nord-sala-sm.webp 800w, ../../assets/demos/nord-sala.webp 1600w" sizes="(min-width: 860px) 50vw, 100vw" alt="Sala de estar com sofá cinzento, mesa de pedra e um quadro grande na parede." width="1600" height="1000" loading="lazy" decoding="async">
+<figure class="frame">
+<img src="../../assets/demos/nord-sala.webp" srcset="../../assets/demos/nord-sala-sm.webp 800w, ../../assets/demos/nord-sala.webp 1600w" sizes="(min-width: 860px) 54vw, 100vw" alt="Sala de estar com sofá cinzento, mesa de pedra e um quadro grande na parede." width="1600" height="1000" loading="lazy" decoding="async">
 <figcaption>Sala de estar, com pedra e linho.</figcaption>
 </figure>
 </div>
 </section>
 <section class="full" id="estudo">
 <img src="../../assets/demos/nord-detalhe.webp" srcset="../../assets/demos/nord-detalhe-sm.webp 800w, ../../assets/demos/nord-detalhe.webp 1600w" sizes="100vw" alt="Sala branca aberta para um pátio com relva e uma árvore." width="1600" height="1000" loading="lazy" decoding="async">
-<div class="w studies" style="padding-top:28px">
+<div class="w studies">
 <figure>
 <p class="kicker">Estudo 01</p>
 <h2>Abertura para o pátio</h2>
@@ -113,15 +143,28 @@ footer a{color:var(--warm)}
 </div>
 </section>
 <section id="contacto">
-<div class="w">
+<div class="w contact">
 <p class="kicker">Contacto</p>
 <h2>Um site neste tom.</h2>
-<p class="lead">O botão abre o WhatsApp da Gomes IA Digital.</p>
-<p style="margin-top:22px"><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero um site como este</a></p>
+<p class="lead">A mensagem segue para a Gomes IA Digital.</p>
+<p><a class="btn" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero um site como este</a></p>
 </div>
 </section>
 </main>
-<footer><div class="w">Criado por <a href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></div></footer>
+<footer class="w"><span>Atelier Nórd</span><span>Criado por <a href="https://gomesiadigital.com" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></span></footer>
+<script>
+(function () {
+  var btn = document.querySelector('.menu');
+  var menu = document.getElementById('menu');
+  btn.addEventListener('click', function () {
+    var open = menu.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function (event) {
+    if (event.target.closest('a')) { menu.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); }
+  });
+})();
+</script>
 <script src="../../assets/bibo-widget.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
 </body>
