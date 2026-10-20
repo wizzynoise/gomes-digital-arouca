@@ -16,16 +16,21 @@ Every WhatsApp control is a link to `https://wa.me/message/5VB7SV74VVEKE1` with 
 
 The homepage shows four example cards: Atelier Nórd, Leonor Matos, Nexora Inventory, and BRUMA Coffee. Desktop and mobile screenshots crossfade on hover, focus, or tap.
 
-`/projetos` uses the same card style and presents every card as an example ("Exemplos"). Do not use the word "demo" in visible text, and do not present any card as a client or as real/delivered work. Cards, in this order:
+`/projetos` is an example showcase headed "Exemplos", with filters for websites, applications, and automations. Do not use the word "demo" in visible text, and do not present any piece as a client or as real/delivered work. Pieces, in this order:
 
-| Name on the card | Link | Screenshot |
-| --- | --- | --- |
-| 7Jardins - Serviços de jardinagem | None (the site is no longer online) | `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` |
-| SjGomes - Sistemas de som | None | `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` |
-| Barbearia Leme | `/demos/barbearia-leme/` | `assets/projects/barbearia-leme-desktop.webp`, `assets/projects/barbearia-leme-mobile.webp` |
-| Mesa da Encosta | `/demos/mesa-da-encosta/` | `assets/projects/mesa-da-encosta-desktop.webp`, `assets/projects/mesa-da-encosta-mobile.webp` |
+| Name | Kind | Link | Screenshot |
+| --- | --- | --- | --- |
+| 7Jardins - Serviços de jardinagem | Website | https://7jardins26.vercel.app/ | `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` |
+| SjGomes - Sistemas de som | Website | None | `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` |
+| Barbearia Leme | Website | `/demos/barbearia-leme/` | `assets/projects/barbearia-leme-desktop.webp`, `assets/projects/barbearia-leme-mobile.webp` |
+| Mesa da Encosta | Website | `/demos/mesa-da-encosta/` | `assets/projects/mesa-da-encosta-desktop.webp`, `assets/projects/mesa-da-encosta-mobile.webp` |
+| Atelier Nórd | Website | `/demos/atelier-nord/` | `assets/projects/atelier-nord-desktop.webp`, `assets/projects/atelier-nord-mobile.webp` |
+| Leonor Matos | Website | `/demos/leonor-matos/` | `assets/projects/leonor-matos-desktop.webp`, `assets/projects/leonor-matos-mobile.webp` |
+| BRUMA Coffee | Website | `/demos/bruma/` | `assets/projects/bruma-desktop.webp`, `assets/projects/bruma-mobile.webp` |
+| Nexora Inventory | Application | `/demos/nexora/` | `assets/projects/nexora-desktop.webp`, `assets/projects/nexora-mobile.webp` |
+| Foto para Excel | Automation | `/demos/foto-para-excel/` | Built in the page |
 
-Each card shows the name, one short line about the kind of site, and a link only where one exists. Casa do Vale and Barro & Linho stay on disk and are not linked from the homepage or `/projetos`.
+The SjGomes frames crop the bottom of that screenshot so the footer phone number is not shown. Casa do Vale and Barro & Linho stay on disk and are not linked from the homepage or `/projetos`.
 
 ## Pages
 
@@ -33,7 +38,7 @@ Each card shows the name, one short line about the kind of site, and a link only
 
 ## Demonstration sites
 
-Example pages live under `demos/`. Each page is `noindex` and is not listed in `sitemap.xml`. Photo sources are in `CREDITS.md`.
+Example pages live under `demos/`. They are `noindex` and are not listed in `sitemap.xml`, except `demos/foto-para-excel/`, which is indexed and listed. Photo sources are in `CREDITS.md`.
 
 | Path | Page |
 | --- | --- |
@@ -45,6 +50,7 @@ Example pages live under `demos/`. Each page is `noindex` and is not listed in `
 | `demos/mesa-da-encosta/` | Restaurant page linked from `/projetos` |
 | `demos/casa-do-vale/` | Kept on disk, not linked from the homepage or `/projetos` |
 | `demos/barro-e-linho/` | Kept on disk, not linked from the homepage or `/projetos` |
+| `demos/foto-para-excel/` | Photo-to-spreadsheet example, linked from `/projetos` and listed in `sitemap.xml`. The file never leaves the browser |
 
 ## Run locally
 
@@ -73,10 +79,10 @@ The repository root is a Cloudflare Worker with static assets, connected to Work
 | `assets/bibo-widget.js` | Bibo assistant on the homepage and demonstrations |
 | `assets/projects/` | Desktop and mobile screenshots for the homepage examples and `/projetos` |
 | `servicos.html` | Services page at `/servicos` |
-| `projetos.html` | Completed projects at `/projetos` |
+| `projetos.html` | Example showcase at `/projetos` |
 | `sobre.html` | About page at `/sobre` |
 | `politica-privacidade.html` | Privacy policy in European Portuguese |
-| `demos/` | Example pages, all `noindex` |
+| `demos/` | Example pages. `noindex`, except `demos/foto-para-excel/` |
 | `assets/demos/` | Compressed WebP photographs for the concepts |
 | `CREDITS.md` | Photograph authors and source URLs |
 | `assets/monograma.svg` | GIA monogram |

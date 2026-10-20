@@ -6,7 +6,7 @@ These files are screenshots of web pages, not third-party photographs. The homep
 
 | File | Page |
 | --- | --- |
-| `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` | Services section of the former 7Jardins site (no longer online). The crop stops above the contact line. |
+| `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` | Services section of https://7jardins26.vercel.app/. The crop stops above the contact line. |
 | `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` | Local render of the SjGomes - Sistemas de som site. |
 | `assets/projects/atelier-nord-desktop.webp`, `assets/projects/atelier-nord-mobile.webp` | `/demos/atelier-nord/` |
 | `assets/projects/leonor-matos-desktop.webp`, `assets/projects/leonor-matos-mobile.webp` | `/demos/leonor-matos/` |
