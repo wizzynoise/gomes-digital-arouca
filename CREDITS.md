@@ -19,9 +19,9 @@ These files are screenshots of web pages, not third-party photographs. The homep
 | `assets/demos/casa-do-vale-preview.webp` | `/demos/casa-do-vale/` |
 | `assets/demos/barro-e-linho-preview.webp` | `/demos/barro-e-linho/` |
 
-## Demonstration photographs
+## Example photographs
 
-Demonstration pages use photographs from Unsplash, under the [Unsplash License](https://unsplash.com/license). Attribution is not required by the licence. Authors are listed here anyway.
+Example pages use photographs from Unsplash, under the [Unsplash License](https://unsplash.com/license). Attribution is not required by the licence. Authors are listed here anyway.
 
 Files live in `assets/demos/`. The newer photographs use a full WebP and an 800px-wide `-sm` file. The portrait is 1000×1400; the others in that set are 1600×1000. Older photographs have a 1600×1000 hero and an 800×600 card (`-sm`).
 

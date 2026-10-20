@@ -43,7 +43,7 @@ if (location.hostname.endsWith('github.io')) {
 }
 .sample[aria-pressed="true"] { background: #c7f36a; }
 .sample b, .upload b { display: block; margin: 8px 0 0; font-size: 15px; }
-.sample svg, .doc-preview svg { width: 100%; height: auto; display: block; background: #fff; border-radius: 4px; }
+.sample svg, .doc-preview svg { width: 100%; height: auto; display: block; background: #fff; border-radius: 4px; box-shadow: 0 8px 16px rgba(16, 42, 43, .14); }
 .upload input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
 .upload { display: flex; flex-direction: column; justify-content: flex-end; position: relative; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 8px 0 18px; }
@@ -85,15 +85,52 @@ if (location.hostname.endsWith('github.io')) {
 <p class="lead">Escolhe uma fatura ou uma lista de material, ou carrega uma foto tua. A leitura deste ecrã usa dados fictícios. A foto não sai do teu browser e nada é guardado.</p>
 <div class="sample-row" role="group" aria-label="Documentos de exemplo">
 <button class="sample" type="button" data-sample="fatura" aria-pressed="true">
-<svg viewBox="0 0 240 140" aria-hidden="true"><rect width="240" height="140" fill="#fffef9"/><rect x="16" y="16" width="88" height="10" fill="#102a2b"/><rect x="16" y="36" width="200" height="6" fill="#d8dfd9"/><rect x="16" y="52" width="160" height="6" fill="#d8dfd9"/><rect x="16" y="68" width="180" height="6" fill="#d8dfd9"/><rect x="16" y="96" width="70" height="16" fill="#c7f36a"/></svg>
+<svg viewBox="0 0 340 230" aria-hidden="true" role="img">
+<rect width="340" height="230" fill="#fffef8"/>
+<text x="18" y="32" fill="#102a2b" font-family="Georgia, serif" font-size="20" font-weight="700">Oficina Norte</text>
+<text x="230" y="32" fill="#102a2b" font-family="Arial, sans-serif" font-size="14" font-weight="700">FAC-014</text>
+<text x="18" y="52" fill="#5c534c" font-family="Arial, sans-serif" font-size="12">Fatura · 12 de março de 2026 · Arouca</text>
+<line x1="18" y1="64" x2="322" y2="64" stroke="#d8dfd9"/>
+<text x="18" y="86" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">Parafuso zincado M8</text><text x="250" y="86" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">40 × 0,18 €</text>
+<text x="18" y="108" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">Tinta branca 5 L</text><text x="250" y="108" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">2 × 24,90 €</text>
+<text x="18" y="130" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">Lixa grão 120</text><text x="248" y="130" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">10 × 1,40 €</text>
+<text x="18" y="152" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">Rolo e fita de pintor</text><text x="250" y="152" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">4 + 6</text>
+<text x="18" y="174" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">Massa de reparação</text><text x="250" y="174" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">3 × 4,50 €</text>
+<rect x="18" y="190" width="118" height="26" fill="#c7f36a"/>
+<text x="28" y="208" fill="#102a2b" font-family="Arial, sans-serif" font-size="13" font-weight="700">Total 103,90 €</text>
+</svg>
 <b>Fatura</b>
 </button>
 <button class="sample" type="button" data-sample="lista" aria-pressed="false">
-<svg viewBox="0 0 240 140" aria-hidden="true"><rect width="240" height="140" fill="#fff7e4"/><rect x="16" y="18" width="120" height="10" fill="#102a2b"/><rect x="16" y="42" width="14" height="14" fill="none" stroke="#102a2b"/><rect x="40" y="46" width="150" height="6" fill="#102a2b"/><rect x="16" y="66" width="14" height="14" fill="none" stroke="#102a2b"/><rect x="40" y="70" width="120" height="6" fill="#102a2b"/><rect x="16" y="90" width="14" height="14" fill="none" stroke="#102a2b"/><rect x="40" y="94" width="170" height="6" fill="#102a2b"/></svg>
+<svg viewBox="0 0 340 230" aria-hidden="true" role="img">
+<rect width="340" height="230" fill="#fff7e4"/>
+<text x="18" y="32" fill="#102a2b" font-family="Georgia, serif" font-size="20" font-weight="700">Lista de material</text>
+<text x="18" y="52" fill="#5c534c" font-family="Arial, sans-serif" font-size="12">Obra da oficina · 12 de março de 2026</text>
+<rect x="18" y="70" width="16" height="16" fill="none" stroke="#102a2b" stroke-width="1.5"/><path d="M21 78 l4 4 7-8" fill="none" stroke="#102a2b" stroke-width="1.6"/>
+<text x="44" y="83" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Painel MDF 18 mm · 12</text>
+<rect x="18" y="98" width="16" height="16" fill="none" stroke="#102a2b" stroke-width="1.5"/>
+<text x="44" y="111" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Contraplacado 10 mm · 8</text>
+<rect x="18" y="126" width="16" height="16" fill="none" stroke="#102a2b" stroke-width="1.5"/><path d="M21 134 l4 4 7-8" fill="none" stroke="#102a2b" stroke-width="1.6"/>
+<text x="44" y="139" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Parafuso 4x40 · 200</text>
+<rect x="18" y="154" width="16" height="16" fill="none" stroke="#102a2b" stroke-width="1.5"/>
+<text x="44" y="167" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Cola branca 1 kg · 3</text>
+<rect x="18" y="182" width="16" height="16" fill="none" stroke="#102a2b" stroke-width="1.5"/>
+<text x="44" y="195" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Cantos de união · 24</text>
+<text x="18" y="220" fill="#5c534c" font-family="Arial, sans-serif" font-size="12">Materiais por contar na bancada.</text>
+</svg>
 <b>Lista de material</b>
 </button>
 <button class="sample" type="button" data-sample="guia" aria-pressed="false">
-<svg viewBox="0 0 240 140" aria-hidden="true"><rect width="240" height="140" fill="#e5f3f4"/><rect x="16" y="16" width="140" height="10" fill="#102a2b"/><rect x="16" y="40" width="208" height="22" fill="#fff"/><rect x="16" y="70" width="208" height="22" fill="#fff"/><rect x="16" y="100" width="208" height="22" fill="#fff"/></svg>
+<svg viewBox="0 0 340 230" aria-hidden="true" role="img">
+<rect width="340" height="230" fill="#e7f4f5"/>
+<text x="18" y="32" fill="#102a2b" font-family="Georgia, serif" font-size="20" font-weight="700">Guia de entrega</text>
+<text x="230" y="32" fill="#102a2b" font-family="Arial, sans-serif" font-size="14" font-weight="700">ENT-221</text>
+<text x="18" y="52" fill="#3e5553" font-family="Arial, sans-serif" font-size="12">Saída da loja · 12 de março de 2026</text>
+<rect x="18" y="66" width="304" height="36" fill="#fff"/><text x="28" y="88" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Candeeiro de parede · 6</text>
+<rect x="18" y="108" width="304" height="36" fill="#fff"/><text x="28" y="130" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Cabo XLR 10 m · 4</text>
+<rect x="18" y="150" width="304" height="36" fill="#fff"/><text x="28" y="172" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Suporte de coluna · 2</text>
+<text x="18" y="210" fill="#3e5553" font-family="Arial, sans-serif" font-size="12">Recebido na obra. Sem assinatura neste exemplo.</text>
+</svg>
 <b>Guia de entrega</b>
 </button>
 </div>
@@ -165,7 +202,10 @@ if (location.hostname.endsWith('github.io')) {
         ['Referência', 'Descrição', 'Quantidade', 'Preço €'],
         ['FAC-014', 'Parafuso zincado M8', 40, 0.18],
         ['FAC-015', 'Tinta branca 5 L', 2, 24.9],
-        ['FAC-016', 'Lixa grão 120', 10, 1.4]
+        ['FAC-016', 'Lixa grão 120', 10, 1.4],
+        ['FAC-017', 'Rolo de pintor', 4, 3.2],
+        ['FAC-018', 'Fita de pintor', 6, 1.1],
+        ['FAC-019', 'Massa de reparação', 3, 4.5]
       ]
     },
     lista: {
@@ -174,7 +214,9 @@ if (location.hostname.endsWith('github.io')) {
         ['Referência', 'Material', 'Quantidade'],
         ['MAT-001', 'Painel MDF 18 mm', 12],
         ['MAT-002', 'Contraplacado 10 mm', 8],
-        ['MAT-003', 'Parafuso 4x40', 200]
+        ['MAT-003', 'Parafuso 4x40', 200],
+        ['MAT-004', 'Cola branca 1 kg', 3],
+        ['MAT-005', 'Cantos de união', 24]
       ]
     },
     guia: {
@@ -183,7 +225,9 @@ if (location.hostname.endsWith('github.io')) {
         ['Referência', 'Artigo', 'Quantidade'],
         ['ENT-221', 'Candeeiro de parede', 6],
         ['ENT-222', 'Cabo XLR 10 m', 4],
-        ['ENT-223', 'Suporte de coluna', 2]
+        ['ENT-223', 'Suporte de coluna', 2],
+        ['ENT-224', 'Fita de marcação', 3],
+        ['ENT-225', 'Braçadeira 200 mm', 20]
       ]
     }
   };

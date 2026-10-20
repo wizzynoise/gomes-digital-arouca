@@ -721,7 +721,18 @@ footer {
 .piece[hidden] { display: none; }
 .device-screen { overflow: hidden; border-radius: 4px; background: #fff; aspect-ratio: 16 / 10; }
 .device-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-.crop-foot img { transform: scale(1.45); transform-origin: top center; }
+.devices-clear { display: grid; grid-template-columns: minmax(0, 1fr) 132px; align-items: end; gap: 14px; padding-bottom: 0; }
+.devices-clear .phone { position: relative; width: 100%; max-width: none; right: auto; bottom: auto; }
+.crop-foot { position: relative; }
+.crop-foot img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: unset;
+  transform: none;
+}
 .phone {
   position: absolute;
   width: 27%;
@@ -734,10 +745,94 @@ footer {
   box-shadow: 0 14px 26px rgba(16, 42, 43, .22);
 }
 .phone .device-screen { aspect-ratio: 9 / 17; border-radius: 8px; }
-.sheet-mock { height: 100%; padding: 14px 12px; color: var(--ink); overflow: hidden; }
-.sheet-mock p { margin: 0 0 8px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.sheet-mock table { width: 100%; border-collapse: collapse; font-size: 12px; }
-.sheet-mock td { padding: 6px 4px; border-bottom: 1px solid rgba(16, 42, 43, .12); }
+.excel-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.12fr);
+  gap: 8px;
+  align-items: stretch;
+  height: 100%;
+  padding: 10px;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, .45), transparent 42%),
+    linear-gradient(145deg, #d7e3df, #b7c9c4);
+  color: var(--ink);
+}
+.bill {
+  margin: 0;
+  min-width: 0;
+  background: #fffef8;
+  color: #1c1916;
+  transform: rotate(-2.4deg);
+  transform-origin: center;
+  box-shadow: 0 10px 22px rgba(16, 42, 43, .28);
+  padding: 8px 10px 6px;
+  overflow: hidden;
+  font-size: 11px;
+  line-height: 1.25;
+  display: flex;
+  flex-direction: column;
+}
+.bill header { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.bill strong { font-size: 13px; letter-spacing: -.02em; }
+.bill .meta { margin: 2px 0 6px; color: #5c534c; font-size: 10px; }
+.bill ul { list-style: none; margin: 0; padding: 0; }
+.bill li, .bill .sum {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 6px;
+  padding: 3px 0;
+  border-top: 1px solid rgba(28, 25, 22, .12);
+}
+.bill .sum { margin-top: auto; font-weight: 800; grid-template-columns: 1fr auto; }
+.excel-arrow {
+  align-self: center;
+  margin: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: var(--lime);
+  font-weight: 800;
+  font-size: 16px;
+}
+.excel-sheet {
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #9aada8;
+  box-shadow: 0 8px 16px rgba(16, 42, 43, .16);
+  overflow: hidden;
+  display: flex;
+}
+.excel-sheet table, .excel-phone table { width: 100%; height: 100%; border-collapse: collapse; font-size: 11px; }
+.excel-sheet th, .excel-phone th { background: var(--ink); color: var(--cream); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; text-align: left; padding: 5px 6px; }
+.excel-sheet td, .excel-phone td { padding: 4px 6px; border-bottom: 1px solid rgba(16, 42, 43, .12); }
+.excel-sheet tr.total td, .excel-phone tr.total td { font-weight: 800; background: var(--lime); }
+.excel-phone {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 6px 8px;
+  background: #fff;
+  color: var(--ink);
+}
+.excel-phone p { margin: 0; font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.excel-phone table { font-size: 9px; }
+.excel-phone .dl {
+  margin-top: auto;
+  display: grid;
+  place-items: center;
+  min-height: 28px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--lime);
+  font-size: 9px;
+  font-weight: 800;
+  text-align: center;
+  padding: 4px;
+}
 .showcase-ask { background: var(--ink); color: var(--cream); padding: 72px 24px; }
 .showcase-ask-inner { width: min(1160px, 100%); margin: 0 auto; }
 .showcase-ask h2 { margin: 0 0 18px; font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -.05em; line-height: 1.05; max-width: 16ch; }
@@ -750,6 +845,16 @@ footer {
   .piece, .piece-b { grid-template-columns: 1fr; padding: 18px; }
   .piece-b .piece-copy { order: 0; }
   .phone { width: 104px; right: 10px; }
+  .devices-clear { grid-template-columns: minmax(0, 1fr) 96px; gap: 8px; }
+  .devices-clear .phone { width: 100%; }
+  .filter-bar { display: grid; grid-template-columns: 1fr 1fr; }
+  .filter-bar button { width: 100%; }
+  .excel-stage { padding: 6px; gap: 4px; }
+  .bill { font-size: 9px; padding: 6px; }
+  .bill strong { font-size: 10px; }
+  .excel-arrow { width: 22px; height: 22px; font-size: 13px; }
+  .excel-sheet table { font-size: 8px; }
+  .excel-sheet th, .excel-sheet td { padding: 3px 4px; }
   .showcase-ask { padding: 56px 16px; }
   .showcase-page { padding-top: 36px; }
 }

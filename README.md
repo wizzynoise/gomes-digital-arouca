@@ -76,7 +76,7 @@ The repository root is a Cloudflare Worker with static assets, connected to Work
 | --- | --- |
 | `index.html` | Homepage, search metadata, and contact script |
 | `assets/home.css` | Homepage styles |
-| `assets/bibo-widget.js` | Bibo assistant on the homepage and demonstrations |
+| `assets/bibo-widget.js` | Bibo assistant on the homepage and example pages |
 | `assets/projects/` | Desktop and mobile screenshots for the homepage examples and `/projetos` |
 | `servicos.html` | Services page at `/servicos` |
 | `projetos.html` | Example showcase at `/projetos` |

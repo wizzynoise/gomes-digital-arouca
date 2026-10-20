@@ -82,7 +82,7 @@ if (location.hostname.endsWith('github.io')) {
 <h2>SjGomes - Sistemas de som</h2>
 <p>Aluguer de som para eventos, com o equipamento à vista e um caminho claro para marcar.</p>
 </div>
-<div class="devices">
+<div class="devices devices-clear">
 <div class="laptop"><div class="device-screen crop-foot"><img src="assets/projects/sjgomes-desktop.webp" width="1200" height="750" alt="Website de aluguer de som da SjGomes." loading="lazy"></div></div>
 <div class="phone"><div class="device-screen crop-foot"><img src="assets/projects/sjgomes-mobile.webp" width="390" height="844" alt="" loading="lazy"></div></div>
 </div>
@@ -166,9 +166,51 @@ if (location.hostname.endsWith('github.io')) {
 <p>Uma foto de uma fatura ou de uma lista de material passa a tabela, pronta a descarregar.</p>
 <a class="button button-lime" href="/demos/foto-para-excel/">Experimentar</a>
 </div>
-<div class="devices">
-<div class="laptop"><div class="device-screen sheet-mock"><p>Lista de material</p><table><tbody><tr><td>MAT-001</td><td>Painel MDF</td><td>12</td></tr><tr><td>MAT-002</td><td>Contraplacado</td><td>8</td></tr><tr><td>MAT-003</td><td>Parafuso 4×40</td><td>200</td></tr></tbody></table></div></div>
-<div class="phone"><div class="device-screen sheet-mock"><p>Excel</p><table><tbody><tr><td>MAT-001</td><td>12</td></tr><tr><td>MAT-002</td><td>8</td></tr></tbody></table></div></div>
+<div class="devices devices-clear">
+<div class="laptop"><div class="device-screen excel-stage">
+<article class="bill">
+<header><strong>Oficina Norte</strong><span>FAC-014</span></header>
+<p class="meta">12 de março de 2026 · Arouca</p>
+<ul>
+<li><span>Parafuso zincado M8</span><span>40</span><span>7,20 €</span></li>
+<li><span>Tinta branca 5 L</span><span>2</span><span>49,80 €</span></li>
+<li><span>Lixa grão 120</span><span>10</span><span>14,00 €</span></li>
+<li><span>Rolo de pintor</span><span>4</span><span>12,80 €</span></li>
+<li><span>Fita de pintor</span><span>6</span><span>6,60 €</span></li>
+<li><span>Massa de reparação</span><span>3</span><span>13,50 €</span></li>
+</ul>
+<p class="sum"><span>Total</span><span>103,90 €</span></p>
+</article>
+<p class="excel-arrow" aria-hidden="true">→</p>
+<div class="excel-sheet"><table>
+<thead><tr><th>Ref.</th><th>Descrição</th><th>Qtd</th><th>Preço</th></tr></thead>
+<tbody>
+<tr><td>FAC-014</td><td>Parafuso zincado M8</td><td>40</td><td>0,18 €</td></tr>
+<tr><td>FAC-015</td><td>Tinta branca 5 L</td><td>2</td><td>24,90 €</td></tr>
+<tr><td>FAC-016</td><td>Lixa grão 120</td><td>10</td><td>1,40 €</td></tr>
+<tr><td>FAC-017</td><td>Rolo de pintor</td><td>4</td><td>3,20 €</td></tr>
+<tr><td>FAC-018</td><td>Fita de pintor</td><td>6</td><td>1,10 €</td></tr>
+<tr><td>FAC-019</td><td>Massa de reparação</td><td>3</td><td>4,50 €</td></tr>
+<tr class="total"><td></td><td>Total</td><td></td><td>103,90 €</td></tr>
+</tbody>
+</table></div>
+</div></div>
+<div class="phone"><div class="device-screen excel-phone">
+<p>Fatura FAC-014</p>
+<table>
+<thead><tr><th>Ref.</th><th>Qtd</th></tr></thead>
+<tbody>
+<tr><td>FAC-014</td><td>40</td></tr>
+<tr><td>FAC-015</td><td>2</td></tr>
+<tr><td>FAC-016</td><td>10</td></tr>
+<tr><td>FAC-017</td><td>4</td></tr>
+<tr><td>FAC-018</td><td>6</td></tr>
+<tr><td>FAC-019</td><td>3</td></tr>
+<tr class="total"><td>Total</td><td>103,90 €</td></tr>
+</tbody>
+</table>
+<span class="dl">Descarregar Excel</span>
+</div></div>
 </div>
 </article>
 </div>
