@@ -16,11 +16,11 @@ Every WhatsApp control is a link to `https://wa.me/message/5VB7SV74VVEKE1` with 
 
 The homepage shows four example cards: Atelier Nórd, Leonor Matos, Nexora Inventory, and BRUMA Coffee. Desktop and mobile screenshots crossfade on hover, focus, or tap.
 
-`/projetos` uses the same card style for completed work, in this order:
+`/projetos` uses the same card style and presents every card as an example ("Exemplos"). Do not use the word "demo" in visible text, and do not present any card as a client or as real/delivered work. Cards, in this order:
 
 | Name on the card | Link | Screenshot |
 | --- | --- | --- |
-| 7Jardins - Serviços de jardinagem | https://7jardins26.vercel.app | `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` |
+| 7Jardins - Serviços de jardinagem | None (the site is no longer online) | `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` |
 | SjGomes - Sistemas de som | None | `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` |
 | Barbearia Leme | `/demos/barbearia-leme/` | `assets/projects/barbearia-leme-desktop.webp`, `assets/projects/barbearia-leme-mobile.webp` |
 | Mesa da Encosta | `/demos/mesa-da-encosta/` | `assets/projects/mesa-da-encosta-desktop.webp`, `assets/projects/mesa-da-encosta-mobile.webp` |
