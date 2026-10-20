@@ -56,6 +56,7 @@ if (location.hostname.endsWith('github.io')) {
 .result { margin-top: 8px; }
 .result table { width: 100%; border-collapse: collapse; background: #fff; font-size: 14px; }
 .result th, .result td { text-align: left; padding: 10px 8px; border-bottom: 1px solid rgba(16, 42, 43, .12); }
+.result tr.total td { font-weight: 800; background: #c7f36a; }
 .result th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
 .table-wrap { overflow-x: auto; border: 1px solid rgba(16, 42, 43, .12); border-radius: 8px; }
 .fine { margin: 12px 0 0; color: #4d6361; font-size: 14px; line-height: 1.5; }
@@ -266,13 +267,33 @@ if (location.hostname.endsWith('github.io')) {
     document.getElementById('aviso').textContent = 'Exemplo com dados fictícios, nada é guardado. A foto fica só neste ecrã.';
   });
 
+  function euro(n) {
+    var parts = n.toFixed(2).split('.');
+    return parts[0] + ',' + parts[1] + ' €';
+  }
   function showTable() {
     rows = samples[current].rows;
+    var priceCol = rows[0].indexOf('Preço €');
+    var qtyCol = rows[0].indexOf('Quantidade');
+    var body = rows.slice(1).map(function (row) {
+      return '<tr>' + row.map(function (cell, i) {
+        var text = (i === priceCol && typeof cell === 'number') ? euro(cell) : cell;
+        return '<td>' + text + '</td>';
+      }).join('') + '</tr>';
+    }).join('');
+    if (priceCol >= 0) {
+      var cents = rows.slice(1).reduce(function (sum, row) {
+        return sum + Math.round(row[qtyCol] * row[priceCol] * 100);
+      }, 0);
+      var total = rows[0].map(function (_, i) {
+        if (i === 1) return 'Total';
+        if (i === priceCol) return euro(cents / 100);
+        return '';
+      });
+      body += '<tr class="total">' + total.map(function (cell) { return '<td>' + cell + '</td>'; }).join('') + '</tr>';
+    }
     var table = document.getElementById('tabela');
-    table.innerHTML = '<thead><tr>' + rows[0].map(function (cell) { return '<th>' + cell + '</th>'; }).join('') + '</tr></thead><tbody>' +
-      rows.slice(1).map(function (row) {
-        return '<tr>' + row.map(function (cell) { return '<td>' + cell + '</td>'; }).join('') + '</tr>';
-      }).join('') + '</tbody>';
+    table.innerHTML = '<thead><tr>' + rows[0].map(function (cell) { return '<th>' + cell + '</th>'; }).join('') + '</tr></thead><tbody>' + body + '</tbody>';
     document.getElementById('scan').hidden = true;
     document.getElementById('estado').textContent = 'Tabela pronta. Os números são do exemplo, não da tua foto.';
     document.getElementById('resultado').hidden = false;
