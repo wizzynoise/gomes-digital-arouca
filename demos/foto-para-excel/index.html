@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<script>
+if (location.hostname.endsWith('github.io')) {
+  var meta = document.createElement('meta');
+  meta.name = 'robots';
+  meta.content = 'noindex';
+  document.head.appendChild(meta);
+  location.replace('https://gomesiadigital.com' + location.pathname.replace('/gomes-digital-arouca', '') + location.hash);
+}
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f4eb">
+<title>Foto para Excel — Gomes IA Digital</title>
+<meta name="description" content="Exemplo: uma foto de fatura ou de lista de material passa a tabela e descarrega em Excel. Dados fictícios, nada é guardado.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://gomesiadigital.com/demos/foto-para-excel/">
+<meta property="og:title" content="Foto para Excel — Gomes IA Digital">
+<meta property="og:description" content="Exemplo: uma foto de fatura ou de lista de material passa a tabela e descarrega em Excel. Dados fictícios, nada é guardado.">
+<meta property="og:url" content="https://gomesiadigital.com/demos/foto-para-excel/">
+<meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Foto para Excel — Gomes IA Digital">
+<meta name="twitter:description" content="Exemplo: uma foto de fatura ou de lista de material passa a tabela e descarrega em Excel. Dados fictícios, nada é guardado.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/home.css">
+<style>
+.tool { width: min(1160px, calc(100% - 32px)); margin: 28px auto 72px; }
+.tool h1 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 3.4rem); letter-spacing: -.05em; line-height: 1; }
+.tool .lead { max-width: 62ch; margin: 0 0 22px; color: #4d6361; font-size: 16px; line-height: 1.6; }
+.sample-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0 0 16px; }
+.sample, .upload {
+  min-height: 44px;
+  border: 1px solid #102a2b;
+  background: #fffef9;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  color: #102a2b;
+}
+.sample[aria-pressed="true"] { background: #c7f36a; }
+.sample b, .upload b { display: block; margin: 8px 0 0; font-size: 15px; }
+.sample svg, .doc-preview svg { width: 100%; height: auto; display: block; background: #fff; border-radius: 4px; box-shadow: 0 8px 16px rgba(16, 42, 43, .14); }
+.upload input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+.upload { display: flex; flex-direction: column; justify-content: flex-end; position: relative; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 8px 0 18px; }
+.stage-box { position: relative; background: #fffef9; border: 1px solid rgba(16, 42, 43, .12); border-radius: 8px; overflow: hidden; min-height: 180px; }
+.doc-preview { padding: 16px; }
+.doc-preview img { width: min(100%, 420px); height: auto; display: block; border: 1px solid rgba(16, 42, 43, .12); }
+.scan { position: absolute; left: 0; right: 0; height: 28%; background: linear-gradient(transparent, rgba(199, 243, 106, .55), transparent); animation: scan 1.1s linear infinite; pointer-events: none; }
+@keyframes scan { from { top: -20%; } to { top: 92%; } }
+.status { margin: 12px 0; font-weight: 800; }
+.result { margin-top: 8px; }
+.result table { width: 100%; border-collapse: collapse; background: #fff; font-size: 14px; }
+.result th, .result td { text-align: left; padding: 10px 8px; border-bottom: 1px solid rgba(16, 42, 43, .12); }
+.result tr.total td { font-weight: 800; background: #c7f36a; }
+.result th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.table-wrap { overflow-x: auto; border: 1px solid rgba(16, 42, 43, .12); border-radius: 8px; }
+.fine { margin: 12px 0 0; color: #4d6361; font-size: 14px; line-height: 1.5; }
+@media (max-width: 700px) { .sample-row { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .scan { animation: none; top: 36%; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<main class="site-shell" id="conteudo">
+<nav class="nav-wrap" aria-label="Navegação principal">
+<a href="/" class="brand" aria-label="Gomes IA Digital — página inicial"><span class="brand-mark" aria-hidden="true">G</span><span>Gomes <em>IA</em> Digital</span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+</button>
+<div class="nav-links" id="menu-principal">
+<a href="/servicos">Serviços</a>
+<a href="/projetos">Projetos</a>
+<a href="/servicos#assistencia">Assistência</a>
+<a href="/sobre">Sobre</a>
+<a class="nav-cta" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Pedir orçamento pelo WhatsApp</a>
+</div>
+</nav>
+<section class="tool">
+<p class="eyebrow"><span class="eyebrow-dot"></span> Automatização</p>
+<h1>Foto para Excel</h1>
+<p class="lead">Escolhe uma fatura ou uma lista de material, ou carrega uma foto tua. A leitura deste ecrã usa dados fictícios. A foto não sai do teu browser e nada é guardado.</p>
+<div class="sample-row" role="group" aria-label="Documentos de exemplo">
+<button class="sample" type="button" data-sample="fatura" aria-pressed="true">
+<svg viewBox="0 0 340 230" aria-hidden="true" role="img">
+<rect width="340" height="230" fill="#fffef8"/>
+<text x="18" y="32" fill="#102a2b" font-family="Georgia, serif" font-size="20" font-weight="700">Oficina Norte</text>
+<text x="230" y="32" fill="#102a2b" font-family="Arial, sans-serif" font-size="14" font-weight="700">FAC-014</text>
+<text x="18" y="52" fill="#5c534c" font-family="Arial, sans-serif" font-size="12">Fatura · 12 de março de 2026 · Arouca</text>
+<line x1="18" y1="64" x2="322" y2="64" stroke="#d8dfd9"/>
+<text x="18" y="86" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">Parafuso zincado M8</text><text x="250" y="86" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">40 × 0,18 €</text>
+<text x="18" y="108" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">Tinta branca 5 L</text><text x="250" y="108" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">2 × 24,90 €</text>
+<text x="18" y="130" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">Lixa grão 120</text><text x="248" y="130" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">10 × 1,40 €</text>
+<text x="18" y="152" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">Rolo e fita de pintor</text><text x="250" y="152" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">4 + 6</text>
+<text x="18" y="174" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">Massa de reparação</text><text x="250" y="174" fill="#1c1916" font-family="Arial, sans-serif" font-size="13">3 × 4,50 €</text>
+<rect x="18" y="190" width="118" height="26" fill="#c7f36a"/>
+<text x="28" y="208" fill="#102a2b" font-family="Arial, sans-serif" font-size="13" font-weight="700">Total 103,90 €</text>
+</svg>
+<b>Fatura</b>
+</button>
+<button class="sample" type="button" data-sample="lista" aria-pressed="false">
+<svg viewBox="0 0 340 230" aria-hidden="true" role="img">
+<rect width="340" height="230" fill="#fff7e4"/>
+<text x="18" y="32" fill="#102a2b" font-family="Georgia, serif" font-size="20" font-weight="700">Lista de material</text>
+<text x="18" y="52" fill="#5c534c" font-family="Arial, sans-serif" font-size="12">Obra da oficina · 12 de março de 2026</text>
+<rect x="18" y="70" width="16" height="16" fill="none" stroke="#102a2b" stroke-width="1.5"/><path d="M21 78 l4 4 7-8" fill="none" stroke="#102a2b" stroke-width="1.6"/>
+<text x="44" y="83" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Painel MDF 18 mm · 12</text>
+<rect x="18" y="98" width="16" height="16" fill="none" stroke="#102a2b" stroke-width="1.5"/>
+<text x="44" y="111" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Contraplacado 10 mm · 8</text>
+<rect x="18" y="126" width="16" height="16" fill="none" stroke="#102a2b" stroke-width="1.5"/><path d="M21 134 l4 4 7-8" fill="none" stroke="#102a2b" stroke-width="1.6"/>
+<text x="44" y="139" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Parafuso 4x40 · 200</text>
+<rect x="18" y="154" width="16" height="16" fill="none" stroke="#102a2b" stroke-width="1.5"/>
+<text x="44" y="167" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Cola branca 1 kg · 3</text>
+<rect x="18" y="182" width="16" height="16" fill="none" stroke="#102a2b" stroke-width="1.5"/>
+<text x="44" y="195" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Cantos de união · 24</text>
+<text x="18" y="220" fill="#5c534c" font-family="Arial, sans-serif" font-size="12">Materiais por contar na bancada.</text>
+</svg>
+<b>Lista de material</b>
+</button>
+<button class="sample" type="button" data-sample="guia" aria-pressed="false">
+<svg viewBox="0 0 340 230" aria-hidden="true" role="img">
+<rect width="340" height="230" fill="#e7f4f5"/>
+<text x="18" y="32" fill="#102a2b" font-family="Georgia, serif" font-size="20" font-weight="700">Guia de entrega</text>
+<text x="230" y="32" fill="#102a2b" font-family="Arial, sans-serif" font-size="14" font-weight="700">ENT-221</text>
+<text x="18" y="52" fill="#3e5553" font-family="Arial, sans-serif" font-size="12">Saída da loja · 12 de março de 2026</text>
+<rect x="18" y="66" width="304" height="36" fill="#fff"/><text x="28" y="88" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Candeeiro de parede · 6</text>
+<rect x="18" y="108" width="304" height="36" fill="#fff"/><text x="28" y="130" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Cabo XLR 10 m · 4</text>
+<rect x="18" y="150" width="304" height="36" fill="#fff"/><text x="28" y="172" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Suporte de coluna · 2</text>
+<text x="18" y="210" fill="#3e5553" font-family="Arial, sans-serif" font-size="12">Recebido na obra. Sem assinatura neste exemplo.</text>
+</svg>
+<b>Guia de entrega</b>
+</button>
+</div>
+<label class="upload">Carregar uma foto do documento
+<input id="foto" type="file" accept="image/*">
+<b>A foto não é enviada</b>
+</label>
+<div class="actions">
+<button class="button button-lime" type="button" id="ler">Ler o documento</button>
+</div>
+<p class="fine" id="aviso">Exemplo com dados fictícios, nada é guardado.</p>
+<div class="stage-box" id="stage">
+<div class="doc-preview" id="paper"></div>
+<img id="foto-vista" alt="Foto escolhida neste ecrã" hidden>
+<div class="scan" id="scan" hidden></div>
+</div>
+<p class="status" id="estado" role="status"></p>
+<div class="result" id="resultado" hidden>
+<div class="table-wrap"><table id="tabela"></table></div>
+<div class="actions">
+<button class="button button-dark" type="button" id="excel">Descarregar Excel</button>
+</div>
+<p class="fine">O ficheiro é criado neste browser, com os dados do exemplo. A tua foto não entra no ficheiro.</p>
+</div>
+</section>
+<footer>
+<div class="footer-brand">
+<a href="/" class="brand" aria-label="Gomes IA Digital — página inicial"><span class="brand-mark" aria-hidden="true">G</span><span>Gomes <em>IA</em> Digital</span></a>
+<p>Pedro Gomes, programador e diretor, em Arouca. Websites, presença online e assistência tecnológica.</p>
+<a class="footer-wa" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Pedir orçamento pelo WhatsApp</a>
+<a class="footer-mail" href="mailto:sjgomesarouca@gmail.com">sjgomesarouca@gmail.com</a>
+<small>Arouca, Portugal · clientes em todo o país</small>
+</div>
+<a class="footer-logo" href="/" aria-label="Gomes IA Digital — página inicial">
+<img src="/assets/logo-gomes-ia.webp" width="560" height="512" alt="">
+</a>
+<div class="footer-bottom">
+<span>© 2026 <a class="brand-home" href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></span>
+<a href="/servicos">Serviços</a>
+<a href="/projetos">Projetos</a>
+<a href="/sobre">Sobre</a>
+<a href="/politica-privacidade">Política de privacidade</a>
+</div>
+</footer>
+</main>
+<a class="wa-float" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">WhatsApp</a>
+<script>
+(function () {
+  var btn = document.querySelector('.menu-toggle');
+  var menu = document.getElementById('menu-principal');
+  var iconOpen = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  var iconClose = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+  function setOpen(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    btn.innerHTML = open ? iconClose : iconOpen;
+    menu.classList.toggle('is-open', open);
+  }
+  btn.addEventListener('click', function () { setOpen(btn.getAttribute('aria-expanded') !== 'true'); });
+  menu.addEventListener('click', function (event) { if (event.target.closest('a')) setOpen(false); });
+})();
+</script>
+<script>
+(function () {
+  var samples = {
+    fatura: {
+      name: 'fatura-exemplo.xlsx',
+      rows: [
+        ['Referência', 'Descrição', 'Quantidade', 'Preço €'],
+        ['FAC-014', 'Parafuso zincado M8', 40, 0.18],
+        ['FAC-015', 'Tinta branca 5 L', 2, 24.9],
+        ['FAC-016', 'Lixa grão 120', 10, 1.4],
+        ['FAC-017', 'Rolo de pintor', 4, 3.2],
+        ['FAC-018', 'Fita de pintor', 6, 1.1],
+        ['FAC-019', 'Massa de reparação', 3, 4.5]
+      ]
+    },
+    lista: {
+      name: 'lista-material.xlsx',
+      rows: [
+        ['Referência', 'Material', 'Quantidade'],
+        ['MAT-001', 'Painel MDF 18 mm', 12],
+        ['MAT-002', 'Contraplacado 10 mm', 8],
+        ['MAT-003', 'Parafuso 4x40', 200],
+        ['MAT-004', 'Cola branca 1 kg', 3],
+        ['MAT-005', 'Cantos de união', 24]
+      ]
+    },
+    guia: {
+      name: 'guia-entrega.xlsx',
+      rows: [
+        ['Referência', 'Artigo', 'Quantidade'],
+        ['ENT-221', 'Candeeiro de parede', 6],
+        ['ENT-222', 'Cabo XLR 10 m', 4],
+        ['ENT-223', 'Suporte de coluna', 2],
+        ['ENT-224', 'Fita de marcação', 3],
+        ['ENT-225', 'Braçadeira 200 mm', 20]
+      ]
+    }
+  };
+  var papers = {
+    fatura: document.querySelector('[data-sample="fatura"] svg').outerHTML,
+    lista: document.querySelector('[data-sample="lista"] svg').outerHTML,
+    guia: document.querySelector('[data-sample="guia"] svg').outerHTML
+  };
+  var current = 'fatura';
+  var paper = document.getElementById('paper');
+  var photo = document.getElementById('foto-vista');
+  var photoUrl = '';
+  var rows = samples.fatura.rows;
+  paper.innerHTML = papers.fatura;
+
+  document.querySelectorAll('.sample').forEach(function (button) {
+    button.addEventListener('click', function () {
+      current = button.getAttribute('data-sample');
+      document.querySelectorAll('.sample').forEach(function (b) {
+        b.setAttribute('aria-pressed', b === button ? 'true' : 'false');
+      });
+      if (!photoUrl) paper.innerHTML = papers[current];
+      document.getElementById('resultado').hidden = true;
+      document.getElementById('estado').textContent = '';
+    });
+  });
+
+  document.getElementById('foto').addEventListener('change', function (event) {
+    var file = event.target.files && event.target.files[0];
+    if (!file) return;
+    if (photoUrl) URL.revokeObjectURL(photoUrl);
+    photoUrl = URL.createObjectURL(file);
+    photo.src = photoUrl;
+    photo.hidden = false;
+    paper.hidden = true;
+    document.getElementById('aviso').textContent = 'Exemplo com dados fictícios, nada é guardado. A foto fica só neste ecrã.';
+  });
+
+  function euro(n) {
+    var parts = n.toFixed(2).split('.');
+    return parts[0] + ',' + parts[1] + ' €';
+  }
+  function showTable() {
+    rows = samples[current].rows;
+    var priceCol = rows[0].indexOf('Preço €');
+    var qtyCol = rows[0].indexOf('Quantidade');
+    var body = rows.slice(1).map(function (row) {
+      return '<tr>' + row.map(function (cell, i) {
+        var text = (i === priceCol && typeof cell === 'number') ? euro(cell) : cell;
+        return '<td>' + text + '</td>';
+      }).join('') + '</tr>';
+    }).join('');
+    if (priceCol >= 0) {
+      var cents = rows.slice(1).reduce(function (sum, row) {
+        return sum + Math.round(row[qtyCol] * row[priceCol] * 100);
+      }, 0);
+      var total = rows[0].map(function (_, i) {
+        if (i === 1) return 'Total';
+        if (i === priceCol) return euro(cents / 100);
+        return '';
+      });
+      body += '<tr class="total">' + total.map(function (cell) { return '<td>' + cell + '</td>'; }).join('') + '</tr>';
+    }
+    var table = document.getElementById('tabela');
+    table.innerHTML = '<thead><tr>' + rows[0].map(function (cell) { return '<th>' + cell + '</th>'; }).join('') + '</tr></thead><tbody>' + body + '</tbody>';
+    document.getElementById('scan').hidden = true;
+    document.getElementById('estado').textContent = 'Tabela pronta. Os números são do exemplo, não da tua foto.';
+    document.getElementById('resultado').hidden = false;
+  }
+
+  document.getElementById('ler').addEventListener('click', function () {
+    document.getElementById('resultado').hidden = true;
+    document.getElementById('estado').textContent = 'A ler o documento…';
+    var scan = document.getElementById('scan');
+    scan.hidden = false;
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setTimeout(showTable, reduce ? 0 : 1200);
+  });
+
+  function crc32(bytes) {
+    if (!crc32.table) {
+      var table = new Uint32Array(256);
+      for (var n = 0; n < 256; n++) {
+        var c = n;
+        for (var k = 0; k < 8; k++) c = (c & 1) ? (0xedb88320 ^ (c >>> 1)) : (c >>> 1);
+        table[n] = c >>> 0;
+      }
+      crc32.table = table;
+    }
+    var crc = 0xffffffff;
+    for (var i = 0; i < bytes.length; i++) crc = crc32.table[(crc ^ bytes[i]) & 255] ^ (crc >>> 8);
+    return (crc ^ 0xffffffff) >>> 0;
+  }
+  function u16(n) { return [n & 255, (n >> 8) & 255]; }
+  function u32(n) { return [n & 255, (n >> 8) & 255, (n >> 16) & 255, (n >>> 24) & 255]; }
+  function zipStore(files) {
+    var encoder = new TextEncoder();
+    var parts = [];
+    var central = [];
+    var offset = 0;
+    files.forEach(function (file) {
+      var name = encoder.encode(file.name);
+      var data = typeof file.data === 'string' ? encoder.encode(file.data) : file.data;
+      var crc = crc32(data);
+      var local = [].concat([80, 75, 3, 4], u16(20), u16(0), u16(0), u16(0), u16(0), u32(crc), u32(data.length), u32(data.length), u16(name.length), u16(0));
+      parts.push(new Uint8Array(local), name, data);
+      central.push(new Uint8Array([].concat([80, 75, 1, 2], u16(20), u16(20), u16(0), u16(0), u16(0), u16(0), u32(crc), u32(data.length), u32(data.length), u16(name.length), u16(0), u16(0), u16(0), u16(0), u32(0), u32(offset))), name);
+      offset += local.length + name.length + data.length;
+    });
+    var centralSize = central.reduce(function (n, part) { return n + part.length; }, 0);
+    var end = new Uint8Array([].concat([80, 75, 5, 6], u16(0), u16(0), u16(files.length), u16(files.length), u32(centralSize), u32(offset), u16(0)));
+    var chunks = parts.concat(central, [end]);
+    var total = chunks.reduce(function (n, part) { return n + part.length; }, 0);
+    var out = new Uint8Array(total);
+    var pos = 0;
+    chunks.forEach(function (part) { out.set(part, pos); pos += part.length; });
+    return out;
+  }
+  function colName(index) {
+    var n = index + 1;
+    var s = '';
+    while (n) { var m = (n - 1) % 26; s = String.fromCharCode(65 + m) + s; n = Math.floor((n - 1) / 26); }
+    return s;
+  }
+  function escapeXml(value) {
+    return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function workbook(table) {
+    var sheet = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetData>' +
+      table.map(function (row, r) {
+        return '<row r="' + (r + 1) + '">' + row.map(function (cell, c) {
+          var ref = colName(c) + (r + 1);
+          if (typeof cell === 'number') return '<c r="' + ref + '"><v>' + cell + '</v></c>';
+          return '<c r="' + ref + '" t="inlineStr"><is><t>' + escapeXml(cell) + '</t></is></c>';
+        }).join('') + '</row>';
+      }).join('') + '</sheetData></worksheet>';
+    return zipStore([
+      { name: '[Content_Types].xml', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>' },
+      { name: '_rels/.rels', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>' },
+      { name: 'xl/workbook.xml', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Exemplo" sheetId="1" r:id="rId1"/></sheets></workbook>' },
+      { name: 'xl/_rels/workbook.xml.rels', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/></Relationships>' },
+      { name: 'xl/worksheets/sheet1.xml', data: sheet }
+    ]);
+  }
+
+  document.getElementById('excel').addEventListener('click', function () {
+    var bytes = workbook(rows);
+    var blob = new Blob([bytes], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    var link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = samples[current].name;
+    link.click();
+    setTimeout(function () { URL.revokeObjectURL(link.href); }, 1500);
+  });
+})();
+</script>
+<script src="/assets/bibo-widget.js" defer></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
+</body>
+</html>

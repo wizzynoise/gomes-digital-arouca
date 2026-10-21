@@ -14,20 +14,20 @@ if (location.hostname.endsWith('github.io')) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f6f4eb">
 <title>Exemplos — Gomes IA Digital</title>
-<meta name="description" content="Exemplos de websites: 7Jardins - Serviços de jardinagem, SjGomes - Sistemas de som, Barbearia Leme e Mesa da Encosta.">
+<meta name="description" content="Exemplos de websites, uma aplicação e uma automatização: jardinagem, som, barbearia, restaurante, arquitetura, café, inventário e foto para Excel.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://gomesiadigital.com/projetos">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_PT">
 <meta property="og:site_name" content="Gomes IA Digital">
 <meta property="og:title" content="Exemplos — Gomes IA Digital">
-<meta property="og:description" content="Exemplos de websites: 7Jardins - Serviços de jardinagem, SjGomes - Sistemas de som, Barbearia Leme e Mesa da Encosta.">
+<meta property="og:description" content="Exemplos de websites, uma aplicação e uma automatização: jardinagem, som, barbearia, restaurante, arquitetura, café, inventário e foto para Excel.">
 <meta property="og:url" content="https://gomesiadigital.com/projetos">
 <meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
 <meta property="og:image:alt" content="Gomes IA Digital. Criação de sites em Arouca para negócios locais.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Exemplos — Gomes IA Digital">
-<meta name="twitter:description" content="Exemplos de websites: 7Jardins - Serviços de jardinagem, SjGomes - Sistemas de som, Barbearia Leme e Mesa da Encosta.">
+<meta name="twitter:description" content="Exemplos de websites, uma aplicação e uma automatização: jardinagem, som, barbearia, restaurante, arquitetura, café, inventário e foto para Excel.">
 <meta name="twitter:image" content="https://gomesiadigital.com/assets/og.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/icon-180.png" type="image/png" sizes="180x180">
@@ -51,78 +51,179 @@ if (location.hostname.endsWith('github.io')) {
 </div>
 </nav>
 
-<section class="section projects">
+<section class="section showcase-page" id="exemplos">
 <div class="section-heading">
 <h1>Exemplos</h1>
+<p class="heading-note">Websites, uma aplicação e uma automatização. Cada peça mostra uma tarefa concreta do negócio.</p>
 </div>
-<div class="project-grid">
-<article class="project-card">
-<div class="project-hit">
-<div class="stage">
-<div class="shot shot-desk"><img src="assets/projects/7jardins-desktop.webp" width="1440" height="900" alt="Website de jardinagem da 7Jardins, com serviços de exterior."></div>
-<div class="shot shot-mob"><img src="assets/projects/7jardins-mobile.webp" width="390" height="844" alt="" loading="lazy"></div>
+<div class="filter-bar" role="group" aria-label="Filtrar exemplos">
+<button type="button" data-filter="todos" aria-pressed="true">Todos</button>
+<button type="button" data-filter="website" aria-pressed="false">Websites</button>
+<button type="button" data-filter="app" aria-pressed="false">Aplicações</button>
+<button type="button" data-filter="auto" aria-pressed="false">Automações</button>
 </div>
-<div class="project-info">
-<div>
-<h3>7Jardins - Serviços de jardinagem</h3>
-<p>Website de jardinagem, com serviços de exterior.</p>
+<p class="filter-live" aria-live="polite"></p>
+<div class="showcase" id="lista">
+<article class="piece piece-a" data-kind="website">
+<div class="piece-copy">
+<p class="eyebrow"><span class="eyebrow-dot"></span> Website</p>
+<h2>7Jardins - Serviços de jardinagem</h2>
+<p>Quem procura jardinagem vê os serviços de exterior e pede orçamento sem adivinhar o que a empresa faz.</p>
+<a class="button button-lime" href="https://7jardins26.vercel.app/" target="_blank" rel="noopener">Ver o site</a>
 </div>
+<div class="devices">
+<div class="laptop"><div class="device-screen"><img src="assets/projects/7jardins-desktop.webp" width="1440" height="900" alt="Website de jardinagem da 7Jardins, com serviços de exterior."></div></div>
+<div class="phone"><div class="device-screen"><img src="assets/projects/7jardins-mobile.webp" width="390" height="844" alt=""></div></div>
 </div>
-</div>
-<button class="view-toggle" type="button" aria-pressed="false">Ver no telemóvel</button>
 </article>
-
-<article class="project-card">
-<div class="project-hit">
-<div class="stage">
-<div class="shot shot-desk"><img src="assets/projects/sjgomes-desktop.webp" width="1200" height="750" alt="Website de aluguer de som da SjGomes." loading="lazy"></div>
-<div class="shot shot-mob"><img src="assets/projects/sjgomes-mobile.webp" width="390" height="844" alt="" loading="lazy"></div>
+<article class="piece piece-b" data-kind="website">
+<div class="piece-copy">
+<p class="eyebrow"><span class="eyebrow-dot"></span> Website</p>
+<h2>SjGomes - Sistemas de som</h2>
+<p>Aluguer de som para eventos, com o equipamento à vista e um caminho claro para marcar.</p>
 </div>
-<div class="project-info">
-<div>
-<h3>SjGomes - Sistemas de som</h3>
-<p>Website de aluguer de som para eventos.</p>
+<div class="devices devices-clear">
+<div class="laptop"><div class="device-screen crop-foot"><img src="assets/projects/sjgomes-desktop.webp" width="1200" height="750" alt="Website de aluguer de som da SjGomes." loading="lazy"></div></div>
+<div class="phone"><div class="device-screen crop-foot"><img src="assets/projects/sjgomes-mobile.webp" width="390" height="844" alt="" loading="lazy"></div></div>
 </div>
-</div>
-</div>
-<button class="view-toggle" type="button" aria-pressed="false">Ver no telemóvel</button>
 </article>
-
-<article class="project-card">
-<a class="project-hit" href="/demos/barbearia-leme/">
-<div class="stage">
-<div class="shot shot-desk"><img src="assets/projects/barbearia-leme-desktop.webp" width="1440" height="900" alt="Website da Barbearia Leme, com serviços e marcação." loading="lazy"></div>
-<div class="shot shot-mob"><img src="assets/projects/barbearia-leme-mobile.webp" width="390" height="844" alt="" loading="lazy"></div>
+<article class="piece piece-c" data-kind="website">
+<div class="piece-copy">
+<p class="eyebrow"><span class="eyebrow-dot"></span> Website</p>
+<h2>Barbearia Leme</h2>
+<p>Serviços, preços e marcação ficam visíveis, e o telefone deixa de ser a única forma de reservar.</p>
+<a class="button button-lime" href="/demos/barbearia-leme/">Ver o exemplo</a>
 </div>
-<div class="project-info">
-<div>
-<h3>Barbearia Leme</h3>
-<p>Website de barbearia, com serviços e marcação.</p>
-<p class="explore">Ver o site</p>
+<div class="devices">
+<div class="laptop"><div class="device-screen"><img src="assets/projects/barbearia-leme-desktop.webp" width="1440" height="900" alt="Website da Barbearia Leme, com serviços e marcação." loading="lazy"></div></div>
+<div class="phone"><div class="device-screen"><img src="assets/projects/barbearia-leme-mobile.webp" width="390" height="844" alt="" loading="lazy"></div></div>
 </div>
-<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-</div>
-</a>
-<button class="view-toggle" type="button" aria-pressed="false">Ver no telemóvel</button>
 </article>
-
-<article class="project-card">
-<a class="project-hit" href="/demos/mesa-da-encosta/">
-<div class="stage">
-<div class="shot shot-desk"><img src="assets/projects/mesa-da-encosta-desktop.webp" width="1440" height="900" alt="Website da Mesa da Encosta, com ementa e reserva." loading="lazy"></div>
-<div class="shot shot-mob"><img src="assets/projects/mesa-da-encosta-mobile.webp" width="390" height="844" alt="" loading="lazy"></div>
+<article class="piece piece-a" data-kind="website">
+<div class="piece-copy">
+<p class="eyebrow"><span class="eyebrow-dot"></span> Website</p>
+<h2>Mesa da Encosta</h2>
+<p>Ementa, horário e reserva à mão de quem já está a procurar onde comer.</p>
+<a class="button button-lime" href="/demos/mesa-da-encosta/">Ver o exemplo</a>
 </div>
-<div class="project-info">
-<div>
-<h3>Mesa da Encosta</h3>
-<p>Website de restaurante, com ementa e reserva.</p>
-<p class="explore">Ver o site</p>
+<div class="devices">
+<div class="laptop"><div class="device-screen"><img src="assets/projects/mesa-da-encosta-desktop.webp" width="1440" height="900" alt="Website da Mesa da Encosta, com ementa e reserva." loading="lazy"></div></div>
+<div class="phone"><div class="device-screen"><img src="assets/projects/mesa-da-encosta-mobile.webp" width="390" height="844" alt="" loading="lazy"></div></div>
 </div>
-<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-</div>
-</a>
-<button class="view-toggle" type="button" aria-pressed="false">Ver no telemóvel</button>
 </article>
+<article class="piece piece-b" data-kind="website">
+<div class="piece-copy">
+<p class="eyebrow"><span class="eyebrow-dot"></span> Website</p>
+<h2>Atelier Nórd</h2>
+<p>Fotografia grande do estúdio, para o visitante perceber o ofício antes de escrever.</p>
+<a class="button button-lime" href="/demos/atelier-nord/">Ver o exemplo</a>
+</div>
+<div class="devices">
+<div class="laptop"><div class="device-screen"><img src="assets/projects/atelier-nord-desktop.webp" width="1440" height="900" alt="Página inicial de Atelier Nórd, um site de estúdio de arquitetura." loading="lazy"></div></div>
+<div class="phone"><div class="device-screen"><img src="assets/projects/atelier-nord-mobile.webp" width="390" height="844" alt="" loading="lazy"></div></div>
+</div>
+</article>
+<article class="piece piece-c" data-kind="website">
+<div class="piece-copy">
+<p class="eyebrow"><span class="eyebrow-dot"></span> Website</p>
+<h2>Leonor Matos</h2>
+<p>Retrato e áreas de trabalho numa página curta, para quem quer conhecer a pessoa e o ofício.</p>
+<a class="button button-lime" href="/demos/leonor-matos/">Ver o exemplo</a>
+</div>
+<div class="devices">
+<div class="laptop"><div class="device-screen"><img src="assets/projects/leonor-matos-desktop.webp" width="1440" height="900" alt="Página de Leonor Matos, uma marca pessoal com retrato." loading="lazy"></div></div>
+<div class="phone"><div class="device-screen"><img src="assets/projects/leonor-matos-mobile.webp" width="390" height="844" alt="" loading="lazy"></div></div>
+</div>
+</article>
+<article class="piece piece-a" data-kind="website">
+<div class="piece-copy">
+<p class="eyebrow"><span class="eyebrow-dot"></span> Website</p>
+<h2>BRUMA Coffee</h2>
+<p>Os produtos da semana e o pedido pelo WhatsApp ficam na mesma página, sem um catálogo solto.</p>
+<a class="button button-lime" href="/demos/bruma/">Ver o exemplo</a>
+</div>
+<div class="devices">
+<div class="laptop"><div class="device-screen"><img src="assets/projects/bruma-desktop.webp" width="1440" height="900" alt="Montra BRUMA Coffee, com uma chávena em primeiro plano." loading="lazy"></div></div>
+<div class="phone"><div class="device-screen"><img src="assets/projects/bruma-mobile.webp" width="390" height="844" alt="" loading="lazy"></div></div>
+</div>
+</article>
+<article class="piece piece-b" data-kind="app">
+<div class="piece-copy">
+<p class="eyebrow"><span class="eyebrow-dot"></span> Aplicação</p>
+<h2>Nexora Inventory</h2>
+<p>Existências, pesquisa e movimentos num painel que se usa no browser, sem instalar nada.</p>
+<a class="button button-lime" href="/demos/nexora/">Experimentar</a>
+</div>
+<div class="devices">
+<div class="laptop"><div class="device-screen"><img src="assets/projects/nexora-desktop.webp" width="1440" height="900" alt="Painel Nexora Inventory, com resumo de existências e tabela." loading="lazy"></div></div>
+<div class="phone"><div class="device-screen"><img src="assets/projects/nexora-mobile.webp" width="390" height="844" alt="" loading="lazy"></div></div>
+</div>
+</article>
+<article class="piece piece-c" data-kind="auto">
+<div class="piece-copy">
+<p class="eyebrow"><span class="eyebrow-dot"></span> Automatização</p>
+<h2>Foto para Excel</h2>
+<p>Uma foto de uma fatura ou de uma lista de material passa a tabela, pronta a descarregar.</p>
+<a class="button button-lime" href="/demos/foto-para-excel/">Experimentar</a>
+</div>
+<div class="devices devices-clear">
+<div class="laptop"><div class="device-screen excel-stage">
+<article class="bill">
+<header><strong>Oficina Norte</strong><span>FAC-014</span></header>
+<p class="meta">12 de março de 2026 · Arouca</p>
+<ul>
+<li><span>Parafuso zincado M8</span><span>40</span><span>7,20 €</span></li>
+<li><span>Tinta branca 5 L</span><span>2</span><span>49,80 €</span></li>
+<li><span>Lixa grão 120</span><span>10</span><span>14,00 €</span></li>
+<li><span>Rolo de pintor</span><span>4</span><span>12,80 €</span></li>
+<li><span>Fita de pintor</span><span>6</span><span>6,60 €</span></li>
+<li><span>Massa de reparação</span><span>3</span><span>13,50 €</span></li>
+</ul>
+<p class="sum"><span>Total</span><span>103,90 €</span></p>
+</article>
+<p class="excel-arrow" aria-hidden="true">→</p>
+<div class="excel-sheet"><table>
+<thead><tr><th>Ref.</th><th>Descrição</th><th>Qtd</th><th>Preço</th></tr></thead>
+<tbody>
+<tr><td>FAC-014</td><td>Parafuso zincado M8</td><td>40</td><td>0,18 €</td></tr>
+<tr><td>FAC-015</td><td>Tinta branca 5 L</td><td>2</td><td>24,90 €</td></tr>
+<tr><td>FAC-016</td><td>Lixa grão 120</td><td>10</td><td>1,40 €</td></tr>
+<tr><td>FAC-017</td><td>Rolo de pintor</td><td>4</td><td>3,20 €</td></tr>
+<tr><td>FAC-018</td><td>Fita de pintor</td><td>6</td><td>1,10 €</td></tr>
+<tr><td>FAC-019</td><td>Massa de reparação</td><td>3</td><td>4,50 €</td></tr>
+<tr class="total"><td></td><td>Total</td><td></td><td>103,90 €</td></tr>
+</tbody>
+</table></div>
+</div></div>
+<div class="phone"><div class="device-screen excel-phone">
+<p>Fatura FAC-014</p>
+<table>
+<thead><tr><th>Ref.</th><th>Qtd</th></tr></thead>
+<tbody>
+<tr><td>FAC-014</td><td>40</td></tr>
+<tr><td>FAC-015</td><td>2</td></tr>
+<tr><td>FAC-016</td><td>10</td></tr>
+<tr><td>FAC-017</td><td>4</td></tr>
+<tr><td>FAC-018</td><td>6</td></tr>
+<tr><td>FAC-019</td><td>3</td></tr>
+<tr class="total"><td>Total</td><td>103,90 €</td></tr>
+</tbody>
+</table>
+<span class="dl">Descarregar Excel</span>
+</div></div>
+</div>
+</article>
+</div>
+</section>
+<section class="showcase-ask" aria-labelledby="pedir">
+<div class="showcase-ask-inner">
+<h2 id="pedir">Queres uma peça assim para o teu negócio?</h2>
+<div class="ask-actions">
+<a class="button button-wa" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero um website</a>
+<a class="button button-lime" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Preciso de uma aplicação</a>
+<a class="button button-dark" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero automatizar uma tarefa</a>
+</div>
+<p class="mail-line">Ou escreve para <a href="mailto:sjgomesarouca@gmail.com">sjgomesarouca@gmail.com</a>.</p>
 </div>
 </section>
 
@@ -168,27 +269,60 @@ if (location.hostname.endsWith('github.io')) {
 </script>
 <script>
 (function () {
-  var cards = document.querySelectorAll('.project-card');
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var coarse = matchMedia('(hover: none), (pointer: coarse)').matches;
-  cards.forEach(function (card) {
-    var button = card.querySelector('.view-toggle');
-    button.addEventListener('click', function () {
-      card.dataset.locked = '1';
-      var on = card.classList.toggle('is-alt');
-      button.setAttribute('aria-pressed', on ? 'true' : 'false');
-      button.textContent = on ? 'Ver no computador' : 'Ver no telemóvel';
+  var buttons = [].slice.call(document.querySelectorAll('.filter-bar button'));
+  var items = [].slice.call(document.querySelectorAll('.piece'));
+  var live = document.querySelector('.filter-live');
+  var names = { todos: 'Todos', website: 'Websites', app: 'Aplicações', auto: 'Automações' };
+  function select(btn) {
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+    var kind = btn.getAttribute('data-filter');
+    var count = 0;
+    items.forEach(function (item) {
+      var show = kind === 'todos' || item.getAttribute('data-kind') === kind;
+      item.hidden = !show;
+      if (show) count += 1;
     });
+    live.textContent = names[kind] + ', ' + count + (count === 1 ? ' exemplo.' : ' exemplos.');
+  }
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () { select(btn); });
   });
-  if (coarse && !reduce) {
-    var on = false;
-    setInterval(function () {
-      on = !on;
-      cards.forEach(function (card) {
-        if (card.dataset.locked) return;
-        card.classList.toggle('is-alt', on);
+  document.querySelector('.filter-bar').addEventListener('keydown', function (event) {
+    if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+    var i = buttons.indexOf(document.activeElement);
+    if (i < 0) return;
+    event.preventDefault();
+    var next = event.key === 'ArrowRight' ? (i + 1) % buttons.length : (i - 1 + buttons.length) % buttons.length;
+    buttons[next].focus();
+    select(buttons[next]);
+  });
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    items.forEach(function (el) { el.classList.add('will-reveal'); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('is-shown');
       });
-    }, 4200);
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+    var phones = document.querySelectorAll('.phone');
+    var ticking = false;
+    function place() {
+      ticking = false;
+      phones.forEach(function (phone) {
+        var piece = phone.closest('.piece');
+        if (!piece || piece.hidden) { phone.style.transform = ''; return; }
+        var mid = phone.getBoundingClientRect().top - innerHeight / 2;
+        var shift = Math.max(-12, Math.min(12, mid / innerHeight * -18));
+        phone.style.transform = 'translate3d(0,' + shift.toFixed(1) + 'px,0)';
+      });
+    }
+    addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(place);
+    }, { passive: true });
+    place();
   }
 })();
 </script>

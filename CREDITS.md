@@ -6,7 +6,7 @@ These files are screenshots of web pages, not third-party photographs. The homep
 
 | File | Page |
 | --- | --- |
-| `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` | Services section of the former 7Jardins site (no longer online). The crop stops above the contact line. |
+| `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` | Services section of https://7jardins26.vercel.app/. The crop stops above the contact line. |
 | `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` | Local render of the SjGomes - Sistemas de som site. |
 | `assets/projects/atelier-nord-desktop.webp`, `assets/projects/atelier-nord-mobile.webp` | `/demos/atelier-nord/` |
 | `assets/projects/leonor-matos-desktop.webp`, `assets/projects/leonor-matos-mobile.webp` | `/demos/leonor-matos/` |
@@ -19,9 +19,9 @@ These files are screenshots of web pages, not third-party photographs. The homep
 | `assets/demos/casa-do-vale-preview.webp` | `/demos/casa-do-vale/` |
 | `assets/demos/barro-e-linho-preview.webp` | `/demos/barro-e-linho/` |
 
-## Demonstration photographs
+## Example photographs
 
-Demonstration pages use photographs from Unsplash, under the [Unsplash License](https://unsplash.com/license). Attribution is not required by the licence. Authors are listed here anyway.
+Example pages use photographs from Unsplash, under the [Unsplash License](https://unsplash.com/license). Attribution is not required by the licence. Authors are listed here anyway.
 
 Files live in `assets/demos/`. The newer photographs use a full WebP and an 800px-wide `-sm` file. The portrait is 1000×1400; the others in that set are 1600×1000. Older photographs have a 1600×1000 hero and an 800×600 card (`-sm`).
 
