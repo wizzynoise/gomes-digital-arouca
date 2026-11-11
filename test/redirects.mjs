@@ -144,6 +144,7 @@ check("verification file is the single Google line", verifyFile === VERIFY_LINE,
 const sitemap = readFileSync(new URL("../sitemap.xml", import.meta.url), "utf8");
 check("sitemap omits the verification file", !sitemap.includes("googlef7be4e9e08c807ca"));
 check("sitemap lists trabalhos", sitemap.includes("https://gomesiadigital.com/trabalhos"));
+check("sitemap lists painellog termos", sitemap.includes("https://gomesiadigital.com/painellog/termos"));
 check("sitemap omits the legacy projetos url", !sitemap.includes("https://gomesiadigital.com/projetos"));
 
 seen.length = 0;

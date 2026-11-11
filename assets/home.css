@@ -1235,3 +1235,25 @@ body { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   .hero-tilt, .work-card, .sector-card { transition: none; }
 }
+
+.idea-band {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 72px 24px;
+  border-top: 1px solid var(--line);
+}
+.idea-band-inner { width: min(40rem, 100%); margin: 0 auto; min-width: 0; }
+.idea-band h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -.05em;
+  line-height: 1.08;
+  font-weight: 800;
+  overflow-wrap: break-word;
+}
+.idea-band p { margin: 0 0 22px; color: var(--muted); font-size: 17px; line-height: 1.6; }
+.idea-band .button { max-width: 100%; text-align: center; line-height: 1.35; white-space: normal; }
+@media (max-width: 420px) {
+  .idea-band { padding: 56px 16px; }
+  .idea-band p { font-size: 16px; }
+}
