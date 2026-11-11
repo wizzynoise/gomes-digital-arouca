@@ -83,6 +83,41 @@ const cases = [
     assets: true,
   },
   {
+    name: "legacy portfolio path redirects to trabalhos",
+    url: "https://gomesiadigital.com/projetos?from=menu",
+    status: 301,
+    location: "https://gomesiadigital.com/trabalhos?from=menu",
+    assets: false,
+  },
+  {
+    name: "legacy portfolio slash redirects to trabalhos",
+    url: "https://gomesiadigital.com/projetos/",
+    status: 301,
+    location: "https://gomesiadigital.com/trabalhos",
+    assets: false,
+  },
+  {
+    name: "legacy portfolio html redirects to trabalhos",
+    url: "http://127.0.0.1:8787/projetos.html",
+    status: 301,
+    location: "http://127.0.0.1:8787/trabalhos",
+    assets: false,
+  },
+  {
+    name: "www legacy portfolio collapses to one apex redirect",
+    url: "https://www.gomesiadigital.com/projetos/?q=1",
+    status: 301,
+    location: "https://gomesiadigital.com/trabalhos?q=1",
+    assets: false,
+  },
+  {
+    name: "preview legacy portfolio stays on that host",
+    url: "https://abc123-gomes-digital-arouca.sjgomesarouca.workers.dev/projetos",
+    status: 301,
+    location: "https://abc123-gomes-digital-arouca.sjgomesarouca.workers.dev/trabalhos",
+    assets: false,
+  },
+  {
     name: "www verification file redirects to the apex html URL",
     url: "https://www.gomesiadigital.com/googlef7be4e9e08c807ca.html",
     status: 301,
@@ -108,6 +143,8 @@ check("verification file is the single Google line", verifyFile === VERIFY_LINE,
 
 const sitemap = readFileSync(new URL("../sitemap.xml", import.meta.url), "utf8");
 check("sitemap omits the verification file", !sitemap.includes("googlef7be4e9e08c807ca"));
+check("sitemap lists trabalhos", sitemap.includes("https://gomesiadigital.com/trabalhos"));
+check("sitemap omits the legacy projetos url", !sitemap.includes("https://gomesiadigital.com/projetos"));
 
 seen.length = 0;
 const verify = await worker.fetch(new Request("https://gomesiadigital.com/googlef7be4e9e08c807ca.html"), env);

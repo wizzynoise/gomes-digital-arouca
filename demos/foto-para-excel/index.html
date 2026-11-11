@@ -14,16 +14,16 @@ if (location.hostname.endsWith('github.io')) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f6f4eb">
 <title>Foto para Excel — Gomes IA Digital</title>
-<meta name="description" content="Exemplo: uma foto de fatura ou de lista de material passa a tabela e descarrega em Excel. Dados fictícios, nada é guardado.">
+<meta name="description" content="Uma foto de fatura ou de lista de material passa a tabela e descarrega em Excel. Dados fictícios, nada é guardado.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://gomesiadigital.com/demos/foto-para-excel/">
 <meta property="og:title" content="Foto para Excel — Gomes IA Digital">
-<meta property="og:description" content="Exemplo: uma foto de fatura ou de lista de material passa a tabela e descarrega em Excel. Dados fictícios, nada é guardado.">
+<meta property="og:description" content="Uma foto de fatura ou de lista de material passa a tabela e descarrega em Excel. Dados fictícios, nada é guardado.">
 <meta property="og:url" content="https://gomesiadigital.com/demos/foto-para-excel/">
 <meta property="og:image" content="https://gomesiadigital.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Foto para Excel — Gomes IA Digital">
-<meta name="twitter:description" content="Exemplo: uma foto de fatura ou de lista de material passa a tabela e descarrega em Excel. Dados fictícios, nada é guardado.">
+<meta name="twitter:description" content="Uma foto de fatura ou de lista de material passa a tabela e descarrega em Excel. Dados fictícios, nada é guardado.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/home.css">
 <style>
@@ -74,7 +74,7 @@ if (location.hostname.endsWith('github.io')) {
 </button>
 <div class="nav-links" id="menu-principal">
 <a href="/servicos">Serviços</a>
-<a href="/projetos">Projetos</a>
+<a href="/trabalhos">Trabalhos</a>
 <a href="/servicos#assistencia">Assistência</a>
 <a href="/sobre">Sobre</a>
 <a class="nav-cta" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Pedir orçamento pelo WhatsApp</a>
@@ -84,7 +84,7 @@ if (location.hostname.endsWith('github.io')) {
 <p class="eyebrow"><span class="eyebrow-dot"></span> Automatização</p>
 <h1>Foto para Excel</h1>
 <p class="lead">Escolhe uma fatura ou uma lista de material, ou carrega uma foto tua. A leitura deste ecrã usa dados fictícios. A foto não sai do teu browser e nada é guardado.</p>
-<div class="sample-row" role="group" aria-label="Documentos de exemplo">
+<div class="sample-row" role="group" aria-label="Documentos fictícios">
 <button class="sample" type="button" data-sample="fatura" aria-pressed="true">
 <svg viewBox="0 0 340 230" aria-hidden="true" role="img">
 <rect width="340" height="230" fill="#fffef8"/>
@@ -130,7 +130,7 @@ if (location.hostname.endsWith('github.io')) {
 <rect x="18" y="66" width="304" height="36" fill="#fff"/><text x="28" y="88" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Candeeiro de parede · 6</text>
 <rect x="18" y="108" width="304" height="36" fill="#fff"/><text x="28" y="130" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Cabo XLR 10 m · 4</text>
 <rect x="18" y="150" width="304" height="36" fill="#fff"/><text x="28" y="172" fill="#1c1916" font-family="Arial, sans-serif" font-size="14">Suporte de coluna · 2</text>
-<text x="18" y="210" fill="#3e5553" font-family="Arial, sans-serif" font-size="12">Recebido na obra. Sem assinatura neste exemplo.</text>
+<text x="18" y="210" fill="#3e5553" font-family="Arial, sans-serif" font-size="12">Recebido na obra. Sem assinatura.</text>
 </svg>
 <b>Guia de entrega</b>
 </button>
@@ -142,7 +142,7 @@ if (location.hostname.endsWith('github.io')) {
 <div class="actions">
 <button class="button button-lime" type="button" id="ler">Ler o documento</button>
 </div>
-<p class="fine" id="aviso">Exemplo com dados fictícios, nada é guardado.</p>
+<p class="fine" id="aviso">Dados fictícios, nada é guardado.</p>
 <div class="stage-box" id="stage">
 <div class="doc-preview" id="paper"></div>
 <img id="foto-vista" alt="Foto escolhida neste ecrã" hidden>
@@ -154,7 +154,7 @@ if (location.hostname.endsWith('github.io')) {
 <div class="actions">
 <button class="button button-dark" type="button" id="excel">Descarregar Excel</button>
 </div>
-<p class="fine">O ficheiro é criado neste browser, com os dados do exemplo. A tua foto não entra no ficheiro.</p>
+<p class="fine">O ficheiro é criado neste browser, com dados fictícios. A tua foto não entra no ficheiro.</p>
 </div>
 </section>
 <footer>
@@ -171,7 +171,7 @@ if (location.hostname.endsWith('github.io')) {
 <div class="footer-bottom">
 <span>© 2026 <a class="brand-home" href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></span>
 <a href="/servicos">Serviços</a>
-<a href="/projetos">Projetos</a>
+<a href="/trabalhos">Trabalhos</a>
 <a href="/sobre">Sobre</a>
 <a href="https://painellog.gomesiadigital.com">Entrar no PainelLog</a>
 <a href="/politica-privacidade">Política de privacidade</a>
@@ -199,7 +199,7 @@ if (location.hostname.endsWith('github.io')) {
 (function () {
   var samples = {
     fatura: {
-      name: 'fatura-exemplo.xlsx',
+      name: 'fatura.xlsx',
       rows: [
         ['Referência', 'Descrição', 'Quantidade', 'Preço €'],
         ['FAC-014', 'Parafuso zincado M8', 40, 0.18],
@@ -265,7 +265,7 @@ if (location.hostname.endsWith('github.io')) {
     photo.src = photoUrl;
     photo.hidden = false;
     paper.hidden = true;
-    document.getElementById('aviso').textContent = 'Exemplo com dados fictícios, nada é guardado. A foto fica só neste ecrã.';
+    document.getElementById('aviso').textContent = 'Dados fictícios, nada é guardado. A foto fica só neste ecrã.';
   });
 
   function euro(n) {
@@ -296,7 +296,7 @@ if (location.hostname.endsWith('github.io')) {
     var table = document.getElementById('tabela');
     table.innerHTML = '<thead><tr>' + rows[0].map(function (cell) { return '<th>' + cell + '</th>'; }).join('') + '</tr></thead><tbody>' + body + '</tbody>';
     document.getElementById('scan').hidden = true;
-    document.getElementById('estado').textContent = 'Tabela pronta. Os números são do exemplo, não da tua foto.';
+    document.getElementById('estado').textContent = 'Tabela pronta. Os números são fictícios, não da tua foto.';
     document.getElementById('resultado').hidden = false;
   }
 
@@ -369,7 +369,7 @@ if (location.hostname.endsWith('github.io')) {
     return zipStore([
       { name: '[Content_Types].xml', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>' },
       { name: '_rels/.rels', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>' },
-      { name: 'xl/workbook.xml', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Exemplo" sheetId="1" r:id="rId1"/></sheets></workbook>' },
+      { name: 'xl/workbook.xml', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Tabela" sheetId="1" r:id="rId1"/></sheets></workbook>' },
       { name: 'xl/_rels/workbook.xml.rels', data: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/></Relationships>' },
       { name: 'xl/worksheets/sheet1.xml', data: sheet }
     ]);

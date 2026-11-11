@@ -14,27 +14,27 @@ Every WhatsApp control is a link to `https://wa.me/message/5VB7SV74VVEKE1` with 
 
 ## Portfolio
 
-The homepage shows four example cards: Atelier Nórd, Leonor Matos, Nexora Inventory, and BRUMA Coffee. Desktop and mobile screenshots crossfade on hover, focus, or tap.
+The homepage hero shows the live SjGomes site in an animated browser window. Below the sectors, the homepage shows 7Jardins (live) and PainelLog (still in development, example-data screen only). SjGomes is not repeated in that section.
 
-`/projetos` is an example showcase headed "Exemplos", with filters for websites, applications, and automations. Do not use the word "demo" in visible text, and do not present any piece as a client or as real/delivered work. Pieces, in this order:
+`/trabalhos` (`trabalhos.html`) is the portfolio, headed "Trabalhos". `/projetos`, `/projetos/` and `/projetos.html` 301 to `/trabalhos` in `worker.js`. The canonical URL and the sitemap entry are `/trabalhos`. Do not use the word "demo" in visible text. Concept pieces are labeled "Conceito de design, não é um cliente." Pieces, in this order:
 
 | Name | Kind | Link | Screenshot |
 | --- | --- | --- | --- |
-| 7Jardins - Serviços de jardinagem | Website | https://7jardins26.vercel.app/ | `assets/projects/7jardins-desktop.webp`, `assets/projects/7jardins-mobile.webp` |
-| SjGomes - Sistemas de som | Website | None | `assets/projects/sjgomes-desktop.webp`, `assets/projects/sjgomes-mobile.webp` |
-| Barbearia Leme | Website | `/demos/barbearia-leme/` | `assets/projects/barbearia-leme-desktop.webp`, `assets/projects/barbearia-leme-mobile.webp` |
-| Mesa da Encosta | Website | `/demos/mesa-da-encosta/` | `assets/projects/mesa-da-encosta-desktop.webp`, `assets/projects/mesa-da-encosta-mobile.webp` |
-| Atelier Nórd | Website | `/demos/atelier-nord/` | `assets/projects/atelier-nord-desktop.webp`, `assets/projects/atelier-nord-mobile.webp` |
-| Leonor Matos | Website | `/demos/leonor-matos/` | `assets/projects/leonor-matos-desktop.webp`, `assets/projects/leonor-matos-mobile.webp` |
-| BRUMA Coffee | Website | `/demos/bruma/` | `assets/projects/bruma-desktop.webp`, `assets/projects/bruma-mobile.webp` |
-| Nexora Inventory | Application | `/demos/nexora/` | `assets/projects/nexora-desktop.webp`, `assets/projects/nexora-mobile.webp` |
-| Foto para Excel | Automation | `/demos/foto-para-excel/` | Built in the page |
+| SjGomes — Sistemas de som | Live site | https://sjgomes.sjgomesarouca.workers.dev | `assets/shots/sjgomes-desktop.webp`, `assets/shots/sjgomes-mobile.webp` |
+| 7Jardins — Serviços de jardinagem | Live site | https://7jardins26.vercel.app/ | `assets/shots/7jardins-desktop.webp`, `assets/shots/7jardins-mobile.webp` |
+| PainelLog | App in development | `/painellog` | `assets/painellog/stock.webp` (example data only) |
+| Foto para Excel | App in development | `/demos/foto-para-excel/` | `assets/shots/foto-para-excel-desktop.webp` |
+| Barbearia Leme | Design concept | `/demos/barbearia-leme/` | `assets/shots/barbearia-leme-desktop.webp` |
+| Mesa da Encosta | Design concept | `/demos/mesa-da-encosta/` | `assets/shots/mesa-da-encosta-desktop.webp` |
+| Atelier Nórd | Design concept | `/demos/atelier-nord/` | `assets/shots/atelier-nord-desktop.webp` |
+| Leonor Matos | Design concept | `/demos/leonor-matos/` | `assets/shots/leonor-matos-desktop.webp` |
+| BRUMA Coffee | Design concept | `/demos/bruma/` | `assets/shots/bruma-desktop.webp` |
 
-The SjGomes frames crop the bottom of that screenshot so the footer phone number is not shown. Casa do Vale and Barro & Linho stay on disk and are not linked from the homepage or `/projetos`.
+The SjGomes captures do not show a phone number. Nexora Inventory, Casa do Vale and Barro & Linho stay on disk and are not linked from the homepage or `/trabalhos`.
 
 ## Pages
 
-`servicos.html`, `projetos.html`, and `sobre.html` are served at `/servicos`, `/projetos`, and `/sobre`. They are listed in `sitemap.xml`. `/servicos#assistencia` is the technology-help block.
+`servicos.html`, `trabalhos.html`, and `sobre.html` are served at `/servicos`, `/trabalhos`, and `/sobre`. They are listed in `sitemap.xml`. `/servicos#assistencia` is the technology-help block.
 
 ## Demonstration sites
 
@@ -46,11 +46,11 @@ Example pages live under `demos/`. They are `noindex` and are not listed in `sit
 | `demos/leonor-matos/` | Personal-brand example |
 | `demos/nexora/` | Inventory prototype, in the browser only |
 | `demos/bruma/` | Coffee storefront; each Comprar button uses the WhatsApp short link |
-| `demos/barbearia-leme/` | Barbershop page linked from `/projetos` |
-| `demos/mesa-da-encosta/` | Restaurant page linked from `/projetos` |
-| `demos/casa-do-vale/` | Kept on disk, not linked from the homepage or `/projetos` |
-| `demos/barro-e-linho/` | Kept on disk, not linked from the homepage or `/projetos` |
-| `demos/foto-para-excel/` | Photo-to-spreadsheet example, linked from `/projetos` and listed in `sitemap.xml`. The file never leaves the browser |
+| `demos/barbearia-leme/` | Barbershop concept linked from `/trabalhos` |
+| `demos/mesa-da-encosta/` | Restaurant concept linked from `/trabalhos` |
+| `demos/casa-do-vale/` | Kept on disk, not linked from the homepage or `/trabalhos` |
+| `demos/barro-e-linho/` | Kept on disk, not linked from the homepage or `/trabalhos` |
+| `demos/foto-para-excel/` | Photo-to-spreadsheet tool, linked from `/trabalhos` and listed in `sitemap.xml`. The file never leaves the browser |
 
 ## Run locally
 
@@ -77,9 +77,11 @@ The repository root is a Cloudflare Worker with static assets, connected to Work
 | `index.html` | Homepage, search metadata, and contact script |
 | `assets/home.css` | Homepage styles |
 | `assets/bibo-widget.js` | Bibo assistant on the homepage and example pages |
-| `assets/projects/` | Desktop and mobile screenshots for the homepage examples and `/projetos` |
+| `assets/projects/` | Older screenshots kept on disk |
+| `assets/shots/` | WebP captures used on the homepage hero and `/trabalhos` |
+| `assets/ui.js` | Portfolio filters, scroll reveal, and the hero tilt |
 | `servicos.html` | Services page at `/servicos` |
-| `projetos.html` | Example showcase at `/projetos` |
+| `trabalhos.html` | Portfolio at `/trabalhos` |
 | `sobre.html` | About page at `/sobre` |
 | `politica-privacidade.html` | Privacy policy in European Portuguese |
 | `demos/` | Example pages. `noindex`, except `demos/foto-para-excel/` |
@@ -91,7 +93,7 @@ The repository root is a Cloudflare Worker with static assets, connected to Work
 | `assets/icon-180.png` | Home-screen icon |
 | `favicon.svg` | Browser-tab icon |
 | `googlef7be4e9e08c807ca.html` | Google Search Console file, served at the `.html` URL with status 200 |
-| `worker.js` | 301 from www and the production workers.dev host to the apex |
+| `worker.js` | 301 from www and the production workers.dev host to the apex, and from `/projetos` to `/trabalhos` |
 | `wrangler.jsonc` | Worker and static-assets config, including previews |
 | `test/redirects.mjs` | Local checks for the host redirects |
 | `.assetsignore` | Files left out of the Worker asset upload |

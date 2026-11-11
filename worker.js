@@ -6,6 +6,7 @@ const REDIRECT_HOSTS = new Set([
   "gomes-digital-arouca.sjgomesarouca.workers.dev",
 ]);
 const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "0.0.0.0", "[::1]"]);
+const PORTFOLIO_LEGACY = new Set(["/projetos", "/projetos/", "/projetos.html"]);
 
 function bareHost(value) {
   return value.toLowerCase().replace(/:\d+$/, "").replace(/\.$/, "");
@@ -23,12 +24,21 @@ function requestHost(request) {
   return urlHost;
 }
 
-function apexUrl(request) {
-  const target = new URL(request.url);
-  target.protocol = "https:";
-  target.hostname = APEX;
-  target.port = "";
-  return target.toString();
+// /projetos was the portfolio URL. The page now lives at /trabalhos.
+// A redirect host and the old path collapse into one 301.
+function redirectTarget(request) {
+  const host = requestHost(request);
+  const url = new URL(request.url);
+  const legacy = PORTFOLIO_LEGACY.has(url.pathname);
+  const alias = REDIRECT_HOSTS.has(host);
+  if (!legacy && !alias) return null;
+  if (legacy) url.pathname = "/trabalhos";
+  if (alias) {
+    url.protocol = "https:";
+    url.hostname = APEX;
+    url.port = "";
+  }
+  return url.toString();
 }
 
 // html_handling "auto-trailing-slash" 307s /file.html to /file.
@@ -60,9 +70,8 @@ async function googleVerification(request, env) {
 
 export default {
   async fetch(request, env) {
-    if (REDIRECT_HOSTS.has(requestHost(request))) {
-      return Response.redirect(apexUrl(request), 301);
-    }
+    const target = redirectTarget(request);
+    if (target) return Response.redirect(target, 301);
     if (new URL(request.url).pathname === VERIFY_HTML) {
       return googleVerification(request, env);
     }

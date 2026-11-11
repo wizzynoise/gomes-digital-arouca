@@ -88,29 +88,58 @@ try{if(matchMedia('(prefers-reduced-motion: no-preference)').matches)document.do
 </button>
 <div class="nav-links" id="menu-principal">
 <a href="/servicos">Serviços</a>
-<a href="/projetos">Projetos</a>
+<a href="/trabalhos">Trabalhos</a>
 <a href="/servicos#assistencia">Assistência</a>
 <a href="/sobre">Sobre</a>
 <a class="nav-cta" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Falar no WhatsApp</a>
 </div>
 </nav>
 
-<section class="hero" id="topo">
+<section class="hero has-visual" id="topo">
 <div class="hero-copy">
 <p class="eyebrow"><span class="eyebrow-dot"></span> Gomes IA Digital · Portugal</p>
-<h1>Os teus clientes procuram-te no Google. <span>Vão encontrar-te?</span></h1>
+<h1>Os teus clientes procuram-te no Google. <span class="keep">Vão encontrar-te?</span></h1>
 <p class="hero-intro">Sites e ferramentas digitais para o teu negócio receber mais contactos e pedidos.</p>
 <div class="hero-actions">
 <a class="button button-wa" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero mais clientes — falar no WhatsApp</a>
-<a class="text-link" href="/projetos">Ver projetos</a>
+<a class="text-link" href="/trabalhos">Ver trabalhos</a>
 </div>
 </div>
-<div class="offer-board" aria-label="O que o site muda">
+<div class="hero-visual" aria-hidden="true">
+<div class="hero-tilt">
+<div class="mock-stage">
+<span class="mock-live-badge">No ar</span>
+<div class="mock-browser">
+<div class="mock-chrome">
+<span class="browser-dots"><i></i><i></i><i></i></span>
+<span class="mock-url">sjgomes.sjgomesarouca.workers.dev</span>
+</div>
+<div class="mock-screen">
+<img class="mock-shot-static" src="assets/shots/sjgomes-hero-desktop.webp" width="1600" height="1000" alt="" fetchpriority="high" decoding="async">
+<div class="mock-layers">
+<div class="mock-layer layer-nav"></div>
+<div class="mock-layer layer-photo"></div>
+<div class="mock-layer layer-copy"></div>
+</div>
+</div>
+</div>
+<div class="phone-frame mock-phone">
+<div class="phone-screen">
+<picture>
+<source media="(min-width: 901px)" srcset="assets/shots/sjgomes-hero-mobile.webp" type="image/webp">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="780" height="1688" decoding="async">
+</picture>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="offer-row" aria-label="O que o site muda">
 <article class="offer-item lime"><b>Desde 80 €</b><p>Uma página para o negócio, com o design que escolheres.</p></article>
 <article class="offer-item sand"><b>Mais pedidos</b><p>Horário, preços e contacto num sítio que o cliente abre no telemóvel.</p></article>
 <article class="offer-item blue"><b>Falas com o Pedro</b><p>Sem call center. A resposta é de quem faz o trabalho.</p></article>
 </div>
-</section>
 
 <section class="section" id="setores">
 <div class="section-heading">
@@ -147,6 +176,53 @@ try{if(matchMedia('(prefers-reduced-motion: no-preference)').matches)document.do
 </div>
 </section>
 
+<div id="demos"></div>
+<section class="section is-quiet" id="trabalhos">
+<div class="section-heading">
+<p class="eyebrow">Trabalhos</p>
+<h2>Alguns trabalhos<br><span>recentes.</span></h2>
+<p class="heading-note">O site da 7Jardins já está no ar. O PainelLog ainda está em desenvolvimento e o ecrã mostra dados de exemplo. Os conceitos de design estão na página de trabalhos.</p>
+</div>
+<div class="work-grid">
+<article class="work-card" data-kind="live">
+<a class="project-hit" href="https://7jardins26.vercel.app/" target="_blank" rel="noopener">
+<div class="work-stage has-phone">
+<span class="badge badge-live">No ar</span>
+<div class="browser-frame">
+<div class="browser-bar"><span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="browser-url">7jardins26.vercel.app</span></div>
+<div class="browser-screen"><img src="assets/shots/7jardins-desktop.webp" width="1440" height="900" alt="Website de jardinagem da 7Jardins, com serviços de exterior." loading="lazy" decoding="async"></div>
+</div>
+<div class="phone-frame phone-overlay">
+<div class="phone-screen"><img src="assets/shots/7jardins-mobile.webp" width="780" height="1688" alt="" loading="lazy" decoding="async"></div>
+</div>
+</div>
+<div class="work-info">
+<h3>7Jardins — Serviços de jardinagem</h3>
+<p>Quem procura jardinagem vê os serviços de exterior e pede orçamento sem adivinhar o que a empresa faz.</p>
+<p class="explore">Ver o site</p>
+</div>
+</a>
+</article>
+<article class="work-card" data-kind="app">
+<a class="project-hit" href="/painellog">
+<div class="work-stage is-phone">
+<span class="badge badge-dev">Em desenvolvimento</span>
+<div class="phone-frame">
+<div class="phone-screen"><img src="assets/painellog/stock.webp" width="780" height="1690" alt="Ecrã da lista de stock do PainelLog, com dados de exemplo." loading="lazy" decoding="async"></div>
+</div>
+</div>
+<div class="work-info">
+<h3>PainelLog</h3>
+<p>O stock de painéis num painel no telemóvel, sem folhas de Excel.</p>
+<p class="work-note">Ainda em desenvolvimento. O ecrã mostra dados de exemplo, não dados reais.</p>
+<p class="explore">Ver a página</p>
+</div>
+</a>
+</article>
+</div>
+<p class="examples-more"><a class="button button-lime" href="/trabalhos">Ver todos os trabalhos</a></p>
+</section>
+
 <section class="value-band" id="valor">
 <h2>Quanto vale um cliente novo?</h2>
 <p>Se o site te trouxer um cliente por mês, já se pagou.</p>
@@ -161,7 +237,7 @@ try{if(matchMedia('(prefers-reduced-motion: no-preference)').matches)document.do
 <li><b>Diagnóstico gratuito</b><span>Olho para o caso antes de falar de preço.</span></li>
 <li><b>Fica entre nós</b><span>O que contas do negócio serve só para este trabalho.</span></li>
 <li><b>Falas com o Pedro</b><span>Não há call center. A resposta é de quem faz o site.</span></li>
-<li><b>Exemplos</b><span><a href="/projetos">7Jardins - Serviços de jardinagem</a> e <a href="/projetos">SjGomes - Sistemas de som</a>.</span></li>
+<li><b>Trabalhos</b><span><a href="https://7jardins26.vercel.app/" target="_blank" rel="noopener">7Jardins - Serviços de jardinagem</a> e <a href="https://sjgomes.sjgomesarouca.workers.dev" target="_blank" rel="noopener">SjGomes - Sistemas de som</a>.</span></li>
 </ul>
 <p class="trust-note">A deslocação é gratuita em Arouca. No resto do país, o site faz-se à distância.</p>
 </section>
@@ -198,92 +274,9 @@ try{if(matchMedia('(prefers-reduced-motion: no-preference)').matches)document.do
 </div>
 </section>
 
-<section class="section projects is-quiet" id="demos">
-<div class="section-heading projects-heading">
-<div>
-<p class="eyebrow">04 · Exemplos</p>
-<h2>Exemplos</h2>
-</div>
-</div>
-<div class="project-grid">
-<article class="project-card">
-<a class="project-hit" href="/demos/atelier-nord/">
-<div class="stage">
-<div class="shot shot-desk"><img src="assets/projects/atelier-nord-desktop.webp" width="1440" height="900" alt="Página inicial de Atelier Nórd, um site de estúdio de arquitetura."></div>
-<div class="shot shot-mob"><img src="assets/projects/atelier-nord-mobile.webp" width="390" height="844" alt="" loading="lazy"></div>
-</div>
-<div class="project-info">
-<div>
-<h3>Atelier Nórd</h3>
-<p>Site de estúdio de arquitetura, com fotografia grande.</p>
-<p class="explore">Ver o exemplo</p>
-</div>
-<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-</div>
-</a>
-<button class="view-toggle" type="button" aria-pressed="false">Ver no telemóvel</button>
-</article>
-
-<article class="project-card">
-<a class="project-hit" href="/demos/leonor-matos/">
-<div class="stage">
-<div class="shot shot-desk"><img src="assets/projects/leonor-matos-desktop.webp" width="1440" height="900" alt="Página de Leonor Matos, uma marca pessoal com retrato." loading="lazy"></div>
-<div class="shot shot-mob"><img src="assets/projects/leonor-matos-mobile.webp" width="390" height="844" alt="" loading="lazy"></div>
-</div>
-<div class="project-info">
-<div>
-<h3>Leonor Matos</h3>
-<p>Página de marca pessoal, com retrato e áreas de trabalho.</p>
-<p class="explore">Ver o exemplo</p>
-</div>
-<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-</div>
-</a>
-<button class="view-toggle" type="button" aria-pressed="false">Ver no telemóvel</button>
-</article>
-
-<article class="project-card">
-<a class="project-hit" href="/demos/nexora/">
-<div class="stage">
-<div class="shot shot-desk"><img src="assets/projects/nexora-desktop.webp" width="1440" height="900" alt="Painel Nexora Inventory, com resumo de existências e tabela." loading="lazy"></div>
-<div class="shot shot-mob"><img src="assets/projects/nexora-mobile.webp" width="390" height="844" alt="" loading="lazy"></div>
-</div>
-<div class="project-info">
-<div>
-<h3>Nexora Inventory</h3>
-<p>Protótipo de inventário, com tabela e movimentos.</p>
-<p class="explore">Ver o exemplo</p>
-</div>
-<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-</div>
-</a>
-<button class="view-toggle" type="button" aria-pressed="false">Ver no telemóvel</button>
-</article>
-
-<article class="project-card">
-<a class="project-hit" href="/demos/bruma/">
-<div class="stage">
-<div class="shot shot-desk"><img src="assets/projects/bruma-desktop.webp" width="1440" height="900" alt="Montra BRUMA Coffee, com uma chávena em primeiro plano." loading="lazy"></div>
-<div class="shot shot-mob"><img src="assets/projects/bruma-mobile.webp" width="390" height="844" alt="" loading="lazy"></div>
-</div>
-<div class="project-info">
-<div>
-<h3>BRUMA Coffee</h3>
-<p>Montra de café, com produtos e compra pelo WhatsApp.</p>
-<p class="explore">Ver o exemplo</p>
-</div>
-<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-</div>
-</a>
-<button class="view-toggle" type="button" aria-pressed="false">Ver no telemóvel</button>
-</article>
-</div>
-<p class="examples-more"><a class="button button-lime" href="/projetos">Ver todos os exemplos</a></p>
-</section>
-
 <section class="section services is-quiet" id="servicos">
 <div class="section-heading">
-<p class="eyebrow">05 · Também faço</p>
+<p class="eyebrow">04 · Também faço</p>
 <h2>Outros trabalhos</h2>
 <p class="heading-note">O que não cabe no preço de entrada é orçamentado antes de começar.</p>
 </div>
@@ -312,7 +305,7 @@ try{if(matchMedia('(prefers-reduced-motion: no-preference)').matches)document.do
 <section class="section automations is-quiet" id="automatizacoes">
 <div class="section-heading">
 <div>
-<p class="eyebrow">06 · Automatizações</p>
+<p class="eyebrow">05 · Automatizações</p>
 <h2>Automatizações</h2>
 </div>
 </div>
@@ -360,7 +353,7 @@ records = [
 ]
 df = pd.DataFrame(records)
 df.to_excel("dados_organizados.xlsx", index=False)</code></pre>
-<p class="auto-note">Este exemplo parte de dados já extraídos. O código não lê o documento.</p>
+<p class="auto-note">Estes dados já estão extraídos. O código não lê o documento.</p>
 </section>
 
 <section class="about" id="sobre">
@@ -371,7 +364,7 @@ df.to_excel("dados_organizados.xlsx", index=False)</code></pre>
 <p>Projetos maiores, orçamento próprio</p>
 </div>
 <div class="about-copy">
-<p class="eyebrow">07 · Quem faz</p>
+<p class="eyebrow">06 · Quem faz</p>
 <h2>Pedro Gomes,<br><span>em Arouca.</span></h2>
 <p>Trabalho a partir de Arouca, para todo o país. Sou fundador da Gomes IA Digital. Os websites, as aplicações e a presença online fazem-se à distância.</p>
 <p>A assistência é presencial no concelho. Fora de Arouca, pode ser à distância. O diagnóstico não se paga. Paga-se o tempo a resolver. A deslocação dentro de Arouca está incluída.</p>
@@ -381,7 +374,7 @@ df.to_excel("dados_organizados.xlsx", index=False)</code></pre>
 
 <section class="faq-contact" id="contacto">
 <div class="faq">
-<p class="eyebrow">08 · Perguntas</p>
+<p class="eyebrow">07 · Perguntas</p>
 <h2>Antes do<br><span>orçamento.</span></h2>
 <div class="faq-item">
 <h3><button type="button" aria-expanded="false" aria-controls="faq-1" id="faq-b1"><span>Quanto custa criar um website?</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button></h3>
@@ -409,7 +402,7 @@ df.to_excel("dados_organizados.xlsx", index=False)</code></pre>
 </div>
 </div>
 <div class="contact-form">
-<p class="eyebrow">09 · Contacto</p>
+<p class="eyebrow">08 · Contacto</p>
 <h2>Pede o<br><span>orçamento.</span></h2>
 <a class="button button-wa" href="https://wa.me/message/5VB7SV74VVEKE1" target="_blank" rel="noopener">Quero mais clientes — falar no WhatsApp</a>
 <p class="form-note">O botão abre o WhatsApp. Se preferires email, o formulário abre a mensagem para sjgomesarouca@gmail.com.</p>
@@ -419,7 +412,7 @@ df.to_excel("dados_organizados.xlsx", index=False)</code></pre>
 </div>
 <form id="pedido">
 <label>O teu nome<input name="nome" required autocomplete="name" placeholder="Como te chamas?"></label>
-<label>Email<input name="email" required type="email" autocomplete="email" placeholder="nome@exemplo.pt"></label>
+<label>Email<input name="email" required type="email" autocomplete="email" placeholder="nome@email.pt"></label>
 <label>Como posso ajudar?<textarea name="mensagem" required rows="4" placeholder="Conta brevemente o que tens em mente."></textarea></label>
 <label class="check"><input type="checkbox" required> Aceito que estes dados sejam usados só para responder ao pedido.</label>
 <button class="button button-lime" type="submit">Enviar por email</button>
@@ -442,7 +435,7 @@ df.to_excel("dados_organizados.xlsx", index=False)</code></pre>
 <div class="footer-bottom">
 <span>© 2026 <a class="brand-home" href="/" aria-label="Gomes IA Digital — página inicial">Gomes IA Digital</a></span>
 <a href="/servicos">Serviços</a>
-<a href="/projetos">Projetos</a>
+<a href="/trabalhos">Trabalhos</a>
 <a href="/sobre">Sobre</a>
 <a href="https://painellog.gomesiadigital.com">Entrar no PainelLog</a>
 <a href="/politica-privacidade">Política de privacidade</a>
@@ -493,32 +486,7 @@ document.getElementById('pedido').addEventListener('submit', function (event) {
   document.getElementById('form-ok').hidden = false;
 });
 </script>
-<script>
-(function () {
-  var cards = document.querySelectorAll('.project-card');
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var coarse = matchMedia('(hover: none), (pointer: coarse)').matches;
-  cards.forEach(function (card) {
-    var button = card.querySelector('.view-toggle');
-    button.addEventListener('click', function () {
-      card.dataset.locked = '1';
-      var on = card.classList.toggle('is-alt');
-      button.setAttribute('aria-pressed', on ? 'true' : 'false');
-      button.textContent = on ? 'Ver no computador' : 'Ver no telemóvel';
-    });
-  });
-  if (coarse && !reduce) {
-    var on = false;
-    setInterval(function () {
-      on = !on;
-      cards.forEach(function (card) {
-        if (card.dataset.locked) return;
-        card.classList.toggle('is-alt', on);
-      });
-    }, 4200);
-  }
-})();
-</script>
+<script src="assets/ui.js" defer></script>
 <script src="assets/bibo-widget.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bf7138fab5d1450e9c8d835a33099160"}'></script>
 </body>
